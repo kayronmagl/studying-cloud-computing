@@ -56,6 +56,15 @@ h4 {
 }
 
 
+/* Oculta data e tempo de leitura somente na página inicial */
+
+body[data-slug="index"] .content-meta,
+body[data-slug="Leia-me"] .content-meta,
+body[data-slug="leia-me"] .content-meta {
+  display: none !important;
+}
+
+
 /* Links dentro do conteúdo das notas */
 
 article a,
