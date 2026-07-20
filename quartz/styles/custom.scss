@@ -1,0 +1,382 @@
+/* Cores do site */
+
+:root,
+:root[saved-theme="light"],
+html[saved-theme="light"] {
+  --light: #f3efe6;
+  --lightgray: #d8d2c8;
+  --gray: #8b857d;
+  --darkgray: #585b61;
+  --dark: #17191d;
+  --secondary: #585b61;
+  --tertiary: #6f6962;
+  --highlight: rgba(216, 210, 200, 0.28);
+  --textHighlight: #d8d2c866;
+}
+
+:root[saved-theme="dark"],
+html[saved-theme="dark"] {
+  --light: #14161a;
+  --lightgray: #1f232a;
+  --gray: #585b61;
+  --darkgray: #d8d2c8;
+  --dark: #f3efe6;
+  --secondary: #d8d2c8;
+  --tertiary: #b9b2a9;
+  --highlight: rgba(216, 210, 200, 0.14);
+  --textHighlight: #d8d2c844;
+}
+
+
+/* Base do site */
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+article {
+  line-height: 1.7;
+}
+
+article p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--dark);
+  letter-spacing: -0.02em;
+}
+
+
+/* Links sem fundo amarelo */
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a.internal,
+a.external,
+a.internal-link,
+article a,
+section a,
+.page a,
+.content a,
+.popover-hint a {
+  color: var(--secondary) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+
+  text-decoration-line: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: color-mix(in srgb, var(--secondary) 45%, transparent) !important;
+}
+
+
+/* Link quando passa o mouse */
+
+a:hover,
+a.internal:hover,
+a.external:hover,
+a.internal-link:hover,
+article a:hover,
+.content a:hover,
+.page a:hover,
+.popover-hint a:hover {
+  color: var(--tertiary) !important;
+  text-decoration-color: var(--tertiary) !important;
+}
+
+
+/* Remove efeitos extras dos links */
+
+a::before,
+a::after,
+a.internal::before,
+a.internal::after,
+a.external::before,
+a.external::after,
+a.internal-link::before,
+a.internal-link::after,
+article a::before,
+article a::after,
+.content a::before,
+.content a::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+
+/* Remove ícone de link externo */
+
+a.external svg,
+a.external .external-icon {
+  display: none !important;
+}
+
+
+/* Links quebrados */
+
+a.broken,
+a.broken-link,
+a.dead-link,
+a.unresolved,
+a.internal.broken,
+a.internal-link.broken,
+a[data-broken],
+a[aria-label*="not found"],
+a[aria-label*="Not found"],
+a[title*="not found"],
+a[title*="Not found"] {
+  color: var(--secondary) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+
+  text-decoration-line: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-style: dashed !important;
+  text-decoration-color: color-mix(in srgb, var(--secondary) 45%, transparent) !important;
+}
+
+
+/* Destaque de texto */
+
+mark,
+.highlight,
+.text-highlight {
+  background-color: color-mix(in srgb, var(--secondary) 18%, transparent) !important;
+  color: inherit !important;
+  border-radius: 3px;
+  padding: 0 0.15em;
+}
+
+
+/* Evita coisas estourando a tela */
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+code {
+  word-break: break-word;
+}
+
+
+/* Celular */
+
+@media (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  #quartz-body {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  article {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    line-height: 1.7;
+  }
+
+  article p {
+    margin-bottom: 1rem;
+  }
+
+  article h1,
+  .article-title {
+    font-size: 1.5rem !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.035em;
+    margin-top: 1.4rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  article h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.25 !important;
+  }
+
+  article h3 {
+    font-size: 1.08rem !important;
+    line-height: 1.3 !important;
+  }
+
+  header,
+  .top,
+  .page-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+  }
+
+  .page-title,
+  a.page-title,
+  .site-title {
+    font-size: 1.12rem !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.045em !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: none !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  /* Remove a busca no celular */
+  .search,
+  button.search,
+  [class*="search" i],
+  [aria-label*="Search" i],
+  [aria-label*="Pesquisar" i],
+  input[type="search"] {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Remove o modo leitura no celular */
+  .reader-mode,
+  [class*="reader" i],
+  [aria-label*="Reader" i],
+  [aria-label*="Leitura" i] {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Mantém o botão de tema */
+  .darkmode {
+    flex-shrink: 0 !important;
+  }
+
+  .toolbar,
+  .darkmode {
+    gap: 0.25rem !important;
+  }
+
+  .toolbar button,
+  .darkmode button,
+  header button,
+  .top button,
+  .page-header button {
+    padding: 0.2rem !important;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25rem;
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0.9rem;
+  }
+
+  .callout {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .toc,
+  .table-of-contents {
+    display: none !important;
+  }
+
+  table {
+    white-space: nowrap;
+  }
+
+  code {
+    white-space: pre-wrap;
+  }
+}
+
+
+/* Celular pequeno */
+
+@media (max-width: 480px) {
+  #quartz-body {
+    padding-left: 0.9rem !important;
+    padding-right: 0.9rem !important;
+  }
+
+  article {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  article h1,
+  .article-title {
+    font-size: 1.38rem !important;
+    line-height: 1.18 !important;
+    margin-top: 1.4rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .page-title,
+  a.page-title,
+  .site-title {
+    font-size: 1.02rem !important;
+    line-height: 1.05 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: none !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  /* Remove caminho da página no celular */
+  .breadcrumb-container,
+  .breadcrumbs {
+    display: none !important;
+  }
+}
