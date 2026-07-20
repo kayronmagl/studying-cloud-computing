@@ -17,7 +17,7 @@ Aqui você vai aprender e se aprofundar em **Computação em Nuvem** com minhas 
 <a href="https://kayronmagl.github.io/studying-cloud-computing/">
   <img
     src="https://img.shields.io/badge/Acessar%20o%20site-0D1117?style=for-the-badge&logo=googlechrome&logoColor=828282"
-    alt="Acessar o site"
+    alt="Acesse aqui"
   />
 </a>
 
