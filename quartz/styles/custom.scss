@@ -258,24 +258,6 @@ code {
     min-width: 0 !important;
   }
 
-  /* Remove a busca no celular */
-  .search,
-  button.search,
-  [class*="search" i],
-  [aria-label*="Search" i],
-  [aria-label*="Pesquisar" i],
-  input[type="search"] {
-    display: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    min-width: 0 !important;
-    max-width: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-
   /* Remove o modo leitura no celular */
   .reader-mode,
   [class*="reader" i],
