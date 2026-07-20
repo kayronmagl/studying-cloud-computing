@@ -45,11 +45,9 @@ h4 {
 }
 
 
-/* Oculta data e tempo de leitura somente na página inicial */
+/* Oculta data e tempo de leitura em todas as notas */
 
-body[data-slug="index"] .content-meta,
-body[data-slug="Leia-me"] .content-meta,
-body[data-slug="leia-me"] .content-meta {
+.content-meta {
   display: none !important;
 }
 
