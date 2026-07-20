@@ -1,0 +1,85 @@
+Reserved Instances, ou RIs, são compromissos de uso que oferecem desconto em troca de reserva por período.
+
+Elas são comuns em serviços como [[Amazon EC2]] e bancos, dependendo do serviço.
+
+---
+
+## Visão geral
+
+Reserved Instances mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
+
+
+---
+
+## Quando Usar
+
+Use quando o workload é previsível e constante.
+
+Exemplo: servidores de produção que ficam ligados o tempo todo.
+
+---
+
+## Benefício
+
+RIs podem reduzir custo em comparação com On-Demand.
+
+---
+
+## Diferença para Savings Plans
+
+[[AWS Savings Plans]] tendem a oferecer mais flexibilidade em certos cenários de computação.
+
+RIs podem ser específicas conforme serviço, instância, região e atributos.
+
+---
+
+## Cuidado
+
+Comprar RIs sem analisar uso pode prender a organização em compromisso ruim.
+
+Sempre avalie cobertura e utilização.
+
+---
+
+## Relação com Gestão Financeira
+
+* [[Relatórios de Instâncias Reservadas]];
+
+---
+
+## Exemplo Prático
+
+Uma arquitetura pode parecer barata no desenho inicial, mas gerar custo por logs excessivos, transferência de dados, NAT Gateway, snapshots antigos, recursos ociosos ou falta de tags.
+
+Ferramentas como [[AWS Cost Explorer]], [[AWS Budgets]], [[AWS Billing and Cost Management]] e [[AWS Trusted Advisor]] ajudam a enxergar e corrigir esses problemas.
+
+---
+
+## Cuidados importantes
+
+Otimizar custo não significa cortar recursos cegamente.
+
+A decisão precisa considerar disponibilidade, segurança, performance, previsibilidade e valor de negócio.
+
+---
+
+## Como entender isso
+
+Este conceito pertence ao módulo de precificação, suporte e gestão financeira.
+
+## Ponto central
+
+A AWS cobra por consumo, e a equipe precisa estimar, acompanhar, controlar e otimizar gasto.
+
+## Como Diferenciar
+
+* Cost Explorer analisa custo.
+* Budgets alerta.
+* Tags organizam.
+* CUR detalha.
+* Savings Plans e Reserved Instances reduzem custo previsível.
+* Spot reduz custo com risco de interrupção.
+
+## Cuidado importante
+
+Reduzir custo sem considerar disponibilidade e performance pode quebrar a aplicação.
