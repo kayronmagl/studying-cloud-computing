@@ -5,18 +5,7 @@
 
 :root,
 :root[saved-theme="light"],
-html[saved-theme="light"] {
-  --light: #f3efe6;
-  --lightgray: #d8d2c8;
-  --gray: #8b857d;
-  --darkgray: #585b61;
-  --dark: #17191d;
-  --secondary: #585b61;
-  --tertiary: #6f6962;
-  --highlight: rgba(216, 210, 200, 0.28);
-  --textHighlight: #d8d2c866;
-}
-
+html[saved-theme="light"],
 :root[saved-theme="dark"],
 html[saved-theme="dark"] {
   --light: #14161a;
@@ -26,8 +15,8 @@ html[saved-theme="dark"] {
   --dark: #f3efe6;
   --secondary: #d8d2c8;
   --tertiary: #b9b2a9;
-  --highlight: rgba(216, 210, 200, 0.14);
-  --textHighlight: #d8d2c844;
+  --highlight: rgba(255, 255, 255, 0.09);
+  --textHighlight: rgba(139, 133, 125, 0.35);
 }
 
 
