@@ -2,7 +2,14 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+    paths:
+      - "content/**"
+      - "quartz/**"
+      - "quartz.config.yaml"
+      - "quartz.lock.json"
+      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 permissions:
@@ -11,16 +18,25 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  QUARTZ_COMMIT: 9cf87ff1c248a8ca551093214b0fec3b31415009
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout repository
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Record site telemetry
         continue-on-error: true
@@ -32,45 +48,56 @@ jobs:
           else
             EVENT="update"
           fi
-          curl -sS -f -X POST "https://github-publish-telemetry.o-rouiller.workers.dev/v1/event" \
+
+          curl -sS -f -X POST \
+            "https://github-publish-telemetry.o-rouiller.workers.dev/v1/event" \
             -H "Content-Type: application/json" \
             -d "{\"event\":\"$EVENT\"}"
 
-      - uses: actions/setup-node@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
         with:
-          node-version: '22'
+          node-version: "22"
 
       - name: Clone Quartz engine
         run: |
           git clone --depth 1 https://github.com/jackyzha0/quartz.git quartz-engine
-          cd quartz-engine
-          git fetch --depth 1 origin 9cf87ff1c248a8ca551093214b0fec3b31415009
-          git checkout 9cf87ff1c248a8ca551093214b0fec3b31415009
 
-      - name: Restore Quartz dependency cache
+          cd quartz-engine
+          git fetch --depth 1 origin "${QUARTZ_COMMIT}"
+          git checkout "${QUARTZ_COMMIT}"
+
+      - name: Restore dependency cache
         uses: actions/cache@v5
-        id: quartz-deps-cache
         with:
           path: |
-            quartz-engine/node_modules
+            ~/.npm
             quartz-engine/.quartz/plugins
-          key: quartz-deps-9cf87ff1c248a8ca551093214b0fec3b31415009-\${{ hashFiles('quartz.lock.json') }}
+          key: quartz-${{ runner.os }}-${{ env.QUARTZ_COMMIT }}-${{ hashFiles('quartz.lock.json') }}
           restore-keys: |
-            quartz-deps-9cf87ff1c248a8ca551093214b0fec3b31415009-
+            quartz-${{ runner.os }}-${{ env.QUARTZ_COMMIT }}-
 
       - name: Overlay user site
         run: |
+          test -d content
+          test -f quartz.config.yaml
+          test -f quartz.lock.json
+
           rm -rf quartz-engine/content
           cp -r content quartz-engine/content
-          cp quartz.config.yaml quartz.lock.json quartz-engine/
+
+          cp quartz.config.yaml quartz-engine/
+          cp quartz.lock.json quartz-engine/
+
+          if [[ -d quartz ]]; then
+            cp -r quartz/. quartz-engine/quartz/
+          fi
 
       - name: Install dependencies
-        if: steps.quartz-deps-cache.outputs.cache-hit != 'true'
         working-directory: quartz-engine
         run: npm ci
 
       - name: Install Quartz plugins
-        if: steps.quartz-deps-cache.outputs.cache-hit != 'true'
         working-directory: quartz-engine
         run: npx quartz plugin install
 
@@ -78,16 +105,21 @@ jobs:
         working-directory: quartz-engine
         run: npx quartz build
 
-      - uses: actions/upload-pages-artifact@v5
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v5
         with:
           path: quartz-engine/public
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v5
