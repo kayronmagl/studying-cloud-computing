@@ -1,3 +1,6 @@
+@use "./variables.scss" as *;
+
+
 /* Cores do site */
 
 :root,
@@ -53,20 +56,14 @@ h4 {
 }
 
 
-/* Links sem fundo amarelo */
+/* Links dentro do conteúdo das notas */
 
-a,
-a:link,
-a:visited,
-a:hover,
-a:active,
-a.internal,
-a.external,
-a.internal-link,
 article a,
-section a,
-.page a,
-.content a,
+article a:link,
+article a:visited,
+article a.internal,
+article a.external,
+article a.internal-link,
 .popover-hint a {
   color: var(--secondary) !important;
   background: transparent !important;
@@ -74,45 +71,52 @@ section a,
   background-image: none !important;
   box-shadow: none !important;
   text-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
 
   text-decoration-line: underline !important;
   text-decoration-thickness: 1px !important;
   text-underline-offset: 3px !important;
-  text-decoration-color: color-mix(in srgb, var(--secondary) 45%, transparent) !important;
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--secondary) 45%,
+    transparent
+  ) !important;
 }
 
 
-/* Link quando passa o mouse */
+/* Links da interface */
 
-a:hover,
-a.internal:hover,
-a.external:hover,
-a.internal-link:hover,
+.page-title,
+a.page-title,
+.site-title,
+.explorer a,
+.breadcrumb-container a,
+.breadcrumbs a,
+.backlinks a,
+.toc a,
+.table-of-contents a,
+footer a {
+  text-decoration: none !important;
+}
+
+
+/* Links quando passa o mouse */
+
 article a:hover,
-.content a:hover,
-.page a:hover,
+article a.internal:hover,
+article a.external:hover,
+article a.internal-link:hover,
 .popover-hint a:hover {
   color: var(--tertiary) !important;
   text-decoration-color: var(--tertiary) !important;
 }
 
 
-/* Remove efeitos extras dos links */
+/* Remove efeitos extras dos links do conteúdo */
 
-a::before,
-a::after,
-a.internal::before,
-a.internal::after,
-a.external::before,
-a.external::after,
-a.internal-link::before,
-a.internal-link::after,
 article a::before,
 article a::after,
-.content a::before,
-.content a::after {
+.popover-hint a::before,
+.popover-hint a::after {
   background: transparent !important;
   background-color: transparent !important;
   background-image: none !important;
@@ -122,25 +126,27 @@ article a::after,
 
 /* Remove ícone de link externo */
 
-a.external svg,
-a.external .external-icon {
+article a.external svg,
+article a.external .external-icon,
+.popover-hint a.external svg,
+.popover-hint a.external .external-icon {
   display: none !important;
 }
 
 
 /* Links quebrados */
 
-a.broken,
-a.broken-link,
-a.dead-link,
-a.unresolved,
-a.internal.broken,
-a.internal-link.broken,
-a[data-broken],
-a[aria-label*="not found"],
-a[aria-label*="Not found"],
-a[title*="not found"],
-a[title*="Not found"] {
+article a.broken,
+article a.broken-link,
+article a.dead-link,
+article a.unresolved,
+article a.internal.broken,
+article a.internal-link.broken,
+article a[data-broken],
+article a[aria-label*="not found"],
+article a[aria-label*="Not found"],
+article a[title*="not found"],
+article a[title*="Not found"] {
   color: var(--secondary) !important;
   background: transparent !important;
   background-color: transparent !important;
@@ -151,7 +157,11 @@ a[title*="Not found"] {
   text-decoration-thickness: 1px !important;
   text-underline-offset: 3px !important;
   text-decoration-style: dashed !important;
-  text-decoration-color: color-mix(in srgb, var(--secondary) 45%, transparent) !important;
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--secondary) 45%,
+    transparent
+  ) !important;
 }
 
 
@@ -160,19 +170,36 @@ a[title*="Not found"] {
 mark,
 .highlight,
 .text-highlight {
-  background-color: color-mix(in srgb, var(--secondary) 18%, transparent) !important;
+  background-color: color-mix(
+    in srgb,
+    var(--secondary) 18%,
+    transparent
+  ) !important;
+
   color: inherit !important;
   border-radius: 3px;
   padding: 0 0.15em;
 }
 
 
-/* Evita coisas estourando a tela */
+/* Acessibilidade por teclado */
 
-img,
-video,
-canvas,
-svg {
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--tertiary) !important;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+
+/* Evita conteúdo estourando a tela */
+
+article img,
+article video,
+article canvas,
+article svg {
   max-width: 100% !important;
   height: auto !important;
 }
@@ -189,7 +216,12 @@ pre {
 }
 
 code {
-  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+pre code {
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 
@@ -258,7 +290,14 @@ code {
     min-width: 0 !important;
   }
 
+  /* Mantém a pesquisa disponível no celular */
+
+  .search {
+    flex-shrink: 0 !important;
+  }
+
   /* Remove o modo leitura no celular */
+
   .reader-mode,
   [class*="reader" i],
   [aria-label*="Reader" i],
@@ -274,6 +313,7 @@ code {
   }
 
   /* Mantém o botão de tema */
+
   .darkmode {
     flex-shrink: 0 !important;
   }
@@ -285,6 +325,7 @@ code {
 
   .toolbar button,
   .darkmode button,
+  .search button,
   header button,
   .top button,
   .page-header button {
@@ -316,8 +357,8 @@ code {
     white-space: nowrap;
   }
 
-  code {
-    white-space: pre-wrap;
+  pre code {
+    white-space: pre;
   }
 }
 
@@ -356,7 +397,8 @@ code {
     min-width: 0 !important;
   }
 
-  /* Remove caminho da página no celular */
+  /* Remove o caminho da página no celular */
+
   .breadcrumb-container,
   .breadcrumbs {
     display: none !important;
