@@ -4,6 +4,8 @@ Em um ambiente tradicional, a empresa precisa adquirir equipamentos, preparar es
 
 Essa mudança afeta tanto a operação técnica quanto o modelo financeiro. A aquisição antecipada de infraestrutura representa investimento de capital, associado a [[CapEx (Capital Expenditures)]]. O uso de recursos contratados conforme a necessidade aumenta a participação de despesas operacionais, associadas a [[OpEx (Operating Expenses)]], [[Consumo sob Demanda]] e [[Pay-as-you-go]]. Em vez de pagar por toda a capacidade antes de saber se ela será usada, a organização passa a consumir recursos medidos por tempo, armazenamento, requisições, transferência de dados ou outras dimensões definidas por cada serviço.
 
+Essas mudanças explicam parte dos [[Benefícios da Computação em Nuvem]], como menor compra antecipada de capacidade, provisionamento mais rápido, elasticidade e uso de infraestrutura distribuída. Esses benefícios não são automáticos: dependem de arquitetura, governança, operação e controle de custos.
+
 A nuvem não elimina servidores, redes ou datacenters. Ela modifica quem administra esses recursos, como eles são provisionados e de que forma seu consumo é cobrado. Também não elimina toda responsabilidade operacional do cliente: dados, identidades, permissões, configurações, arquitetura, monitoramento, custos e, em alguns serviços, sistema operacional e aplicações continuam exigindo decisões técnicas.
 
 ---

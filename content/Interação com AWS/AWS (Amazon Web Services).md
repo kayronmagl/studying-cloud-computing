@@ -56,6 +56,8 @@ A AWS é um provedor de computação em nuvem. Na hora de estudar, a ideia princ
 
 A diferença para infraestrutura tradicional é que o cliente não precisa comprar e instalar tudo antes. Ele consome serviços e paga conforme uso.
 
+A AWS costuma organizar parte da proposta de valor da nuvem em seis benefícios recorrentes, como troca de despesas fixas por variáveis, elasticidade, velocidade de provisionamento e alcance global. Esses pontos são uma forma de estudar os [[Benefícios da Computação em Nuvem]], mas não são exclusivos da AWS e dependem de arquitetura, governança e operação para se concretizarem.
+
 ## O que você precisa saber
 
 * AWS é um provedor, não um único serviço.
