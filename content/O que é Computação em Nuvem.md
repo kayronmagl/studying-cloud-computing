@@ -1,10 +1,10 @@
-Computação em nuvem é um modelo de fornecimento de recursos de tecnologia pela internet. Servidores, redes, armazenamento, bancos de dados e aplicações podem ser provisionados conforme a necessidade, sem que uma organização precise comprar e administrar diretamente toda a infraestrutura física utilizada.
+Computação em nuvem é um modelo de fornecimento sob demanda de recursos de tecnologia. Servidores, redes, armazenamento, bancos de dados, aplicações e ferramentas de operação podem ser provisionados conforme a necessidade, sem que uma organização precise comprar e administrar diretamente toda a infraestrutura física utilizada.
 
 Em um ambiente tradicional, a empresa precisa adquirir equipamentos, preparar espaço físico, instalar servidores, configurar redes, prever capacidade e manter um datacenter em funcionamento. Na nuvem, parte dessas responsabilidades é transferida para provedores como [[AWS (Amazon Web Services)]], [[Google Cloud]] e [[Microsoft Azure]].
 
-Essa mudança afeta tanto a operação técnica quanto o modelo financeiro. A aquisição antecipada de infraestrutura representa investimento de capital, associado a [[CapEx (Capital Expenditures)]]. O uso de recursos contratados conforme a necessidade aumenta a participação de despesas operacionais, associadas a [[OpEx (Operating Expenses)]], [[Consumo sob Demanda]] e [[Pay-as-you-go]].
+Essa mudança afeta tanto a operação técnica quanto o modelo financeiro. A aquisição antecipada de infraestrutura representa investimento de capital, associado a [[CapEx (Capital Expenditures)]]. O uso de recursos contratados conforme a necessidade aumenta a participação de despesas operacionais, associadas a [[OpEx (Operating Expenses)]], [[Consumo sob Demanda]] e [[Pay-as-you-go]]. Em vez de pagar por toda a capacidade antes de saber se ela será usada, a organização passa a consumir recursos medidos por tempo, armazenamento, requisições, transferência de dados ou outras dimensões definidas por cada serviço.
 
-A nuvem não elimina servidores, redes ou datacenters. Ela modifica quem administra esses recursos, como eles são provisionados e de que forma seu consumo é cobrado.
+A nuvem não elimina servidores, redes ou datacenters. Ela modifica quem administra esses recursos, como eles são provisionados e de que forma seu consumo é cobrado. Também não elimina toda responsabilidade operacional do cliente: dados, identidades, permissões, configurações, arquitetura, monitoramento, custos e, em alguns serviços, sistema operacional e aplicações continuam exigindo decisões técnicas.
 
 ---
 
@@ -16,9 +16,11 @@ Quando um usuário acessa uma aplicação pela [[Internet Pública]], seu dispos
 
 Os dados podem ser organizados em diferentes modelos. Sistemas estruturados frequentemente utilizam [[Bancos de Dados Relacionais]] e propriedades como [[Transações ACID]]. Outras aplicações podem utilizar [[NoSQL]] quando precisam de modelos de dados ou padrões de acesso diferentes. Todos esses recursos pertencem ao campo mais amplo de [[Bancos de Dados]].
 
-A diferença entre nuvem e [[On-Premise]] não está na existência desses componentes, mas na forma como são disponibilizados. Em um ambiente local, a organização controla diretamente os equipamentos. Na nuvem, ela utiliza [[Provedores de Nuvem]] e realiza o [[Provisionamento]] de recursos oferecidos como serviços.
+A diferença entre nuvem e [[On-Premise]] não está na existência desses componentes, mas na forma como são disponibilizados. Em um ambiente local, a organização controla diretamente os equipamentos. Na nuvem, ela utiliza [[Provedores de Nuvem]] e realiza o [[Provisionamento]] de recursos oferecidos como serviços. Essa diferença aparece nos [[Modelos de Implantação em Nuvem]], que ajudam a separar ambientes baseados em nuvem, ambientes locais e arquiteturas híbridas.
 
 Isso permite criar servidores, redes, volumes de armazenamento e bancos de dados com mais rapidez, ajustando a capacidade conforme a demanda e reduzindo a dependência de aquisições físicas antecipadas.
+
+O acesso remoto aos recursos não significa que tudo precise ser administrado apenas pelo navegador ou trafegar sempre pela internet pública. Em provedores como a AWS, uma mesma operação pode ser feita pelo [[AWS Management Console]], por [[APIs]], pela [[AWS CLI]], por [[AWS SDKs]] ou por [[Computação em Nuvem/Interação com AWS/Infraestrutura como Código (IaC)|Infraestrutura como Código]]. O caminho de rede também depende da arquitetura: alguns acessos usam a [[Internet Pública]], enquanto outros podem usar redes privadas, [[VPC Endpoints]], [[AWS PrivateLink]], VPNs ou conexões dedicadas como [[AWS Direct Connect]].
 
 ---
 

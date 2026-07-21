@@ -38,7 +38,7 @@ Exemplos de conceitos conectados:
 * [[AWS Control Tower]];
 * [[Amazon VPC]];
 * [[AWS Organizations]];
-* [[Estudando o Dev. Ágil de Software 1/Práticas/Infraestrutura como Código (IaC)]];
+* [[Estudando o Dev. Ágil de Software/Práticas/Infraestrutura como Código (IaC)]];
 * [[AWS CloudTrail]];
 * [[Amazon CloudWatch]];
 * [[Migração e Transferência de Dados para AWS]].
@@ -77,7 +77,7 @@ Isso é plataforma.
 
 ## Como isso aparece na AWS
 
-Essa perspectiva se conecta com [[Landing Zone]], [[AWS Control Tower]], [[Amazon VPC]], [[Estudando o Dev. Ágil de Software 1/Práticas/Infraestrutura como Código (IaC)]], [[AWS Organizations]] e observabilidade.
+Essa perspectiva se conecta com [[Landing Zone]], [[AWS Control Tower]], [[Amazon VPC]], [[Estudando o Dev. Ágil de Software/Práticas/Infraestrutura como Código (IaC)]], [[AWS Organizations]] e observabilidade.
 
 ---
 

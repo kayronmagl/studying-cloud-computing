@@ -17,8 +17,6 @@ Ao estudar, pense sempre em produtor, consumidor, mensagem, retry e DLQ.
 ## Como Funciona
 
 Fluxo:
-
-
 * produtor envia mensagem: ↓.
 * mensagem fica na fila: ↓.
 * consumidor recebe mensagem: ↓.

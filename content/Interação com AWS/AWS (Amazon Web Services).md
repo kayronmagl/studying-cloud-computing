@@ -2,6 +2,18 @@ AWS (Amazon Web Services) é o provedor de nuvem da Amazon. Ele oferece computa�
 
 ---
 
+## Origem da AWS
+
+A AWS surgiu a partir de necessidades internas da Amazon. Conforme a operação de comércio eletrônico cresceu, a empresa precisou lidar com mais servidores, armazenamento, capacidade de computação, redes e processos de provisionamento.
+
+Para reduzir repetição e aumentar escala, equipes internas passaram a criar mecanismos padronizados para operar essa infraestrutura. A percepção técnica foi que parte desses mecanismos poderia ser oferecida a outras organizações como serviços sob demanda, em vez de permanecer apenas como ferramentas internas.
+
+O primeiro serviço público de infraestrutura lançado pela AWS foi o [[Amazon SQS]], voltado a filas de mensagens. Depois vieram serviços que se tornaram centrais na plataforma, como [[Amazon S3]] para armazenamento de objetos e [[Amazon EC2]] para servidores virtuais.
+
+Essa história ajuda a entender a AWS como implementação concreta de [[O que é Computação em Nuvem]], não como sinônimo de computação em nuvem. O conceito geral é mais amplo; a AWS é um provedor que oferece esse modelo por meio de serviços específicos.
+
+---
+
 ## Visão geral
 
 AWS (Amazon Web Services) mostra como você conversa com a AWS. A ideia é simples: tudo que você cria, consulta ou altera precisa passar por alguma interface e por permissões.

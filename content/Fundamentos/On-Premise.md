@@ -1,4 +1,4 @@
-On-Premise é infraestrutura mantida localmente pela organização. Exige compra, instalação, energia, refrigeração e manutenção. A nuvem troca parte disso por [[OpEx (Operating Expenses)]] e [[Pay-as-you-go]].
+On-Premise é infraestrutura mantida localmente pela organização. Exige compra, instalação, energia, refrigeração e manutenção. Dentro dos [[Modelos de Implantação em Nuvem]], ele representa o cenário em que a organização mantém controle direto sobre a infraestrutura física. A nuvem troca parte disso por [[OpEx (Operating Expenses)]] e [[Pay-as-you-go]].
 
 ## Exemplo Prático
 
@@ -21,6 +21,8 @@ Por isso, esta nota deve funcionar como camada de apoio para entender os módulo
 Em uma aplicação real, o usuário acessa uma interface web, a requisição trafega pela rede, chega a servidores ou funções, consulta bancos e retorna dados. Mesmo que tudo esteja na AWS, os fundamentos continuam existindo.
 
 A diferença é que o provisionamento, a escala, a segurança e a cobrança passam a ser controlados por serviços, políticas e APIs.
+
+Quando a arquitetura combina recursos locais com recursos em nuvem, o assunto deixa de ser apenas on-premise e passa a envolver implantação híbrida. Essa comparação geral fica em [[Modelos de Implantação em Nuvem]], enquanto esta nota aprofunda a infraestrutura mantida localmente.
 
 ---
 
