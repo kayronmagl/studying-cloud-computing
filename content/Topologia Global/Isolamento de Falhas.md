@@ -1,4 +1,4 @@
-Isolamento de Falhas impede que uma falha local afete todo o sistema. [[Availability Zones (AZ)]] são desenhadas para esse isolamento.
+Isolamento de Falhas limita o impacto de uma falha para que ela não se espalhe por todo o sistema. [[Availability Zones (AZ)]] são desenhadas como limites de isolamento físico e operacional dentro de uma região.
 
 ---
 
@@ -8,11 +8,13 @@ Isolamento de Falhas é uma ideia de localização, falha ou distribuição. Qua
 
 Esse raciocínio é essencial para entender alta disponibilidade, disaster recovery e latência.
 
+Isolamento não significa independência absoluta. Componentes em zonas diferentes ainda podem compartilhar dependências regionais, configuração, credenciais, serviços externos, pipelines de deploy ou dados mal replicados.
+
 ---
 
 ## Exemplo Prático
 
-Uma aplicação pode executar instâncias em duas zonas de disponibilidade. Se uma zona sofrer falha, o tráfego pode ser direcionado para recursos saudáveis em outra zona.
+Uma aplicação pode executar instâncias em duas zonas de disponibilidade para reduzir dependência de uma única instalação física. Para que isso funcione em uma falha real, o balanceamento, os dados, a capacidade e as dependências compartilhadas também precisam estar preparados.
 
 Esse desenho depende de conceitos como isolamento, latência, failover, replicação e estado da aplicação.
 
@@ -35,7 +37,7 @@ Não basta “usar AWS”. É necessário desenhar onde e como os recursos serã
 
 ## Exemplo Arquitetural
 
-Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Se um componente falhar, o tráfego deve continuar indo para partes saudáveis.
+Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Esse desenho usa isolamento de falhas para reduzir impacto zonal, mas precisa de health checks, capacidade restante, recuperação de dados e testes.
 
 ---
 

@@ -1,5 +1,7 @@
 Data Centers são instalações físicas que abrigam servidores, armazenamento, redes, energia e refrigeração. Eles sustentam serviços como [[Amazon EC2]], [[Amazon S3]] e [[Amazon RDS]].
 
+Um data center é um prédio ou conjunto de instalações físicas. Ele não é a mesma coisa que uma [[Availability Zones (AZ)|Zona de Disponibilidade]] nem uma [[Regions (Regiões)|Região]]. Uma AZ pode conter um ou mais data centers. Uma região contém múltiplas AZs.
+
 ---
 
 ## Visão geral
@@ -14,7 +16,7 @@ Não pule esta nota: ela ajuda a lembrar que “nuvem” continua dependendo de 
 
 Quando você cria uma instância [[Amazon EC2]], um bucket [[Amazon S3]] ou um banco [[Amazon RDS]], o recurso lógico depende de uma base física distribuída entre instalações, equipamentos, energia, refrigeração e conectividade.
 
-Essa camada física explica por que existem [[Regions (Regiões)]], [[Availability Zones (AZ)]], redundância, isolamento de falhas e decisões de localização.
+Essa camada física explica por que existem [[Regions (Regiões)]], [[Availability Zones (AZ)]], redundância, [[Isolamento de Falhas]] e decisões de localização. A aplicação usa recursos lógicos, mas esses recursos continuam apoiados em energia, rede, hardware, armazenamento e segurança física.
 
 ---
 
@@ -28,7 +30,7 @@ Por isso, conceitos físicos aparecem no estudo para fundamentar alta disponibil
 
 ## Exemplo Arquitetural
 
-Quando uma instância EC2 é criada, ela depende de servidores físicos, rede, energia, refrigeração e armazenamento. Quando uma região possui múltiplas zonas, a AWS está separando falhas físicas e operacionais para reduzir impacto.
+Quando uma instância EC2 é criada, ela depende de servidores físicos, rede, energia, refrigeração e armazenamento. Quando uma AZ contém mais de um data center, a infraestrutura física pode ter redundância interna. Quando uma região possui múltiplas AZs, a AWS oferece isolamento entre locais para reduzir impacto de falhas físicas e operacionais.
 
 ---
 
@@ -36,4 +38,4 @@ Quando uma instância EC2 é criada, ela depende de servidores físicos, rede, e
 
 Mesmo que a AWS opere a camada física, o cliente ainda precisa desenhar aplicações resilientes.
 
-Não basta confiar no data center. É necessário usar múltiplas zonas, backups, failover e monitoramento conforme a criticidade da aplicação.
+Não basta confiar no data center. É necessário usar múltiplas zonas, backups, failover e monitoramento conforme a criticidade da aplicação. A responsabilidade pela infraestrutura física é do provedor; a responsabilidade pelo desenho da carga continua com o cliente.

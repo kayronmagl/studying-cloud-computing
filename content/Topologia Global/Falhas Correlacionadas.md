@@ -1,4 +1,4 @@
-Falhas Correlacionadas ocorrem quando vários componentes falham pela mesma causa. Separar recursos entre [[Availability Zones (AZ)]] reduz esse risco.
+Falhas Correlacionadas ocorrem quando vários componentes falham pela mesma causa. Separar recursos entre [[Availability Zones (AZ)]] reduz alguns riscos físicos, mas não elimina falhas causadas por dependências compartilhadas.
 
 ---
 
@@ -8,11 +8,13 @@ Falhas Correlacionadas é uma ideia de localização, falha ou distribuição. Q
 
 Esse raciocínio é essencial para entender alta disponibilidade, disaster recovery e latência.
 
+Duas instâncias em AZs diferentes podem falhar juntas se recebem a mesma configuração incorreta, dependem do mesmo banco indisponível, usam uma credencial expirada, são afetadas pelo mesmo deploy defeituoso ou dependem de um serviço externo único.
+
 ---
 
 ## Exemplo Prático
 
-Uma aplicação pode executar instâncias em duas zonas de disponibilidade. Se uma zona sofrer falha, o tráfego pode ser direcionado para recursos saudáveis em outra zona.
+Uma aplicação pode executar instâncias em duas zonas de disponibilidade e ainda falhar por completo se um deploy defeituoso for aplicado nas duas, se o banco central ficar indisponível ou se uma política de permissão impedir todas as instâncias de acessar uma dependência essencial.
 
 Esse desenho depende de conceitos como isolamento, latência, failover, replicação e estado da aplicação.
 
@@ -35,7 +37,7 @@ Não basta “usar AWS”. É necessário desenhar onde e como os recursos serã
 
 ## Exemplo Arquitetural
 
-Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Se um componente falhar, o tráfego deve continuar indo para partes saudáveis.
+Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Isso reduz falhas locais, mas ainda exige análise de dependências compartilhadas, limites regionais, configuração e processos operacionais.
 
 ---
 

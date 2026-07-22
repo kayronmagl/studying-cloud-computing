@@ -1,4 +1,6 @@
-SPOF é um ponto único de falha. Se ele falha, o sistema cai. Cloud reduz SPOF com [[High Availability]], múltiplas [[Availability Zones (AZ)]] e [[Failover]].
+SPOF é um ponto único de falha. Se ele falha, o sistema inteiro ou uma função crítica deixa de operar.
+
+A nuvem oferece recursos para reduzir SPOFs, como [[High Availability]], múltiplas [[Availability Zones (AZ)]] e [[Failover]], mas o cliente precisa desenhar a arquitetura para usá-los. Hospedar uma aplicação na AWS não remove automaticamente componentes únicos e indispensáveis.
 
 ---
 
@@ -8,11 +10,13 @@ Single Points of Failure (SPOF) é uma ideia de localização, falha ou distribu
 
 Esse raciocínio é essencial para entender alta disponibilidade, disaster recovery e latência.
 
+Um SPOF pode ser uma única instância, um único banco, uma única regra de roteamento, uma credencial, uma configuração centralizada, uma dependência externa ou uma equipe/processo sem alternativa operacional.
+
 ---
 
 ## Exemplo Prático
 
-Uma aplicação pode executar instâncias em duas zonas de disponibilidade. Se uma zona sofrer falha, o tráfego pode ser direcionado para recursos saudáveis em outra zona.
+Uma aplicação pode ter duas instâncias em zonas diferentes e ainda possuir um SPOF se ambas dependem de um único banco sem failover, uma única regra de roteamento, uma credencial expirada ou uma configuração centralizada.
 
 Esse desenho depende de conceitos como isolamento, latência, failover, replicação e estado da aplicação.
 
@@ -35,7 +39,7 @@ Não basta “usar AWS”. É necessário desenhar onde e como os recursos serã
 
 ## Exemplo Arquitetural
 
-Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Se um componente falhar, o tráfego deve continuar indo para partes saudáveis.
+Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Esse desenho reduz alguns SPOFs, mas ainda precisa verificar dependências compartilhadas, capacidade restante, dados e configuração de failover.
 
 ---
 

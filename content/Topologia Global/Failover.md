@@ -1,20 +1,39 @@
-Failover é a troca para um componente reserva quando o principal falha. É central para [[High Availability]] e [[Disaster Recovery (DR)]].
+Failover é a transferência da operação para um recurso, zona ou região alternativa após uma falha ou uma condição definida. É central para [[High Availability]] e [[Disaster Recovery (DR)]], mas não acontece sem mecanismos configurados para detectar a falha e mudar o tráfego ou a função do componente.
 
 ---
 
 ## Visão geral
 
-Failover é uma ideia de localização, falha ou distribuição. Quando estudar, pergunte: “onde o recurso fica?” e “o que acontece se uma parte falhar?”.
+Failover é uma decisão operacional e arquitetural. Quando estudar, pergunte: “qual componente falhou?”, “como a falha é detectada?”, “para onde a operação muda?” e “os dados e a capacidade existem no destino?”.
 
 Esse raciocínio é essencial para entender alta disponibilidade, disaster recovery e latência.
 
 ---
 
-## Exemplo Prático
+## Etapas
 
-Uma aplicação pode executar instâncias em duas zonas de disponibilidade. Se uma zona sofrer falha, o tráfego pode ser direcionado para recursos saudáveis em outra zona.
+Um failover pode envolver:
 
-Esse desenho depende de conceitos como isolamento, latência, failover, replicação e estado da aplicação.
+* detecção por [[Health Checks]];
+* decisão de failover;
+* alteração de roteamento;
+* remoção de destinos não saudáveis;
+* promoção de uma réplica;
+* recuperação de conexões;
+* capacidade suficiente no destino;
+* verificação de consistência dos dados;
+* retorno ao ambiente original, conhecido como failback;
+* testes periódicos.
+
+Nem toda arquitetura usa todas essas etapas, mas ignorá-las costuma gerar falsa sensação de recuperação.
+
+---
+
+## Failover não é replicação
+
+Replicação copia ou sincroniza dados entre componentes. Failover transfere a operação para um destino alternativo.
+
+Uma aplicação pode ter dados replicados e ainda não ter failover automático. Também pode redirecionar tráfego para um destino sem dados atualizados, o que causa erros ou perda de consistência.
 
 ---
 
@@ -35,7 +54,9 @@ Não basta “usar AWS”. É necessário desenhar onde e como os recursos serã
 
 ## Exemplo Arquitetural
 
-Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Se um componente falhar, o tráfego deve continuar indo para partes saudáveis.
+Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Se um componente falhar, o tráfego pode ser direcionado para partes saudáveis quando health checks, roteamento e capacidade estiverem configurados corretamente.
+
+Mesmo assim, podem ocorrer reconexões, repetição de operações, perda de sessão, degradação temporária e tempo de recuperação.
 
 ---
 
