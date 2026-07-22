@@ -28,7 +28,9 @@ Aqui você vai aprender e se aprofundar em **Computação em Nuvem** com minhas 
 **Comece por**  
 O que é Computação em Nuvem
 
-Aproveitem o conteúdo, espero que ajude!
+**Lembre-se que**, este conteúdo sempre vai ser atualizado com o decorrer do tempo, tornado-se cada vez mais completo e técnico.
+
+Aproveitem, espero que ajude!
 Sugestões são muito bem-vindas.
 
 <div align="center">
