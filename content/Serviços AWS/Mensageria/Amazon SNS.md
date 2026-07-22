@@ -4,9 +4,6 @@ Amazon SNS significa Amazon Simple Notification Service.
 
 A documentação da AWS descreve o cenário fanout como a replicação de uma mensagem publicada em um tópico SNS para múltiplos endpoints, como filas SQS, funções Lambda e endpoints HTTP/S.
 
----
-
-## Visão geral
 
 Amazon SNS aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

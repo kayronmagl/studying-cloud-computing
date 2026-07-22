@@ -2,9 +2,6 @@ AWS Client VPN permite que usuários remotos acessem recursos dentro da AWS por 
 
 Diferente de [[AWS Site-to-Site VPN]], que conecta redes, Client VPN conecta usuários individuais.
 
----
-
-## Visão geral
 
 AWS Client VPN faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

@@ -2,9 +2,6 @@ Apache Kafka é uma plataforma distribuída de streaming de eventos.
 
 Ela organiza eventos em tópicos particionados, permite múltiplos consumidores e mantém retenção por período ou tamanho.
 
----
-
-## Visão geral
 
 Apache Kafka aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

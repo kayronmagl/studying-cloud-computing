@@ -2,9 +2,6 @@ AWS Cost and Usage Report, ou CUR, é um relatório detalhado de custo e uso da 
 
 Ele fornece dados granulares para análise financeira, auditoria e integração com ferramentas de BI ou FinOps.
 
----
-
-## Visão geral
 
 AWS Cost and Usage Report (CUR) mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

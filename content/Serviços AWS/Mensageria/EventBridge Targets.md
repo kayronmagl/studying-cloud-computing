@@ -2,9 +2,6 @@ EventBridge Targets são destinos para eventos roteados por regras do [[Amazon E
 
 Uma regra pode entregar eventos para um ou mais targets.
 
----
-
-## Visão geral
 
 EventBridge Targets aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

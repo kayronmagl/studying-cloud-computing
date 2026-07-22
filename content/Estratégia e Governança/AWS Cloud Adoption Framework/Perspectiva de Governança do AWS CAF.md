@@ -2,9 +2,6 @@ Perspectiva de Governança do AWS CAF foca em controle, supervisão, priorizaç�
 
 Ela ajuda a garantir que a adoção da nuvem aconteça de forma coordenada e responsável.
 
----
-
-## Visão geral
 
 Governança é o “como vamos controlar e direcionar”.
 

@@ -4,7 +4,7 @@ Ela funciona como um ponto de partida para a instância. Dentro dela ficam o sis
 
 ---
 
-## Visão geral
+## Como a AMI é usada
 
 Quando você cria uma instância no [[Amazon EC2]], precisa escolher de onde essa máquina vai nascer. Essa origem é a AMI.
 
@@ -30,7 +30,7 @@ AMI não é a instância rodando. A AMI é o modelo usado para criar a instânci
 
 Também não é o mesmo que tipo de instância. A AMI define o conteúdo inicial da máquina. O tipo de instância define CPU, memória, rede e capacidade.
 
-Quando o cenário envolve em imagem usada para iniciar EC2, [[Amazon Machine Image (AMI)]] costuma ser a associação mais direta.
+Quando a dúvida envolve a imagem usada para iniciar uma instância EC2, a AMI é o conceito central. Ela não decide sozinha desempenho, rede ou custo, mas define a base de software que a máquina terá ao nascer.
 
 ---
 

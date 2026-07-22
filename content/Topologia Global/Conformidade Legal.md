@@ -1,15 +1,5 @@
 Conformidade Legal é atender leis, normas e regulações. Em cloud, envolve proteção de dados, retenção, auditoria e residência de dados.
 
----
-
-## Visão geral
-
-Conformidade Legal é uma ideia de localização, falha ou distribuição. Quando estudar, pergunte: “onde o recurso fica?” e “o que acontece se uma parte falhar?”.
-
-Esse raciocínio é essencial para entender alta disponibilidade, disaster recovery e latência.
-
----
-
 ## Exemplo Prático
 
 Uma aplicação pode executar instâncias em duas zonas de disponibilidade. Se uma zona sofrer falha, o tráfego pode ser direcionado para recursos saudáveis em outra zona.
@@ -33,7 +23,7 @@ Não basta “usar AWS”. É necessário desenhar onde e como os recursos serã
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Se um componente falhar, o tráfego deve continuar indo para partes saudáveis.
 

@@ -2,9 +2,6 @@ Routing Policies do Route 53 definem como o [[Amazon Route 53]] escolhe resposta
 
 Elas permitem que DNS participe de estratégias de disponibilidade, performance e distribuição geográfica.
 
----
-
-## Visão geral
 
 Routing Policies do Route 53 faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

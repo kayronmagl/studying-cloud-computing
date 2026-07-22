@@ -2,9 +2,6 @@ AWS Enterprise Support é um plano de suporte AWS para organizações com worklo
 
 Ele oferece assistência especializada mais profunda que planos básicos ou intermediários.
 
----
-
-## Visão geral
 
 AWS Enterprise Support mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

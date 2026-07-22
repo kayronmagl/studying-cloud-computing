@@ -4,7 +4,7 @@ O par é formado por uma chave pública e uma chave privada. A AWS guarda a chav
 
 ---
 
-## Visão geral
+## Como funciona
 
 Em instâncias Linux, key pairs são usados principalmente para acesso via SSH. Em instâncias Windows, ajudam no processo de obtenção da senha inicial de administrador.
 
@@ -28,4 +28,4 @@ Key pair não é a mesma coisa que access key do IAM.
 
 Key pair serve para acesso ao sistema operacional da instância. Access key do [[AWS Identity and Access Management (IAM)]] serve para chamadas de API da AWS.
 
-Quando o cenário envolve em acesso SSH a EC2, key pair costuma ser a associação mais direta.
+Quando a dúvida envolve acesso SSH a uma instância EC2, o key pair é parte do caminho de autenticação. Ele ainda depende de rede, usuário correto, permissões do arquivo de chave e regras de segurança permitindo a conexão.

@@ -2,9 +2,6 @@ Landing Zone é um ambiente base preparado para receber workloads na nuvem de fo
 
 Ela normalmente inclui contas, redes, identidade, logs, segurança, padrões e automação.
 
----
-
-## Visão geral
 
 Antes de colocar aplicações importantes na AWS, a empresa precisa preparar o terreno.
 
@@ -38,7 +35,6 @@ Landing zone se conecta principalmente com a [[Perspectiva de Plataforma do AWS 
 
 ## Como Diferenciar
 
-Quando o cenário envolve em preparar ambiente base para adoção de nuvem em escala, landing zone costuma ser a associação mais direta.
 
 ---
 

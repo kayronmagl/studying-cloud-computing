@@ -2,9 +2,6 @@ SQS Standard Queues são filas padrão do [[Amazon SQS]].
 
 Elas oferecem alta escala e entrega pelo menos uma vez.
 
----
-
-## Visão geral
 
 SQS Standard Queues aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

@@ -4,9 +4,6 @@ Otimização não significa cortar recursos sem critério.
 
 Significa ajustar arquitetura, modelos de compra, tamanhos, retenção, armazenamento e padrões de uso.
 
----
-
-## Visão geral
 
 Otimizar Custos da AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

@@ -2,9 +2,6 @@ Stream Processing é o processamento de dados em fluxo contínuo.
 
 Em vez de processar arquivos em lote, a aplicação processa eventos conforme eles chegam.
 
----
-
-## Visão geral
 
 Stream Processing aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

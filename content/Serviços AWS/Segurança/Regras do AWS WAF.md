@@ -2,9 +2,6 @@ Regras do AWS WAF definem critérios para inspecionar e tratar requisições web
 
 Elas são avaliadas dentro de uma [[Web ACLs|Web ACL]].
 
----
-
-## Visão geral
 
 Em Regras do AWS WAF, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

@@ -2,9 +2,6 @@ AWS Direct Connect fornece conexão de rede dedicada entre uma infraestrutura ex
 
 Ele é usado quando a empresa precisa de conectividade privada, previsível e controlada entre data center, colocation ou rede corporativa e a nuvem.
 
----
-
-## Visão geral
 
 AWS Direct Connect faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

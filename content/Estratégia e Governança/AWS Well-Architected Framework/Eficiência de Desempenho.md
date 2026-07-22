@@ -2,9 +2,6 @@ Eficiência de Desempenho é um pilar do AWS Well-Architected Framework.
 
 Ele foca em usar recursos de computação de maneira eficiente para atender aos requisitos do sistema e manter essa eficiência conforme a demanda muda.
 
----
-
-## Visão geral
 
 Uma pergunta desse pilar é:
 

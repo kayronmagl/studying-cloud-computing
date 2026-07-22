@@ -2,9 +2,6 @@ AWS Budgets permite criar orçamentos e alertas para custo, uso, cobertura e uti
 
 A documentação da AWS indica que Budgets pode rastrear custos e uso e também monitorar utilização e cobertura de Reserved Instances e Savings Plans.
 
----
-
-## Visão geral
 
 AWS Budgets mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

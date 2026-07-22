@@ -2,9 +2,6 @@ Target Tracking Scaling é uma política de escala que tenta manter uma métrica
 
 É uma das formas mais simples de configurar Auto Scaling.
 
----
-
-## Visão geral
 
 Target Tracking Scaling ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

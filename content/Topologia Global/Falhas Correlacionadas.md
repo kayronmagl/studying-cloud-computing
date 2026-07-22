@@ -2,11 +2,7 @@ Falhas Correlacionadas ocorrem quando vários componentes falham pela mesma caus
 
 ---
 
-## Visão geral
-
-Falhas Correlacionadas é uma ideia de localização, falha ou distribuição. Quando estudar, pergunte: “onde o recurso fica?” e “o que acontece se uma parte falhar?”.
-
-Esse raciocínio é essencial para entender alta disponibilidade, disaster recovery e latência.
+## Dependências compartilhadas
 
 Duas instâncias em AZs diferentes podem falhar juntas se recebem a mesma configuração incorreta, dependem do mesmo banco indisponível, usam uma credencial expirada, são afetadas pelo mesmo deploy defeituoso ou dependem de um serviço externo único.
 
@@ -35,7 +31,7 @@ Não basta “usar AWS”. É necessário desenhar onde e como os recursos serã
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Isso reduz falhas locais, mas ainda exige análise de dependências compartilhadas, limites regionais, configuração e processos operacionais.
 

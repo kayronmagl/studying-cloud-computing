@@ -4,9 +4,6 @@ O nome não deve ser interpretado literalmente. Servidores continuam existindo n
 
 Na AWS, o serviço mais importante para entender serverless é o [[AWS Lambda]].
 
----
-
-## Visão geral
 
 Computação sem Servidor (Serverless) faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

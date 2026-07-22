@@ -2,9 +2,6 @@ At-Least-Once Delivery significa que uma mensagem será entregue uma ou mais vez
 
 O sistema tenta garantir que a mensagem não seja perdida, aceitando a possibilidade de duplicidade.
 
----
-
-## Visão geral
 
 At-Least-Once Delivery aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

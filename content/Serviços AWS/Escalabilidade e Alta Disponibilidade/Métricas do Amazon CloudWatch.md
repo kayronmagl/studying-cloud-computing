@@ -2,9 +2,6 @@ Métricas do Amazon CloudWatch são séries temporais numéricas que representam
 
 A documentação da AWS descreve métricas como dados sobre a performance dos sistemas, coletados de serviços AWS ou publicados como métricas customizadas.
 
----
-
-## Visão geral
 
 Métricas do Amazon CloudWatch ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

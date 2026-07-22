@@ -2,9 +2,6 @@ SNS Message Filtering permite que assinantes de um tópico SNS recebam apenas me
 
 Por padrão, um assinante recebe todas as mensagens do tópico. Com filtro, recebe apenas subconjuntos.
 
----
-
-## Visão geral
 
 SNS Message Filtering aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

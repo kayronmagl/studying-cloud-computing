@@ -2,9 +2,6 @@ Target Groups são grupos de destinos que recebem tráfego de load balancers.
 
 Eles são usados por [[Application Load Balancer]], [[Network Load Balancer]] e outros mecanismos de balanceamento.
 
----
-
-## Visão geral
 
 Target Groups ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

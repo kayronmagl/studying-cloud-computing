@@ -1,15 +1,5 @@
 Failover é a transferência da operação para um recurso, zona ou região alternativa após uma falha ou uma condição definida. É central para [[High Availability]] e [[Disaster Recovery (DR)]], mas não acontece sem mecanismos configurados para detectar a falha e mudar o tráfego ou a função do componente.
 
----
-
-## Visão geral
-
-Failover é uma decisão operacional e arquitetural. Quando estudar, pergunte: “qual componente falhou?”, “como a falha é detectada?”, “para onde a operação muda?” e “os dados e a capacidade existem no destino?”.
-
-Esse raciocínio é essencial para entender alta disponibilidade, disaster recovery e latência.
-
----
-
 ## Etapas
 
 Um failover pode envolver:
@@ -52,7 +42,7 @@ Não basta “usar AWS”. É necessário desenhar onde e como os recursos serã
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Se um componente falhar, o tráfego pode ser direcionado para partes saudáveis quando health checks, roteamento e capacidade estiverem configurados corretamente.
 

@@ -4,9 +4,6 @@ Amazon SQS significa Amazon Simple Queue Service.
 
 A documentação da AWS descreve o SQS como serviço que armazena mensagens em infraestrutura redundante; Standard Queues oferecem entrega pelo menos uma vez, enquanto FIFO Queues ajudam a evitar duplicidade dentro da janela de deduplicação e preservam ordem por grupo de mensagens.
 
----
-
-## Visão geral
 
 Amazon SQS aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

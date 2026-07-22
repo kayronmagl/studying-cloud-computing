@@ -2,9 +2,6 @@ Kafka Consumer Groups são grupos de consumidores que dividem a leitura das part
 
 Dentro de um grupo, cada partição é consumida por apenas um consumidor por vez.
 
----
-
-## Visão geral
 
 Kafka Consumer Groups aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

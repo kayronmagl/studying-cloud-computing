@@ -2,9 +2,6 @@ Subnets Públicas são subnets com rota para um [[Internet Gateway]].
 
 Elas são usadas para recursos que precisam receber tráfego público diretamente ou servir como ponto de entrada para recursos privados.
 
----
-
-## Visão geral
 
 Subnets Públicas faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

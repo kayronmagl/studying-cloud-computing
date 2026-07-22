@@ -2,9 +2,6 @@ Bancos de Dados em Memória mantêm dados principalmente em RAM para oferecer la
 
 Eles são usados quando acesso rápido é mais importante que custo por GB.
 
----
-
-## Visão geral
 
 Bancos de Dados em Memória deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

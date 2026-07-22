@@ -2,9 +2,6 @@ FinOps é a prática de governar custos de nuvem de forma colaborativa entre eng
 
 O objetivo não é apenas reduzir custo. É maximizar valor do gasto em nuvem.
 
----
-
-## Visão geral
 
 FinOps mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

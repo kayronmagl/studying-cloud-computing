@@ -1,8 +1,5 @@
 Alarmes de Faturamento com Amazon CloudWatch permitem enviar notificações quando métricas de billing ultrapassam um limite definido.
 
----
-
-## Visão geral
 
 Quando você quer ser avisado se o gasto passou de certo valor, você pode usar métricas de faturamento e alarmes no CloudWatch.
 
@@ -110,6 +107,5 @@ Isso não substitui entender a fatura, mas ajuda a reagir cedo.
 
 ## Resposta curta para guardar
 
-Quando o cenário envolve em alarme e notificação quando limite de faturamento é excedido, [[Amazon CloudWatch]] costuma ser a associação mais direta.
 
 Se fala em orçamento planejado, previsão e controle financeiro, pense em [[AWS Budgets]].

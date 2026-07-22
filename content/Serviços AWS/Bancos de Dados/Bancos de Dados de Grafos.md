@@ -2,9 +2,6 @@ Bancos de Dados de Grafos armazenam dados como nós e relacionamentos.
 
 Eles são adequados quando a relação entre entidades é tão importante quanto as entidades.
 
----
-
-## Visão geral
 
 Bancos de Dados de Grafos deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

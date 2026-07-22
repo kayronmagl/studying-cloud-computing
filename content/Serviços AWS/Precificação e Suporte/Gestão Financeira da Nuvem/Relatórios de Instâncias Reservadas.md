@@ -2,9 +2,6 @@ Relatórios de Instâncias Reservadas ajudam a acompanhar utilização e cobertu
 
 Eles mostram se os compromissos comprados estão sendo bem aproveitados.
 
----
-
-## Visão geral
 
 Relatórios de Instâncias Reservadas mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

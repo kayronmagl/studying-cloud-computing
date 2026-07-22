@@ -2,9 +2,6 @@ Amazon Redshift é o serviço de data warehouse da AWS.
 
 Ele é usado para análise de grandes volumes de dados, consultas analíticas e workloads de BI.
 
----
-
-## Visão geral
 
 Amazon Redshift deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

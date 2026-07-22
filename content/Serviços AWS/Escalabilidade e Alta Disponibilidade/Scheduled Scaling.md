@@ -2,9 +2,6 @@ Scheduled Scaling é uma forma de escala programada em que a capacidade muda em 
 
 Ela é usada quando a demanda é previsível.
 
----
-
-## Visão geral
 
 Scheduled Scaling ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

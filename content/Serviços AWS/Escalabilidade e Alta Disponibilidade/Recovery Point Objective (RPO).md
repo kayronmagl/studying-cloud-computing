@@ -6,9 +6,6 @@ Ele responde:
 * até que ponto no passado posso perder dados?
 
 
----
-
-## Visão geral
 
 Recovery Point Objective (RPO) ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

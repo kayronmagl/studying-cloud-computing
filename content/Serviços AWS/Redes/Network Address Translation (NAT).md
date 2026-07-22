@@ -2,9 +2,6 @@ Network Address Translation, ou NAT, é a técnica de traduzir endereços IP dur
 
 Na AWS, o caso mais comum é o [[NAT Gateway]], usado para permitir que recursos em subnets privadas acessem a internet sem receber conexões iniciadas externamente.
 
----
-
-## Visão geral
 
 Network Address Translation (NAT) faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

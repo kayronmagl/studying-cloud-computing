@@ -2,9 +2,6 @@ Amazon DocumentDB é um serviço de banco de documentos da AWS com compatibilida
 
 Ele armazena dados em formato documental, geralmente JSON-like, permitindo estruturas flexíveis.
 
----
-
-## Visão geral
 
 Amazon DocumentDB deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

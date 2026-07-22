@@ -2,9 +2,6 @@ Grupos de Usuários do IAM são coleções de [[Usuários do IAM]] usadas para f
 
 Em vez de anexar políticas manualmente a cada usuário, cria-se um grupo e anexa-se a política ao grupo.
 
----
-
-## Visão geral
 
 Em Grupos de Usuários do IAM, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

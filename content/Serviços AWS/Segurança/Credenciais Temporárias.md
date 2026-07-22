@@ -2,9 +2,6 @@ Credenciais Temporárias são credenciais com tempo de expiração.
 
 Na AWS, elas são frequentemente emitidas pelo [[AWS Security Token Service (STS)]] quando uma entidade assume uma [[Roles do IAM|role]].
 
----
-
-## Visão geral
 
 Em Credenciais Temporárias, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

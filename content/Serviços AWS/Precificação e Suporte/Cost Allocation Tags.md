@@ -2,9 +2,6 @@ Cost Allocation Tags são tags usadas para organizar custos na AWS.
 
 A documentação da AWS explica que relatórios de alocação de custos incluem custos com tags e sem tags, permitindo organizar cobranças por atributos como aplicação.
 
----
-
-## Visão geral
 
 Cost Allocation Tags mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

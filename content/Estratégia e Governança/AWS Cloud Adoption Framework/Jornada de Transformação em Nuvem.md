@@ -2,9 +2,6 @@ Jornada de Transformação em Nuvem é o caminho que uma organização percorre 
 
 Essa jornada envolve tecnologia, pessoas, processos, governança e negócio.
 
----
-
-## Visão geral
 
 Não pense em adoção de nuvem como “migrar tudo de uma vez”.
 
@@ -53,7 +50,6 @@ Migração move sistemas. Transformação muda a forma como a organização entr
 
 ## Como Analisar o Cenário
 
-Quando o cenário envolve em caminho gradual, fases, maturidade ou evolução da adoção da nuvem, jornada de transformação costuma ser a associação mais direta.
 
 Não é apenas migração técnica.
 

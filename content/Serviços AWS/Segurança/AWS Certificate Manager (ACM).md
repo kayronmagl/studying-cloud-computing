@@ -2,9 +2,6 @@ AWS Certificate Manager, ou ACM, é o serviço da AWS para provisionar, gerencia
 
 Ele é usado para habilitar HTTPS em serviços como [[Amazon CloudFront]], load balancers e APIs.
 
----
-
-## Visão geral
 
 Em AWS Certificate Manager (ACM), pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

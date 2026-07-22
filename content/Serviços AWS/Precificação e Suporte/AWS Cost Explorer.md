@@ -2,9 +2,6 @@ AWS Cost Explorer é a ferramenta da AWS para visualizar e analisar custos e uso
 
 Ele ajuda a entender de onde vem a fatura, quais serviços estão consumindo mais, como os custos mudam com o tempo e quais tendências precisam de atenção.
 
----
-
-## Visão geral
 
 Cost Explorer é análise de custo.
 
@@ -27,7 +24,6 @@ No Cost Explorer, você analisa custos por serviço, conta, região, tag, tipo d
 
 ## Como Diferenciar
 
-Quando o cenário envolve em visualizar, entender e gerenciar custos e uso da AWS ao longo do tempo, [[AWS Cost Explorer]] costuma ser a associação mais direta.
 
 ---
 

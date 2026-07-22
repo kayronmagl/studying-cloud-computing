@@ -2,9 +2,6 @@ DNS TTL significa Time To Live em registros DNS.
 
 Ele define por quanto tempo uma resposta DNS pode permanecer em cache antes de ser consultada novamente.
 
----
-
-## Visão geral
 
 DNS TTL faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

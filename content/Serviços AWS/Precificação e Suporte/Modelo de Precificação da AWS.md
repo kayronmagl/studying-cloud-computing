@@ -2,9 +2,6 @@ O Modelo de Precificação da AWS é baseado principalmente em consumo.
 
 A AWS permite criar recursos sob demanda e pagar conforme uso, combinando tempo, volume, requisições, transferência, armazenamento, capacidade provisionada e recursos adicionais.
 
----
-
-## Visão geral
 
 Modelo de Precificação da AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

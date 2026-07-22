@@ -4,7 +4,7 @@ Ela é usada para executar aplicações, serviços, scripts, APIs, servidores we
 
 ---
 
-## Visão geral
+## Como a instância nasce
 
 Quando você cria uma instância, a AWS provisiona capacidade computacional dentro da infraestrutura dela.
 
@@ -30,4 +30,4 @@ Uma instância EC2 dá bastante controle, mas também traz responsabilidade.
 
 Você precisa pensar em sistema operacional, patches, segurança, monitoramento, backup, escala e disponibilidade. Em serviços mais gerenciados, parte desse trabalho passa para a AWS.
 
-Quando o cenário envolve em servidor virtual na AWS, instância EC2 costuma ser a associação mais direta.
+Quando a necessidade é executar um servidor virtual com controle sobre sistema operacional, rede e armazenamento, a instância EC2 é uma das abstrações centrais. Esse controle é útil, mas vem acompanhado de mais responsabilidade operacional.

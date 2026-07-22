@@ -2,9 +2,6 @@ Rate Limiting é a prática de limitar a quantidade de requisições permitidas 
 
 Na AWS, pode ser aplicado com [[AWS WAF]], [[Amazon API Gateway]], aplicações próprias e outros componentes.
 
----
-
-## Visão geral
 
 Em Rate Limiting, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

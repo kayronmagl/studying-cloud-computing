@@ -2,9 +2,6 @@ AWS CAF e AWS Well-Architected Framework tratam de problemas diferentes, embora 
 
 Os dois frameworks são da AWS, mas respondem perguntas diferentes.
 
----
-
-## Visão geral
 
 Pense assim:
 

@@ -2,9 +2,6 @@ Escalabilidade Horizontal significa adicionar mais recursos em paralelo.
 
 Exemplo: em vez de uma instância maior, usar várias instâncias atrás de um load balancer.
 
----
-
-## Visão geral
 
 Escalabilidade Horizontal ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

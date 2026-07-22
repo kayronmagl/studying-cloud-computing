@@ -2,9 +2,6 @@ Alarmes do Amazon CloudWatch monitoram métricas e mudam de estado quando uma co
 
 Eles conectam observabilidade a ação.
 
----
-
-## Visão geral
 
 Alarmes do Amazon CloudWatch ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

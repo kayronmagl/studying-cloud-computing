@@ -2,9 +2,6 @@ AWS Service Catalog permite criar e gerenciar catálogos de produtos aprovados p
 
 Ele ajuda organizações a oferecer recursos padronizados para equipes, mantendo governança.
 
----
-
-## Visão geral
 
 AWS Service Catalog mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

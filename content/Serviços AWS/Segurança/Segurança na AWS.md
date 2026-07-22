@@ -2,9 +2,6 @@ Segurança na AWS é o conjunto de práticas, serviços e decisões arquiteturai
 
 Segurança em nuvem não deve ser entendida como um produto isolado. Ela é uma propriedade do sistema inteiro. Uma aplicação pode usar [[Amazon EC2]], [[Amazon S3]], [[Amazon RDS]], [[AWS Lambda]], [[Amazon VPC]] e [[Amazon CloudFront]], mas todos esses recursos precisam de identidade, permissão, criptografia, rede segura, logs, auditoria e detecção de ameaças.
 
----
-
-## Visão geral
 
 Em Segurança na AWS, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

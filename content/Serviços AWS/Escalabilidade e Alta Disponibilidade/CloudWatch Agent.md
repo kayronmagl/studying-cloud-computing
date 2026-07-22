@@ -2,9 +2,6 @@ CloudWatch Agent é o agente usado para coletar métricas, logs e traces de inst
 
 Ele complementa as métricas padrão dos serviços AWS.
 
----
-
-## Visão geral
 
 CloudWatch Agent ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

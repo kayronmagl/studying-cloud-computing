@@ -2,9 +2,6 @@ Chaves KMS são chaves criptográficas gerenciadas pelo [[AWS Key Management Ser
 
 Elas controlam operações como criptografar, descriptografar, gerar data keys e assinar/verificar, dependendo do tipo de chave.
 
----
-
-## Visão geral
 
 Em Chaves KMS, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

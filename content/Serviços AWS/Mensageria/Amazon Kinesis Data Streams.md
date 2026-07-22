@@ -4,9 +4,6 @@ Ele permite coletar e processar grandes fluxos de registros de dados em tempo re
 
 A documentação da AWS descreve Kinesis Data Streams como serviço para coletar e processar grandes streams de registros em tempo real, com aplicações que leem dados de streams compostos por shards.
 
----
-
-## Visão geral
 
 Amazon Kinesis Data Streams aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

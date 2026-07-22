@@ -2,9 +2,6 @@ Amazon GuardDuty é o serviço de detecção de ameaças da AWS.
 
 Ele analisa sinais como eventos, logs e padrões de atividade para identificar comportamento suspeito.
 
----
-
-## Visão geral
 
 Em Amazon GuardDuty, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

@@ -1,8 +1,5 @@
 Consumo sob Demanda é usar recursos quando necessário e ajustar capacidade conforme carga. Ele reduz ociosidade e melhora elasticidade.
 
----
-
-## Visão geral
 
 Consumo sob Demanda explica a lógica econômica da nuvem. Não é só contabilidade: é como a forma de pagar muda a forma de projetar sistemas.
 

@@ -2,9 +2,6 @@ Cold Start é a latência adicional que ocorre quando uma plataforma serverless 
 
 No [[AWS Lambda]], isso pode acontecer quando a função é invocada pela primeira vez, depois de um período de inatividade ou quando a concorrência aumenta e novos ambientes precisam ser criados.
 
----
-
-## Visão geral
 
 Cold Start faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

@@ -2,9 +2,6 @@ Message Broker é um intermediário que recebe mensagens de produtores e entrega
 
 Ele pode oferecer filas, tópicos, roteamento, confirmações, persistência, protocolos e políticas de entrega.
 
----
-
-## Visão geral
 
 Message Broker aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

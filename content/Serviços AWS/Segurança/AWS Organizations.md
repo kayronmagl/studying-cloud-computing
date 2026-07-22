@@ -2,9 +2,6 @@ AWS Organizations é o serviço usado para organizar múltiplas contas AWS em um
 
 Ele permite agrupar contas, aplicar políticas e separar ambientes como produção, desenvolvimento, segurança, auditoria e dados.
 
----
-
-## Visão geral
 
 Em AWS Organizations, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

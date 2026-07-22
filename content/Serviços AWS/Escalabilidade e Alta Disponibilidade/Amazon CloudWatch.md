@@ -4,9 +4,6 @@ Ele coleta, armazena e apresenta métricas, logs, alarmes, dashboards e sinais o
 
 CloudWatch é essencial para [[Escalabilidade e Alta Disponibilidade na AWS]] porque muitos mecanismos de escala e resposta dependem de sinais observáveis.
 
----
-
-## Visão geral
 
 Amazon CloudWatch ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

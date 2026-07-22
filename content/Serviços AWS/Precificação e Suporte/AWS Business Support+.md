@@ -2,9 +2,6 @@ AWS Business Support+ é um plano pago de suporte AWS voltado a workloads de pro
 
 A página de planos da AWS o posiciona como mínimo recomendado para workloads de produção.
 
----
-
-## Visão geral
 
 AWS Business Support+ mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

@@ -2,9 +2,6 @@ NAT Gateway é um serviço de Network Address Translation usado para permitir sa
 
 Ele permite que instâncias em [[Subnets Privadas]] iniciem conexões com a internet ou outros serviços, enquanto impede conexões iniciadas de fora diretamente para essas instâncias.
 
----
-
-## Visão geral
 
 NAT Gateway faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

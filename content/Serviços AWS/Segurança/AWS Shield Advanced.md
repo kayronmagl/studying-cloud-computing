@@ -2,9 +2,6 @@ AWS Shield Advanced é o nível avançado do [[AWS Shield]].
 
 Ele oferece proteção adicional contra DDoS, visibilidade, suporte especializado e recursos voltados para aplicações críticas.
 
----
-
-## Visão geral
 
 Em AWS Shield Advanced, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

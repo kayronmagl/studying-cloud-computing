@@ -2,9 +2,6 @@ AWS PrivateLink é a tecnologia que permite acessar serviços de forma privada, 
 
 Ela evita expor serviços pela internet pública e permite conectividade privada entre VPCs, contas e serviços AWS.
 
----
-
-## Visão geral
 
 AWS PrivateLink faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

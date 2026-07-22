@@ -1,8 +1,5 @@
 OpEx são despesas operacionais recorrentes. Na nuvem, recursos entram como custos variáveis conforme uso.
 
----
-
-## Visão geral
 
 OpEx (Operating Expenses) explica a lógica econômica da nuvem. Não é só contabilidade: é como a forma de pagar muda a forma de projetar sistemas.
 

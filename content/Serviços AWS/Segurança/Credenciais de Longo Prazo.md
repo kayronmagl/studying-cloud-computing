@@ -2,9 +2,6 @@ Credenciais de Longo Prazo são credenciais que permanecem válidas até serem r
 
 Na AWS, exemplos comuns são senhas de usuários IAM e access keys.
 
----
-
-## Visão geral
 
 Em Credenciais de Longo Prazo, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

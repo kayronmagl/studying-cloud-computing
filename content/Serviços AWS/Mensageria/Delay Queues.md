@@ -2,9 +2,6 @@ Delay Queues são filas do [[Amazon SQS]] que atrasam a disponibilidade de mensa
 
 Quando uma mensagem é enviada, ela não fica imediatamente disponível para consumo.
 
----
-
-## Visão geral
 
 Delay Queues aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

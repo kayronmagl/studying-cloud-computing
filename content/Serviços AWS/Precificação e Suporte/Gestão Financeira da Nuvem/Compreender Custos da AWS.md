@@ -2,9 +2,6 @@ Compreender Custos da AWS é a capacidade de interpretar fatores de custo, tend�
 
 Não basta ver que a fatura aumentou. É preciso entender o motivo.
 
----
-
-## Visão geral
 
 Compreender Custos da AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

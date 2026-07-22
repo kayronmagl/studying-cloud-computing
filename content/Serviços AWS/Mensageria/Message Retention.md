@@ -2,9 +2,6 @@ Message Retention é o período pelo qual o [[Amazon SQS]] mantém mensagens que
 
 Depois que o período expira, a mensagem pode ser removida.
 
----
-
-## Visão geral
 
 Message Retention aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

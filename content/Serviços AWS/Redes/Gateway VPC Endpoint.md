@@ -2,9 +2,6 @@ Gateway VPC Endpoint é um tipo de [[VPC Endpoints|VPC Endpoint]] usado para ace
 
 O exemplo mais comum é acesso privado ao [[Amazon S3]].
 
----
-
-## Visão geral
 
 Gateway VPC Endpoint faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

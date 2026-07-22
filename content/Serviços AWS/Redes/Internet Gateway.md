@@ -2,9 +2,6 @@ Internet Gateway é o componente que permite comunicação entre uma [[Amazon VP
 
 Ele funciona como alvo em [[Route Tables]] para tráfego roteável para internet.
 
----
-
-## Visão geral
 
 Internet Gateway faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

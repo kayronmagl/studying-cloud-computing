@@ -2,9 +2,6 @@ Escalabilidade e Balanceamento de Carga é a combinação entre adicionar/remove
 
 Na AWS, isso normalmente envolve [[Amazon EC2 Auto Scaling]] e [[Elastic Load Balancing]].
 
----
-
-## Visão geral
 
 Escalabilidade e Balanceamento de Carga ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

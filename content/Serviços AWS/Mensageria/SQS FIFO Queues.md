@@ -2,9 +2,6 @@ SQS FIFO Queues são filas do [[Amazon SQS]] que preservam ordem e oferecem dedu
 
 FIFO significa First In, First Out.
 
----
-
-## Visão geral
 
 SQS FIFO Queues aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

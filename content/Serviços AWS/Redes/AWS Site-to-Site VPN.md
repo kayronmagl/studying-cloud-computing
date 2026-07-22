@@ -2,9 +2,6 @@ AWS Site-to-Site VPN cria túneis VPN IPsec entre uma rede externa e a AWS.
 
 Ela conecta, por exemplo, uma rede on-premise a uma [[Amazon VPC]] ou a um [[AWS Transit Gateway]].
 
----
-
-## Visão geral
 
 AWS Site-to-Site VPN faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

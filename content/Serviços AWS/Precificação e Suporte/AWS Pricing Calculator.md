@@ -4,9 +4,6 @@ Ela permite montar cenários, escolher serviços, definir parâmetros de uso e g
 
 A AWS descreve a ferramenta como uma forma de explorar serviços AWS e criar estimativas de custo para casos de uso.
 
----
-
-## Visão geral
 
 AWS Pricing Calculator mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

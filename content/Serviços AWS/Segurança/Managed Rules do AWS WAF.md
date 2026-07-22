@@ -2,9 +2,6 @@ Managed Rules do AWS WAF são conjuntos de regras gerenciadas pela AWS ou por fo
 
 Elas ajudam a proteger contra padrões conhecidos de ataque sem exigir que a equipe escreva todas as regras manualmente.
 
----
-
-## Visão geral
 
 Em Managed Rules do AWS WAF, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

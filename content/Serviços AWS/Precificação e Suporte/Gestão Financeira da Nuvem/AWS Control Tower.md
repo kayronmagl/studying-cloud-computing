@@ -2,9 +2,6 @@ AWS Control Tower é um serviço da AWS para configurar e governar ambientes mul
 
 Ele ajuda a criar uma landing zone com contas, guardrails e padrões iniciais de governança.
 
----
-
-## Visão geral
 
 AWS Control Tower mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

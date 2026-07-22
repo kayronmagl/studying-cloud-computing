@@ -2,9 +2,6 @@ Hosted Zones são contêineres de registros DNS no [[Amazon Route 53]].
 
 Uma hosted zone corresponde normalmente a um domínio ou subdomínio.
 
----
-
-## Visão geral
 
 Hosted Zones faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

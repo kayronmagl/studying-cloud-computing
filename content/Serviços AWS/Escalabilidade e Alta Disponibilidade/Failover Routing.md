@@ -1,8 +1,5 @@
 Failover Routing é uma política de roteamento do [[Amazon Route 53]] usada para direcionar tráfego para um recurso secundário quando o primário falha.
 
----
-
-## Visão geral
 
 Failover Routing ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

@@ -2,9 +2,6 @@ Launch Templates definem como uma instância [[Amazon EC2]] deve ser criada.
 
 Eles são usados por [[Auto Scaling Groups]] para lançar novas instâncias de forma padronizada.
 
----
-
-## Visão geral
 
 Launch Templates ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

@@ -2,9 +2,6 @@ Egress-Only Internet Gateway permite saída IPv6 de uma VPC para a internet sem 
 
 Ele é parecido conceitualmente com o papel de saída controlada do NAT Gateway, mas aplicado a IPv6.
 
----
-
-## Visão geral
 
 Egress-Only Internet Gateway faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

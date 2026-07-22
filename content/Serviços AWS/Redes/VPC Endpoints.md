@@ -2,9 +2,6 @@ VPC Endpoints permitem acessar serviços AWS de dentro de uma [[Amazon VPC]] sem
 
 Eles são importantes para segurança, controle de tráfego e redução de dependência de NAT Gateway em alguns cenários.
 
----
-
-## Visão geral
 
 VPC Endpoints faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

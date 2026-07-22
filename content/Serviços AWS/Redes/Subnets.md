@@ -2,9 +2,6 @@ Subnets são subdivisões de uma [[Amazon VPC]].
 
 Cada subnet pertence a uma única [[Availability Zones (AZ)|Availability Zone]]. Recursos como instâncias EC2, bancos RDS, load balancers e interfaces de rede são colocados dentro de subnets.
 
----
-
-## Visão geral
 
 Subnets faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

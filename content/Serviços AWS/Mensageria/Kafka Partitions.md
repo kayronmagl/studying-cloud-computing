@@ -2,9 +2,6 @@ Kafka Partitions são divisões de um tópico no [[Apache Kafka]].
 
 Elas permitem paralelismo, distribuição e ordenação local.
 
----
-
-## Visão geral
 
 Kafka Partitions aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

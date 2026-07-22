@@ -2,9 +2,6 @@ Service Quotas é o serviço da AWS para visualizar e gerenciar quotas de servi�
 
 A documentação da AWS explica que contas possuem quotas padrão, antes chamadas de limites, e que muitas quotas são específicas por região; algumas podem ser aumentadas e outras não.
 
----
-
-## Visão geral
 
 Service Quotas mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

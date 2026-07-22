@@ -2,9 +2,6 @@ AWS Shield é o serviço da AWS para proteção contra ataques DDoS.
 
 Ele possui dois níveis principais: [[AWS Shield Standard]] e [[AWS Shield Advanced]].
 
----
-
-## Visão geral
 
 Em AWS Shield, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

@@ -2,9 +2,6 @@ Amazon Managed Service for Apache Flink é o serviço gerenciado da AWS para exe
 
 Ele é usado para processamento de streams em tempo real.
 
----
-
-## Visão geral
 
 Amazon Managed Service for Apache Flink aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

@@ -2,9 +2,6 @@ Perspectiva de Negócios do AWS CAF foca em garantir que investimentos em nuvem 
 
 Ela conecta adoção de nuvem com valor, estratégia, resultados, prioridades e benefícios.
 
----
-
-## Visão geral
 
 Essa perspectiva pergunta: “por que estamos indo para a nuvem?”
 

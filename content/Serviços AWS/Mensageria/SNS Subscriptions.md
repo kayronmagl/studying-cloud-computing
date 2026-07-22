@@ -2,9 +2,6 @@ SNS Subscriptions conectam um [[SNS Topics|tópico SNS]] a um destino assinante.
 
 Elas definem para onde mensagens publicadas no tópico serão entregues.
 
----
-
-## Visão geral
 
 SNS Subscriptions aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

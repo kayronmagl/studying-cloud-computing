@@ -2,9 +2,6 @@ Planos do AWS Support definem o nível de suporte técnico e operacional dispon�
 
 Eles afetam canais de contato, tempos de resposta, acesso a recursos de suporte e acesso ao conjunto de verificações do AWS Trusted Advisor.
 
----
-
-## Visão geral
 
 O suporte básico existe para todos os clientes, mas é limitado. À medida que a empresa passa a rodar workloads de produção, a necessidade muda: incidentes precisam ser respondidos mais rápido, equipes precisam falar com engenheiros de suporte e recomendações operacionais passam a ter mais importância.
 

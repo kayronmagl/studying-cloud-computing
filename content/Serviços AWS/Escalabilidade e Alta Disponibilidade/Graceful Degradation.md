@@ -2,9 +2,6 @@ Graceful Degradation é a capacidade de um sistema continuar oferecendo funciona
 
 Em vez de cair completamente, ele degrada de forma controlada.
 
----
-
-## Visão geral
 
 Graceful Degradation ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

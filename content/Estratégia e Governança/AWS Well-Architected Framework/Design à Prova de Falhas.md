@@ -2,9 +2,6 @@ Design à Prova de Falhas é um princípio arquitetural em que sistemas são des
 
 Em vez de tentar impedir toda falha, a arquitetura reduz impacto e se recupera.
 
----
-
-## Visão geral
 
 Na nuvem, você deve projetar como se componentes fossem falhar.
 

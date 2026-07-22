@@ -51,30 +51,26 @@ Para modelos NoSQL, algumas garantias podem variar conforme serviço, configura�
 
 ## Exemplo Prático
 
-Imagine uma aplicação web simples. Ela precisa receber requisições, processar dados, gravar informações, proteger acesso e responder ao usuário.
+Imagine uma compra em uma loja virtual. A aplicação precisa registrar o pedido, reservar ou reduzir o estoque e associar o pagamento à operação. Se o pagamento for confirmado, mas o pedido não for criado, o sistema fica inconsistente. Se o estoque for reduzido, mas a compra falhar, outro cliente pode deixar de comprar um produto disponível.
 
-Mesmo usando AWS, a aplicação ainda depende de conceitos como rede, protocolo, servidor, banco, API e armazenamento. A diferença é que muitos desses elementos deixam de ser comprados e instalados manualmente e passam a ser configurados por serviço.
+Uma transação existe para tratar esse conjunto de mudanças como uma unidade lógica. Ou todas as partes necessárias são confirmadas, ou o sistema volta para um estado válido. Esse comportamento é decisivo em domínios como pagamentos, estoque, faturamento, contratos e registros financeiros.
 
 ---
 
 ## Cuidados importantes
 
-O erro comum é decorar o nome do serviço sem entender o fundamento. Isso gera confusão, por exemplo, ao comparar banco relacional com NoSQL, servidor físico com instância virtual, ou API com interface gráfica.
-
-Por isso, esta nota deve funcionar como camada de apoio para entender os módulos posteriores.
+ACID não significa que qualquer banco relacional será automaticamente rápido, simples ou adequado para qualquer escala. As garantias de transação têm custo em concorrência, bloqueios, replicação, latência e desenho da aplicação. Em sistemas distribuídos, essas decisões ficam ainda mais sensíveis.
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
-Em uma aplicação real, o usuário acessa uma interface web, a requisição trafega pela rede, chega a servidores ou funções, consulta bancos e retorna dados. Mesmo que tudo esteja na AWS, os fundamentos continuam existindo.
+Em um banco relacional, uma transação pode iniciar, alterar várias tabelas e só depois confirmar a gravação. Se uma etapa falhar antes do commit, o banco desfaz as mudanças parciais. Para a aplicação, isso evita que uma sequência de operações deixe registros pela metade.
 
-A diferença é que o provisionamento, a escala, a segurança e a cobrança passam a ser controlados por serviços, políticas e APIs.
+Na nuvem, serviços como [[Amazon RDS]] e [[Amazon Aurora]] podem reduzir parte da operação do banco, mas não eliminam a necessidade de projetar transações corretamente. A equipe ainda precisa entender isolamento, concorrência, tempo de execução das transações e impacto sobre desempenho.
 
 ---
 
 ## Erros Comuns
 
-O erro mais comum é decorar o nome do serviço sem entender o conceito que ele abstrai.
-
-Isso prejudica escolhas como EC2 versus Lambda, RDS versus DynamoDB, S3 versus EBS, ou internet pública versus rede privada.
+Um erro comum é usar “consistência” de forma genérica. Em ACID, consistência significa preservar regras válidas do banco durante a transação. Isso não é a mesma coisa que consistência eventual em sistemas distribuídos, nem garante por si só que a aplicação modelou corretamente todas as regras de negócio.

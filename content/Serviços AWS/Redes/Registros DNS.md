@@ -2,9 +2,6 @@ Registros DNS são entradas que dizem como um nome deve ser resolvido.
 
 Eles ficam dentro de uma [[Hosted Zones|hosted zone]].
 
----
-
-## Visão geral
 
 Registros DNS faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

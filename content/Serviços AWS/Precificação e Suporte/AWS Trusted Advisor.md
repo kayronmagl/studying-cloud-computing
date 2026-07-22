@@ -2,9 +2,6 @@ AWS Trusted Advisor é um serviço que analisa o ambiente AWS e mostra recomenda
 
 Ele ajuda a encontrar pontos de melhoria em custo, segurança, desempenho, tolerância a falhas e limites de serviço. A ideia é simples: em vez de você procurar manualmente cada risco ou desperdício, o Trusted Advisor aponta verificações que merecem atenção.
 
----
-
-## Visão geral
 
 Pense no Trusted Advisor como uma revisão automática do ambiente.
 
@@ -36,6 +33,5 @@ Clientes em planos Basic ou Developer têm acesso limitado, incluindo verificaç
 
 ## Como Diferenciar
 
-Quando o cenário envolve em recomendações de boas práticas, verificações de custo, segurança, desempenho, limites ou tolerância a falhas, AWS Trusted Advisor costuma ser a associação mais direta.
 
 Quando o cenário que envolve todas as verificações do Trusted Advisor, associe a planos de suporte pagos de nível mais alto, como Business/Business Support+, Enterprise ou Unified Operations, dependendo da nomenclatura usada no material.

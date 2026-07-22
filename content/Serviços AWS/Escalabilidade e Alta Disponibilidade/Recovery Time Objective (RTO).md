@@ -6,9 +6,6 @@ Ele responde:
 * quanto tempo o sistema pode ficar fora do ar?
 
 
----
-
-## Visão geral
 
 Recovery Time Objective (RTO) ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

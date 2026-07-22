@@ -2,9 +2,6 @@ AWS Secrets Manager é o serviço da AWS para armazenar, recuperar e rotacionar 
 
 Segredos incluem senhas de banco, tokens, chaves de API, credenciais e informações sensíveis que não devem ficar no código.
 
----
-
-## Visão geral
 
 Em AWS Secrets Manager, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

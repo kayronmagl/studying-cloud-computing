@@ -2,9 +2,6 @@ AWS Unified Operations é um plano de suporte AWS voltado a workloads de missão
 
 A AWS o apresenta como opção avançada para organizações que precisam de suporte operacional mais profundo.
 
----
-
-## Visão geral
 
 AWS Unified Operations mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

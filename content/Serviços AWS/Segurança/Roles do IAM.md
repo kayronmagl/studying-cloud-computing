@@ -4,9 +4,6 @@ Diferente de [[Usuários do IAM]], uma role não possui senha nem access keys pe
 
 Esse é um conceito central de segurança na AWS.
 
----
-
-## Visão geral
 
 Em Roles do IAM, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

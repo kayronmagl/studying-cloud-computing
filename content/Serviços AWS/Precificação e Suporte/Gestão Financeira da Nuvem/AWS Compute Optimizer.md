@@ -2,9 +2,6 @@ AWS Compute Optimizer é o serviço da AWS que analisa métricas de uso e recome
 
 Ele ajuda em [[Rightsizing]].
 
----
-
-## Visão geral
 
 AWS Compute Optimizer mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

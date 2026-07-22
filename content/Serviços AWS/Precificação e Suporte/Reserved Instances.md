@@ -2,9 +2,6 @@ Reserved Instances, ou RIs, são compromissos de uso que oferecem desconto em tr
 
 Elas são comuns em serviços como [[Amazon EC2]] e bancos, dependendo do serviço.
 
----
-
-## Visão geral
 
 Reserved Instances mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

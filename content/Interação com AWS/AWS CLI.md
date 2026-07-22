@@ -1,8 +1,5 @@
 AWS CLI é a ferramenta de linha de comando da AWS. Ela executa operações por terminal, facilitando scripts, automação e administração técnica.
 
----
-
-## Visão geral
 
 AWS CLI mostra como você conversa com a AWS. A ideia é simples: tudo que você cria, consulta ou altera precisa passar por alguma interface e por permissões.
 
@@ -26,7 +23,7 @@ Por isso, conforme o ambiente amadurece, automação, versionamento, permissões
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma equipe pode criar recursos manualmente no início, mas depois declarar tudo em IaC para reproduzir ambientes. Aplicações usam SDKs para falar com S3, DynamoDB ou SQS.
 

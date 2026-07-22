@@ -2,9 +2,6 @@ AWS Instance Scheduler é uma solução usada para iniciar e parar recursos conf
 
 Ela ajuda a reduzir custo de ambientes que não precisam ficar ligados continuamente.
 
----
-
-## Visão geral
 
 AWS Instance Scheduler mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

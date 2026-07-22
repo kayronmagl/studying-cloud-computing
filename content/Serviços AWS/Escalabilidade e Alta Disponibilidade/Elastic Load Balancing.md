@@ -2,9 +2,6 @@ Elastic Load Balancing, ou ELB, é o serviço da AWS que distribui tráfego entr
 
 Ele é essencial para [[Escalabilidade Horizontal]] e [[Alta Disponibilidade]].
 
----
-
-## Visão geral
 
 Elastic Load Balancing ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

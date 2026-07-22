@@ -2,9 +2,6 @@ Capacidade Igualada à Demanda é a prática de ajustar recursos ao volume real 
 
 Ela é uma ideia central da nuvem porque evita excesso de capacidade comprada antecipadamente.
 
----
-
-## Visão geral
 
 Capacidade Igualada à Demanda mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

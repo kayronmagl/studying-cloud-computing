@@ -2,9 +2,6 @@ Governança de Custos na AWS é o conjunto de práticas usadas para manter custo
 
 Ela evita que a liberdade técnica da nuvem vire descontrole financeiro.
 
----
-
-## Visão geral
 
 Governança de Custos na AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

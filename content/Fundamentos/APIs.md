@@ -1,31 +1,27 @@
-APIs são interfaces programáveis para sistemas interagirem. Na AWS, console, CLI, SDKs e IaC acabam chamando APIs para criar, alterar, consultar e remover [[Recursos de Nuvem]].
+APIs são interfaces programáveis usadas para que sistemas conversem entre si de forma padronizada. Em vez de uma pessoa clicar em uma tela, um programa envia uma requisição com dados, recebe uma resposta e decide o próximo passo a partir dela.
 
 ## Exemplo Prático
 
-Imagine uma aplicação web simples. Ela precisa receber requisições, processar dados, gravar informações, proteger acesso e responder ao usuário.
+Em uma aplicação web simples, o navegador pode chamar uma API para buscar os dados de um produto. A API recebe a requisição, valida se o cliente tem permissão, consulta um banco de dados e devolve uma resposta em um formato que o navegador consegue interpretar.
 
-Mesmo usando AWS, a aplicação ainda depende de conceitos como rede, protocolo, servidor, banco, API e armazenamento. A diferença é que muitos desses elementos deixam de ser comprados e instalados manualmente e passam a ser configurados por serviço.
+Na nuvem, esse mesmo princípio aparece em praticamente todas as operações. Quando alguém cria um recurso pelo console web, usa uma CLI, executa um SDK ou aplica Infraestrutura como Código, a ação normalmente chega ao provedor por meio de APIs. Isso permite criar, alterar, consultar e remover [[Recursos de Nuvem]] de maneira repetível, automatizada e auditável.
 
 ---
 
 ## Cuidados importantes
 
-O erro comum é decorar o nome do serviço sem entender o fundamento. Isso gera confusão, por exemplo, ao comparar banco relacional com NoSQL, servidor físico com instância virtual, ou API com interface gráfica.
-
-Por isso, esta nota deve funcionar como camada de apoio para entender os módulos posteriores.
+Uma API não é a mesma coisa que uma interface gráfica. A interface gráfica organiza botões, formulários e telas para uma pessoa operar o sistema. A API organiza entradas, saídas, regras de autenticação, códigos de resposta e formatos de dados para que outro sistema consiga operar de forma automática.
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
-Em uma aplicação real, o usuário acessa uma interface web, a requisição trafega pela rede, chega a servidores ou funções, consulta bancos e retorna dados. Mesmo que tudo esteja na AWS, os fundamentos continuam existindo.
+Um script pode pedir ao provedor de nuvem a criação de uma máquina virtual, informar tamanho, imagem do sistema operacional, rede e regras de acesso, e depois receber um identificador do recurso criado. O resultado não depende de uma pessoa repetir cliques manualmente. Depende de uma chamada bem definida, com parâmetros compreensíveis para o serviço.
 
-A diferença é que o provisionamento, a escala, a segurança e a cobrança passam a ser controlados por serviços, políticas e APIs.
+Essa é a base de automação em nuvem: a infraestrutura deixa de ser apenas algo instalado fisicamente e passa a ser também algo descrito, solicitado e controlado por software.
 
 ---
 
 ## Erros Comuns
 
-O erro mais comum é decorar o nome do serviço sem entender o conceito que ele abstrai.
-
-Isso prejudica escolhas como EC2 versus Lambda, RDS versus DynamoDB, S3 versus EBS, ou internet pública versus rede privada.
+Um erro comum é imaginar que API serve apenas para desenvolvedores de aplicação. Em computação em nuvem, APIs também fazem parte da operação da infraestrutura. Elas permitem provisionar servidores, configurar redes, criar bancos, consultar métricas e aplicar políticas de segurança.

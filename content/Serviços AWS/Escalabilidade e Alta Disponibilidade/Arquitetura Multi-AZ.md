@@ -2,9 +2,6 @@ Arquitetura Multi-AZ distribui componentes entre múltiplas [[Availability Zones
 
 É um dos padrões mais importantes de [[Alta Disponibilidade]] na AWS.
 
----
-
-## Visão geral
 
 O objetivo é reduzir o impacto de uma falha zonal. Uma AZ é um limite de isolamento de falhas; ao distribuir aplicação, rede e dados entre duas ou mais AZs, a arquitetura evita depender de um único local físico.
 

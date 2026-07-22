@@ -4,9 +4,6 @@ Ele inclui suporte para cobrança, problemas técnicos, orientação operacional
 
 A AWS afirma que o suporte básico está incluído para todos os clientes e destaca planos pagos como Business Support+, Enterprise Support e Unified Operations.
 
----
-
-## Visão geral
 
 AWS Support mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

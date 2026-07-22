@@ -2,9 +2,6 @@ Function as a Service, ou FaaS, é o modelo serverless no qual a unidade princip
 
 Na AWS, o serviço FaaS central é o [[AWS Lambda]]. O desenvolvedor escreve uma função, define runtime, handler, memória, timeout, permissões e gatilhos. A AWS executa essa função quando ela é invocada.
 
----
-
-## Visão geral
 
 Function as a Service (FaaS) faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

@@ -2,9 +2,6 @@ Elastic Network Interface, ou ENI, é uma interface de rede virtual dentro de um
 
 Ela pode ser anexada a instâncias EC2 e usada por vários serviços AWS para conectar recursos à rede.
 
----
-
-## Visão geral
 
 Elastic Network Interface (ENI) faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

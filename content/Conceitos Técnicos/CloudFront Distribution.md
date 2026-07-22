@@ -4,7 +4,7 @@ Ela informa qual é a origem do conteúdo, como o cache funciona, quais domínio
 
 ---
 
-## Visão geral
+## Como a distribuição funciona
 
 O CloudFront é a CDN. A distribution é a configuração concreta dentro do serviço.
 
@@ -30,4 +30,4 @@ CloudFront Distribution não é a mesma coisa que bucket S3.
 
 O bucket guarda objetos. A distribuição define como esses objetos serão entregues pela CDN.
 
-Quando o cenário envolve em configuração de CDN, origem, cache behavior ou entrega por edge locations, CloudFront Distribution costuma ser a associação mais direta.
+Quando a dúvida envolve origem, comportamento de cache, domínio, certificado ou entrega por edge locations, a distribuição é o ponto de configuração que precisa ser analisado.

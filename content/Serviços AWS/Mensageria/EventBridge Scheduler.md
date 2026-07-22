@@ -2,9 +2,6 @@ EventBridge Scheduler é o serviço de agendamento serverless da AWS para execut
 
 Ele substitui muitos casos de cron gerenciado manualmente.
 
----
-
-## Visão geral
 
 EventBridge Scheduler aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

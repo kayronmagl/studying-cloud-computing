@@ -2,9 +2,6 @@ Consumo de Tecnologia de Nuvem é a forma como recursos de nuvem são adquiridos
 
 Diferente de data centers tradicionais, em que a capacidade costuma ser comprada antecipadamente, a nuvem permite criar recursos sob demanda e ajustar capacidade conforme uso.
 
----
-
-## Visão geral
 
 Consumo de Tecnologia de Nuvem mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

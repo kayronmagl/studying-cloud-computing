@@ -2,9 +2,6 @@ Endereços IP Privados são endereços usados dentro da [[Amazon VPC]] para comu
 
 Eles não são roteáveis diretamente pela internet pública.
 
----
-
-## Visão geral
 
 Endereços IP Privados faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

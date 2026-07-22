@@ -4,7 +4,7 @@ Ele aparece em DNS, CDNs, caches de aplicação e outros sistemas que guardam re
 
 ---
 
-## Visão geral
+## Como o TTL controla cache
 
 TTL é um controle de equilíbrio.
 
@@ -30,7 +30,7 @@ TTL não é tempo de vida de um servidor.
 
 Ele é tempo de vida de uma resposta em cache.
 
-Quando o cenário envolve em cache, DNS ou tempo para uma alteração ser percebida, TTL costuma ser a associação mais direta.
+Quando a dúvida envolve cache, DNS ou tempo para uma alteração ser percebida, o TTL costuma ser uma das primeiras configurações a verificar. Ele não garante propagação instantânea, mas influencia por quanto tempo respostas antigas podem continuar sendo reutilizadas.
 
 ---
 

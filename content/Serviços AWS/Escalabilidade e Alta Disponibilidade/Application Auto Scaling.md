@@ -2,9 +2,6 @@ Application Auto Scaling é o serviço da AWS usado para configurar escala autom
 
 Enquanto [[Amazon EC2 Auto Scaling]] gerencia instâncias [[Amazon EC2]], Application Auto Scaling pode ajustar capacidade de outros serviços compatíveis.
 
----
-
-## Visão geral
 
 Application Auto Scaling ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

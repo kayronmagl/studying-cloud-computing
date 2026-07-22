@@ -2,9 +2,6 @@ Predictive Scaling é uma estratégia de escala que usa padrões históricos par
 
 Em vez de reagir apenas quando uma métrica já subiu, o sistema tenta prever necessidade de capacidade antes do pico.
 
----
-
-## Visão geral
 
 Predictive Scaling ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

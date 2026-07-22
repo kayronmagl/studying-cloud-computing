@@ -2,9 +2,6 @@ AWS Basic Support é o suporte incluído para todos os clientes AWS.
 
 Ele é adequado para início, aprendizado e acesso básico a recursos de conta e cobrança.
 
----
-
-## Visão geral
 
 AWS Basic Support mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

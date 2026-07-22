@@ -4,7 +4,7 @@ Eles determinam características como vCPU, memória, desempenho de rede, armaze
 
 ---
 
-## Visão geral
+## Como escolher capacidade
 
 Ao criar uma instância EC2, não basta escolher o sistema operacional. Também é preciso escolher o tamanho e a família da máquina.
 
@@ -30,4 +30,4 @@ Tipo de instância não é AMI.
 
 A [[Amazon Machine Image (AMI)]] define o que vem instalado na máquina. O tipo de instância define quanta capacidade a máquina terá.
 
-Quando o cenário envolve em escolher CPU, memória ou tamanho da instância EC2, tipos de instância costuma ser a associação mais direta.
+Quando a decisão envolve CPU, memória, rede, armazenamento local ou aceleradores, o tipo de instância é uma das escolhas mais importantes. Ele precisa combinar com a carga real, não apenas com o menor preço ou com o maior tamanho disponível.

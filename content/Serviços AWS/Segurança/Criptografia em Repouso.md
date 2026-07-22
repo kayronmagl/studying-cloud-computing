@@ -2,9 +2,6 @@ Criptografia em Repouso protege dados armazenados.
 
 Ela se aplica quando dados estão em disco, bucket, snapshot, banco, backup ou outro meio persistente.
 
----
-
-## Visão geral
 
 Em Criptografia em Repouso, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

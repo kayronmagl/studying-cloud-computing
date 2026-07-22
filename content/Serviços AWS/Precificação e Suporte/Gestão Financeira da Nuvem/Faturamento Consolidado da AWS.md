@@ -2,9 +2,6 @@ Faturamento Consolidado da AWS permite reunir cobranças de múltiplas contas em
 
 Ele é usado com [[AWS Organizations]] para centralizar billing e facilitar gestão financeira.
 
----
-
-## Visão geral
 
 Faturamento Consolidado da AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

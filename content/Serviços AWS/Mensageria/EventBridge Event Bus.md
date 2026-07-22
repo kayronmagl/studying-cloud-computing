@@ -2,9 +2,6 @@ EventBridge Event Bus é o barramento que recebe eventos no [[Amazon EventBridge
 
 Ele funciona como um roteador de eventos.
 
----
-
-## Visão geral
 
 EventBridge Event Bus aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

@@ -2,9 +2,6 @@ Amazon Data Firehose é o serviço da AWS para capturar, transformar e entregar 
 
 Ele é usado para entregar dados em serviços como [[Amazon S3]], [[Amazon Redshift]], [[Amazon OpenSearch Service]] e destinos HTTP compatíveis.
 
----
-
-## Visão geral
 
 Amazon Data Firehose aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

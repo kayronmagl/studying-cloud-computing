@@ -2,9 +2,6 @@ Kafka Topics são categorias lógicas de eventos no [[Apache Kafka]].
 
 Produtores escrevem eventos em tópicos. Consumidores leem eventos desses tópicos.
 
----
-
-## Visão geral
 
 Kafka Topics aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

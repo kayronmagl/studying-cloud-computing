@@ -2,9 +2,6 @@ Estratégias de Migração para a Nuvem são formas de mover, manter, substituir
 
 Em materiais AWS, esse assunto costuma aparecer como os 7 Rs.
 
----
-
-## Visão geral
 
 Nem toda aplicação deve ir para a nuvem do mesmo jeito.
 

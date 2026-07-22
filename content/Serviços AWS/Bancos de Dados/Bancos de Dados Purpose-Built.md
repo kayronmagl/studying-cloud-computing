@@ -2,9 +2,6 @@ Bancos de Dados Purpose-Built são bancos criados para finalidades específicas.
 
 A ideia é que diferentes modelos de dados exigem motores diferentes. Um banco relacional não é sempre a melhor escolha para chave-valor em escala massiva. Um banco de grafos não substitui um data warehouse. Um cache em memória não substitui armazenamento durável.
 
----
-
-## Visão geral
 
 Bancos de Dados Purpose-Built deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

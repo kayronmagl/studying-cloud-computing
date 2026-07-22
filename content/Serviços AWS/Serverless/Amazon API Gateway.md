@@ -2,9 +2,6 @@ Amazon API Gateway é o serviço da AWS para criar, publicar, proteger, monitora
 
 Em arquiteturas serverless, ele costuma ser a porta de entrada HTTP para funções [[AWS Lambda]]. O usuário externo chama uma URL HTTPS, o API Gateway recebe a requisição, aplica regras e encaminha a chamada para o backend configurado.
 
----
-
-## Visão geral
 
 Amazon API Gateway faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

@@ -2,9 +2,6 @@ Amazon Macie é o serviço da AWS para descoberta e proteção de dados sensíve
 
 Ele ajuda a identificar dados como informações pessoais, credenciais e dados sensíveis armazenados em buckets.
 
----
-
-## Visão geral
 
 Em Amazon Macie, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

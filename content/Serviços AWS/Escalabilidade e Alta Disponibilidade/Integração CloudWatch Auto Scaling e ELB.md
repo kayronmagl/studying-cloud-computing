@@ -2,9 +2,6 @@ Integração CloudWatch Auto Scaling e ELB é o padrão em que observabilidade, 
 
 É uma das composições mais importantes para aplicações web na AWS.
 
----
-
-## Visão geral
 
 Integração CloudWatch Auto Scaling e ELB ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

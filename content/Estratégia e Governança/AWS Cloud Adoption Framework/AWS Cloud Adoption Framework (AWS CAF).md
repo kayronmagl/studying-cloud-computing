@@ -2,9 +2,6 @@ AWS Cloud Adoption Framework (AWS CAF) é um framework da AWS para orientar a ad
 
 Ele não é um serviço técnico como EC2 ou S3. É uma forma de organizar a transformação para que a empresa pense em negócio, pessoas, governança, plataforma, segurança e operações.
 
----
-
-## Visão geral
 
 Ir para a nuvem não é apenas mover servidores.
 
@@ -30,7 +27,6 @@ O [[AWS Cloud Adoption Framework (AWS CAF)]] orienta a adoção da nuvem pela or
 
 O [[AWS Well-Architected Framework]] avalia e melhora workloads e arquiteturas específicas.
 
-Quando o cenário envolve em transformação organizacional, prontidão para nuvem, roadmap, capacidades ou perspectivas, AWS CAF costuma ser a associação mais direta.
 
 ---
 

@@ -2,9 +2,6 @@ Logs do Amazon CloudWatch centralizam logs de aplicações, serviços e infraest
 
 Logs são registros de eventos. Eles ajudam a explicar por que algo aconteceu.
 
----
-
-## Visão geral
 
 Logs do Amazon CloudWatch ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

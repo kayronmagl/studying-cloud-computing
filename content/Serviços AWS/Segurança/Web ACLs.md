@@ -2,9 +2,6 @@ Web ACLs são listas de controle de acesso web usadas pelo [[AWS WAF]].
 
 Uma Web ACL contém regras que determinam como tratar requisições HTTP e HTTPS.
 
----
-
-## Visão geral
 
 Em Web ACLs, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

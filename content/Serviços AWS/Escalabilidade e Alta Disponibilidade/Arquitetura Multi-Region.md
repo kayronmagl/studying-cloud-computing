@@ -2,9 +2,6 @@ Arquitetura Multi-Region distribui componentes entre múltiplas [[Regions (Regi�
 
 Ela é usada quando requisitos de recuperação de desastre regional, baixa latência global, residência de dados, conformidade ou continuidade de negócios justificam maior isolamento geográfico.
 
----
-
-## Visão geral
 
 Multi-Region não é prática obrigatória para toda aplicação. Muitas necessidades de disponibilidade podem ser atendidas dentro de uma única região com [[Arquitetura Multi-AZ]], desde que a aplicação, os dados e a rede estejam bem desenhados.
 

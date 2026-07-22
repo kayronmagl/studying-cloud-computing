@@ -2,9 +2,6 @@ Bancos de Dados da AWS formam uma família de serviços gerenciados para persist
 
 A AWS não oferece apenas um banco universal. Ela segue a lógica de [[Bancos de Dados Purpose-Built]], na qual cada banco é otimizado para um padrão de acesso.
 
----
-
-## Visão geral
 
 Bancos de Dados da AWS deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

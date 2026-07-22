@@ -2,9 +2,6 @@ Data Warehouses são bancos analíticos usados para consolidar e consultar grand
 
 Eles são otimizados para leitura, agregação e análise, não para transações pequenas de alta frequência.
 
----
-
-## Visão geral
 
 Data Warehouses deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

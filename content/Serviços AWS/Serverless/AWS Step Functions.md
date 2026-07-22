@@ -4,9 +4,6 @@ Ele permite organizar processos compostos por várias etapas, decisões, retries
 
 Em serverless, Step Functions evita que uma função Lambda precise chamar outra função diretamente em cadeias longas e difíceis de observar.
 
----
-
-## Visão geral
 
 AWS Step Functions faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

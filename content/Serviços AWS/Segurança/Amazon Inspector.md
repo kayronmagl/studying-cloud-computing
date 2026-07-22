@@ -2,9 +2,6 @@ Amazon Inspector é o serviço da AWS para gerenciamento de vulnerabilidades.
 
 Ele ajuda a identificar vulnerabilidades e exposições em workloads como instâncias, imagens de containers e funções Lambda, conforme suporte do serviço.
 
----
-
-## Visão geral
 
 Em Amazon Inspector, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

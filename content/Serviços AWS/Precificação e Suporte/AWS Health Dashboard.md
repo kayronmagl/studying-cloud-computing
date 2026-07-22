@@ -2,9 +2,6 @@ AWS Health Dashboard mostra eventos de saúde relacionados à AWS e à conta.
 
 Ele ajuda a entender se há eventos operacionais afetando serviços, regiões ou recursos.
 
----
-
-## Visão geral
 
 AWS Health Dashboard mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

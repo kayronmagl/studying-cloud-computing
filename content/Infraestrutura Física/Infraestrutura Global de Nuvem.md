@@ -4,11 +4,10 @@ Na AWS, essa infraestrutura organiza recursos em camadas geográficas. Uma regi�
 
 ---
 
-## Visão geral
+## Relação com a nuvem
 
 Pense em Infraestrutura Global de Nuvem como a parte que normalmente fica invisível para quem usa nuvem. O cliente não escolhe racks, circuitos elétricos ou prédios específicos, mas precisa entender essa estrutura porque ela influencia latência, disponibilidade, recuperação de desastre, residência de dados e custo.
 
-Não pule esta nota: ela ajuda a lembrar que “nuvem” continua dependendo de infraestrutura real.
 
 ---
 
@@ -26,11 +25,11 @@ As AZs de uma mesma região são interligadas por redes privadas redundantes, de
 
 O usuário da nuvem normalmente não escolhe rack, servidor físico ou circuito elétrico. Mesmo assim, precisa entender que falhas físicas podem acontecer e que a arquitetura deve considerar redundância, dados, rede, identidade, capacidade e recuperação.
 
-Por isso, conceitos físicos aparecem no estudo para fundamentar alta disponibilidade, disaster recovery e topologia global.
+Esses conceitos físicos ajudam a entender alta disponibilidade, recuperação de desastre e topologia global sem esquecer que a nuvem continua dependendo de instalações reais.
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Quando uma instância EC2 é criada, ela depende de servidores físicos, rede, energia, refrigeração e armazenamento. Quando uma região possui múltiplas zonas, a AWS oferece limites de isolamento físico e operacional para reduzir impacto de falhas locais.
 

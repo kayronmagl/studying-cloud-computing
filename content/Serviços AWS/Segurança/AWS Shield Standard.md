@@ -2,9 +2,6 @@ AWS Shield Standard é a proteção DDoS automática incluída para clientes AWS
 
 Ele ajuda a proteger contra ataques comuns de camada de rede e transporte.
 
----
-
-## Visão geral
 
 Em AWS Shield Standard, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

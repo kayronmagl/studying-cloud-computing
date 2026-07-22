@@ -65,14 +65,12 @@ Não use NoSQL apenas por moda. A escolha deve seguir o padrão de acesso e as g
 
 ## Exemplo Prático
 
-Imagine uma aplicação web simples. Ela precisa receber requisições, processar dados, gravar informações, proteger acesso e responder ao usuário.
+Imagine um sistema de pedidos. Um cliente faz uma compra, o pedido precisa ser registrado, o estoque precisa diminuir e o pagamento precisa ser associado à mesma operação. Um banco relacional ajuda porque permite representar clientes, pedidos, itens e pagamentos em tabelas diferentes, mantendo relações explícitas entre elas.
 
-Mesmo usando AWS, a aplicação ainda depende de conceitos como rede, protocolo, servidor, banco, API e armazenamento. A diferença é que muitos desses elementos deixam de ser comprados e instalados manualmente e passam a ser configurados por serviço.
+Essa estrutura facilita consultas como “quais pedidos pertencem a este cliente?”, “quais itens fazem parte deste pedido?” ou “qual pagamento confirma esta compra?”. O valor do modelo relacional aparece justamente quando a integridade entre entidades importa.
 
 ---
 
 ## Cuidados importantes
 
-O erro comum é decorar o nome do serviço sem entender o fundamento. Isso gera confusão, por exemplo, ao comparar banco relacional com NoSQL, servidor físico com instância virtual, ou API com interface gráfica.
-
-Por isso, esta nota deve funcionar como camada de apoio para entender os módulos posteriores.
+Um erro comum é tratar banco relacional como tecnologia antiga e NoSQL como substituto automático. Bancos relacionais continuam adequados quando o domínio tem relações importantes, regras de integridade, consultas estruturadas e transações. O problema não é usar relacional ou NoSQL, mas escolher sem entender o padrão de dados e as garantias exigidas pela aplicação.

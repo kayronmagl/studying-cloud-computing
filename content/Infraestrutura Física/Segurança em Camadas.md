@@ -2,11 +2,10 @@ Segurança em Camadas combina controles físicos, lógicos e operacionais. Na AW
 
 ---
 
-## Visão geral
+## Relação com a nuvem
 
 Pense em Segurança em Camadas como a parte que normalmente fica invisível para quem usa nuvem. Você não administra isso diretamente, mas esse conceito explica por que existem regiões, zonas, redundância e preocupação com disponibilidade.
 
-Não pule esta nota: ela ajuda a lembrar que “nuvem” continua dependendo de infraestrutura real.
 
 ---
 
@@ -22,11 +21,11 @@ Essa camada física explica por que existem [[Regions (Regiões)]], [[Availabili
 
 O usuário da nuvem normalmente não escolhe rack, servidor físico ou circuito elétrico. Mesmo assim, precisa entender que falhas físicas podem acontecer e que a arquitetura deve considerar redundância.
 
-Por isso, conceitos físicos aparecem no estudo para fundamentar alta disponibilidade, disaster recovery e topologia global.
+Esses conceitos físicos ajudam a entender alta disponibilidade, recuperação de desastre e topologia global sem esquecer que a nuvem continua dependendo de instalações reais.
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Quando uma instância EC2 é criada, ela depende de servidores físicos, rede, energia, refrigeração e armazenamento. Quando uma região possui múltiplas zonas, a AWS está separando falhas físicas e operacionais para reduzir impacto.
 

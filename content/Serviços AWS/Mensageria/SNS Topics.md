@@ -2,9 +2,6 @@ SNS Topics são canais lógicos do [[Amazon SNS]] onde mensagens são publicadas
 
 Assinantes recebem mensagens publicadas no tópico.
 
----
-
-## Visão geral
 
 SNS Topics aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

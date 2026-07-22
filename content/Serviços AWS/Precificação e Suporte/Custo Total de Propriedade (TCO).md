@@ -2,9 +2,6 @@ Custo Total de Propriedade, ou TCO, compara o custo total de manter uma soluçã
 
 Ele vai além do preço direto de servidores.
 
----
-
-## Visão geral
 
 Custo Total de Propriedade (TCO) mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

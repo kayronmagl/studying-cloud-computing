@@ -2,9 +2,6 @@ Amazon MQ é o serviço gerenciado de message broker da AWS para [[Apache Active
 
 A documentação da AWS descreve o Amazon MQ como serviço gerenciado que cuida da configuração, operação e manutenção de brokers ActiveMQ Classic e RabbitMQ, permitindo migrar brokers existentes sem reescrever código de mensageria.
 
----
-
-## Visão geral
 
 Amazon MQ aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

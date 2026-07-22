@@ -2,9 +2,6 @@ Governança de Adoção da Nuvem é o conjunto de decisões, políticas e contro
 
 Ela garante que a adoção aconteça com responsabilidade, valor e controle de risco.
 
----
-
-## Visão geral
 
 Governança responde perguntas como:
 
@@ -44,7 +41,6 @@ Ela também se conecta à gestão financeira, segurança e plataforma.
 
 ## Como Diferenciar
 
-Quando o cenário envolve em controle, políticas, risco, priorização e supervisão da adoção da nuvem, governança costuma ser a associação mais direta.
 
 ---
 
@@ -58,7 +54,6 @@ Boa governança permite que times usem nuvem com liberdade dentro de limites seg
 
 ## Como Analisar o Cenário
 
-Quando o cenário envolve em regras, políticas, controle, risco, aprovação, regiões permitidas, orçamento ou responsabilidades, governança de adoção costuma ser a associação mais direta.
 
 A governança evita crescimento desorganizado da nuvem.
 

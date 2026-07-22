@@ -2,9 +2,6 @@ Kinesis Shards são unidades de capacidade dentro de um [[Amazon Kinesis Data St
 
 Um stream é composto por um ou mais shards.
 
----
-
-## Visão geral
 
 Kinesis Shards aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

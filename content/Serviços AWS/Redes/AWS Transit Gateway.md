@@ -2,9 +2,6 @@ AWS Transit Gateway é um roteador regional gerenciado que conecta múltiplas VP
 
 Ele simplifica arquiteturas que, com peering ponto a ponto, virariam uma malha complexa.
 
----
-
-## Visão geral
 
 AWS Transit Gateway faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

@@ -2,9 +2,6 @@ AWS Config é o serviço da AWS que registra configurações de recursos e avali
 
 Enquanto [[AWS CloudTrail]] registra ações, Config acompanha estado e mudanças de configuração.
 
----
-
-## Visão geral
 
 Em AWS Config, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

@@ -2,9 +2,6 @@ Escalabilidade é a capacidade de um sistema ajustar sua capacidade conforme a d
 
 Um sistema escalável suporta aumento de tráfego, usuários, requisições, dados ou processamento sem degradar rapidamente.
 
----
-
-## Visão geral
 
 Escalabilidade ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

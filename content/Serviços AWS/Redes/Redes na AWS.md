@@ -2,9 +2,6 @@ Redes na AWS é o conjunto de serviços, conceitos e padrões usados para conect
 
 Depois de entender computação, armazenamento e bancos, rede se torna inevitável: uma aplicação precisa receber tráfego, acessar banco privado, baixar objetos do S3, chamar APIs, enviar logs e operar com segurança.
 
----
-
-## Visão geral
 
 Redes na AWS faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

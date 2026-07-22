@@ -2,9 +2,6 @@ Ordering and Delivery Semantics descreve garantias de ordem e entrega de mensage
 
 Essas garantias são centrais em mensageria porque diferentes serviços fazem trade-offs diferentes entre escala, disponibilidade, ordem e duplicidade.
 
----
-
-## Visão geral
 
 Ordering and Delivery Semantics aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

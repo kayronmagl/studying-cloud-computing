@@ -2,9 +2,6 @@ Gestão Financeira da Nuvem é a disciplina usada para gerenciar, otimizar e pre
 
 No contexto AWS, ela conecta decisões técnicas com decisões financeiras. Isso significa que engenharia, operações e finanças precisam atuar juntos, porque cada escolha arquitetural pode gerar impacto de custo.
 
----
-
-## Visão geral
 
 Gestão Financeira da Nuvem mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

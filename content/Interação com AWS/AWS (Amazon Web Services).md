@@ -12,9 +12,6 @@ O primeiro serviço público de infraestrutura lançado pela AWS foi o [[Amazon 
 
 Essa história ajuda a entender a AWS como implementação concreta de [[O que é Computação em Nuvem]], não como sinônimo de computação em nuvem. O conceito geral é mais amplo; a AWS é um provedor que oferece esse modelo por meio de serviços específicos.
 
----
-
-## Visão geral
 
 AWS (Amazon Web Services) mostra como você conversa com a AWS. A ideia é simples: tudo que você cria, consulta ou altera precisa passar por alguma interface e por permissões.
 
@@ -38,7 +35,7 @@ Por isso, conforme o ambiente amadurece, automação, versionamento, permissões
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma equipe pode criar recursos manualmente no início, mas depois declarar tudo em IaC para reproduzir ambientes. Aplicações usam SDKs para falar com S3, DynamoDB ou SQS.
 

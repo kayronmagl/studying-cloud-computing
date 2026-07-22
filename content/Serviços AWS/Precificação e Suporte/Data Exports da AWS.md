@@ -2,9 +2,6 @@ Data Exports da AWS são mecanismos para exportar dados de Billing and Cost Mana
 
 Eles ajudam a criar pipelines de custo, relatórios e integrações de FinOps.
 
----
-
-## Visão geral
 
 Data Exports da AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

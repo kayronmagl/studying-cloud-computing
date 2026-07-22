@@ -2,9 +2,6 @@ RabbitMQ é um message broker open source baseado originalmente no protocolo AMQ
 
 Ele é usado para filas, roteamento, pub/sub e integração entre sistemas.
 
----
-
-## Visão geral
 
 RabbitMQ aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

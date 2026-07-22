@@ -2,9 +2,6 @@ Coreografia é o modelo em que componentes reagem a eventos sem um coordenador c
 
 Cada serviço observa eventos relevantes e executa sua parte.
 
----
-
-## Visão geral
 
 Coreografia faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

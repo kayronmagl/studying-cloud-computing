@@ -2,9 +2,6 @@ Service Control Policies, ou SCPs, são políticas do [[AWS Organizations]] que 
 
 Elas não concedem acesso diretamente. Elas limitam o que pode ser permitido dentro de uma conta.
 
----
-
-## Visão geral
 
 Em Service Control Policies (SCPs), pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

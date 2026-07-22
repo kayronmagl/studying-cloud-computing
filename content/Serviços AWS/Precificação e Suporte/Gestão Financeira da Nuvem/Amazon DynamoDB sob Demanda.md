@@ -2,9 +2,6 @@ Amazon DynamoDB sob Demanda é o modo de capacidade em que o [[Amazon DynamoDB]]
 
 Ele é útil quando o padrão de acesso é imprevisível.
 
----
-
-## Visão geral
 
 Amazon DynamoDB sob Demanda mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

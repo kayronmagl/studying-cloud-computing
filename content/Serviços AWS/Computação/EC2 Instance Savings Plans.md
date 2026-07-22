@@ -2,9 +2,6 @@ EC2 Instance Savings Plans é uma opção de preço do Amazon EC2 que oferece de
 
 Você assume esse compromisso por 1 ou 3 anos, ligado a uma família de instância em uma região.
 
----
-
-## Visão geral
 
 Pense nisso como um acordo financeiro.
 
@@ -65,7 +62,7 @@ Essa é a lógica do Savings Plans: a AWS dá desconto porque você assumiu um c
 
 ---
 
-## Pergunta que esta nota responde
+## Decisão de custo
 
 * Qual opção reduz custo quando há compromisso de gasto por hora com família de instância e região por 1 ou 3 anos?
 

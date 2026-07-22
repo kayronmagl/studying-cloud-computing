@@ -2,9 +2,6 @@ Backpressure é a pressão de retorno que ocorre quando consumidores não conseg
 
 Em sistemas de mensageria, isso aparece como crescimento de fila, aumento de lag ou atraso no processamento.
 
----
-
-## Visão geral
 
 Backpressure aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

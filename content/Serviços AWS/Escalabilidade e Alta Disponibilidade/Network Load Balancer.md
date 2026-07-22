@@ -2,9 +2,6 @@ Network Load Balancer, ou NLB, é um tipo de load balancer da AWS voltado a alto
 
 Ele opera principalmente com tráfego TCP, UDP e TLS.
 
----
-
-## Visão geral
 
 Network Load Balancer ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

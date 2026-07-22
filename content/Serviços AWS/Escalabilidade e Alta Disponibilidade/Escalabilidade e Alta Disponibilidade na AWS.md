@@ -2,9 +2,6 @@ Escalabilidade e Alta Disponibilidade na AWS é o módulo que explica como aplic
 
 Ele vem depois de [[Redes na AWS]] e [[Segurança na AWS]] porque depende das duas camadas. Para escalar corretamente, os recursos precisam estar conectados por uma rede bem desenhada. Para operar com segurança, a escala precisa respeitar permissões, proteção de tráfego e auditoria.
 
----
-
-## Visão geral
 
 Escalabilidade e Alta Disponibilidade na AWS ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

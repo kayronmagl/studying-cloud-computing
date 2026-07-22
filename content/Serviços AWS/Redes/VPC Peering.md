@@ -2,9 +2,6 @@ VPC Peering conecta duas VPCs diretamente usando endereçamento privado.
 
 Depois de configurado, recursos em uma VPC podem se comunicar com recursos da outra, se rotas e regras de segurança permitirem.
 
----
-
-## Visão geral
 
 VPC Peering faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

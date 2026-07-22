@@ -2,9 +2,6 @@ Timeouts são limites de tempo definidos para chamadas entre sistemas.
 
 Eles impedem que uma aplicação espere indefinidamente por uma dependência lenta ou indisponível.
 
----
-
-## Visão geral
 
 Timeouts ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

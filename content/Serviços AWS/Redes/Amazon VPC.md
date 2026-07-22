@@ -1,126 +1,43 @@
-Amazon VPC significa Amazon Virtual Private Cloud.
+Amazon VPC, ou Amazon Virtual Private Cloud, é o serviço que permite criar uma rede virtual isolada dentro da AWS. Essa rede se parece conceitualmente com uma rede que uma organização manteria em um data center próprio, mas é criada por software e integrada aos serviços da nuvem.
 
-É o serviço que permite criar uma rede virtual isolada dentro da AWS. Essa rede se parece conceitualmente com uma rede que uma empresa manteria em um data center próprio, mas é criada por software e integrada aos serviços da nuvem.
-
----
-
-## Visão geral
-
-Amazon VPC faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
-
-Sempre pergunte: “quem precisa falar com quem, por qual caminho, e com qual permissão?”.
-
----
-
-## Função
-
-Uma VPC define o espaço de rede onde recursos podem existir.
-
-Dentro dela, o usuário configura:
-
-* [[Blocos CIDR]];
-* [[Subnets]];
-* [[Route Tables]];
-* [[Internet Gateway]];
-* [[NAT Gateway]];
-* [[Security Groups]];
-* [[Network ACLs]];
-* [[VPC Endpoints]];
-* conectividade com outras redes.
-
-A VPC é regional: ela pertence a uma [[Regions (Regiões)|região]], mas suas subnets ficam dentro de [[Availability Zones (AZ)]] específicas.
-
----
-
-## VPC não é Apenas Isolamento
-
-A VPC também define arquitetura.
-
-Ela separa camadas públicas, privadas e isoladas. Controla rotas. Permite endpoints privados. Conecta redes híbridas. Define onde load balancers, aplicações e bancos serão posicionados.
-
----
-
-## Exemplo
-
-Uma VPC de produção pode ter:
-
-
-* 10.0.0.0/16
-
-
-Dividida em:
-
-
-* 10.0.1.0/24: subnet pública AZ A.
-* 10.0.2.0/24: subnet privada AZ A.
-* 10.0.3.0/24: subnet pública AZ B.
-* 10.0.4.0/24: subnet privada AZ B.
-
-
-Esse desenho permite alta disponibilidade e segmentação.
-
----
-
-## Cuidado
-
-Mudar endereçamento depois pode ser difícil.
-
-Por isso, o planejamento de CIDR deve considerar crescimento, múltiplas VPCs, VPNs, Direct Connect e ausência de sobreposição com redes externas.
-
----
-
-## Exemplo Prático
-
-Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e VPC Endpoints para acessar serviços AWS sem passar pela internet.
-
-Cada componente muda segurança, custo e disponibilidade.
-
----
-
-## Cuidados importantes
-
-Rede mal desenhada pode gerar três problemas comuns:
-
-* exposição indevida de recursos;
-* falta de conectividade entre serviços;
-* custo inesperado de tráfego.
-
-Por isso, rede precisa ser estudada junto com segurança, alta disponibilidade e precificação.
-
-## Explicação principal
-
-Amazon VPC é a rede virtual isolada onde recursos AWS podem ser colocados.
-
-Ela permite definir blocos CIDR, subnets, rotas, gateways, security groups, NACLs e conectividade.
+Uma VPC responde a uma pergunta básica de arquitetura: onde os recursos ficam e por quais caminhos eles podem se comunicar? Em nuvem, rede não significa apenas “ter internet”. Ela envolve isolamento, endereçamento, subnets, rotas, DNS, gateways, regras de segurança e conectividade com outros ambientes.
 
 ## Como Funciona
 
-Você cria uma VPC com um intervalo IP, divide em subnets e define rotas.
+Uma VPC define um espaço de rede dentro de uma [[Regions (Regiões)|região]]. Dentro desse espaço, o usuário define [[Blocos CIDR]], cria [[Subnets]], associa [[Route Tables]], configura gateways e controla tráfego com [[Security Groups]] e [[Network ACLs]].
 
-Subnets públicas têm rota para Internet Gateway. Subnets privadas não recebem acesso direto da internet, mas podem sair via NAT Gateway.
+A VPC é regional, mas suas subnets pertencem a [[Availability Zones (AZ)]] específicas. Essa diferença é importante para disponibilidade. Uma aplicação distribuída entre duas AZs normalmente precisa de subnets em cada zona, para que load balancers, instâncias e bancos possam ser posicionados corretamente.
 
-## O que Cai Muito
+## Subnets e Rotas
 
-* VPC é regional.
-* Subnet pertence a uma única AZ.
-* Security Group é stateful.
-* NACL é stateless.
-* Route table define caminho do tráfego.
-* Internet Gateway permite conectividade pública.
-* NAT Gateway permite saída de subnet privada.
+Uma subnet não é pública apenas pelo nome. Ela se torna pública quando possui rota adequada para um [[Internet Gateway]] e quando os recursos têm configuração que permite conectividade pública, como endereço IP público quando necessário.
 
-## Cuidado importante
+Subnets privadas não recebem acesso direto da internet. Recursos nelas podem iniciar conexões externas por meio de um [[NAT Gateway]], mas não precisam aceitar conexões vindas diretamente da internet. Esse padrão é comum para instâncias de aplicação, bancos e serviços internos.
 
-Uma subnet não é pública pelo nome. Ela é pública se tiver rota adequada para Internet Gateway e recursos com IP público.
+As route tables determinam o caminho do tráfego. Se uma rota está errada ou ausente, recursos que parecem corretamente criados podem não conseguir se comunicar. Por isso, ao desenhar uma VPC, a pergunta prática deve ser: quem precisa falar com quem, por qual caminho e com qual permissão?
 
----
+## Segurança
 
-## Endereçamento dentro da VPC
+[[Security Groups]] atuam no nível do recurso, como uma instância EC2. Eles são stateful: uma resposta ao tráfego permitido é automaticamente considerada parte da comunicação. [[Network ACLs]] atuam no nível da subnet e são stateless, ou seja, regras de ida e volta precisam ser consideradas separadamente.
 
-Dentro de uma VPC, [[Endereços IP Privados]] identificam recursos na rede interna sem expor esses recursos diretamente à internet.
+Essa diferença ajuda a evitar configurações confusas. Security group e NACL não são controles idênticos em camadas diferentes. Eles têm comportamentos diferentes e devem ser usados de forma complementar.
 
----
+## Exemplo
 
-## Observabilidade de rede
+Uma VPC de produção pode usar um bloco como `10.0.0.0/16` e dividi-lo em subnets públicas e privadas em mais de uma AZ. Um load balancer pode ficar em subnets públicas, enquanto instâncias e bancos ficam em subnets privadas. O NAT Gateway permite saída controlada para atualizações ou chamadas externas. [[VPC Endpoints]] permitem acessar determinados serviços AWS sem passar pela internet pública.
 
-[[VPC Flow Logs]] ajudam a investigar tráfego aceito ou rejeitado dentro da VPC.
+Esse desenho melhora segmentação e pode contribuir para alta disponibilidade, mas também introduz custo e complexidade. NAT Gateway, tráfego entre zonas, endpoints e transferência de dados precisam ser considerados no desenho.
+
+## Conectividade
+
+Uma VPC também pode se conectar a outras redes. Isso pode envolver peering, VPN, [[AWS Direct Connect]], [[AWS Transit Gateway]] ou endpoints privados. Em ambientes híbridos, a VPC se torna a ponte entre recursos na AWS e sistemas mantidos fora da nuvem.
+
+Dentro da VPC, [[Endereços IP Privados]] identificam recursos internamente sem expô-los diretamente à internet. Para investigação, [[VPC Flow Logs]] ajudam a analisar metadados de tráfego aceito ou rejeitado.
+
+## Erros Comuns
+
+Um erro comum é colocar recursos em subnets públicas sem necessidade. Isso aumenta superfície de exposição. Outro erro é criar subnets privadas sem rota de saída quando os recursos precisam baixar atualizações ou chamar APIs externas.
+
+Também é comum planejar mal o CIDR. Mudar endereçamento depois pode ser difícil, principalmente quando existem várias VPCs, VPNs, Direct Connect ou redes externas que não podem ter sobreposição de endereços.
+
+Rede mal desenhada pode causar exposição indevida, falta de conectividade entre serviços e custo inesperado de tráfego. Por isso, VPC precisa ser estudada junto com segurança, disponibilidade e precificação.

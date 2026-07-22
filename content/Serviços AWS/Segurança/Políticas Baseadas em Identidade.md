@@ -2,9 +2,6 @@ Políticas Baseadas em Identidade são políticas anexadas a identidades IAM.
 
 Elas podem ser anexadas a [[Usuários do IAM]], [[Grupos de Usuários do IAM]] ou [[Roles do IAM]].
 
----
-
-## Visão geral
 
 Em Políticas Baseadas em Identidade, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

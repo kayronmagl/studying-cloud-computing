@@ -2,9 +2,6 @@ Custo de Transferência de Dados é um dos fatores mais importantes e mais esque
 
 Na AWS, transferência pode ter custo dependendo da direção, origem, destino, região, zona, serviço e volume.
 
----
-
-## Visão geral
 
 Custo de Transferência de Dados mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

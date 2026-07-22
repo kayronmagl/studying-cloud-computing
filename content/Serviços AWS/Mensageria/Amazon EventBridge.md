@@ -4,9 +4,6 @@ Ele permite ingerir, filtrar, transformar e entregar eventos entre aplicações,
 
 A documentação da AWS descreve event buses como roteadores que recebem eventos e os entregam a zero ou mais targets, e EventBridge como serviço para ingerir, filtrar, transformar e entregar eventos.
 
----
-
-## Visão geral
 
 Amazon EventBridge aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

@@ -2,9 +2,6 @@ Prontidão para Nuvem é o grau de preparação de uma organização para adotar
 
 Ela envolve competências técnicas, processos, governança, segurança, pessoas e estratégia.
 
----
-
-## Visão geral
 
 Antes de migrar aplicações para AWS, uma empresa precisa perguntar: estamos prontos?
 
@@ -37,7 +34,6 @@ Cada perspectiva mostra uma área que pode estar madura ou fraca.
 
 ## Como Diferenciar
 
-Quando o cenário envolve em avaliar capacidade da organização antes de adoção da nuvem, prontidão e AWS CAF costuma ser a associação mais direta.
 
 ---
 

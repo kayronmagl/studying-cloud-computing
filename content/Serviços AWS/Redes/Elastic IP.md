@@ -2,9 +2,6 @@ Elastic IP é um endereço IPv4 público estático alocado à conta AWS.
 
 Ele pode ser associado a recursos como instâncias EC2 ou NAT Gateways.
 
----
-
-## Visão geral
 
 Elastic IP faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

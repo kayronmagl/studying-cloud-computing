@@ -10,9 +10,6 @@ Ele responde perguntas como:
 * em qual recurso?
 
 
----
-
-## Visão geral
 
 Em AWS CloudTrail, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

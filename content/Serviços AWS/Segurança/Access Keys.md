@@ -2,9 +2,6 @@ Access Keys são [[Credenciais de Longo Prazo|credenciais de longo prazo]] usada
 
 Elas normalmente possuem duas partes: access key ID e secret access key.
 
----
-
-## Visão geral
 
 Em Access Keys, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

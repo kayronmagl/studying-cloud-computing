@@ -2,9 +2,6 @@ Instâncias Spot são instâncias EC2 que usam capacidade ociosa da AWS com pre�
 
 Elas podem ser bem mais baratas, mas têm uma condição importante: podem ser interrompidas quando a AWS precisa da capacidade de volta.
 
----
-
-## Visão geral
 
 Spot é para trabalho flexível.
 
@@ -70,7 +67,7 @@ Se uma instância for interrompida, a aplicação precisa conseguir continuar de
 
 ---
 
-## Pergunta que esta nota responde
+## Decisão de uso
 
 * Qual modelo de preço muda conforme oferta e demanda de instâncias EC2?
 

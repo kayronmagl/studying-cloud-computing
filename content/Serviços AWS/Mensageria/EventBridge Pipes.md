@@ -2,9 +2,6 @@ EventBridge Pipes conectam fontes de eventos a destinos com filtragem, enriqueci
 
 Eles simplificam integrações ponto a ponto sem escrever código intermediário.
 
----
-
-## Visão geral
 
 EventBridge Pipes aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

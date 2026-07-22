@@ -2,9 +2,6 @@ AWS Security Token Service, ou AWS STS, é o serviço que emite credenciais temp
 
 Ele é usado principalmente quando uma entidade assume uma [[Roles do IAM|role]].
 
----
-
-## Visão geral
 
 Em AWS Security Token Service (STS), pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

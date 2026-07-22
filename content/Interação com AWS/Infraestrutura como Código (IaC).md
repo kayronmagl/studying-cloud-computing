@@ -2,9 +2,6 @@ Infraestrutura como Código, ou IaC, é a prática de declarar infraestrutura em
 
 Em vez de criar recursos manualmente pelo [[AWS Management Console]], a equipe descreve redes, servidores, bancos, buckets, permissões e alarmes em código.
 
----
-
-## Visão geral
 
 Infraestrutura como Código (IaC) mostra como você conversa com a AWS. A ideia é simples: tudo que você cria, consulta ou altera precisa passar por alguma interface e por permissões.
 
@@ -40,7 +37,7 @@ Por isso, conforme o ambiente amadurece, automação, versionamento, permissões
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma equipe pode criar recursos manualmente no início, mas depois declarar tudo em IaC para reproduzir ambientes. Aplicações usam SDKs para falar com S3, DynamoDB ou SQS.
 

@@ -2,9 +2,6 @@ Event Patterns são padrões usados pelo [[Amazon EventBridge]] para selecionar 
 
 Eles definem quais eventos uma regra deve capturar.
 
----
-
-## Visão geral
 
 Event Patterns aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

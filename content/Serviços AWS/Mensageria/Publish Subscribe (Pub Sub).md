@@ -2,9 +2,6 @@ Publish Subscribe, ou Pub/Sub, é um padrão em que produtores publicam mensagen
 
 O produtor não precisa conhecer os consumidores.
 
----
-
-## Visão geral
 
 Publish Subscribe (Pub Sub) aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

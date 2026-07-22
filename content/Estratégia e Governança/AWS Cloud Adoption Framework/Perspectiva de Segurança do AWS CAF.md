@@ -2,9 +2,6 @@ Perspectiva de Segurança do AWS CAF foca em proteger dados e workloads na nuvem
 
 Ela busca alcançar confidencialidade, integridade e disponibilidade dentro da transformação em nuvem.
 
----
-
-## Visão geral
 
 Segurança no CAF não é apenas escolher ferramentas.
 

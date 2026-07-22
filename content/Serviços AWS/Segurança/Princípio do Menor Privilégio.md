@@ -2,9 +2,6 @@ O Princípio do Menor Privilégio determina que uma identidade deve receber apen
 
 Esse princípio é central em [[AWS Identity and Access Management (IAM)]].
 
----
-
-## Visão geral
 
 Em Princípio do Menor Privilégio, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

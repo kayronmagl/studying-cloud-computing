@@ -2,9 +2,6 @@ Fanout é o padrão em que uma mensagem publicada uma vez é distribuída para m
 
 Na AWS, um padrão comum é usar [[Amazon SNS]] publicando para múltiplas filas [[Amazon SQS]].
 
----
-
-## Visão geral
 
 Fanout aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

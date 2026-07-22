@@ -1,31 +1,27 @@
-Google Cloud é o provedor de nuvem do Google, com serviços de computação, dados, IA, rede e segurança. Ele é um dos principais provedores ao lado da [[AWS (Amazon Web Services)]] e do [[Microsoft Azure]].
+Google Cloud é o provedor de nuvem do Google. Ele oferece serviços de computação, armazenamento, bancos de dados, redes, segurança, análise de dados e inteligência artificial, usando a infraestrutura operada pelo próprio Google.
 
 ## Exemplo Prático
 
-Imagine uma aplicação web simples. Ela precisa receber requisições, processar dados, gravar informações, proteger acesso e responder ao usuário.
+Uma aplicação hospedada no Google Cloud pode executar código em máquinas virtuais, armazenar arquivos em um serviço de objetos, usar bancos gerenciados e publicar conteúdo por uma rede global. A lógica geral é a mesma de outros provedores: recursos de TI são provisionados sob demanda e cobrados conforme o uso, mas os nomes dos serviços, integrações e decisões de implementação são próprios do Google.
 
-Mesmo usando AWS, a aplicação ainda depende de conceitos como rede, protocolo, servidor, banco, API e armazenamento. A diferença é que muitos desses elementos deixam de ser comprados e instalados manualmente e passam a ser configurados por serviço.
+Por isso, ao estudar Google Cloud ao lado de [[AWS (Amazon Web Services)]] e [[Microsoft Azure]], o mais importante é separar o conceito geral do produto específico. Computação, rede, identidade e banco de dados existem em todos os provedores, mas cada plataforma organiza esses recursos de um jeito.
 
 ---
 
 ## Cuidados importantes
 
-O erro comum é decorar o nome do serviço sem entender o fundamento. Isso gera confusão, por exemplo, ao comparar banco relacional com NoSQL, servidor físico com instância virtual, ou API com interface gráfica.
-
-Por isso, esta nota deve funcionar como camada de apoio para entender os módulos posteriores.
+Não é correto aprender computação em nuvem como se cada provedor fosse um universo sem relação com os outros. Também não é correto imaginar que serviços com nomes parecidos tenham sempre o mesmo comportamento. A comparação precisa começar pelo mecanismo: tipo de computação, modelo de armazenamento, padrão de rede, forma de cobrança, responsabilidade operacional e integração com outros serviços.
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
-Em uma aplicação real, o usuário acessa uma interface web, a requisição trafega pela rede, chega a servidores ou funções, consulta bancos e retorna dados. Mesmo que tudo esteja na AWS, os fundamentos continuam existindo.
+Se uma equipe migra uma aplicação para Google Cloud, ela pode escolher máquinas virtuais para manter controle sobre o sistema operacional ou serviços mais gerenciados para reduzir operação. A decisão não deve partir apenas do nome do serviço, mas do que a aplicação precisa: tempo de resposta, volume de dados, segurança, previsibilidade de custo e esforço de manutenção.
 
-A diferença é que o provisionamento, a escala, a segurança e a cobrança passam a ser controlados por serviços, políticas e APIs.
+Essa leitura também ajuda a evitar propaganda técnica. Google Cloud é uma implementação de nuvem pública, não a definição de computação em nuvem.
 
 ---
 
 ## Erros Comuns
 
-O erro mais comum é decorar o nome do serviço sem entender o conceito que ele abstrai.
-
-Isso prejudica escolhas como EC2 versus Lambda, RDS versus DynamoDB, S3 versus EBS, ou internet pública versus rede privada.
+Um erro comum é comparar provedores apenas por listas de serviços. A pergunta mais útil costuma ser: qual problema técnico a aplicação tem, qual modelo de operação a equipe aceita e qual serviço resolve esse problema com menos risco para aquele contexto?

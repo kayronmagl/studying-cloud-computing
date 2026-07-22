@@ -1,41 +1,27 @@
-Data Centers são instalações físicas que abrigam servidores, armazenamento, redes, energia e refrigeração. Eles sustentam serviços como [[Amazon EC2]], [[Amazon S3]] e [[Amazon RDS]].
+Data centers são instalações físicas preparadas para abrigar servidores, armazenamento, redes, energia, refrigeração e controles de segurança. Eles sustentam serviços como [[Amazon EC2]], [[Amazon S3]] e [[Amazon RDS]], mesmo quando o cliente só enxerga recursos lógicos criados por console, API ou automação.
 
-Um data center é um prédio ou conjunto de instalações físicas. Ele não é a mesma coisa que uma [[Availability Zones (AZ)|Zona de Disponibilidade]] nem uma [[Regions (Regiões)|Região]]. Uma AZ pode conter um ou mais data centers. Uma região contém múltiplas AZs.
+Esse conceito é importante porque “nuvem” não significa ausência de infraestrutura. Significa que a infraestrutura física é operada pelo provedor, enquanto o cliente consome capacidade por meio de serviços.
 
----
+## Relação com Região e AZ
 
-## Visão geral
+Um data center é um prédio ou conjunto de instalações físicas. Ele não é a mesma coisa que uma [[Availability Zones (AZ)|Zona de Disponibilidade]] nem uma [[Regions (Regiões)|Região]].
 
-Pense em Data Centers como a parte que normalmente fica invisível para quem usa nuvem. Você não administra isso diretamente, mas esse conceito explica por que existem regiões, zonas, redundância e preocupação com disponibilidade.
+Uma AZ pode conter um ou mais data centers. Uma região contém múltiplas AZs. Essa separação cria limites físicos e operacionais que ajudam a reduzir o impacto de falhas locais. Se um problema atinge uma instalação ou uma zona, a arquitetura pode usar recursos em outra zona, desde que isso tenha sido planejado.
 
-Não pule esta nota: ela ajuda a lembrar que “nuvem” continua dependendo de infraestrutura real.
+## Como Sustenta a Nuvem
 
----
+Quando uma instância EC2 é criada, ela depende de servidores físicos, rede, energia, refrigeração e armazenamento. Quando um objeto é gravado no S3 ou um banco é criado no RDS, também existe infraestrutura física sustentando o serviço.
 
-## Por que Importa para AWS
+O cliente normalmente não escolhe rack, servidor físico ou circuito elétrico. Essa abstração é uma parte essencial da nuvem. Mesmo assim, a camada física continua influenciando latência, disponibilidade, residência de dados, recuperação de desastre e custo.
 
-Quando você cria uma instância [[Amazon EC2]], um bucket [[Amazon S3]] ou um banco [[Amazon RDS]], o recurso lógico depende de uma base física distribuída entre instalações, equipamentos, energia, refrigeração e conectividade.
+## Responsabilidades
 
-Essa camada física explica por que existem [[Regions (Regiões)]], [[Availability Zones (AZ)]], redundância, [[Isolamento de Falhas]] e decisões de localização. A aplicação usa recursos lógicos, mas esses recursos continuam apoiados em energia, rede, hardware, armazenamento e segurança física.
+A responsabilidade pela infraestrutura física é do provedor. Isso inclui prédios, energia, refrigeração, segurança física, hardware e parte da rede global.
 
----
+A responsabilidade pelo desenho da carga continua com o cliente. Não basta confiar no data center. Aplicações críticas precisam considerar múltiplas zonas, backups, [[Failover]], monitoramento, testes de recuperação e dados recuperáveis.
 
-## Cuidados importantes de Interpretação
+## Exemplo
 
-O usuário da nuvem normalmente não escolhe rack, servidor físico ou circuito elétrico. Mesmo assim, precisa entender que falhas físicas podem acontecer e que a arquitetura deve considerar redundância.
+Uma aplicação pode executar instâncias EC2 em duas AZs. Cada AZ depende de data centers físicos, mas a aplicação enxerga recursos lógicos: subnets, instâncias, volumes, bancos e balanceadores. Se a aplicação estiver toda em uma única AZ, uma falha zonal pode derrubá-la. Se estiver distribuída de forma correta, a falha pode ter impacto menor.
 
-Por isso, conceitos físicos aparecem no estudo para fundamentar alta disponibilidade, disaster recovery e topologia global.
-
----
-
-## Exemplo Arquitetural
-
-Quando uma instância EC2 é criada, ela depende de servidores físicos, rede, energia, refrigeração e armazenamento. Quando uma AZ contém mais de um data center, a infraestrutura física pode ter redundância interna. Quando uma região possui múltiplas AZs, a AWS oferece isolamento entre locais para reduzir impacto de falhas físicas e operacionais.
-
----
-
-## Cuidados importantes
-
-Mesmo que a AWS opere a camada física, o cliente ainda precisa desenhar aplicações resilientes.
-
-Não basta confiar no data center. É necessário usar múltiplas zonas, backups, failover e monitoramento conforme a criticidade da aplicação. A responsabilidade pela infraestrutura física é do provedor; a responsabilidade pelo desenho da carga continua com o cliente.
+Esse exemplo mostra por que data centers aparecem no estudo de nuvem: eles explicam a base física por trás de [[Infraestrutura Global de Nuvem]], isolamento, redundância e disponibilidade.

@@ -38,14 +38,12 @@ Entender essa diferença ajuda a diagnosticar problemas de rede: IP, rota, porta
 
 ## Exemplo Prático
 
-Imagine uma aplicação web simples. Ela precisa receber requisições, processar dados, gravar informações, proteger acesso e responder ao usuário.
+Quando uma aplicação chama uma API HTTPS, o endereço precisa ser resolvido, os pacotes precisam encontrar uma rota até o destino, uma conexão precisa ser estabelecida e os dados precisam chegar em ordem suficiente para a aplicação interpretar a resposta. O usuário enxerga uma chamada simples, mas por baixo existe uma sequência de decisões de rede.
 
-Mesmo usando AWS, a aplicação ainda depende de conceitos como rede, protocolo, servidor, banco, API e armazenamento. A diferença é que muitos desses elementos deixam de ser comprados e instalados manualmente e passam a ser configurados por serviço.
+Em uma arquitetura de nuvem, isso vale tanto para tráfego público quanto para comunicação privada entre serviços. Uma instância pode acessar outra por endereço privado, uma aplicação pode chamar um endpoint de serviço e um usuário pode acessar um sistema pela internet pública. Em todos os casos, endereçamento, roteamento, portas e protocolos continuam determinando se a comunicação funciona.
 
 ---
 
 ## Cuidados importantes
 
-O erro comum é decorar o nome do serviço sem entender o fundamento. Isso gera confusão, por exemplo, ao comparar banco relacional com NoSQL, servidor físico com instância virtual, ou API com interface gráfica.
-
-Por isso, esta nota deve funcionar como camada de apoio para entender os módulos posteriores.
+Um erro comum é explicar conectividade apenas pelo nome do serviço de nuvem. Se uma aplicação não responde, o problema pode estar no DNS, na rota, na porta, na regra de firewall, na negociação TLS, na aplicação ou na permissão do serviço. TCP/IP ajuda a separar essas hipóteses antes de alterar a arquitetura sem direção.

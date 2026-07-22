@@ -2,9 +2,6 @@ Políticas Baseadas em Recurso são políticas anexadas diretamente a um recurso
 
 Elas definem quem pode acessar aquele recurso e em quais condições.
 
----
-
-## Visão geral
 
 Em Políticas Baseadas em Recurso, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

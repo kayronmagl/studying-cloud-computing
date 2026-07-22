@@ -2,9 +2,6 @@ Concorrência Lambda é a quantidade de execuções simultâneas de uma função
 
 Se mil eventos chegam ao mesmo tempo, a plataforma pode executar muitas instâncias da função em paralelo, respeitando limites da conta, da região e da função.
 
----
-
-## Visão geral
 
 Concorrência Lambda faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

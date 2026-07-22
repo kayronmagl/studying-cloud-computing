@@ -2,9 +2,6 @@ Comunicação Síncrona e Assíncrona descreve duas formas de interação entre 
 
 Na comunicação síncrona, o chamador espera resposta. Na assíncrona, o produtor envia trabalho ou evento e não precisa esperar o processamento final.
 
----
-
-## Visão geral
 
 Comunicação Síncrona e Assíncrona aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

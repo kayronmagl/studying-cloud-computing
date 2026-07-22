@@ -2,9 +2,6 @@ Gateway Load Balancer, ou GWLB, é um tipo de load balancer usado para implantar
 
 Ele é comum em arquiteturas com firewalls, IDS/IPS, inspeção de tráfego e appliances de segurança.
 
----
-
-## Visão geral
 
 Gateway Load Balancer ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

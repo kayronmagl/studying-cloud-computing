@@ -4,9 +4,6 @@ Elas determinam para onde o tráfego deve ser enviado.
 
 Cada rota possui um destino e um alvo.
 
----
-
-## Visão geral
 
 Route Tables faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

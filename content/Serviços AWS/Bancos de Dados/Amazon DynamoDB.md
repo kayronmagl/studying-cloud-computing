@@ -2,9 +2,6 @@ Amazon DynamoDB é um banco NoSQL gerenciado da AWS, orientado a chave-valor e d
 
 Ele é projetado para baixa latência e alta escala, especialmente quando o padrão de acesso é conhecido antecipadamente.
 
----
-
-## Visão geral
 
 Amazon DynamoDB deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

@@ -1,8 +1,5 @@
 AWS Management Console é a interface web da AWS. Permite criar, configurar e monitorar recursos pelo navegador. É útil para aprendizado e operação manual, mas deve ser combinado com automação em ambientes maduros.
 
----
-
-## Visão geral
 
 AWS Management Console mostra como você conversa com a AWS. A ideia é simples: tudo que você cria, consulta ou altera precisa passar por alguma interface e por permissões.
 
@@ -26,7 +23,7 @@ Por isso, conforme o ambiente amadurece, automação, versionamento, permissões
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma equipe pode criar recursos manualmente no início, mas depois declarar tudo em IaC para reproduzir ambientes. Aplicações usam SDKs para falar com S3, DynamoDB ou SQS.
 

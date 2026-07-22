@@ -2,9 +2,6 @@ Escalabilidade Vertical significa aumentar a capacidade de um único recurso.
 
 Exemplo: trocar uma instância pequena por uma maior.
 
----
-
-## Visão geral
 
 Escalabilidade Vertical ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

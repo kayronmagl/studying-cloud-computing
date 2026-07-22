@@ -2,9 +2,6 @@ Mensageria é o uso de mensagens para comunicação entre componentes de softwar
 
 Em vez de um componente depender diretamente de outro em tempo real, ele publica uma mensagem em uma fila, tópico, broker, barramento de eventos ou stream.
 
----
-
-## Visão geral
 
 Mensageria aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

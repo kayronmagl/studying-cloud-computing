@@ -2,9 +2,6 @@ Apache ActiveMQ é um message broker open source usado em aplicações corporati
 
 Ele suporta protocolos e padrões tradicionais de mensageria, incluindo JMS em ambientes Java.
 
----
-
-## Visão geral
 
 Apache ActiveMQ aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

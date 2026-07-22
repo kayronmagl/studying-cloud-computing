@@ -2,9 +2,6 @@ AWS Fargate é um mecanismo de computação serverless para containers.
 
 Ele funciona com [[Amazon ECS]] e [[Amazon EKS]], permitindo executar containers sem provisionar, configurar ou escalar clusters de instâncias [[Amazon EC2]]. A equipe define imagem, CPU, memória, rede, variáveis e permissões; a AWS gerencia a infraestrutura subjacente.
 
----
-
-## Visão geral
 
 AWS Fargate faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

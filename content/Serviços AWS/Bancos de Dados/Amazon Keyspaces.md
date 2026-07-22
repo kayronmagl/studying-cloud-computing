@@ -2,9 +2,6 @@ Amazon Keyspaces é o serviço gerenciado da AWS compatível com Apache Cassandr
 
 Ele é usado para workloads que precisam do modelo de colunas largas e compatibilidade com Cassandra Query Language.
 
----
-
-## Visão geral
 
 Amazon Keyspaces deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

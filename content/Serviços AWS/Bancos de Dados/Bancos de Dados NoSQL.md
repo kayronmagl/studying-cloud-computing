@@ -2,9 +2,6 @@ Bancos de Dados NoSQL são bancos não relacionais criados para modelos de dados
 
 Eles podem ser chave-valor, documento, colunas largas, grafos ou séries temporais.
 
----
-
-## Visão geral
 
 Bancos de Dados NoSQL deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

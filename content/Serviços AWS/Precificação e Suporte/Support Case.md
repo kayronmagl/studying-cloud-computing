@@ -2,9 +2,6 @@ Support Case é um chamado aberto com o [[AWS Support]].
 
 Ele é usado para solicitar ajuda de cobrança, suporte técnico, aumento de limites, investigação ou orientação, dependendo do plano.
 
----
-
-## Visão geral
 
 Support Case mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

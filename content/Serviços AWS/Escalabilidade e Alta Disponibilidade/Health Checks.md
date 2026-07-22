@@ -2,9 +2,6 @@ Health Checks são verificações usadas para determinar se um recurso está sau
 
 Eles são essenciais para [[Alta Disponibilidade]], [[Elastic Load Balancing]] e [[Amazon EC2 Auto Scaling]].
 
----
-
-## Visão geral
 
 Health Checks ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

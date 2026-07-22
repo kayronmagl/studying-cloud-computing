@@ -2,9 +2,6 @@ Resiliência é a capacidade de um workload se recuperar de falhas, adaptar-se a
 
 Ela inclui disponibilidade, recuperação, elasticidade, tolerância a falhas e operação observável.
 
----
-
-## Visão geral
 
 Resiliência ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

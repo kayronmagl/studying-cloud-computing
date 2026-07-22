@@ -2,9 +2,6 @@ Alertas de Orçamentos da AWS são notificações associadas a [[AWS Budgets]].
 
 Eles avisam quando custo ou uso real, previsto ou configurado atinge limites definidos.
 
----
-
-## Visão geral
 
 Alertas de Orçamentos da AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

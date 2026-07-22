@@ -2,9 +2,6 @@ Amazon Route 53 é o serviço DNS gerenciado da AWS.
 
 Ele permite registrar domínios, hospedar zonas DNS, criar registros, aplicar políticas de roteamento e configurar health checks.
 
----
-
-## Visão geral
 
 Amazon Route 53 faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

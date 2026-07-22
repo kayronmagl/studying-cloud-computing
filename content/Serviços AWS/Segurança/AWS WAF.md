@@ -4,9 +4,6 @@ Ele permite monitorar, permitir, bloquear ou desafiar requisições HTTP e HTTPS
 
 Pode ser associado a [[Amazon CloudFront]], Application Load Balancer, [[Amazon API Gateway]] e outros recursos compatíveis.
 
----
-
-## Visão geral
 
 Em AWS WAF, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

@@ -2,9 +2,6 @@ Auto Scaling Groups, ou ASGs, são coleções de instâncias [[Amazon EC2]] gere
 
 O grupo mantém a quantidade de instâncias dentro de limites definidos.
 
----
-
-## Visão geral
 
 Auto Scaling Groups ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

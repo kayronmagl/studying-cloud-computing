@@ -2,9 +2,6 @@ Segurança de Aplicações na AWS é o conjunto de práticas e serviços usados 
 
 Ela envolve mais do que firewall. Inclui validação de entrada, autenticação, autorização, criptografia, logs, proteção de borda, varredura de vulnerabilidades e resposta a incidentes.
 
----
-
-## Visão geral
 
 Em Segurança de Aplicações na AWS, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

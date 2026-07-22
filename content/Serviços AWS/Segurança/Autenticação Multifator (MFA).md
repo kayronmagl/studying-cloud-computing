@@ -2,9 +2,6 @@ Autenticação Multifator, ou MFA, adiciona uma segunda prova de identidade alé
 
 Na AWS, MFA é especialmente importante para o usuário root, usuários administrativos e operações sensíveis.
 
----
-
-## Visão geral
 
 Em Autenticação Multifator (MFA), pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

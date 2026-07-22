@@ -4,9 +4,6 @@ IAM define quem pode fazer o quê, em qual recurso e sob quais condições.
 
 Ele é uma das peças mais importantes da AWS porque quase toda ação na conta passa por autorização: criar uma instância, ler um bucket, apagar um banco, publicar um evento, consultar logs ou assumir uma role.
 
----
-
-## Visão geral
 
 Em AWS Identity and Access Management (IAM), pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

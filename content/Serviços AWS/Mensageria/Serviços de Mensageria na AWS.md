@@ -2,9 +2,6 @@ Serviços de Mensageria na AWS são serviços usados para comunicação assíncr
 
 Eles resolvem um problema central de sistemas distribuídos: componentes não devem depender sempre de chamadas diretas, síncronas e frágeis.
 
----
-
-## Visão geral
 
 Serviços de Mensageria na AWS aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

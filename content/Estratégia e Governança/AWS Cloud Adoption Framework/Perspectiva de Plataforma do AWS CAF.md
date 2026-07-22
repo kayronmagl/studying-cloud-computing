@@ -2,9 +2,6 @@ Perspectiva de Plataforma do AWS CAF trata da construção do ambiente técnico 
 
 Ela foca em arquitetura, infraestrutura, padrões, landing zone e entrega de workloads.
 
----
-
-## Visão geral
 
 Plataforma é a base onde as aplicações vão rodar.
 

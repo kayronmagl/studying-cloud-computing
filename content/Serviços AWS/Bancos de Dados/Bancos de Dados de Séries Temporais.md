@@ -2,9 +2,6 @@ Bancos de Dados de Séries Temporais são bancos otimizados para dados indexados
 
 Eles armazenam medições, eventos e métricas que fazem sentido em sequência temporal.
 
----
-
-## Visão geral
 
 Bancos de Dados de Séries Temporais deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

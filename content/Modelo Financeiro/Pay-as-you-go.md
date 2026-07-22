@@ -1,8 +1,5 @@
 Pay-as-you-go é pagamento conforme uso. O cliente paga por tempo, armazenamento, requisições, tráfego e outros consumos.
 
----
-
-## Visão geral
 
 Pay-as-you-go explica a lógica econômica da nuvem. Não é só contabilidade: é como a forma de pagar muda a forma de projetar sistemas.
 

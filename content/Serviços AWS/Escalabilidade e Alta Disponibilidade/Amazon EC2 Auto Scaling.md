@@ -2,9 +2,6 @@ Amazon EC2 Auto Scaling é o serviço que ajusta automaticamente a quantidade de
 
 Ele ajuda a manter capacidade suficiente para atender demanda e pode substituir instâncias com falha.
 
----
-
-## Visão geral
 
 Amazon EC2 Auto Scaling ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

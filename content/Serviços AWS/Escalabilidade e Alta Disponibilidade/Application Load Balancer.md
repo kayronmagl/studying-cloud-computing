@@ -2,9 +2,6 @@ Application Load Balancer, ou ALB, é um tipo de load balancer da AWS para tráf
 
 Ele é usado em aplicações web, APIs e arquiteturas baseadas em rotas.
 
----
-
-## Visão geral
 
 Application Load Balancer ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

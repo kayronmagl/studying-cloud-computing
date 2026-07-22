@@ -2,9 +2,6 @@ Circuit Breaker é um padrão de resiliência que interrompe chamadas para uma d
 
 Ele evita que uma falha externa derrube o sistema chamador.
 
----
-
-## Visão geral
 
 Circuit Breaker ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

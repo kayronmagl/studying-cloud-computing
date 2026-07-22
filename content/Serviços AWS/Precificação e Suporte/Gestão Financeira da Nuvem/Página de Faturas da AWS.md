@@ -2,9 +2,6 @@ Página de Faturas da AWS é a área usada para consultar faturas de meses anter
 
 Ela complementa o [[AWS Billing Dashboard]] e o [[AWS Cost Explorer]].
 
----
-
-## Visão geral
 
 Página de Faturas da AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

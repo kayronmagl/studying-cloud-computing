@@ -2,9 +2,6 @@ S3 Intelligent-Tiering é uma classe de armazenamento do Amazon S3 para objetos 
 
 Ela monitora o acesso aos objetos e os move automaticamente entre camadas de custo, sem exigir que você adivinhe manualmente se o dado será muito ou pouco acessado.
 
----
-
-## Visão geral
 
 O S3 Intelligent-Tiering faz sentido quando você não sabe como o dado será acessado.
 
@@ -28,7 +25,6 @@ O Intelligent-Tiering começa colocando objetos em uma camada de acesso frequent
 
 ## Como Diferenciar
 
-Quando o cenário envolve em monitorar padrões de acesso do objeto, [[S3 Intelligent-Tiering]] costuma ser a associação mais direta.
 
 
 ---

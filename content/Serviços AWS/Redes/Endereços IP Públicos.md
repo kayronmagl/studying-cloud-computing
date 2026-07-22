@@ -2,9 +2,6 @@ Endereços IP Públicos são endereços roteáveis pela internet.
 
 Na AWS, um recurso pode receber IP público automaticamente ou usar um [[Elastic IP]] estático, dependendo da configuração.
 
----
-
-## Visão geral
 
 Endereços IP Públicos faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

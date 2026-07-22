@@ -2,9 +2,6 @@ Dead Letter Queue, ou DLQ, é uma fila usada para armazenar mensagens que falhar
 
 Ela é essencial para resiliência em sistemas assíncronos.
 
----
-
-## Visão geral
 
 Dead Letter Queue (DLQ) aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

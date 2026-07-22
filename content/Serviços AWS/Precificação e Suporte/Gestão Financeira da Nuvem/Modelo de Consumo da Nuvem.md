@@ -2,9 +2,6 @@ Modelo de Consumo da Nuvem é o modelo em que recursos são usados sob demanda, 
 
 Ele é a base econômica de serviços como [[Amazon EC2]], [[Amazon S3]], [[Amazon RDS]], [[Amazon CloudWatch]] e muitos outros.
 
----
-
-## Visão geral
 
 Modelo de Consumo da Nuvem mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

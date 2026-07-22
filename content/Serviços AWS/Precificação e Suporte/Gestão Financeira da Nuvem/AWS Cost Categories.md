@@ -2,9 +2,6 @@ AWS Cost Categories permite criar agrupamentos personalizados de custo na AWS.
 
 Ele ajuda a organizar custos em dimensões de negócio, mesmo quando tags e contas não são suficientes.
 
----
-
-## Visão geral
 
 AWS Cost Categories mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

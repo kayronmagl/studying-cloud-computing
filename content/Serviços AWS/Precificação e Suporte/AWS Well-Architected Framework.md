@@ -2,9 +2,6 @@ AWS Well-Architected Framework é o framework da AWS para avaliar e melhorar wor
 
 Ele ajuda a revisar decisões de arquitetura com base em pilares de boas práticas.
 
----
-
-## Visão geral
 
 O Well-Architected olha para uma workload específica: uma aplicação, sistema ou conjunto de componentes que entrega valor para o negócio.
 
@@ -26,7 +23,6 @@ Essa diferença evita confundir transformação organizacional com revisão téc
 
 ## Como Diferenciar
 
-Quando o cenário envolve em revisar arquitetura, melhorar workload, aplicar pilares ou avaliar boas práticas técnicas, AWS Well-Architected Framework costuma ser a associação mais direta.
 
 Se o foco for transformação organizacional, perspectivas e prontidão para nuvem, pense em AWS CAF.
 

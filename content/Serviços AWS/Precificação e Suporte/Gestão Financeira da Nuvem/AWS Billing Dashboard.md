@@ -2,9 +2,6 @@ AWS Billing Dashboard é o painel de faturamento da AWS usado para visualizar cu
 
 Ele faz parte da experiência de [[AWS Billing and Cost Management]].
 
----
-
-## Visão geral
 
 AWS Billing Dashboard mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

@@ -2,9 +2,6 @@ Filas de Mensagens armazenam mensagens entre produtores e consumidores.
 
 O produtor envia uma mensagem para a fila. O consumidor lê e processa quando puder.
 
----
-
-## Visão geral
 
 Filas de Mensagens aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

@@ -4,9 +4,6 @@ Elas especificam se uma ação é permitida ou negada, em quais recursos e sob q
 
 Políticas normalmente são escritas em JSON.
 
----
-
-## Visão geral
 
 Em Políticas IAM, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

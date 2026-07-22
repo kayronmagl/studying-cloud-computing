@@ -2,9 +2,6 @@ Tolerância a Falhas é a capacidade de um sistema continuar operando durante um
 
 Não significa que o sistema nunca falha. Também não significa tolerar qualquer quantidade de falhas simultâneas. A quantidade e o tipo de falhas toleradas dependem do desenho da arquitetura, dos componentes redundantes, das dependências compartilhadas e dos mecanismos de recuperação.
 
----
-
-## Visão geral
 
 Tolerância a falhas é diferente de [[Alta Disponibilidade]]. Alta disponibilidade busca manter o serviço acessível e pode aceitar uma interrupção curta durante detecção, failover ou recuperação. Tolerância a falhas é mais exigente: o sistema deve continuar operando apesar da falha específica para a qual foi projetado.
 

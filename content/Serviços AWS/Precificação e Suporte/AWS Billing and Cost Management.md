@@ -2,9 +2,6 @@ AWS Billing and Cost Management é o conjunto de ferramentas da AWS para gerenci
 
 Ele concentra a operação financeira da conta AWS.
 
----
-
-## Visão geral
 
 AWS Billing and Cost Management mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

@@ -2,9 +2,6 @@ Amazon EKS é o serviço gerenciado da AWS para executar Kubernetes.
 
 Kubernetes é uma plataforma usada para orquestrar aplicações em containers. O EKS reduz o trabalho de operar o plano de controle do Kubernetes e integra o cluster com serviços da AWS.
 
----
-
-## Visão geral
 
 Use EKS quando a aplicação já usa Kubernetes ou quando a equipe precisa do ecossistema Kubernetes para organizar containers, escalar aplicações, controlar deploys e integrar componentes.
 
@@ -25,7 +22,6 @@ O EKS não é um banco de dados, não é machine learning e não é data warehou
 
 ## Como Diferenciar
 
-Quando o cenário envolve em Kubernetes ou aplicações em containers na AWS, [[Amazon EKS]] quando a alternativa mencionar Kubernetes gerenciado costuma ser a associação mais direta.
 
 ---
 

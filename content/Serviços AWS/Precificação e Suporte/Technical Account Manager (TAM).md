@@ -2,9 +2,6 @@ Technical Account Manager, ou TAM, é um profissional associado a planos avança
 
 Ele atua como ponto de orientação técnica e operacional para ajudar organizações a obter valor da AWS.
 
----
-
-## Visão geral
 
 Technical Account Manager (TAM) mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

@@ -4,9 +4,6 @@ Amazon MSK significa Amazon Managed Streaming for Apache Kafka.
 
 A documentação da AWS descreve MSK como serviço totalmente gerenciado que permite criar e executar aplicações que usam Apache Kafka para processar dados de streaming.
 
----
-
-## Visão geral
 
 Amazon MSK aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

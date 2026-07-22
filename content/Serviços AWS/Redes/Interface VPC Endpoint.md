@@ -2,9 +2,6 @@ Interface VPC Endpoint é um tipo de [[VPC Endpoints|VPC Endpoint]] baseado em [
 
 Ele cria [[Elastic Network Interface (ENI)|ENIs]] dentro da VPC para permitir acesso privado a serviços.
 
----
-
-## Visão geral
 
 Interface VPC Endpoint faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

@@ -8,9 +8,6 @@ Um bloco CIDR define um intervalo de endereços IP usando uma notação como:
 
 O número após a barra indica quantos bits representam a parte de rede. Quanto menor o número, maior o intervalo de endereços.
 
----
-
-## Visão geral
 
 Blocos CIDR faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

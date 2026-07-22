@@ -2,9 +2,6 @@ AWS Marketplace é um catálogo digital onde você encontra softwares de fornece
 
 Pense nele como uma loja corporativa de software. A diferença é que os produtos ali são voltados para ambientes de nuvem, infraestrutura, segurança, dados, observabilidade, redes, DevOps e aplicações empresariais.
 
----
-
-## Visão geral
 
 Nem tudo que uma empresa usa na AWS é criado pela própria AWS.
 
@@ -68,7 +65,7 @@ Quando aparecer a ideia de software de fornecedor independente, pense em Marketp
 
 ---
 
-## Pergunta que esta nota responde
+## Uso principal
 
 * Onde encontro software de terceiros para comprar e usar com AWS?
 

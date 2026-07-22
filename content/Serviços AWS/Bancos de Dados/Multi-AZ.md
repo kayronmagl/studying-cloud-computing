@@ -2,9 +2,6 @@ Multi-AZ é um padrão de alta disponibilidade em que recursos são distribuído
 
 No contexto de [[Amazon RDS]], Multi-AZ reduz indisponibilidade ao manter capacidade de recuperação em outra zona.
 
----
-
-## Visão geral
 
 Multi-AZ deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

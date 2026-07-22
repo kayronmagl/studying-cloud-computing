@@ -2,9 +2,6 @@ Subnets Privadas são subnets sem rota direta para um [[Internet Gateway]].
 
 Recursos nessas subnets não recebem conexões iniciadas diretamente da internet.
 
----
-
-## Visão geral
 
 Subnets Privadas faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

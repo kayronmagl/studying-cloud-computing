@@ -2,11 +2,7 @@ Isolamento de Falhas limita o impacto de uma falha para que ela não se espalhe 
 
 ---
 
-## Visão geral
-
-Isolamento de Falhas é uma ideia de localização, falha ou distribuição. Quando estudar, pergunte: “onde o recurso fica?” e “o que acontece se uma parte falhar?”.
-
-Esse raciocínio é essencial para entender alta disponibilidade, disaster recovery e latência.
+## Limites do isolamento
 
 Isolamento não significa independência absoluta. Componentes em zonas diferentes ainda podem compartilhar dependências regionais, configuração, credenciais, serviços externos, pipelines de deploy ou dados mal replicados.
 
@@ -35,7 +31,7 @@ Não basta “usar AWS”. É necessário desenhar onde e como os recursos serã
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Esse desenho usa isolamento de falhas para reduzir impacto zonal, mas precisa de health checks, capacidade restante, recuperação de dados e testes.
 

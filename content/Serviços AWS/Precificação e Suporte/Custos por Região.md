@@ -2,9 +2,6 @@ Custos por Região representam a variação de preços entre regiões AWS.
 
 O mesmo serviço pode ter preço diferente dependendo da [[Regions (Regiões)|região]].
 
----
-
-## Visão geral
 
 Custos por Região mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

@@ -1,15 +1,5 @@
 Cache é uma cópia temporária para reduzir latência e carga na origem. Cache pode existir em navegador, CDN, aplicação, memória ou banco.
 
----
-
-## Visão geral
-
-Cache ajuda a entender o caminho dos dados. Em nuvem, desempenho e disponibilidade dependem muito de como o tráfego sai do usuário, passa pela rede e chega ao serviço.
-
-Sempre associe este conceito a latência, roteamento, cache, segurança ou entrega de conteúdo.
-
----
-
 ## Exemplo Prático
 
 Quando um usuário acessa uma aplicação hospedada na AWS, a requisição pode passar pela internet pública, por redes de telecomunicação, por edge locations, por uma CDN, por um load balancer e finalmente por recursos dentro de uma VPC.
@@ -26,7 +16,7 @@ Por isso, entender este conceito ajuda a interpretar desempenho e disponibilidad
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma aplicação pode usar CloudFront para reduzir latência, WAF para filtrar tráfego malicioso e Route 53 para direcionar usuários ao endpoint adequado.
 

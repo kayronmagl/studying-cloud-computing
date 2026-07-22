@@ -2,9 +2,6 @@ Acessar Custos da AWS é a primeira capacidade de gestão financeira: conseguir 
 
 Sem acesso aos dados, não há análise, controle ou otimização.
 
----
-
-## Visão geral
 
 Acessar Custos da AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

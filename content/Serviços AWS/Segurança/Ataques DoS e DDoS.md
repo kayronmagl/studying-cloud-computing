@@ -2,9 +2,6 @@ Ataques DoS e DDoS tentam tornar um serviço indisponível. DoS significa Denial
 
 A diferença principal é que DDoS usa múltiplas origens distribuídas para aumentar volume e dificultar bloqueio.
 
----
-
-## Visão geral
 
 Em Ataques DoS e DDoS, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

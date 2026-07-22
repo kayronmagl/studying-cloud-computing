@@ -2,9 +2,6 @@ Scaling Policies são políticas que dizem ao [[Amazon EC2 Auto Scaling]] quando
 
 Elas transformam métricas em ação.
 
----
-
-## Visão geral
 
 Scaling Policies ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

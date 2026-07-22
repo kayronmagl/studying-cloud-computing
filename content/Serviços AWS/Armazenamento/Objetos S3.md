@@ -47,7 +47,7 @@ Isso diferencia S3 de [[Amazon EBS]] e [[Amazon EFS]]. A aplicação precisa pen
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma aplicação pode salvar imagens originais como objetos S3, gerar miniaturas com [[AWS Lambda]] e distribuir o conteúdo por [[Amazon CloudFront]].
 

@@ -2,9 +2,6 @@ Route 53 Health Checks são verificações usadas pelo [[Amazon Route 53]] para 
 
 Eles podem participar de estratégias de roteamento e failover em nível DNS.
 
----
-
-## Visão geral
 
 Route 53 Health Checks ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

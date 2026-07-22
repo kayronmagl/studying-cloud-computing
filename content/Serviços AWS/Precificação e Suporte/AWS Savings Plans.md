@@ -2,9 +2,6 @@ AWS Savings Plans são modelos de desconto baseados em compromisso de uso por pe
 
 Em troca de compromisso financeiro, a AWS oferece descontos em determinados tipos de uso elegíveis.
 
----
-
-## Visão geral
 
 AWS Savings Plans mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

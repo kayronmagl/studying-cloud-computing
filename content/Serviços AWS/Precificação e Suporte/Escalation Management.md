@@ -2,9 +2,6 @@ Escalation Management é o processo de escalar um problema para níveis mais alt
 
 Em suporte AWS, escalonamento pode ocorrer quando impacto, urgência ou complexidade exigem envolvimento adicional.
 
----
-
-## Visão geral
 
 Escalation Management mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

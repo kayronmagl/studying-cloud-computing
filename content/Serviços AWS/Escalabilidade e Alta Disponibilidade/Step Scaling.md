@@ -2,9 +2,6 @@ Step Scaling é uma política de escala que ajusta capacidade em degraus conform
 
 Quanto maior o desvio, maior pode ser a ação.
 
----
-
-## Visão geral
 
 Step Scaling ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

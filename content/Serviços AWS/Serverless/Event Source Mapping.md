@@ -2,9 +2,6 @@ Event Source Mapping é o recurso que conecta fontes de eventos baseadas em fila
 
 Ele lê registros da fonte, agrupa em lotes e invoca a função automaticamente.
 
----
-
-## Visão geral
 
 Event Source Mapping faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

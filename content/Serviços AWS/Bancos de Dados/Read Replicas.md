@@ -1,8 +1,5 @@
 Read Replicas são réplicas de leitura usadas para escalar consultas e reduzir carga da instância principal.
 
----
-
-## Visão geral
 
 Read Replicas deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

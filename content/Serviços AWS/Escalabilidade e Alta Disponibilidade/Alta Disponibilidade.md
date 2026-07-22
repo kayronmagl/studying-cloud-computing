@@ -1,99 +1,35 @@
-Alta Disponibilidade é uma propriedade arquitetural que busca manter um serviço acessível mesmo quando componentes falham.
+Alta disponibilidade é uma propriedade arquitetural que busca manter um serviço acessível mesmo quando componentes falham. Ela parte de uma ideia prática: falhas vão acontecer, então a aplicação precisa ser desenhada para que uma falha isolada não derrube tudo.
 
-Em AWS, alta disponibilidade normalmente envolve distribuir componentes entre múltiplas [[Availability Zones (AZ)]], reduzir [[Single Points of Failure (SPOF)]], usar balanceamento, health checks, replicação, observabilidade e mecanismos de recuperação.
+Na AWS, alta disponibilidade costuma envolver distribuição entre múltiplas [[Availability Zones (AZ)]], redução de [[Single Points of Failure (SPOF)]], balanceamento de carga, health checks, replicação, monitoramento e mecanismos de recuperação. Esses recursos ajudam, mas não tornam uma aplicação altamente disponível por si só. A disponibilidade real depende de como aplicação, dados, rede, permissões, capacidade e operação foram desenhados.
 
----
+## Como Funciona
 
-## Visão geral
+Uma arquitetura altamente disponível evita depender de um único componente essencial. Em vez de uma única instância receber todo o tráfego, a aplicação pode ter várias instâncias. Em vez de uma única zona concentrar todos os recursos, a arquitetura pode distribuir componentes entre AZs. Em vez de enviar tráfego para qualquer destino, um balanceador pode usar health checks para encaminhar requisições apenas para recursos saudáveis.
 
-Alta disponibilidade não é consequência automática de hospedar uma aplicação na AWS. Ela depende de como a aplicação, os dados, a rede, as permissões, a capacidade e os mecanismos de recuperação foram desenhados.
-
----
-
-## Objetivo
-
-O objetivo não é impedir toda falha.
-
-Falhas acontecem.
-
-O objetivo é reduzir interrupções e impedir que uma falha isolada derrube o serviço inteiro. Mesmo em uma arquitetura bem desenhada, podem existir tempo de detecção, tempo de failover, reconexões, perda de sessões, indisponibilidade parcial, degradação de desempenho e operações que precisam ser repetidas.
-
----
+Esse desenho não impede todas as falhas. O objetivo é reduzir interrupções e limitar o impacto. Mesmo em uma arquitetura bem projetada, podem existir tempo de detecção, tempo de [[Failover]], reconexões, perda de sessão, indisponibilidade parcial, degradação de desempenho e operações que precisam ser repetidas.
 
 ## Componentes
 
-Alta disponibilidade usa:
+Os componentes mais comuns de alta disponibilidade aparecem juntos. Redundância cria alternativas. [[Application Load Balancer|Load balancers]] distribuem tráfego. [[Health Checks]] identificam destinos ruins. [[Auto Scaling Groups]] ajustam ou repõem capacidade. Bancos [[Multi-AZ]] reduzem dependência de uma única zona. Backups, monitoramento, alarmes e testes confirmam se o desenho funciona quando algo falha.
 
-* redundância;
-* múltiplas AZs;
-* health checks;
-* load balancers;
-* failover;
-* replicação;
-* backups;
-* monitoramento;
-* automação;
-* bancos Multi-AZ.
-
----
+O ponto importante é que nenhum componente isolado resolve tudo. Auto Scaling não garante alta disponibilidade sozinho. Ter múltiplas instâncias sem health check pode manter falhas ativas. Ter várias AZs disponíveis na região não distribui automaticamente todos os recursos. Recursos zonais, subnets, bancos, permissões, rotas e capacidade precisam ser configurados de forma coerente.
 
 ## Exemplo
 
-Uma aplicação com uma única instância EC2 tem baixa disponibilidade.
+Uma aplicação com uma única instância EC2 tem baixa disponibilidade porque essa instância é um ponto único de falha. Se ela parar, a aplicação para junto.
 
-Uma aplicação com várias instâncias em múltiplas AZs, atrás de um [[Application Load Balancer]], com [[Auto Scaling Groups]] e banco [[Multi-AZ]], possui disponibilidade maior. Isso não garante funcionamento sem interrupção; o resultado depende de health checks corretos, capacidade suficiente nas AZs restantes, dados recuperáveis e aplicação preparada para reconectar.
+Um desenho mais disponível pode colocar várias instâncias em múltiplas AZs atrás de um [[Application Load Balancer]], usar [[Auto Scaling Groups]] para repor capacidade e manter um banco configurado com [[Multi-AZ]]. Se uma instância falhar, o balanceador pode parar de enviar tráfego para ela depois que o health check detectar o problema. Se uma AZ ficar indisponível, a aplicação pode continuar atendendo pela outra, desde que exista capacidade suficiente e que os dados estejam acessíveis.
 
----
+Isso aumenta a disponibilidade, mas não promete funcionamento sem interrupção. Usuários podem precisar reconectar, sessões podem ser perdidas e algumas operações podem precisar ser repetidas.
 
 ## Relação com Resiliência
 
-[[Resiliência]] inclui alta disponibilidade, recuperação, tolerância a falhas e capacidade de adaptação.
+[[Resiliência]] é mais ampla que alta disponibilidade. Ela inclui recuperação, adaptação, tolerância a falhas, operação durante incidentes e capacidade de voltar a um estado saudável.
 
-Alta disponibilidade é um subconjunto importante da resiliência.
+Alta disponibilidade também não é o mesmo que [[Tolerância a Falhas]]. Alta disponibilidade pode aceitar uma interrupção curta durante detecção e recuperação. Tolerância a falhas busca manter a operação durante falhas específicas previstas no projeto, com impacto mínimo ou imperceptível. A diferença parece pequena no nome, mas muda o nível de exigência da arquitetura.
 
-Alta disponibilidade também não é o mesmo que [[Tolerância a Falhas]]. A alta disponibilidade aceita a possibilidade de uma interrupção curta enquanto o sistema detecta a falha e se recupera. Tolerância a falhas busca manter operação durante a falha com impacto mínimo ou imperceptível, conforme o tipo de falha para o qual a arquitetura foi desenhada.
+## Erros Comuns
 
----
+Um erro comum é assumir que “usar AWS” já resolve disponibilidade. A AWS oferece regiões, AZs, balanceadores, serviços gerenciados e mecanismos de observabilidade, mas o cliente ainda precisa distribuir recursos, remover SPOFs, configurar health checks, testar failover, proteger dados e acompanhar métricas.
 
-## Exemplo Prático
-
-Uma aplicação pode ser distribuída em múltiplas [[Availability Zones (AZ)]], atrás de um [[Application Load Balancer]], com instâncias gerenciadas por [[Amazon EC2 Auto Scaling]] e métricas no [[Amazon CloudWatch]].
-
-Quando a carga aumenta, novas instâncias entram. Quando uma falha ocorre, destinos não saudáveis são removidos.
-
----
-
-## Cuidados importantes
-
-Escalar sem observar pode aumentar custo.
-
-Ter múltiplas instâncias sem health check pode manter falhas ativas.
-
-Ter alta disponibilidade sem testes pode criar falsa confiança.
-
-Por isso, esses conceitos devem ser combinados com métricas, alarmes, limites e testes de resiliência.
-
----
-
-## Como entender isso
-
-Este conceito pertence ao módulo de escalabilidade e alta disponibilidade.
-
-## Ponto central
-
-Escalabilidade é crescer ou reduzir capacidade. Alta disponibilidade é continuar funcionando apesar de falhas.
-
-## Como Diferenciar
-
-* CloudWatch observa.
-* Auto Scaling ajusta capacidade.
-* ELB distribui tráfego.
-* Health checks removem destinos ruins.
-* Multi-AZ reduz falha zonal.
-* RTO e RPO guiam recuperação.
-
-## Cuidado importante
-
-Auto Scaling não garante alta disponibilidade sozinho. Precisa de múltiplas AZs, load balancing e health checks.
-
-Possuir várias AZs disponíveis na região também não distribui automaticamente todos os recursos. Alguns serviços regionais usam múltiplas AZs internamente, mas recursos zonais e várias decisões de arquitetura exigem configuração explícita do cliente.
+Outro erro é escalar sem observar. Mais instâncias podem aumentar custo sem resolver o gargalo real. Se o problema estiver no banco, na rede, em permissões ou em uma dependência externa, aumentar computação pode apenas tornar a falha mais cara.

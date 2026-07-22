@@ -2,9 +2,6 @@ AWS Auto Scaling é uma abordagem e serviço de coordenação para configurar po
 
 Ele ajuda a enxergar escala como uma propriedade da aplicação, não apenas de instâncias.
 
----
-
-## Visão geral
 
 AWS Auto Scaling ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

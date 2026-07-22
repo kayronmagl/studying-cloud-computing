@@ -2,9 +2,6 @@ Bastion Host é uma instância posicionada como ponto controlado de acesso admin
 
 Em uma arquitetura tradicional, ele fica em uma [[Subnets Públicas|subnet pública]] e permite acesso a recursos em [[Subnets Privadas|subnets privadas]].
 
----
-
-## Visão geral
 
 Bastion Host faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

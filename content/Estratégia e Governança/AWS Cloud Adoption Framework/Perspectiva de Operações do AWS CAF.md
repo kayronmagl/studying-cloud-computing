@@ -2,9 +2,6 @@ Perspectiva de Operações do AWS CAF foca em garantir que serviços em nuvem se
 
 Ela envolve operação, monitoramento, suporte, incidentes, automação e melhoria contínua.
 
----
-
-## Visão geral
 
 Depois que a aplicação está na nuvem, alguém precisa operá-la.
 

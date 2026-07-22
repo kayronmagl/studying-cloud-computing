@@ -2,9 +2,6 @@ AWS Key Management Service, ou KMS, é o serviço da AWS para criar, gerenciar e
 
 Ele é usado por diversos serviços AWS para criptografia em repouso e controle de acesso a chaves.
 
----
-
-## Visão geral
 
 Em AWS Key Management Service (KMS), pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

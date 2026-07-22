@@ -2,9 +2,6 @@ Amazon ElastiCache é o serviço gerenciado de cache em memória da AWS, com sup
 
 Ele é usado para reduzir latência e aliviar bancos de dados.
 
----
-
-## Visão geral
 
 Amazon ElastiCache deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

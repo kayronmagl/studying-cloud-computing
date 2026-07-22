@@ -2,9 +2,6 @@ Amazon MemoryDB é um banco em memória compatível com Redis, projetado para du
 
 Ele se diferencia de cache puro porque pode atuar como banco primário em memória para determinados workloads.
 
----
-
-## Visão geral
 
 Amazon MemoryDB deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

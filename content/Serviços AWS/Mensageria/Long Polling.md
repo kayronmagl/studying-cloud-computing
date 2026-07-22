@@ -2,9 +2,6 @@ Long Polling é uma técnica do [[Amazon SQS]] para reduzir respostas vazias ao 
 
 Em vez de responder imediatamente quando não há mensagens, o SQS pode esperar por um curto período até uma mensagem chegar.
 
----
-
-## Visão geral
 
 Long Polling aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

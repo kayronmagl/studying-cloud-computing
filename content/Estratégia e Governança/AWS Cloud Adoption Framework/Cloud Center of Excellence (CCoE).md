@@ -2,9 +2,6 @@ Cloud Center of Excellence (CCoE) é um grupo ou função organizacional que aju
 
 Ele reúne pessoas de áreas técnicas, segurança, operações, finanças e negócio para criar padrões, orientar equipes e acelerar transformação.
 
----
-
-## Visão geral
 
 Pense no CCoE como um time de referência.
 
@@ -34,7 +31,6 @@ O CCoE aparece como prática comum em jornadas de transformação, porque ajuda 
 
 ## Como Diferenciar
 
-Quando o cenário envolve em um grupo central que orienta adoção de nuvem, boas práticas e governança, CCoE costuma ser a associação mais direta.
 
 ---
 

@@ -2,9 +2,6 @@ O Usuário Root da Conta AWS é a identidade original da conta AWS.
 
 Ele possui acesso total à conta e a recursos críticos de faturamento, segurança e configuração.
 
----
-
-## Visão geral
 
 Em Usuário Root da Conta AWS, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

@@ -2,9 +2,6 @@ AWS Cost Anomaly Detection é o recurso da AWS para detectar anomalias de custo 
 
 Ele monitora padrões de gasto e alerta quando identifica comportamento incomum.
 
----
-
-## Visão geral
 
 AWS Cost Anomaly Detection mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

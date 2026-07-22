@@ -2,9 +2,6 @@ Event Streaming é o processamento contínuo de eventos conforme eles são produ
 
 Em vez de esperar lotes periódicos, sistemas leem e processam dados em fluxo.
 
----
-
-## Visão geral
 
 Event Streaming aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

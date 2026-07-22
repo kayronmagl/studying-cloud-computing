@@ -2,9 +2,6 @@ Controlar Custos da AWS é a capacidade de estabelecer limites, alertas, permiss
 
 Controle não significa impedir todo gasto. Significa evitar surpresa e manter uso dentro de limites aceitáveis.
 
----
-
-## Visão geral
 
 Controlar Custos da AWS mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

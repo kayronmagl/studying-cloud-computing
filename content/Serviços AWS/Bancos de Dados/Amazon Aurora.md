@@ -2,9 +2,6 @@ Amazon Aurora é um banco relacional gerenciado da AWS compatível com MySQL e P
 
 Ele faz parte da família relacional, mas usa uma arquitetura de armazenamento distribuído própria da AWS, separando parte do mecanismo de computação e armazenamento.
 
----
-
-## Visão geral
 
 Amazon Aurora deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

@@ -2,9 +2,6 @@ Refatorar é a estratégia de migração em que a aplicação é redesenhada par
 
 Também aparece como refactor ou re-architect.
 
----
-
-## Visão geral
 
 Refatorar é mais profundo do que migrar.
 

@@ -52,17 +52,15 @@ A escolha correta depende do padrão de acesso.
 
 ## Exemplo Prático
 
-Imagine uma aplicação web simples. Ela precisa receber requisições, processar dados, gravar informações, proteger acesso e responder ao usuário.
+Imagine uma aplicação que precisa buscar rapidamente o perfil de um usuário por identificador. Se o padrão principal de acesso é “dado este ID, recupere este documento”, um banco de documentos ou chave-valor pode ser mais simples e eficiente do que espalhar os mesmos dados em várias tabelas e fazer joins a cada leitura.
 
-Mesmo usando AWS, a aplicação ainda depende de conceitos como rede, protocolo, servidor, banco, API e armazenamento. A diferença é que muitos desses elementos deixam de ser comprados e instalados manualmente e passam a ser configurados por serviço.
+O raciocínio muda quando a aplicação precisa de relatórios complexos, relações ricas entre várias entidades ou transações amplas. Nesses casos, a flexibilidade do NoSQL pode virar custo de modelagem e operação. A escolha precisa partir das perguntas que a aplicação fará aos dados.
 
 ---
 
 ## Cuidados importantes
 
-O erro comum é decorar o nome do serviço sem entender o fundamento. Isso gera confusão, por exemplo, ao comparar banco relacional com NoSQL, servidor físico com instância virtual, ou API com interface gráfica.
-
-Por isso, esta nota deve funcionar como camada de apoio para entender os módulos posteriores.
+NoSQL não significa “sem regras” nem “sempre mais rápido”. Muitos bancos NoSQL exigem modelagem cuidadosa, definição clara de chaves, entendimento de consistência e atenção aos custos de leitura e escrita. O ganho costuma aparecer quando o modelo escolhido combina com o padrão real de acesso.
 
 ## Tipos de bancos NoSQL
 

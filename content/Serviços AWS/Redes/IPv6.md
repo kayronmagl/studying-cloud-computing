@@ -2,9 +2,6 @@ IPv6 é a versão do protocolo IP criada para ampliar o espaço de endereços e 
 
 Na AWS, VPCs e subnets podem usar IPv4, IPv6 ou dual-stack, dependendo da configuração e suporte dos serviços.
 
----
-
-## Visão geral
 
 IPv6 faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

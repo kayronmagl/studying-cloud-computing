@@ -2,9 +2,6 @@ AWS Elastic Beanstalk é um serviço para implantar, monitorar e escalar aplica�
 
 Você envia a aplicação, escolhe a plataforma e o Beanstalk provisiona recursos como instâncias EC2, balanceamento de carga, monitoramento de integridade e escalabilidade do ambiente.
 
----
-
-## Visão geral
 
 Elastic Beanstalk fica entre controle e simplicidade.
 
@@ -22,7 +19,6 @@ Nesse caso, o Elastic Beanstalk pode criar o ambiente, implantar a aplicação e
 
 ## Como Diferenciar
 
-Quando o cenário envolve em implantar e dimensionar rapidamente aplicações na AWS, [[AWS Elastic Beanstalk]] costuma ser a associação mais direta.
 
 ---
 

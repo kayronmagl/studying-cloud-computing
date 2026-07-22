@@ -2,9 +2,6 @@ Amazon Neptune é o serviço de banco de grafos da AWS.
 
 Ele é usado quando o dado principal é formado por entidades e relacionamentos complexos.
 
----
-
-## Visão geral
 
 Amazon Neptune deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

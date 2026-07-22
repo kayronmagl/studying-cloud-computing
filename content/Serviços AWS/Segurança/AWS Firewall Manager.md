@@ -2,9 +2,6 @@ AWS Firewall Manager é o serviço da AWS para gerenciar políticas de seguranç
 
 Ele é especialmente útil em organizações com várias contas usando [[AWS Organizations]].
 
----
-
-## Visão geral
 
 Em AWS Firewall Manager, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

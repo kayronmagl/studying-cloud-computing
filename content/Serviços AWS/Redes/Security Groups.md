@@ -2,9 +2,6 @@ Security Groups são firewalls virtuais associados a recursos dentro de uma [[Am
 
 Eles controlam tráfego de entrada e saída de recursos como instâncias EC2, load balancers, bancos RDS e interfaces de rede.
 
----
-
-## Visão geral
 
 Security Groups faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

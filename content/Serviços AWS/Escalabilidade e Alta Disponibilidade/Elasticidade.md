@@ -2,9 +2,6 @@ Elasticidade é a capacidade de aumentar ou reduzir recursos automaticamente con
 
 Ela é uma característica central da computação em nuvem.
 
----
-
-## Visão geral
 
 Elasticidade ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

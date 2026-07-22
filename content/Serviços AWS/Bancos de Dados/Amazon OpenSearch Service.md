@@ -2,9 +2,6 @@ Amazon OpenSearch Service é o serviço gerenciado da AWS para busca, análise t
 
 Ele é baseado no ecossistema OpenSearch.
 
----
-
-## Visão geral
 
 Amazon OpenSearch Service deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 

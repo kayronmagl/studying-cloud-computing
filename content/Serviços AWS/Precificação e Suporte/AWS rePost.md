@@ -2,9 +2,6 @@ AWS re: Post é a comunidade de perguntas e respostas da AWS.
 
 Ele funciona como espaço para consultar dúvidas, respostas, experiências e discussões sobre serviços AWS.
 
----
-
-## Visão geral
 
 AWS rePost mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

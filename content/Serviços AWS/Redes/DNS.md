@@ -4,9 +4,6 @@ Ele traduz nomes legíveis em informações de rede, como endereços IP ou alias
 
 Sem DNS, usuários precisariam acessar serviços por endereços técnicos difíceis de memorizar e instáveis.
 
----
-
-## Visão geral
 
 DNS faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

@@ -70,19 +70,19 @@ Essa diferença evita o erro de tentar resolver todo problema de persistência c
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
-Em uma aplicação real, o usuário acessa uma interface web, a requisição trafega pela rede, chega a servidores ou funções, consulta bancos e retorna dados. Mesmo que tudo esteja na AWS, os fundamentos continuam existindo.
+Em uma aplicação de pedidos, o banco precisa guardar clientes, produtos, estoque, pagamentos e o estado de cada compra. Quando o usuário confirma o pedido, a aplicação não está apenas salvando um texto em algum lugar. Ela precisa preservar relações, impedir gravações conflitantes, consultar dados rapidamente e permitir recuperação se algo falhar.
 
-A diferença é que o provisionamento, a escala, a segurança e a cobrança passam a ser controlados por serviços, políticas e APIs.
+Na nuvem, o provedor pode facilitar a criação do banco, automatizar backups, oferecer réplicas e expor métricas. Ainda assim, a equipe precisa escolher o modelo de dados, desenhar índices, configurar permissões, controlar custo e entender como a aplicação acessa as informações.
 
 ---
 
 ## Erros Comuns
 
-O erro mais comum é decorar o nome do serviço sem entender o conceito que ele abstrai.
+Um erro comum é escolher banco de dados pelo nome do serviço, e não pelo formato do problema. Um sistema que precisa de transações fortes, relações claras e consultas com joins pode se encaixar melhor em um banco relacional. Um sistema que consulta sempre por chave, aceita modelagem orientada ao acesso e precisa escalar horizontalmente pode se encaixar melhor em um modelo NoSQL.
 
-Isso prejudica escolhas como EC2 versus Lambda, RDS versus DynamoDB, S3 versus EBS, ou internet pública versus rede privada.
+Outro erro é confundir armazenamento com banco de dados. Um serviço de armazenamento guarda bytes, arquivos ou objetos. Um banco de dados acrescenta regras de consulta, concorrência, consistência e recuperação.
 
 ---
 

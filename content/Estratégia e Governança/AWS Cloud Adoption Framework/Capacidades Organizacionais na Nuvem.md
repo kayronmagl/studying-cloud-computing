@@ -2,9 +2,6 @@ Capacidades Organizacionais na Nuvem são habilidades, processos e práticas que
 
 No AWS CAF, as perspectivas agrupam capacidades relacionadas.
 
----
-
-## Visão geral
 
 Uma capacidade é algo que a organização consegue fazer de forma consistente.
 
@@ -46,7 +43,6 @@ Isso ajuda a descobrir lacunas:
 
 ## Como Diferenciar
 
-Quando o cenário envolve em desenvolver capacidades para adoção bem-sucedida de nuvem, AWS CAF costuma ser a associação mais direta.
 
 ---
 

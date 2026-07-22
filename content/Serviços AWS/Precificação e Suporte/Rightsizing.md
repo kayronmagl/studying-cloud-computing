@@ -2,9 +2,6 @@ Rightsizing é o processo de ajustar recursos ao tamanho correto para a carga re
 
 Ele evita pagar por capacidade ociosa ou sofrer com recursos subdimensionados.
 
----
-
-## Visão geral
 
 Rightsizing mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

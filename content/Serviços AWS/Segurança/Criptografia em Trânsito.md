@@ -2,9 +2,6 @@ Criptografia em Trânsito protege dados enquanto trafegam entre clientes, aplica
 
 Ela normalmente é implementada com TLS, o protocolo usado por HTTPS para proteger confidencialidade e integridade durante a comunicação.
 
----
-
-## Visão geral
 
 Em Criptografia em Trânsito, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

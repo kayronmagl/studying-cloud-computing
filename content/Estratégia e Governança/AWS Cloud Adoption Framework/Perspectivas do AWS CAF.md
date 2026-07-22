@@ -2,9 +2,6 @@ Perspectivas do AWS CAF são as seis áreas usadas pelo AWS Cloud Adoption Frame
 
 Elas ajudam a separar responsabilidades e evitar que a adoção da nuvem seja vista apenas como trabalho da equipe técnica.
 
----
-
-## Visão geral
 
 Imagine que uma empresa decide migrar para AWS.
 

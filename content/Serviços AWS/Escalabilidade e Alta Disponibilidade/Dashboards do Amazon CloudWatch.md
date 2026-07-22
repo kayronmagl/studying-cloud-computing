@@ -2,9 +2,6 @@ Dashboards do Amazon CloudWatch são painéis visuais para acompanhar métricas 
 
 Eles ajudam a reunir sinais de múltiplos serviços em uma visão única.
 
----
-
-## Visão geral
 
 Dashboards do Amazon CloudWatch ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

@@ -2,9 +2,6 @@ AWS Fault Injection Service, ou AWS FIS, é o serviço da AWS para executar expe
 
 Ele é usado para testar resiliência de workloads.
 
----
-
-## Visão geral
 
 AWS Fault Injection Service (FIS) ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

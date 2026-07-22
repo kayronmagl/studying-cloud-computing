@@ -2,9 +2,6 @@ Perspectiva de Pessoas do AWS CAF trata de cultura, liderança, habilidades, cap
 
 Ela reconhece que adoção de nuvem exige pessoas preparadas.
 
----
-
-## Visão geral
 
 Uma empresa pode comprar bons serviços AWS e ainda falhar se as pessoas não souberem usar, operar, proteger e governar esses serviços.
 

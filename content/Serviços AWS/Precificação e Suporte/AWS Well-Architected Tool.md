@@ -2,9 +2,6 @@ AWS Well-Architected Tool é a ferramenta da AWS para realizar revisões baseada
 
 Ela ajuda a documentar workloads, responder perguntas por pilar e identificar riscos.
 
----
-
-## Visão geral
 
 AWS Well-Architected Tool mostra que nuvem também é decisão financeira. O custo não aparece só porque um serviço existe; ele aparece pelo modo como você usa, escala, transfere, armazena e monitora.
 

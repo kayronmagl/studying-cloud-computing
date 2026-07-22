@@ -4,11 +4,7 @@ A nuvem oferece recursos para reduzir SPOFs, como [[High Availability]], múltip
 
 ---
 
-## Visão geral
-
-Single Points of Failure (SPOF) é uma ideia de localização, falha ou distribuição. Quando estudar, pergunte: “onde o recurso fica?” e “o que acontece se uma parte falhar?”.
-
-Esse raciocínio é essencial para entender alta disponibilidade, disaster recovery e latência.
+## Onde SPOFs aparecem
 
 Um SPOF pode ser uma única instância, um único banco, uma única regra de roteamento, uma credencial, uma configuração centralizada, uma dependência externa ou uma equipe/processo sem alternativa operacional.
 
@@ -37,7 +33,7 @@ Não basta “usar AWS”. É necessário desenhar onde e como os recursos serã
 
 ---
 
-## Exemplo Arquitetural
+## Exemplo
 
 Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Esse desenho reduz alguns SPOFs, mas ainda precisa verificar dependências compartilhadas, capacidade restante, dados e configuração de failover.
 

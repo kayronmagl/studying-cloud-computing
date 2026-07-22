@@ -2,9 +2,6 @@ Network ACLs, ou NACLs, são listas de controle de acesso aplicadas no nível da
 
 Elas permitem ou negam tráfego de entrada e saída.
 
----
-
-## Visão geral
 
 Network ACLs faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

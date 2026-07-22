@@ -2,9 +2,6 @@ Acoplamento Fraco é um princípio arquitetural em que componentes dependem o m�
 
 Isso melhora resiliência, escalabilidade e facilidade de mudança.
 
----
-
-## Visão geral
 
 Imagine dois sistemas conectados diretamente.
 

@@ -2,9 +2,6 @@ Orquestração é o modelo em que um componente central coordena as etapas de um
 
 Em serverless, [[AWS Step Functions]] é o principal serviço de orquestração. Ele define a ordem, condições, retries, paralelismo e tratamento de erro de um workflow.
 
----
-
-## Visão geral
 
 Orquestração faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 

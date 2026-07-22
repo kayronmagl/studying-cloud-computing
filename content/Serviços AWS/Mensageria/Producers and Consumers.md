@@ -2,9 +2,6 @@ Producers and Consumers são produtores e consumidores de mensagens, eventos ou 
 
 Produtores escrevem. Consumidores leem e processam.
 
----
-
-## Visão geral
 
 Producers and Consumers aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

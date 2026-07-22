@@ -2,9 +2,6 @@ Visibility Timeout é o período em que uma mensagem recebida do [[Amazon SQS]] 
 
 Ele começa quando a mensagem é entregue a um consumidor.
 
----
-
-## Visão geral
 
 Visibility Timeout aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

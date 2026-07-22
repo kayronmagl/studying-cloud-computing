@@ -2,9 +2,6 @@ Data Records são registros enviados para [[Amazon Kinesis Data Streams]].
 
 Cada registro contém dados, partition key e metadados como sequence number.
 
----
-
-## Visão geral
 
 Data Records aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

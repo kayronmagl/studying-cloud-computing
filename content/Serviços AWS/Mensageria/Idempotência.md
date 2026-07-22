@@ -2,9 +2,6 @@ Idempotência é a propriedade de uma operação produzir o mesmo resultado mesm
 
 Em mensageria, idempotência é fundamental porque mensagens podem ser entregues novamente, eventos podem ser repetidos e consumidores podem falhar depois de executar parte da lógica.
 
----
-
-## Visão geral
 
 Idempotência aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

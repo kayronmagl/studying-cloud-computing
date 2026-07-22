@@ -2,9 +2,6 @@ VPC Flow Logs registram metadados de tráfego de rede em uma [[Amazon VPC]].
 
 Eles podem ser habilitados em VPCs, subnets ou interfaces de rede.
 
----
-
-## Visão geral
 
 VPC Flow Logs faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 

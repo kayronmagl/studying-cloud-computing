@@ -2,9 +2,6 @@ Bulkhead Pattern é um padrão de resiliência que isola recursos para evitar qu
 
 O nome vem de compartimentos estanques de navios: se um compartimento alaga, o navio não afunda inteiro.
 
----
-
-## Visão geral
 
 Bulkhead Pattern ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

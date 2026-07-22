@@ -2,9 +2,6 @@ Permission Boundaries são limites máximos de permissão aplicados a identidade
 
 Elas não concedem permissão sozinhas. Elas definem o máximo que uma identidade pode receber.
 
----
-
-## Visão geral
 
 Em Permission Boundaries, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

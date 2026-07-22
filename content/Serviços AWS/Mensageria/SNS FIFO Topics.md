@@ -2,9 +2,6 @@ SNS FIFO Topics são tópicos FIFO do [[Amazon SNS]].
 
 Eles oferecem publicação com ordenação e deduplicação em integração com filas FIFO e padrões que exigem consistência de ordem.
 
----
-
-## Visão geral
 
 SNS FIFO Topics aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 

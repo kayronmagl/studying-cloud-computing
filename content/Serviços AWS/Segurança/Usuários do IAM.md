@@ -2,9 +2,6 @@ Usuários do IAM são identidades permanentes criadas dentro de uma conta AWS.
 
 Um usuário pode representar uma pessoa, um administrador, um operador ou uma integração técnica. Ele pode ter senha para o [[AWS Management Console]] e/ou [[Access Keys|access keys]] para acesso programático por [[AWS CLI]], [[AWS SDKs]] e [[APIs]].
 
----
-
-## Visão geral
 
 Em Usuários do IAM, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 

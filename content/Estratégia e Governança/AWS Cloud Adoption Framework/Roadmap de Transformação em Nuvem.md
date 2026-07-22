@@ -2,9 +2,6 @@ Roadmap de Transformação em Nuvem é o plano evolutivo que organiza iniciativa
 
 Ele mostra prioridades, dependências, fases e resultados esperados.
 
----
-
-## Visão geral
 
 Pense no roadmap como um plano de viagem.
 

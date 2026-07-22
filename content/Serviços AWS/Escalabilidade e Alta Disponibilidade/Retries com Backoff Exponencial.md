@@ -2,9 +2,6 @@ Retries com Backoff Exponencial são tentativas de repetição com espera cresce
 
 Esse padrão é usado para lidar com falhas transitórias.
 
----
-
-## Visão geral
 
 Retries com Backoff Exponencial ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 

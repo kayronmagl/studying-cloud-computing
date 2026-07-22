@@ -2,9 +2,6 @@ Hosts Dedicados do Amazon EC2 são servidores físicos dedicados ao uso de um cl
 
 Eles aparecem quando uma empresa precisa de isolamento físico, controle de licenciamento ou requisitos específicos de conformidade.
 
----
-
-## Visão geral
 
 Em uma instância EC2 comum, a AWS fornece isolamento lógico entre clientes. Em alguns cenários, porém, isso não é suficiente para a regra da empresa, licença de software ou exigência de auditoria.
 
@@ -25,7 +22,6 @@ Dedicated Hosts dão mais visibilidade e controle sobre o servidor físico em qu
 
 ## Como Diferenciar
 
-Quando o cenário envolve em isolamento físico de instâncias EC2 em relação às instâncias de outros clientes, [[Hosts Dedicados do Amazon EC2]] costuma ser a associação mais direta.
 
 ---
 

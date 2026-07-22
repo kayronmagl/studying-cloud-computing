@@ -1,8 +1,5 @@
 CapEx são gastos de capital em ativos duráveis, como servidores e prédios. A nuvem reduz CapEx ao trocar compra antecipada por consumo.
 
----
-
-## Visão geral
 
 CapEx (Capital Expenditures) explica a lógica econômica da nuvem. Não é só contabilidade: é como a forma de pagar muda a forma de projetar sistemas.
 
