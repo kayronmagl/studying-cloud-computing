@@ -1,6 +1,5 @@
 ---
 title: Computação em nuvem
-socialImage: og-image.png
 ---
 Aqui você vai aprender e se aprofundar em **computação em nuvem** com minhas notas de tudo que estudei até aqui no programa do **Treina Brasil** em parceria com a **Santander Open Academy** e também alguns aprendizados do meu curso técnico de computação em nuvem pelo **IFCE**.
 
@@ -11,7 +10,7 @@ Aqui você vai aprender e se aprofundar em **computação em nuvem** com minhas 
 
 Aproveitem o conteúdo, espero que ajude!
 
-sugestões são muito bem-vindas.
+Sugestões são muito bem-vindas.
 
 
 <details>

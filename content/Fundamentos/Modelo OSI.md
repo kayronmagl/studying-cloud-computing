@@ -1,20 +1,30 @@
 O Modelo OSI organiza a comunicação de rede em camadas conceituais. Ele não é uma pilha usada literalmente por toda aplicação moderna, mas ajuda a separar responsabilidades: uma coisa é o sinal físico chegar ao equipamento, outra é o pacote encontrar uma rota, outra é a conexão de transporte funcionar, e outra é a aplicação entender a requisição.
 
-## Exemplo Prático
+---
+
+## O que é
+
+Modelo OSI deve ser entendido como base para interpretar a nuvem. Fundamentos explicam o que já existia antes dos provedores e continua aparecendo em serviços modernos.
+
+---
+
+## Por que existe
+
+Modelo OSI existe porque nuvem não substitui os fundamentos de computação. Ela reorganiza infraestrutura, rede, dados, segurança e operação em serviços consumíveis.
+
+---
+
+## Como funciona
+
+Modelo OSI funciona conectando teoria e prática: recurso físico, abstração lógica, software, comunicação, permissão, observação e custo. Essa ligação impede estudar serviços como nomes soltos.
+
+---
+
+## Exemplo prático
 
 Quando uma chamada para uma [[APIs|API]] falha, o problema pode estar em lugares muito diferentes. Pode haver falha de DNS, rota ausente, bloqueio de firewall, porta fechada, problema de TLS, indisponibilidade do serviço ou erro na própria aplicação. O Modelo OSI ajuda a investigar por camadas em vez de tratar tudo como “problema de internet”.
 
 Em nuvem, essa separação continua útil. Uma aplicação pode estar correta do ponto de vista do código e ainda assim não responder porque a rota da sub-rede está errada, a regra de segurança bloqueia a porta ou o nome DNS aponta para o destino incorreto.
-
----
-
-## Cuidados importantes
-
-O modelo é uma ferramenta de raciocínio, não uma lista para decorar. Ele serve para perguntar em que nível o problema acontece: físico, enlace, rede, transporte, sessão, apresentação ou aplicação. Na prática da internet, muitas explicações usam também a pilha TCP/IP, que organiza as camadas de modo diferente.
-
----
-
-## Exemplo
 
 Se uma aplicação web não consegue acessar um banco, a investigação pode começar pela camada de aplicação, conferindo credenciais e string de conexão. Se estiverem corretas, passa para transporte e rede: porta aberta, rota, regras de segurança, resolução de nome e conectividade entre sub-redes.
 
@@ -22,6 +32,22 @@ Esse modo de pensar evita mudanças aleatórias. Em vez de alterar a aplicação
 
 ---
 
-## Erros Comuns
+## Diferenças importantes
+
+Compare Modelo OSI com serviços específicos da AWS. Fundamento explica a ideia geral; serviço é uma implementação concreta dessa ideia dentro de um provedor.
+
+---
+
+## Cuidados
+
+O modelo é uma ferramenta de raciocínio, não uma lista para decorar. Ele serve para perguntar em que nível o problema acontece: físico, enlace, rede, transporte, sessão, apresentação ou aplicação. Na prática da internet, muitas explicações usam também a pilha TCP/IP, que organiza as camadas de modo diferente.
+
+**Erros Comuns**
 
 Um erro comum é usar o Modelo OSI como se ele explicasse sozinho todos os detalhes da internet moderna. Ele ajuda a organizar o diagnóstico, mas precisa ser combinado com conhecimentos práticos de TCP/IP, DNS, TLS, HTTP, roteamento e políticas de segurança.
+
+---
+
+## Relação com outras notas
+
+- [[APIs]]

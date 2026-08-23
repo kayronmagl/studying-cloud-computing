@@ -2,13 +2,29 @@ AWS Firewall Manager é o serviço da AWS para gerenciar políticas de seguranç
 
 Ele é especialmente útil em organizações com várias contas usando [[AWS Organizations]].
 
-
 Em AWS Firewall Manager, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
-
 
 ---
 
-## O que Gerencia
+## O que é
+
+AWS Firewall Manager deve ser entendido como controle de confiança. Segurança em nuvem envolve identidade, autenticação, autorização, criptografia, auditoria, isolamento e resposta a incidentes.
+
+Segurança combina [[AWS Identity and Access Management (IAM)|IAM]], rede, criptografia, auditoria, detecção e proteção de aplicação.
+
+---
+
+## Por que existe
+
+Em ambientes com muitas contas, configurar WAF e regras manualmente em cada aplicação é difícil.
+
+Firewall Manager centraliza a aplicação de políticas e reduz inconsistência.
+
+---
+
+## Como funciona
+
+**O que Gerencia**
 
 Firewall Manager pode ajudar a aplicar políticas relacionadas a:
 
@@ -20,29 +36,9 @@ Firewall Manager pode ajudar a aplicar políticas relacionadas a:
 
 ---
 
-## Por que Importa
-
-Em ambientes com muitas contas, configurar WAF e regras manualmente em cada aplicação é difícil.
-
-Firewall Manager centraliza a aplicação de políticas e reduz inconsistência.
-
----
-
-## Exemplo
+## Exemplo prático
 
 Uma organização pode exigir que todos os CloudFront distributions usem uma Web ACL padrão com managed rules.
-
----
-
-## Cuidado
-
-Política centralizada precisa considerar exceções legítimas.
-
-Segurança central não deve quebrar aplicações sem processo de governança.
-
----
-
-## Exemplo Prático
 
 Uma aplicação pública pode usar [[AWS WAF]] para filtrar requisições, [[AWS Shield]] para proteção DDoS, [[AWS Identity and Access Management (IAM)|IAM]] para permissões, [[AWS Key Management Service (KMS)|KMS]] para chaves e [[AWS CloudTrail]] para auditoria.
 
@@ -50,31 +46,39 @@ Essas camadas reduzem risco de exposição, abuso e alteração indevida.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* [[AWS Identity and Access Management (IAM)|IAM]] controla permissões.
+* KMS gerencia chaves.
+* WAF filtra HTTP/HTTPS.
+* Shield protege contra DDoS.
+* CloudTrail audita chamadas de [[APIs|API]].
+* GuardDuty detecta ameaças.
+
+---
+
+## Cuidados
+
+Política centralizada precisa considerar exceções legítimas.
+
+Segurança central não deve quebrar aplicações sem processo de governança.
 
 O erro comum é confundir “serviço seguro” com “configuração segura”.
 
 A AWS protege a infraestrutura, mas o cliente ainda precisa configurar identidade, rede, dados, logs e aplicação corretamente.
 
+Permissão demais é risco. Aplique menor privilégio e use roles temporárias sempre que possível.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence ao módulo de segurança na AWS.
-
-## Ponto central
-
-Segurança combina IAM, rede, criptografia, auditoria, detecção e proteção de aplicação.
-
-## Como Diferenciar
-
-* IAM controla permissões.
-* KMS gerencia chaves.
-* WAF filtra HTTP/HTTPS.
-* Shield protege contra DDoS.
-* CloudTrail audita chamadas de API.
-* GuardDuty detecta ameaças.
-
-## Cuidado importante
-
-Permissão demais é risco. Aplique menor privilégio e use roles temporárias sempre que possível.
+- [[AWS Organizations]]
+- [[AWS WAF]]
+- [[AWS Shield Advanced]]
+- [[AWS Shield]]
+- [[AWS Identity and Access Management (IAM)]]
+- [[AWS Key Management Service (KMS)]]
+- [[AWS CloudTrail]]

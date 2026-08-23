@@ -4,55 +4,66 @@ Ele traduz nomes legíveis em informações de rede, como endereços IP ou alias
 
 Sem DNS, usuários precisariam acessar serviços por endereços técnicos difíceis de memorizar e instáveis.
 
-
 DNS faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 
 Sempre pergunte: “quem precisa falar com quem, por qual caminho, e com qual permissão?”.
 
 ---
 
-## Exemplo
+## O que é
 
-* app.exemplo.com: ↓.
-* load balancer: ↓.
-* aplicação
+DNS deve ser entendido pelo caminho do tráfego: origem, destino, protocolo, porta, rota, nome DNS e limite de isolamento. Rede na AWS define quem consegue falar com quem e por onde os pacotes passam.
 
-
-DNS permite que o nome permaneça estável mesmo quando a infraestrutura muda.
+Rede define isolamento, caminhos, exposição, conectividade privada, DNS e segurança de tráfego.
 
 ---
 
-## Relação com AWS
+## Por que existe
 
-Na AWS, o serviço DNS principal é o [[Amazon Route 53]].
-
-Ele gerencia zonas, registros, roteamento e health checks.
+DNS existe para controlar comunicação entre recursos, usuários, serviços e ambientes externos. Sem desenho de rede claro, surgem exposição indevida, falhas de conectividade, latência difícil de explicar e custo de tráfego inesperado.
 
 ---
 
-## DNS Interno
+## Como funciona
+
+**DNS Interno**
 
 Dentro de uma [[Amazon VPC]], nomes internos também ajudam recursos a se comunicarem sem depender de IPs fixos.
 
 ---
 
-## Cuidado
+## Exemplo prático
 
-DNS possui cache, controlado em parte por [[DNS TTL|TTL]].
+* app.exemplo.com: ↓.
+* load balancer: ↓.
+* aplicação
 
-Mudanças podem não ser percebidas instantaneamente por todos os clientes, dependendo de TTL e resolvers intermediários.
+DNS permite que o nome permaneça estável mesmo quando a infraestrutura muda.
 
----
-
-## Exemplo Prático
-
-Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e VPC Endpoints para acessar serviços AWS sem passar pela internet.
+Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e [[Amazon VPC|VPC]] Endpoints para acessar serviços AWS sem passar pela internet.
 
 Cada componente muda segurança, custo e disponibilidade.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* [[Amazon VPC|VPC]] é regional.
+* Subnet é zonal.
+* Route table define caminho.
+* Security group controla tráfego em recurso.
+* NACL controla tráfego em subnet.
+* NAT Gateway permite saída privada.
+
+---
+
+## Cuidados
+
+DNS possui cache, controlado em parte por [[DNS TTL|TTL]].
+
+Mudanças podem não ser percebidas instantaneamente por todos os clientes, dependendo de TTL e resolvers intermediários.
 
 Rede mal desenhada pode gerar três problemas comuns:
 
@@ -62,25 +73,14 @@ Rede mal desenhada pode gerar três problemas comuns:
 
 Por isso, rede precisa ser estudada junto com segurança, alta disponibilidade e precificação.
 
+Recurso em subnet pública só é realmente público se também tiver IP público e rota adequada.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence ao módulo de redes na AWS.
+**Relação com AWS**
 
-## Ponto central
+Na AWS, o serviço DNS principal é o [[Amazon Route 53]].
 
-Rede define isolamento, caminhos, exposição, conectividade privada, DNS e segurança de tráfego.
-
-## Como Diferenciar
-
-* VPC é regional.
-* Subnet é zonal.
-* Route table define caminho.
-* Security group controla tráfego em recurso.
-* NACL controla tráfego em subnet.
-* NAT Gateway permite saída privada.
-
-## Cuidado importante
-
-Recurso em subnet pública só é realmente público se também tiver IP público e rota adequada.
+Ele gerencia zonas, registros, roteamento e health checks.

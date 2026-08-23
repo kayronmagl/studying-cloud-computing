@@ -2,14 +2,36 @@ Orquestração é o modelo em que um componente central coordena as etapas de um
 
 Em serverless, [[AWS Step Functions]] é o principal serviço de orquestração. Ele define a ordem, condições, retries, paralelismo e tratamento de erro de um workflow.
 
-
 Orquestração faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 
 Leia pensando no fluxo de eventos.
 
 ---
 
-## Exemplo
+## O que é
+
+Orquestração deve ser entendido como execução ou integração sem administração direta de servidores. Os servidores continuam existindo, mas a equipe trabalha mais perto de eventos, funções, limites e configuração do serviço.
+
+---
+
+## Por que existe
+
+* fluxo explícito;
+* visualização clara;
+* tratamento de erro centralizado;
+* retries configuráveis;
+* auditoria;
+* melhor rastreabilidade.
+
+---
+
+## Como funciona
+
+O funcionamento normalmente envolve eventos, funções, integrações gerenciadas, permissões e execução sob demanda. Ao estudar Orquestração, acompanhe o evento de entrada, a execução, o estado, a falha e o registro gerado.
+
+---
+
+## Exemplo prático
 
 Um pedido pode seguir:
 
@@ -21,20 +43,15 @@ Um pedido pode seguir:
 
 O orquestrador sabe qual etapa vem depois e o que fazer em caso de falha.
 
----
+Um upload no [[Amazon S3]] pode acionar uma função [[AWS Lambda]], que processa o arquivo, publica evento no [[Amazon EventBridge]] e envia mensagem para [[Amazon SQS]] em caso de processamento posterior.
 
-## Vantagens
-
-* fluxo explícito;
-* visualização clara;
-* tratamento de erro centralizado;
-* retries configuráveis;
-* auditoria;
-* melhor rastreabilidade.
+Esse fluxo não exige gerenciar servidor, mas exige [[AWS Identity and Access Management (IAM)|IAM]], logs, retries, DLQ e idempotência.
 
 ---
 
-## Diferença para Coreografia
+## Diferenças importantes
+
+**Diferença para Coreografia**
 
 Na [[Coreografia]], não há coordenador central. Cada serviço reage a eventos.
 
@@ -42,16 +59,19 @@ Orquestração é mais explícita. Coreografia é mais descentralizada.
 
 ---
 
-## Exemplo Prático
-
-Um upload no [[Amazon S3]] pode acionar uma função [[AWS Lambda]], que processa o arquivo, publica evento no [[Amazon EventBridge]] e envia mensagem para [[Amazon SQS]] em caso de processamento posterior.
-
-Esse fluxo não exige gerenciar servidor, mas exige IAM, logs, retries, DLQ e idempotência.
-
----
-
-## Cuidados importantes
+## Cuidados
 
 Serverless não elimina arquitetura.
 
 Limites de execução, cold start, concorrência, permissões, custo por invocação e falhas assíncronas precisam ser tratados de forma explícita.
+
+---
+
+## Relação com outras notas
+
+- [[AWS Step Functions]]
+- [[Amazon S3]]
+- [[AWS Lambda]]
+- [[Amazon EventBridge]]
+- [[Amazon SQS]]
+- [[Coreografia]]

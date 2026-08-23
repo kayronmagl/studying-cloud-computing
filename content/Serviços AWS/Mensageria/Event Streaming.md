@@ -2,25 +2,29 @@ Event Streaming é o processamento contínuo de eventos conforme eles são produ
 
 Em vez de esperar lotes periódicos, sistemas leem e processam dados em fluxo.
 
-
 Event Streaming aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 
 Ao estudar, pense sempre em produtor, consumidor, mensagem, retry e DLQ.
 
 ---
 
-## Exemplos
+## O que é
 
-* logs de aplicação;
-* eventos de clique;
-* telemetria IoT;
-* transações;
-* métricas;
-* eventos de pedidos.
+Event Streaming deve ser entendido como comunicação indireta entre partes de uma aplicação. Em vez de um componente depender da resposta imediata de outro, mensagens permitem desacoplar envio, espera, processamento e falha.
+
+Mensageria desacopla produtores e consumidores.
 
 ---
 
-## AWS
+## Por que existe
+
+Event Streaming existe para desacoplar partes de uma aplicação, absorver variação de carga e permitir comunicação assíncrona ou orientada a eventos. Sem mensageria, componentes ficam mais dependentes do tempo de resposta uns dos outros.
+
+---
+
+## Como funciona
+
+**AWS**
 
 Serviços importantes:
 
@@ -29,31 +33,7 @@ Serviços importantes:
 * [[Amazon Data Firehose]];
 * [[Amazon Managed Service for Apache Flink]].
 
----
-
-## Diferença para Fila
-
-Fila costuma representar trabalho a ser processado.
-
-Stream representa sequência contínua de eventos com retenção e múltiplos consumidores.
-
----
-
-## Cuidado
-
-Streaming exige pensar em ordenação, retenção, atraso, throughput e reprocessamento.
-
----
-
-## Diferença para Eventos Isolados
-
-Em event streaming, o foco é o fluxo contínuo.
-
-Não se trata apenas de reagir a um evento individual, mas de processar muitos eventos ao longo do tempo.
-
----
-
-## Exemplos de Uso
+**Exemplos de Uso**
 
 * monitoramento em tempo real;
 * fraude;
@@ -65,45 +45,62 @@ Não se trata apenas de reagir a um evento individual, mas de processar muitos e
 
 ---
 
-## Relação com Kinesis e Kafka
+## Exemplo prático
 
-[[Amazon Kinesis Data Streams]] e [[Amazon MSK]] são serviços centrais para event streaming na AWS.
+* logs de aplicação;
+* eventos de clique;
+* telemetria IoT;
+* transações;
+* métricas;
+* eventos de pedidos.
 
-Eles permitem múltiplos consumidores e processamento contínuo.
-
----
-
-## Exemplo Prático
-
-Uma API pode receber uma solicitação, publicar uma mensagem em [[Amazon SQS]] e responder rapidamente ao usuário. Workers processam a fila depois. Se falharem, mensagens podem ser repetidas ou enviadas para [[Dead Letter Queue (DLQ)]].
+Uma [[APIs|API]] pode receber uma solicitação, publicar uma mensagem em [[Amazon SQS]] e responder rapidamente ao usuário. Workers processam a fila depois. Se falharem, mensagens podem ser repetidas ou enviadas para [[Dead Letter Queue (DLQ)]].
 
 Em outro cenário, [[Amazon SNS]] distribui uma mensagem para vários consumidores, enquanto [[Amazon EventBridge]] roteia eventos por padrão.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
 
-Mensageria exige lidar com duplicidade, ordem, atraso, reprocessamento e observabilidade.
+**Diferença para Fila**
 
-Não basta “colocar na fila”. O consumidor precisa ser idempotente, monitorado e preparado para falhas.
+Fila costuma representar trabalho a ser processado.
 
-## Como entender isso
+Stream representa sequência contínua de eventos com retenção e múltiplos consumidores.
 
-Este conceito pertence ao módulo de mensageria na AWS.
+**Diferença para Eventos Isolados**
 
-## Ponto central
+Em event streaming, o foco é o fluxo contínuo.
 
-Mensageria desacopla produtores e consumidores.
+Não se trata apenas de reagir a um evento individual, mas de processar muitos eventos ao longo do tempo.
 
-## Como Diferenciar
+**Como Diferenciar**
 
-* SQS é fila.
+* [[Amazon SQS|SQS]] é fila.
 * SNS é pub/sub.
 * EventBridge é barramento de eventos.
 * MQ é broker gerenciado.
 * MSK é Kafka gerenciado.
 * Kinesis é streaming.
 
-## Cuidado importante
+---
+
+## Cuidados
+
+Streaming exige pensar em ordenação, retenção, atraso, throughput e reprocessamento.
+
+Mensageria exige lidar com duplicidade, ordem, atraso, reprocessamento e observabilidade.
+
+Não basta “colocar na fila”. O consumidor precisa ser idempotente, monitorado e preparado para falhas.
 
 Mensageria exige idempotência, retries, DLQ e observabilidade.
+
+---
+
+## Relação com outras notas
+
+**Relação com Kinesis e Kafka**
+
+[[Amazon Kinesis Data Streams]] e [[Amazon MSK]] são serviços centrais para event streaming na AWS.
+
+Eles permitem múltiplos consumidores e processamento contínuo.

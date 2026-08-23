@@ -108,9 +108,9 @@ Por isso, borda não é apenas um assunto de velocidade. Ela conecta desempenho,
 
 A AWS pode ser usada por diferentes interfaces. Para quem está começando, o console web costuma ser o primeiro contato. Ele mostra recursos, botões, formulários e telas de configuração. Isso ajuda a enxergar o ambiente, mas não significa que a nuvem seja administrada apenas pelo navegador.
 
-Por trás dessas interfaces estão as APIs dos serviços. O [[AWS Management Console]] chama essas APIs quando o usuário clica e confirma uma ação. A [[AWS CLI]] permite executar operações pelo terminal. Os [[AWS SDKs]] fornecem bibliotecas para que aplicações conversem com os serviços usando linguagens de programação. Em ambientes profissionais, [[Infraestrutura como Código (IaC)|Infraestrutura como Código]] costuma ser usada para declarar redes, permissões, bancos, filas e outros recursos de forma reproduzível.
+Por trás dessas interfaces estão as [[APIs|APIs]] dos serviços. O [[AWS Management Console]] chama essas [[APIs|APIs]] quando o usuário clica e confirma uma ação. A [[AWS CLI]] permite executar operações pelo terminal. Os [[AWS SDKs]] fornecem bibliotecas para que aplicações conversem com os serviços usando linguagens de programação. Em ambientes profissionais, [[Infraestrutura como Código (IaC)|Infraestrutura como Código]] costuma ser usada para declarar redes, permissões, bancos, filas e outros recursos de forma reproduzível.
 
-Independentemente da interface escolhida, cada ação passa por autenticação e autorização. O [[AWS Identity and Access Management (IAM)]] define quais identidades podem executar determinadas operações sobre determinados recursos. Criar uma instância, alterar uma regra de rede, enviar um objeto ao S3 ou consultar um banco de dados são exemplos de ações que precisam de permissão.
+Independentemente da interface escolhida, cada ação passa por autenticação e autorização. O [[AWS Identity and Access Management (IAM)]] define quais identidades podem executar determinadas operações sobre determinados recursos. Criar uma instância, alterar uma regra de rede, enviar um objeto ao [[Amazon S3|S3]] ou consultar um banco de dados são exemplos de ações que precisam de permissão.
 
 Automação ajuda muito, mas não é sinônimo de segurança. Uma automação bem desenhada reduz erro manual, padroniza ambientes e facilita auditoria. Uma automação mal escrita pode criar recursos inseguros, expostos ou caros rapidamente.
 
@@ -139,7 +139,7 @@ A nota [[AWS (Amazon Web Services)]] aprofunda a AWS como provedora. As notas de
 
 ## Computação na AWS
 
-Computação é a parte da nuvem responsável por executar aplicações, processos e workloads. Um workload é uma carga de trabalho: pode ser uma aplicação web, uma API, um processamento em lote, uma função acionada por evento ou qualquer tarefa que consome recursos computacionais. Sempre que um sistema precisa rodar código, processar uma requisição, executar uma tarefa em segundo plano ou responder a um evento, alguma forma de computação está envolvida.
+Computação é a parte da nuvem responsável por executar aplicações, processos e workloads. Um workload é uma carga de trabalho: pode ser uma aplicação web, uma [[APIs|API]], um processamento em lote, uma função acionada por evento ou qualquer tarefa que consome recursos computacionais. Sempre que um sistema precisa rodar código, processar uma requisição, executar uma tarefa em segundo plano ou responder a um evento, alguma forma de computação está envolvida.
 
 O [[Amazon EC2]] oferece instâncias virtuais configuráveis. Ao criar uma instância, a equipe escolhe uma [[Amazon Machine Image (AMI)]], um tipo de instância, rede, armazenamento, permissões e regras de segurança. Essa liberdade é útil quando a aplicação precisa de controle sobre sistema operacional, runtime, agentes, pacotes ou configuração.
 
@@ -155,7 +155,7 @@ Nem toda aplicação precisa ser administrada diretamente em máquinas virtuais.
 
 Uma das formas mais comuns desse modelo é [[Function as a Service (FaaS)]]. Nela, pequenas unidades de código são executadas em resposta a eventos. No [[AWS Lambda]], por exemplo, o código é enviado ao serviço; depois, um evento dispara a execução. A cobrança considera o uso efetivo, o que combina bem com workloads que não precisam ficar executando o tempo todo.
 
-Aplicações serverless costumam combinar funções com outros serviços. O [[Amazon API Gateway]] expõe APIs. O [[Amazon EventBridge]] encaminha eventos. Amazon SQS desacopla componentes por filas. O [[Amazon SNS]] distribui notificações. O [[AWS Step Functions]] coordena fluxos de execução. O valor desse modelo aparece quando a arquitetura é orientada a eventos e quando a equipe aceita trabalhar com limites, concorrência, retries e observabilidade de execuções curtas.
+Aplicações serverless costumam combinar funções com outros serviços. O [[Amazon API Gateway]] expõe [[APIs|APIs]]. O [[Amazon EventBridge]] encaminha eventos. [[Amazon SQS]] desacopla componentes por filas. O [[Amazon SNS]] distribui notificações. O [[AWS Step Functions]] coordena fluxos de execução. O valor desse modelo aparece quando a arquitetura é orientada a eventos e quando a equipe aceita trabalhar com limites, concorrência, retries e observabilidade de execuções curtas.
 
 O comportamento real dessas aplicações depende de conceitos como [[Cold Start]], concorrência, mapeamento de origem de eventos, [[Idempotência]] e [[Dead Letter Queue (DLQ)]]. Eles ajudam a compreender latência inicial, processamento paralelo, leitura de eventos, repetição segura de operações e tratamento de falhas. Serverless reduz operação de infraestrutura, mas não elimina desenho de arquitetura.
 
@@ -167,7 +167,7 @@ Armazenamento parece simples até a primeira decisão real: que tipo de dado ser
 
 O [[Amazon S3]] oferece armazenamento de objetos para arquivos, imagens, backups, logs e conteúdo estático. Ele é adequado quando a aplicação precisa guardar objetos acessados por chave, e não um disco tradicional anexado a um servidor. O [[Amazon EBS]] fornece armazenamento em bloco, geralmente anexado a uma instância [[Amazon EC2]], e se aproxima mais da ideia de disco persistente usado por uma máquina. O [[Amazon EFS]] oferece um sistema de arquivos compartilhado para múltiplas instâncias Linux. O [[Amazon EC2 Instance Store]] fornece armazenamento temporário ligado ao host físico da instância.
 
-No S3, as classes de armazenamento existem porque nem todo dado é usado da mesma forma. Um arquivo acessado todos os dias pede uma escolha diferente de um backup que talvez só seja recuperado em uma emergência. Classes como S3 Standard, S3 Standard-IA, S3 One Zone-IA, [[S3 Intelligent-Tiering]] e opções de arquivamento têm diferenças de custo, disponibilidade, latência de recuperação e adequação ao uso.
+No [[Amazon S3|S3]], as classes de armazenamento existem porque nem todo dado é usado da mesma forma. Um arquivo acessado todos os dias pede uma escolha diferente de um backup que talvez só seja recuperado em uma emergência. Classes como [[Amazon S3|S3]] Standard, [[Amazon S3|S3]] Standard-IA, [[Amazon S3|S3]] One Zone-IA, [[S3 Intelligent-Tiering]] e opções de arquivamento têm diferenças de custo, disponibilidade, latência de recuperação e adequação ao uso.
 
 Quando o assunto é proteção e recuperação, entram decisões como replicação, backup e ciclo de vida. A cópia de objetos entre destinos ou regiões pode ser implementada com [[S3 Replication]]. O [[AWS Backup]] centraliza políticas de backup para diferentes serviços. O [[Multipart Upload]] divide objetos grandes em partes para tornar o envio mais eficiente e recuperável. Esses mecanismos mostram que armazenar dados não é apenas escolher onde gravar; também envolve durabilidade, disponibilidade, recuperação, custo e governança.
 
@@ -191,7 +191,7 @@ O critério técnico não é escolher banco de dados pelo nome mais conhecido. A
 
 A [[Amazon VPC]] permite criar uma rede virtual isolada. Dentro dela, os recursos são distribuídos em [[Subnets]], e as [[Route Tables]] determinam para onde o tráfego deve ser encaminhado. Um [[Internet Gateway]] conecta recursos públicos à internet. Um [[NAT Gateway]] permite que recursos privados iniciem conexões externas sem receber conexões diretamente.
 
-O controle de tráfego usa camadas diferentes. [[Security Groups]] atuam no nível do recurso, como uma instância EC2. [[Network ACLs]] aplicam regras no nível da subnet. Eles são controles complementares, não peças intercambiáveis. Essa diferença ajuda a evitar a ideia de que “abrir uma porta” é uma decisão simples e isolada.
+O controle de tráfego usa camadas diferentes. [[Security Groups]] atuam no nível do recurso, como uma instância [[Amazon EC2|EC2]]. [[Network ACLs]] aplicam regras no nível da subnet. Eles são controles complementares, não peças intercambiáveis. Essa diferença ajuda a evitar a ideia de que “abrir uma porta” é uma decisão simples e isolada.
 
 O endereçamento envolve [[Endereços IP Privados]] e [[Endereços IP Públicos]]. A observabilidade pode ser ampliada com [[VPC Flow Logs]], que registram metadados sobre fluxos de rede.
 
@@ -203,9 +203,9 @@ A integração com ambientes locais pode utilizar [[AWS Direct Connect]], uma co
 
 [[Segurança na AWS]] começa por uma ideia que parece simples, mas evita muitos erros: usar nuvem não significa entregar toda a segurança ao provedor. A base desse raciocínio é o [[Modelo de Responsabilidade Compartilhada]].
 
-A AWS é responsável pela segurança da nuvem, incluindo data centers, hardware, rede física e camada de virtualização. O cliente é responsável pela segurança na nuvem, incluindo dados, identidades, permissões, aplicações, configurações e, no caso de instâncias EC2, o sistema operacional.
+A AWS é responsável pela segurança da nuvem, incluindo data centers, hardware, rede física e camada de virtualização. O cliente é responsável pela segurança na nuvem, incluindo dados, identidades, permissões, aplicações, configurações e, no caso de instâncias [[Amazon EC2|EC2]], o sistema operacional.
 
-Essa divisão muda conforme o serviço. Em uma instância EC2, o cliente administra mais camadas, como sistema operacional, patches e configuração da aplicação. Em serviços mais gerenciados, parte da operação direta diminui, mas o cliente ainda precisa cuidar de acesso, dados, criptografia, retenção, logs, monitoramento e custos. O provedor operar a infraestrutura não significa que a aplicação esteja automaticamente bem configurada.
+Essa divisão muda conforme o serviço. Em uma instância [[Amazon EC2|EC2]], o cliente administra mais camadas, como sistema operacional, patches e configuração da aplicação. Em serviços mais gerenciados, parte da operação direta diminui, mas o cliente ainda precisa cuidar de acesso, dados, criptografia, retenção, logs, monitoramento e custos. O provedor operar a infraestrutura não significa que a aplicação esteja automaticamente bem configurada.
 
 O [[AWS Identity and Access Management (IAM)]] controla identidades e permissões. [[Roles do IAM]] permitem conceder permissões temporárias a usuários, aplicações e serviços. [[Políticas IAM]] descrevem quais ações são permitidas ou negadas. O [[Princípio do Menor Privilégio]] orienta que cada identidade receba apenas o acesso necessário. Esse princípio é simples de explicar e difícil de aplicar bem: permissões amplas facilitam testes rápidos, mas aumentam o impacto de erro, vazamento ou abuso.
 

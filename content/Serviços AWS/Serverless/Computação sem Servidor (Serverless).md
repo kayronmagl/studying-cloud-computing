@@ -4,17 +4,15 @@ O nome não deve ser interpretado literalmente. Servidores continuam existindo n
 
 Na AWS, o serviço mais importante para entender serverless é o [[AWS Lambda]].
 
-
 Computação sem Servidor (Serverless) faz parte do modelo em que você foca mais no código, evento e integração, e menos no servidor. Mas serverless não é mágica: ainda há limites, permissões, logs, custo e falhas.
 
 Leia pensando no fluxo de eventos.
 
 ---
 
-## Ideia Central
+## O que é
 
 Em modelos tradicionais, o raciocínio começa pela máquina.
-
 
 * preciso de um servidor
 * preciso escolher CPU e memória
@@ -22,9 +20,7 @@ Em modelos tradicionais, o raciocínio começa pela máquina.
 * preciso manter runtime
 * preciso escalar capacidade
 
-
 Em serverless, o raciocínio começa pelo evento ou unidade de trabalho.
-
 
 * algo aconteceu
 * uma função deve reagir
@@ -32,12 +28,19 @@ Em serverless, o raciocínio começa pelo evento ou unidade de trabalho.
 * um workflow deve coordenar etapas
 * um container deve executar sem cluster próprio
 
-
 Esse deslocamento é a chave conceitual.
 
 ---
 
-## Serverless não é Apenas Lambda
+## Por que existe
+
+Computação sem Servidor (Serverless) existe para reduzir a administração direta de servidores e aproximar execução de eventos, demanda real e automação. O ganho aparece quando a arquitetura aceita unidades menores, acoplamento controlado e observabilidade.
+
+---
+
+## Como funciona
+
+**Serverless não é Apenas [[AWS Lambda|Lambda]]**
 
 [[AWS Lambda]] é o exemplo mais conhecido, mas serverless também aparece em outros formatos:
 
@@ -52,9 +55,7 @@ Esse deslocamento é a chave conceitual.
 
 Serverless é uma família de padrões operacionais, não um único serviço.
 
----
-
-## O que o Cliente Ainda Gerencia
+**O que o Cliente Ainda Gerencia**
 
 Serverless reduz operação, mas não elimina responsabilidade técnica.
 
@@ -77,21 +78,7 @@ O cliente ainda precisa cuidar de:
 
 O provedor remove parte da carga operacional, mas não substitui engenharia.
 
----
-
-## Relação com Pay-as-you-go
-
-Serverless combina bem com [[Pay-as-you-go]] porque muitos serviços cobram por invocação, duração, mensagens, transições de estado, requisições ou volume processado.
-
-Isso é útil para cargas variáveis.
-
-Exemplo: uma função que roda cem vezes por dia não precisa manter um servidor ligado vinte e quatro horas. Ela executa quando necessário.
-
-Mas o custo pode crescer se houver alto volume, loops de eventos, retries mal controlados ou payloads grandes.
-
----
-
-## Pontos Fortes
+**Pontos Fortes**
 
 Serverless é forte quando o sistema precisa de:
 
@@ -104,9 +91,7 @@ Serverless é forte quando o sistema precisa de:
 * redução de capacidade ociosa;
 * experimentação rápida.
 
----
-
-## Pontos Fracos
+**Pontos Fracos**
 
 Serverless pode ser ruim quando o sistema exige:
 
@@ -123,10 +108,11 @@ Nesses casos, serviços como [[Amazon EC2]], [[Amazon ECS]], [[Amazon EKS]] ou [
 
 ---
 
-## Exemplo de Leitura Arquitetural
+## Exemplo prático
+
+**Exemplo de Leitura Arquitetural**
 
 Um upload de imagem pode acionar um fluxo completo:
-
 
 * [[Amazon API Gateway]]: ↓.
 * [[AWS Lambda]]: ↓.
@@ -137,5 +123,30 @@ Um upload de imagem pode acionar um fluxo completo:
 * [[AWS Step Functions]]: ↓.
 * Amazon CloudWatch
 
-
 Cada serviço cumpre um papel. O aprendizado correto é enxergar as conexões entre eles, não decorar nomes.
+
+---
+
+## Diferenças importantes
+
+Não confunda serverless com ausência de infraestrutura. Servidores continuam existindo, mas a administração direta de capacidade, provisionamento e parte da operação fica com o provedor.
+
+---
+
+## Cuidados
+
+O erro comum é ignorar limites, cold start, permissões, observabilidade e custo por invocação. Serverless reduz operação direta, mas aumenta a importância de desenho orientado a eventos e monitoramento.
+
+---
+
+## Relação com outras notas
+
+**Relação com Pay-as-you-go**
+
+Serverless combina bem com [[Pay-as-you-go]] porque muitos serviços cobram por invocação, duração, mensagens, transições de estado, requisições ou volume processado.
+
+Isso é útil para cargas variáveis.
+
+Exemplo: uma função que roda cem vezes por dia não precisa manter um servidor ligado vinte e quatro horas. Ela executa quando necessário.
+
+Mas o custo pode crescer se houver alto volume, loops de eventos, retries mal controlados ou payloads grandes.

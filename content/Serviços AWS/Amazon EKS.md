@@ -2,38 +2,33 @@ Amazon EKS é o serviço gerenciado da AWS para executar Kubernetes.
 
 Kubernetes é uma plataforma usada para orquestrar aplicações em containers. O EKS reduz o trabalho de operar o plano de controle do Kubernetes e integra o cluster com serviços da AWS.
 
-
 Use EKS quando a aplicação já usa Kubernetes ou quando a equipe precisa do ecossistema Kubernetes para organizar containers, escalar aplicações, controlar deploys e integrar componentes.
 
 O EKS não é um banco de dados, não é machine learning e não é data warehouse. Ele pertence ao assunto de containers.
 
 ---
 
-## Diferença para serviços parecidos
+## O que é
 
-| Serviço | Ideia principal |
-|---|---|
-| Amazon ECS | Orquestração de containers própria da AWS |
-| Amazon EKS | Kubernetes gerenciado |
-| AWS Fargate | Execução de containers sem gerenciar servidores |
-| AWS Lambda | Execução de funções orientadas a eventos |
+Amazon EKS deve ser entendido como um serviço gerenciado da AWS. Um serviço gerenciado recebe configuração, aplica permissões, registra eventos, gera métricas e cobra conforme uso, capacidade ou recurso associado.
+
+Amazon EKS deve ser entendido pela função que cumpre dentro de uma arquitetura de nuvem. O importante é identificar recurso, dado, rede, permissão, operação e custo envolvidos.
 
 ---
 
-## Como Diferenciar
+## Por que existe
 
-
----
-
-## Quando faz sentido
-
-EKS faz sentido quando Kubernetes já faz parte da estratégia da equipe.
-
-Ele não é a opção mais simples para todo projeto. Para uma aplicação pequena, talvez Elastic Beanstalk, ECS, Fargate ou Lambda sejam mais diretos. O valor do EKS aparece quando a equipe precisa do modelo Kubernetes, de portabilidade, de add-ons do ecossistema ou de controle mais rico sobre workloads em containers.
+Amazon EKS existe para resolver uma limitação prática de sistemas: executar, armazenar, conectar, proteger, observar, escalar ou governar recursos.
 
 ---
 
-## Exemplo aplicado
+## Como funciona
+
+Amazon EKS funciona por configuração, entrada, processamento, saída, limites, permissões e integração com outros componentes. O valor aparece quando o conceito é ligado a um fluxo real.
+
+---
+
+## Exemplo prático
 
 Imagine uma empresa que já usa Kubernetes fora da AWS.
 
@@ -41,9 +36,40 @@ Ela tem manifests, pipelines, equipes treinadas, políticas e ferramentas em tor
 
 Isso reduz parte da operação mais pesada, embora a equipe ainda precise entender nós, pods, serviços, redes, permissões e atualizações do cluster.
 
+**Exemplo de decisão**
+
+Se uma empresa já usa Kubernetes, EKS pode ser uma continuação natural na AWS. Se a equipe ainda não tem experiência com Kubernetes, talvez ECS, Fargate ou Elastic Beanstalk sejam caminhos mais simples. O ponto é não escolher EKS só porque é avançado; ele faz sentido quando Kubernetes realmente resolve o problema.
+
 ---
 
-## Cuidado importante
+## Diferenças importantes
+
+**Diferença para serviços parecidos**
+
+| Serviço | Ideia principal |
+|---|---|
+| Amazon ECS | Orquestração de containers própria da AWS |
+| Amazon EKS | Kubernetes gerenciado |
+| AWS Fargate | Execução de containers sem gerenciar servidores |
+| [[AWS Lambda]] | Execução de funções orientadas a eventos |
+
+**Quando faz sentido**
+
+EKS faz sentido quando Kubernetes já faz parte da estratégia da equipe.
+
+Ele não é a opção mais simples para todo projeto. Para uma aplicação pequena, talvez Elastic Beanstalk, ECS, Fargate ou [[AWS Lambda|Lambda]] sejam mais diretos. O valor do EKS aparece quando a equipe precisa do modelo Kubernetes, de portabilidade, de add-ons do ecossistema ou de controle mais rico sobre workloads em containers.
+
+**Quando não escolher EKS**
+
+EKS pode ser poderoso, mas também traz complexidade.
+
+Se a equipe não precisa de Kubernetes, talvez a escolha mais simples seja ECS, Fargate, Elastic Beanstalk ou [[AWS Lambda|Lambda]]. A melhor decisão depende do nível de controle necessário, da experiência da equipe e do tipo de aplicação.
+
+A associação mais comum é EKS a Kubernetes. Em arquitetura real, avalie se Kubernetes é realmente necessário.
+
+---
+
+## Cuidados
 
 EKS não elimina a necessidade de entender Kubernetes.
 
@@ -53,16 +79,7 @@ Se a equipe quer apenas executar containers com menos complexidade, [[Amazon ECS
 
 ---
 
-## Quando não escolher EKS
+## Relação com outras notas
 
-EKS pode ser poderoso, mas também traz complexidade.
-
-Se a equipe não precisa de Kubernetes, talvez a escolha mais simples seja ECS, Fargate, Elastic Beanstalk ou Lambda. A melhor decisão depende do nível de controle necessário, da experiência da equipe e do tipo de aplicação.
-
-A associação mais comum é EKS a Kubernetes. Em arquitetura real, avalie se Kubernetes é realmente necessário.
-
----
-
-## Exemplo de decisão
-
-Se uma empresa já usa Kubernetes, EKS pode ser uma continuação natural na AWS. Se a equipe ainda não tem experiência com Kubernetes, talvez ECS, Fargate ou Elastic Beanstalk sejam caminhos mais simples. O ponto é não escolher EKS só porque é avançado; ele faz sentido quando Kubernetes realmente resolve o problema.
+- [[Amazon ECS]]
+- [[AWS Fargate]]

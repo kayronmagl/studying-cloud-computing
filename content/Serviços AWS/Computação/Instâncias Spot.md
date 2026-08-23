@@ -1,7 +1,6 @@
-Instâncias Spot são instâncias EC2 que usam capacidade ociosa da AWS com preço variável.
+Instâncias Spot são instâncias [[Amazon EC2|EC2]] que usam capacidade ociosa da AWS com preço variável.
 
 Elas podem ser bem mais baratas, mas têm uma condição importante: podem ser interrompidas quando a AWS precisa da capacidade de volta.
-
 
 Spot é para trabalho flexível.
 
@@ -11,15 +10,35 @@ Isso funciona bem quando a tarefa pode parar e continuar depois, ou quando vári
 
 ---
 
-## Exemplo simples
+## O que é
+
+Spot é uma troca: você ganha preço melhor, mas entrega previsibilidade.
+
+Por isso, antes de usar Spot, pergunte:
+
+* se essa instância parar agora, eu perco algo importante?
+
+Se a resposta for “não, o trabalho pode continuar depois”, Spot pode fazer sentido.
+
+Se a resposta for “sim, o sistema para e causa prejuízo”, Spot provavelmente não é a melhor escolha.
+
+---
+
+## Por que existe
+
+Instâncias Spot existe para transformar capacidade de processamento em recurso configurável. Sem esse modelo, cada aumento de carga dependeria de compra, instalação e manutenção manual de servidores.
+
+---
+
+## Como funciona
+
+**Exemplo simples**
 
 Imagine um processamento de imagens com milhares de arquivos.
 
 Se uma instância Spot for interrompida, outra pode continuar o trabalho depois. Como a tarefa tolera interrupção, Spot pode economizar bastante.
 
----
-
-## Bons usos
+**Bons usos**
 
 * processamento em lote;
 * renderização;
@@ -29,35 +48,25 @@ Se uma instância Spot for interrompida, outra pode continuar o trabalho depois.
 * jobs que salvam progresso;
 * tarefas que podem ser reiniciadas.
 
----
-
-## Quando evitar
-
-Evite Spot para banco de dados primário, sistema crítico sem tolerância a interrupção ou aplicação que não sabe lidar com falhas repentinas.
-
----
-
-## Como isso aparece em perguntas
+**Como isso aparece em perguntas**
 
 A pista costuma ser:
 
-
 * preço ajustado com base na oferta e demanda
-
 
 A resposta é Instâncias Spot.
 
+**Decisão de uso**
+
+* Qual modelo de preço muda conforme oferta e demanda de instâncias [[Amazon EC2|EC2]]?
+
+A resposta é Instâncias Spot.
+
+A palavra “demanda” na pergunta é uma pista forte.
+
 ---
 
-## Cuidado importante
-
-Spot não é apenas “instância barata”.
-
-Spot é capacidade ociosa com preço variável e possibilidade de interrupção.
-
----
-
-## Exemplo aplicado
+## Exemplo prático
 
 Spot é uma boa opção quando perder uma máquina no meio do processo não destrói o trabalho.
 
@@ -67,18 +76,21 @@ Se uma instância for interrompida, a aplicação precisa conseguir continuar de
 
 ---
 
-## Decisão de uso
+## Diferenças importantes
 
-* Qual modelo de preço muda conforme oferta e demanda de instâncias EC2?
+**Quando evitar**
 
-
-A resposta é Instâncias Spot.
-
-A palavra “demanda” na pergunta é uma pista forte.
+Evite Spot para banco de dados primário, sistema crítico sem tolerância a interrupção ou aplicação que não sabe lidar com falhas repentinas.
 
 ---
 
-## Cuidado de professor
+## Cuidados
+
+Spot não é apenas “instância barata”.
+
+Spot é capacidade ociosa com preço variável e possibilidade de interrupção.
+
+**Cuidado de professor**
 
 Nunca pense em Spot como primeira escolha para algo que precisa ficar ligado o tempo todo sem interrupção.
 
@@ -86,16 +98,6 @@ Ela é econômica, mas exige tolerância a falhas.
 
 ---
 
-## Outra forma de entender
+## Relação com outras notas
 
-Spot é uma troca: você ganha preço melhor, mas entrega previsibilidade.
-
-Por isso, antes de usar Spot, pergunte:
-
-
-* se essa instância parar agora, eu perco algo importante?
-
-
-Se a resposta for “não, o trabalho pode continuar depois”, Spot pode fazer sentido.
-
-Se a resposta for “sim, o sistema para e causa prejuízo”, Spot provavelmente não é a melhor escolha.
+- [[O que é computação em nuvem]]

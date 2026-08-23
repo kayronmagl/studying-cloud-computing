@@ -2,7 +2,6 @@ AWS Marketplace é um catálogo digital onde você encontra softwares de fornece
 
 Pense nele como uma loja corporativa de software. A diferença é que os produtos ali são voltados para ambientes de nuvem, infraestrutura, segurança, dados, observabilidade, redes, DevOps e aplicações empresariais.
 
-
 Nem tudo que uma empresa usa na AWS é criado pela própria AWS.
 
 Uma empresa pode precisar de um firewall de terceiro, uma ferramenta de backup, um antivírus, uma solução de monitoramento, um banco especializado ou um produto de segurança.
@@ -11,7 +10,21 @@ O AWS Marketplace ajuda a encontrar e adquirir essas soluções.
 
 ---
 
-## Exemplo simples
+## O que é
+
+AWS Marketplace deve ser entendido pela função que cumpre dentro de uma arquitetura de nuvem. O importante é identificar recurso, dado, rede, permissão, operação e custo envolvidos.
+
+---
+
+## Por que existe
+
+AWS Marketplace existe para resolver uma limitação prática de sistemas: executar, armazenar, conectar, proteger, observar, escalar ou governar recursos.
+
+---
+
+## Como funciona
+
+**Exemplo simples**
 
 Imagine que uma empresa quer usar uma ferramenta de segurança de um fornecedor independente.
 
@@ -19,41 +32,25 @@ Ela pode procurar essa ferramenta no AWS Marketplace, ver o modelo de cobrança 
 
 Isso reduz o trabalho de procurar software fora, negociar separadamente e montar tudo manualmente.
 
----
-
-## Como isso aparece em perguntas
+**Como isso aparece em perguntas**
 
 Uma forma comum desse assunto aparecer é:
 
-
 * catálogo digital que inclui milhares de ofertas de software de fornecedores independentes
-
 
 A resposta é AWS Marketplace.
 
----
+**Uso principal**
 
-## Comparação com serviços parecidos
+* Onde encontro software de terceiros para comprar e usar com AWS?
 
-* AWS Marketplace: catálogo de software.
-* [[AWS Trusted Advisor]]: recomendações de boas práticas.
-* AWS Artifact: relatórios de conformidade e contratos.
-* [[AWS Support]]: suporte técnico e operacional.
+A resposta é AWS Marketplace.
 
+Quando o cenário envolve recomendação de boas práticas, a resposta muda para Trusted Advisor.
 
 ---
 
-## Cuidado importante
-
-Marketplace não “inspeciona” seu ambiente.
-
-Quando o cenário envolve recomendações em tempo real, pense em [[AWS Trusted Advisor]].
-
-Se fala em catálogo de software de terceiros, pense em AWS Marketplace.
-
----
-
-## Exemplo aplicado
+## Exemplo prático
 
 Imagine que uma empresa não quer construir uma solução de segurança do zero.
 
@@ -65,11 +62,28 @@ Quando aparecer a ideia de software de fornecedor independente, pense em Marketp
 
 ---
 
-## Uso principal
+## Diferenças importantes
 
-* Onde encontro software de terceiros para comprar e usar com AWS?
+**Comparação com serviços parecidos**
 
+* AWS Marketplace: catálogo de software.
+* [[AWS Trusted Advisor]]: recomendações de boas práticas.
+* AWS Artifact: relatórios de conformidade e contratos.
+* [[AWS Support]]: suporte técnico e operacional.
 
-A resposta é AWS Marketplace.
+---
 
-Quando o cenário envolve recomendação de boas práticas, a resposta muda para Trusted Advisor.
+## Cuidados
+
+Marketplace não “inspeciona” seu ambiente.
+
+Quando o cenário envolve recomendações em tempo real, pense em [[AWS Trusted Advisor]].
+
+Se fala em catálogo de software de terceiros, pense em AWS Marketplace.
+
+---
+
+## Relação com outras notas
+
+- [[AWS Trusted Advisor]]
+- [[AWS Support]]

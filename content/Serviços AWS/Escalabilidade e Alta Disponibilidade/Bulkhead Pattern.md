@@ -2,48 +2,39 @@ Bulkhead Pattern é um padrão de resiliência que isola recursos para evitar qu
 
 O nome vem de compartimentos estanques de navios: se um compartimento alaga, o navio não afunda inteiro.
 
-
 Bulkhead Pattern ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
-
 
 ---
 
-## Aplicação em Software
+## O que é
+
+Bulkhead Pattern pertence ao desenho de disponibilidade, crescimento e recuperação. O objetivo é manter a aplicação funcionando quando há aumento de demanda, falha parcial ou necessidade de trocar tráfego para outro recurso.
+
+Escalabilidade é crescer ou reduzir capacidade. Alta disponibilidade é continuar funcionando apesar de falhas.
+
+---
+
+## Por que existe
+
+Bulkhead Pattern existe para manter aplicações disponíveis, responsivas e recuperáveis quando há aumento de demanda, falhas ou variações no ambiente. Sem esse tipo de desenho, crescimento e falha viram eventos manuais e arriscados.
+
+---
+
+## Como funciona
+
+**Aplicação em Software**
 
 Uma aplicação pode separar pools de conexão, filas, workers ou limites por tipo de operação.
 
-Se um módulo falha, não consome todos os recursos dos outros.
+Se um componente falha, não consome todos os recursos dos outros.
 
 ---
 
-## Exemplo
+## Exemplo prático
 
 Um sistema separa workers de pagamento e workers de e-mail.
 
 Se envio de e-mail trava, processamento de pagamento continua.
-
----
-
-## Relação com AWS
-
-Pode ser implementado com:
-
-* filas [[Amazon SQS]] separadas;
-* funções [[AWS Lambda]] separadas;
-* Auto Scaling Groups distintos;
-* target groups diferentes;
-* limites de concorrência;
-* contas separadas.
-
----
-
-## Cuidado
-
-Isolamento aumenta complexidade, mas reduz falhas em cascata.
-
----
-
-## Exemplo Prático
 
 Uma aplicação pode ser distribuída em múltiplas [[Availability Zones (AZ)]], atrás de um [[Application Load Balancer]], com instâncias gerenciadas por [[Amazon EC2 Auto Scaling]] e métricas no [[Amazon CloudWatch]].
 
@@ -51,7 +42,22 @@ Quando a carga aumenta, novas instâncias entram. Quando uma falha ocorre, desti
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* CloudWatch observa.
+* Auto Scaling ajusta capacidade.
+* ELB distribui tráfego.
+* Health checks removem destinos ruins.
+* Multi-AZ reduz falha zonal.
+* RTO e RPO guiam recuperação.
+
+---
+
+## Cuidados
+
+Isolamento aumenta complexidade, mas reduz falhas em cascata.
 
 Escalar sem observar pode aumentar custo.
 
@@ -61,25 +67,19 @@ Ter alta disponibilidade sem testes pode criar falsa confiança.
 
 Por isso, esses conceitos devem ser combinados com métricas, alarmes, limites e testes de resiliência.
 
+Auto Scaling não garante alta disponibilidade sozinho. Precisa de múltiplas AZs, load balancing e health checks.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence ao módulo de escalabilidade e alta disponibilidade.
+**Relação com AWS**
 
-## Ponto central
+Pode ser implementado com:
 
-Escalabilidade é crescer ou reduzir capacidade. Alta disponibilidade é continuar funcionando apesar de falhas.
-
-## Como Diferenciar
-
-* CloudWatch observa.
-* Auto Scaling ajusta capacidade.
-* ELB distribui tráfego.
-* Health checks removem destinos ruins.
-* Multi-AZ reduz falha zonal.
-* RTO e RPO guiam recuperação.
-
-## Cuidado importante
-
-Auto Scaling não garante alta disponibilidade sozinho. Precisa de múltiplas AZs, load balancing e health checks.
+* filas [[Amazon SQS]] separadas;
+* funções [[AWS Lambda]] separadas;
+* Auto Scaling Groups distintos;
+* target groups diferentes;
+* limites de concorrência;
+* contas separadas.

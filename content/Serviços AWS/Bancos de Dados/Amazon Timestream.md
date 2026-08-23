@@ -2,7 +2,21 @@ Amazon Timestream é a família de serviços da AWS voltada a dados organizados 
 
 ---
 
-## Timestream for LiveAnalytics
+## O que é
+
+Amazon Timestream deve ser entendido pelo modelo de dados, pelo padrão de consulta e pela consistência exigida. Banco de dados na nuvem não é apenas onde a informação fica guardada; é onde leitura, escrita, escala, backup, latência e custo se encontram.
+
+---
+
+## Por que existe
+
+Amazon Timestream existe para resolver necessidades de persistência, consulta, consistência, escala ou especialização de dados. Escolher banco errado pode gerar custo alto, lentidão, modelagem confusa e dificuldade para manter a aplicação.
+
+---
+
+## Como funciona
+
+**Timestream for LiveAnalytics**
 
 Amazon Timestream for LiveAnalytics é um banco de séries temporais serverless, criado para ingestão em grande escala, retenção por camadas e consultas baseadas em janelas de tempo.
 
@@ -10,9 +24,7 @@ Desde 20 de junho de 2025, o serviço não aceita novos clientes. Contas pagador
 
 Para novos clientes, a AWS recomenda avaliar o Amazon Timestream for InfluxDB.
 
----
-
-## Modelo de Dados
+**Modelo de Dados**
 
 Em uma série temporal, o timestamp é parte central do registro. Dimensões identificam a origem ou o contexto, enquanto medidas armazenam valores observados.
 
@@ -27,7 +39,15 @@ Exemplos:
 
 ---
 
-## Quando um Banco de Séries Temporais Ajuda
+## Exemplo prático
+
+Uma aplicação de pedidos pode usar banco relacional para transações, banco chave-valor para consultas rápidas e cache para reduzir leitura repetida. Nesse cenário, Amazon Timestream deve ser avaliado pelo tipo de dado e pelo padrão de acesso.
+
+---
+
+## Diferenças importantes
+
+**Quando um Banco de Séries Temporais Ajuda**
 
 Esse modelo é adequado quando as consultas dependem de intervalos, agregações temporais, médias móveis, retenção e grande volume de escrita sequencial.
 
@@ -38,3 +58,11 @@ Esse modelo é adequado quando as consultas dependem de intervalos, agregações
 ## Cuidados
 
 A modelagem precisa considerar cardinalidade, granularidade, retenção, frequência de ingestão e padrão de consulta. Um serviço especializado não elimina a necessidade de entender quais dimensões serão filtradas e quais agregações a aplicação executará.
+
+---
+
+## Relação com outras notas
+
+- [[Amazon RDS]]
+- [[Amazon DynamoDB]]
+- [[Bancos de Dados de Séries Temporais]]

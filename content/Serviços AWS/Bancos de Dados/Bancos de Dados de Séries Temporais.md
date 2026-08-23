@@ -2,14 +2,46 @@ Bancos de Dados de Séries Temporais são bancos otimizados para dados indexados
 
 Eles armazenam medições, eventos e métricas que fazem sentido em sequência temporal.
 
-
 Bancos de Dados de Séries Temporais deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 
 muitas alternativas erradas parecem boas porque ignoram esse padrão de acesso.
 
 ---
 
-## Exemplos
+## O que é
+
+Bancos de Dados de Séries Temporais deve ser entendido pelo modelo de dados, pelo padrão de consulta e pela consistência exigida. Banco de dados na nuvem não é apenas onde a informação fica guardada; é onde leitura, escrita, escala, backup, latência e custo se encontram.
+
+A escolha do banco depende do padrão de acesso, consistência, escala, consulta e modelo de dados.
+
+---
+
+## Por que existe
+
+Bancos de Dados de Séries Temporais existe para resolver necessidades de persistência, consulta, consistência, escala ou especialização de dados. Escolher banco errado pode gerar custo alto, lentidão, modelagem confusa e dificuldade para manter a aplicação.
+
+---
+
+## Como funciona
+
+**AWS**
+
+Na AWS, o serviço principal é o [[Amazon Timestream]].
+
+**Padrão de Consulta**
+
+Bancos de séries temporais são desenhados para perguntas como:
+
+* qual foi a média nos últimos 5 minutos?
+* qual sensor passou do limite?
+* qual métrica cresceu por hora?
+* qual tendência apareceu na semana?
+
+O tempo é parte central do dado.
+
+---
+
+## Exemplo prático
 
 * métricas de CPU;
 * sensores IoT;
@@ -17,51 +49,6 @@ muitas alternativas erradas parecem boas porque ignoram esse padrão de acesso.
 * logs estruturados;
 * preços ao longo do tempo;
 * eventos de monitoramento.
-
----
-
-## AWS
-
-Na AWS, o serviço principal é o [[Amazon Timestream]].
-
----
-
-## Cuidado
-
-A modelagem precisa considerar retenção, granularidade, agregações e volume de ingestão.
-
----
-
-## Padrão de Consulta
-
-Bancos de séries temporais são desenhados para perguntas como:
-
-
-* qual foi a média nos últimos 5 minutos?
-* qual sensor passou do limite?
-* qual métrica cresceu por hora?
-* qual tendência apareceu na semana?
-
-
-O tempo é parte central do dado.
-
----
-
-## Relação com Timestream
-
-Na AWS, [[Amazon Timestream]] é o serviço criado para esse modelo.
-
-Ele é útil para IoT, telemetria, métricas operacionais, dados industriais e medições frequentes.
-
----
-
-## Cuidado na prática
-
-Nem todo dado com timestamp exige banco de séries temporais. Se o volume é pequeno e as consultas são relacionais, [[Amazon RDS]] pode bastar.
-
----
-
-## Exemplo Prático
 
 Uma aplicação de pedidos pode usar:
 
@@ -75,12 +62,28 @@ Cada banco resolve um tipo de problema.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* [[Amazon RDS|RDS]]/Aurora: relacional e transacional.
+* [[Amazon DynamoDB|DynamoDB]]: NoSQL chave-valor/documento.
+* ElastiCache: cache em memória.
+* Redshift: data warehouse.
+* Neptune: grafos.
+* Timestream: séries temporais.
+
+---
+
+## Cuidados
+
+A modelagem precisa considerar retenção, granularidade, agregações e volume de ingestão.
+
+Nem todo dado com timestamp exige banco de séries temporais. Se o volume é pequeno e as consultas são relacionais, [[Amazon RDS]] pode bastar.
 
 A escolha do banco deve partir do padrão de acesso.
 
 Perguntas importantes:
-
 
 * preciso de transação?
 * preciso de join?
@@ -88,26 +91,16 @@ Perguntas importantes:
 * preciso de analytics?
 * preciso de relacionamento em grafo?
 
-
 Escolher banco só pelo nome do serviço costuma gerar arquitetura ruim.
 
-## Como entender isso
+NoSQL não é “sem modelagem”. Em [[Amazon DynamoDB|DynamoDB]], modelagem é orientada pelas consultas.
 
-Este conceito pertence ao módulo de bancos de dados na AWS.
+---
 
-## Ponto central
+## Relação com outras notas
 
-A escolha do banco depende do padrão de acesso, consistência, escala, consulta e modelo de dados.
+**Relação com Timestream**
 
-## Como Diferenciar
+Na AWS, [[Amazon Timestream]] é o serviço criado para esse modelo.
 
-* RDS/Aurora: relacional e transacional.
-* DynamoDB: NoSQL chave-valor/documento.
-* ElastiCache: cache em memória.
-* Redshift: data warehouse.
-* Neptune: grafos.
-* Timestream: séries temporais.
-
-## Cuidado importante
-
-NoSQL não é “sem modelagem”. Em DynamoDB, modelagem é orientada pelas consultas.
+Ele é útil para IoT, telemetria, métricas operacionais, dados industriais e medições frequentes.

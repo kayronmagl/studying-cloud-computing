@@ -2,13 +2,25 @@ Resiliência é a capacidade de um workload se recuperar de falhas, adaptar-se a
 
 Ela inclui disponibilidade, recuperação, elasticidade, tolerância a falhas e operação observável.
 
-
 Resiliência ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
-
 
 ---
 
-## Componentes
+## O que é
+
+Resiliência pertence ao desenho de disponibilidade, crescimento e recuperação. O objetivo é manter a aplicação funcionando quando há aumento de demanda, falha parcial ou necessidade de trocar tráfego para outro recurso.
+
+---
+
+## Por que existe
+
+Resiliência existe para manter aplicações disponíveis, responsivas e recuperáveis quando há aumento de demanda, falhas ou variações no ambiente. Sem esse tipo de desenho, crescimento e falha viram eventos manuais e arriscados.
+
+---
+
+## Como funciona
+
+**Componentes**
 
 Resiliência envolve:
 
@@ -22,25 +34,17 @@ Resiliência envolve:
 * automação;
 * observabilidade com [[Amazon CloudWatch]].
 
----
+**Testando falhas de forma controlada**
 
-## Diferença para Disponibilidade
-
-Disponibilidade mede se o sistema está operacional.
-
-Resiliência inclui a capacidade de se recuperar quando algo dá errado.
+[[AWS Fault Injection Service (FIS)]] entra quando a equipe quer testar como a arquitetura se comporta diante de falhas planejadas.
 
 ---
 
-## Exemplo
+## Exemplo prático
 
 Uma aplicação resiliente detecta uma instância com falha, remove do load balancer, cria outra instância e continua atendendo usuários.
 
 Isso exige integração entre [[Elastic Load Balancing]], [[Health Checks]] e [[Amazon EC2 Auto Scaling]].
-
----
-
-## Exemplo Prático
 
 Uma aplicação pode ser distribuída em múltiplas [[Availability Zones (AZ)]], atrás de um [[Application Load Balancer]], com instâncias gerenciadas por [[Amazon EC2 Auto Scaling]] e métricas no [[Amazon CloudWatch]].
 
@@ -48,7 +52,17 @@ Quando a carga aumenta, novas instâncias entram. Quando uma falha ocorre, desti
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Diferença para Disponibilidade**
+
+Disponibilidade mede se o sistema está operacional.
+
+Resiliência inclui a capacidade de se recuperar quando algo dá errado.
+
+---
+
+## Cuidados
 
 Escalar sem observar pode aumentar custo.
 
@@ -60,6 +74,15 @@ Por isso, esses conceitos devem ser combinados com métricas, alarmes, limites e
 
 ---
 
-## Testando falhas de forma controlada
+## Relação com outras notas
 
-[[AWS Fault Injection Service (FIS)]] entra quando a equipe quer testar como a arquitetura se comporta diante de falhas planejadas.
+- [[Alta Disponibilidade]]
+- [[Tolerância a Falhas]]
+- [[Disaster Recovery (DR)]]
+- [[Failover]]
+- [[Amazon CloudWatch]]
+- [[AWS Fault Injection Service (FIS)]]
+- [[Elastic Load Balancing]]
+- [[Health Checks]]
+- [[Amazon EC2 Auto Scaling]]
+- [[Availability Zones (AZ)]]

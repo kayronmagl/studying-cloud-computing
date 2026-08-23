@@ -2,7 +2,25 @@ Armazenamento em Bloco é um modelo em que dados são divididos em blocos endere
 
 Para o sistema operacional, esse armazenamento aparece como um disco. A aplicação pode formatar o volume, criar sistema de arquivos, instalar software, gravar banco de dados ou persistir arquivos locais.
 
-## Como Funciona
+---
+
+## O que é
+
+Armazenamento em Bloco deve ser entendido pelo tipo de dado que guarda, pelo modo de acesso e pela durabilidade esperada. Em armazenamento na nuvem, a decisão central é separar objeto, bloco, arquivo, backup, ciclo de vida, recuperação e custo.
+
+Uma pergunta principal é: como o dado será acessado?
+
+Se for disco de servidor, pense em EBS. Se for objeto via [[APIs|API]], pense em [[Amazon S3|S3]]. Se for filesystem compartilhado, pense em EFS ou FSx.
+
+---
+
+## Por que existe
+
+Armazenamento em Bloco existe para organizar como dados são guardados, acessados, protegidos, recuperados e cobrados. Em nuvem, armazenamento não é apenas espaço em disco: envolve durabilidade, disponibilidade, performance, classe de uso, ciclo de vida e custo.
+
+---
+
+## Como funciona
 
 O sistema operacional envia operações de leitura e escrita para blocos.
 
@@ -15,19 +33,7 @@ Essas operações são avaliadas por:
 * fila de disco;
 * padrão aleatório ou sequencial.
 
----
-
-## Diferença para Objeto
-
-No [[Armazenamento de Objetos]], a aplicação acessa objetos por API.
-
-No armazenamento em bloco, a aplicação acessa um dispositivo parecido com disco.
-
-Por isso, [[Amazon EBS]] é adequado para instâncias [[Amazon EC2]], enquanto [[Amazon S3]] é adequado para arquivos distribuídos, data lakes e objetos.
-
----
-
-## Uso Correto
+**Uso Correto**
 
 Armazenamento em bloco é forte quando existe necessidade de disco persistente, baixa latência e controle pelo sistema operacional.
 
@@ -35,7 +41,7 @@ Ele não deve ser escolhido apenas porque “parece mais familiar”. Em nuvem, 
 
 ---
 
-## Exemplo Prático
+## Exemplo prático
 
 Uma aplicação pode usar:
 
@@ -48,31 +54,29 @@ Cada escolha muda o comportamento da aplicação.
 
 ---
 
-## Critério de Escolha
+## Diferenças importantes
+
+**Diferença para Objeto**
+
+No [[Armazenamento de Objetos]], a aplicação acessa objetos por [[APIs|API]].
+
+No armazenamento em bloco, a aplicação acessa um dispositivo parecido com disco.
+
+Por isso, [[Amazon EBS]] é adequado para instâncias [[Amazon EC2]], enquanto [[Amazon S3]] é adequado para arquivos distribuídos, data lakes e objetos.
+
+**Critério de Escolha**
 
 Pergunte:
 
-
 * a aplicação precisa de disco?
-* precisa de API de objeto?
+* precisa de [[APIs|API]] de objeto?
 * precisa compartilhar arquivos entre máquinas?
 * precisa arquivar por anos?
 * precisa recuperar imediatamente?
 
+Responder essas perguntas evita usar [[Amazon S3|S3]] como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
 
-Responder essas perguntas evita usar S3 como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
-
-## Como entender isso
-
-Este conceito pertence ao módulo de armazenamento na AWS.
-
-## Ponto central
-
-Uma pergunta principal é: como o dado será acessado?
-
-Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se for filesystem compartilhado, pense em EFS ou FSx.
-
-## Como Diferenciar
+**Como Diferenciar**
 
 * bloco é diferente de objeto;
 * objeto é diferente de arquivo compartilhado;
@@ -80,6 +84,21 @@ Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se f
 * lifecycle automatiza economia;
 * versionamento e backup ajudam recuperação.
 
-## Cuidado importante
+---
+
+## Cuidados
 
 Não escolha armazenamento só pelo nome do serviço. Escolha pelo padrão de acesso.
+
+---
+
+## Relação com outras notas
+
+- [[IOPS]]
+- [[Throughput de Armazenamento]]
+- [[Latência de Armazenamento]]
+- [[Amazon EBS]]
+- [[Amazon S3]]
+- [[Amazon EFS]]
+- [[Armazenamento de Objetos]]
+- [[Amazon EC2]]

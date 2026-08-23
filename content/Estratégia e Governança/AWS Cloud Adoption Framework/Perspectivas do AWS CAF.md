@@ -2,7 +2,6 @@ Perspectivas do AWS CAF são as seis áreas usadas pelo AWS Cloud Adoption Frame
 
 Elas ajudam a separar responsabilidades e evitar que a adoção da nuvem seja vista apenas como trabalho da equipe técnica.
 
-
 Imagine que uma empresa decide migrar para AWS.
 
 Se apenas os engenheiros participam, podem surgir problemas: orçamento sem controle, pessoas sem treinamento, segurança sem processo, operação despreparada e liderança sem clareza de valor.
@@ -11,7 +10,25 @@ As perspectivas existem para lembrar que nuvem envolve toda a organização.
 
 ---
 
-## As seis perspectivas
+## O que é
+
+* Business e People olham muito para valor e pessoas.
+* Governance controla.
+* Platform constrói a base.
+* Security protege.
+* Operations mantém funcionando.
+
+---
+
+## Por que existe
+
+Perspectivas do AWS CAF existe para orientar decisões que não são apenas técnicas. Adoção de nuvem envolve pessoas, processos, risco, plataforma, segurança, operação, custo e valor de negócio.
+
+---
+
+## Como funciona
+
+**As seis perspectivas**
 
 * Business: Negócios.
 * People: Pessoas.
@@ -19,7 +36,6 @@ As perspectivas existem para lembrar que nuvem envolve toda a organização.
 * Platform: Plataforma.
 * Security: Segurança.
 * Operations: Operações.
-
 
 Em português, estudamos como:
 
@@ -30,9 +46,32 @@ Em português, estudamos como:
 * [[Perspectiva de Segurança do AWS CAF]];
 * [[Perspectiva de Operações do AWS CAF]].
 
+**Como Analisar o Cenário**
+
+Quando o cenário mencionar uma perspectiva, procure a palavra-chave.
+
+* Business: valor, estratégia, resultado de negócio.
+* People: cultura, liderança, habilidades, treinamento.
+* Governance: controle, risco, prioridade, políticas.
+* Platform: ambiente técnico, landing zone, arquitetura.
+* Security: proteção, risco, confidencialidade, integridade, disponibilidade.
+* Operations: monitoramento, suporte, incidentes, operação.
+
 ---
 
-## Como Diferenciar
+## Exemplo prático
+
+Quando o cenário indica que uma empresa precisa capacitar equipes, mudar cultura e desenvolver fluência em nuvem, a perspectiva é People.
+
+Se fala em criar uma base técnica escalável para workloads, a perspectiva é Platform.
+
+Se fala em controlar riscos, custos e prioridades da transformação, a perspectiva é Governance.
+
+---
+
+## Diferenças importantes
+
+**Como Diferenciar**
 
 * valor, estratégia, resultado financeiro: Negócios.
 * treinamento, cultura, liderança, mudança: Pessoas.
@@ -41,10 +80,9 @@ Em português, estudamos como:
 * proteção, confidencialidade, integridade, disponibilidade: Segurança.
 * monitoramento, suporte, operação e melhoria contínua: Operações.
 
-
 ---
 
-## Cuidado importante
+## Cuidados
 
 Governança e Segurança parecem iguais, mas não são.
 
@@ -56,35 +94,11 @@ As duas se conectam, mas têm foco diferente.
 
 ---
 
-## Como Analisar o Cenário
+## Relação com outras notas
 
-Quando o cenário mencionar uma perspectiva, procure a palavra-chave.
-
-
-* Business: valor, estratégia, resultado de negócio.
-* People: cultura, liderança, habilidades, treinamento.
-* Governance: controle, risco, prioridade, políticas.
-* Platform: ambiente técnico, landing zone, arquitetura.
-* Security: proteção, risco, confidencialidade, integridade, disponibilidade.
-* Operations: monitoramento, suporte, incidentes, operação.
-
-
----
-
-## Exemplo explicado
-
-Quando o cenário indica que uma empresa precisa capacitar equipes, mudar cultura e desenvolver fluência em nuvem, a perspectiva é People.
-
-Se fala em criar uma base técnica escalável para workloads, a perspectiva é Platform.
-
-Se fala em controlar riscos, custos e prioridades da transformação, a perspectiva é Governance.
-
----
-
-## Ideia Central
-
-* Business e People olham muito para valor e pessoas.
-* Governance controla.
-* Platform constrói a base.
-* Security protege.
-* Operations mantém funcionando.
+- [[Perspectiva de Negócios do AWS CAF]]
+- [[Perspectiva de Pessoas do AWS CAF]]
+- [[Perspectiva de Governança do AWS CAF]]
+- [[Perspectiva de Plataforma do AWS CAF]]
+- [[Perspectiva de Segurança do AWS CAF]]
+- [[Perspectiva de Operações do AWS CAF]]

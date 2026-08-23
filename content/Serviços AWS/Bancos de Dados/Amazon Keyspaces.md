@@ -2,40 +2,27 @@ Amazon Keyspaces é o serviço gerenciado da AWS compatível com Apache Cassandr
 
 Ele é usado para workloads que precisam do modelo de colunas largas e compatibilidade com Cassandra Query Language.
 
-
 Amazon Keyspaces deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 
 muitas alternativas erradas parecem boas porque ignoram esse padrão de acesso.
 
 ---
 
-## Quando Usar
+## O que é
 
-* workloads já baseados em Cassandra;
-* alta escala de escrita;
-* tabelas largas;
-* baixa latência;
-* aplicações distribuídas.
+Amazon Keyspaces deve ser entendido pelo modelo de dados, pelo padrão de consulta e pela consistência exigida. Banco de dados na nuvem não é apenas onde a informação fica guardada; é onde leitura, escrita, escala, backup, latência e custo se encontram.
 
 ---
 
-## Cuidado
+## Por que existe
 
-Não escolha apenas por ser NoSQL.
-
-O modelo Cassandra exige boa definição de partição, chave e padrão de consulta.
+Amazon Keyspaces existe para resolver necessidades de persistência, consulta, consistência, escala ou especialização de dados. Escolher banco errado pode gerar custo alto, lentidão, modelagem confusa e dificuldade para manter a aplicação.
 
 ---
 
-## Relação com Bancos Purpose-Built
+## Como funciona
 
-[[Amazon Keyspaces]] faz sentido quando o modelo Cassandra já é uma exigência técnica ou quando o padrão de acesso favorece colunas largas, alta escala de escrita e consultas desenhadas por chave.
-
-Ele não deve ser usado apenas porque é NoSQL. Assim como [[Amazon DynamoDB]], exige modelagem orientada a consulta. A aplicação precisa saber antecipadamente como os dados serão buscados.
-
----
-
-## Trade-offs
+**Trade-offs**
 
 A vantagem é reduzir operação de Cassandra autogerenciado. A desvantagem é que o modelo de dados continua exigente: partições mal desenhadas podem gerar hotspots, consultas ineficientes e custo desnecessário.
 
@@ -43,7 +30,7 @@ Para workloads relacionais, [[Amazon RDS]] ou [[Amazon Aurora]] continuam sendo 
 
 ---
 
-## Exemplo Prático
+## Exemplo prático
 
 Uma aplicação de pedidos pode usar:
 
@@ -57,12 +44,27 @@ Cada banco resolve um tipo de problema.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Quando Usar**
+
+* workloads já baseados em Cassandra;
+* alta escala de escrita;
+* tabelas largas;
+* baixa latência;
+* aplicações distribuídas.
+
+---
+
+## Cuidados
+
+Não escolha apenas por ser NoSQL.
+
+O modelo Cassandra exige boa definição de partição, chave e padrão de consulta.
 
 A escolha do banco deve partir do padrão de acesso.
 
 Perguntas importantes:
-
 
 * preciso de transação?
 * preciso de join?
@@ -70,5 +72,14 @@ Perguntas importantes:
 * preciso de analytics?
 * preciso de relacionamento em grafo?
 
-
 Escolher banco só pelo nome do serviço costuma gerar arquitetura ruim.
+
+---
+
+## Relação com outras notas
+
+**Relação com Bancos Purpose-Built**
+
+[[Amazon Keyspaces]] faz sentido quando o modelo Cassandra já é uma exigência técnica ou quando o padrão de acesso favorece colunas largas, alta escala de escrita e consultas desenhadas por chave.
+
+Ele não deve ser usado apenas porque é NoSQL. Assim como [[Amazon DynamoDB]], exige modelagem orientada a consulta. A aplicação precisa saber antecipadamente como os dados serão buscados.

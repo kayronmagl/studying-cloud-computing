@@ -2,14 +2,29 @@ AWS Client VPN permite que usuários remotos acessem recursos dentro da AWS por 
 
 Diferente de [[AWS Site-to-Site VPN]], que conecta redes, Client VPN conecta usuários individuais.
 
-
 AWS Client VPN faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 
 Sempre pergunte: “quem precisa falar com quem, por qual caminho, e com qual permissão?”.
 
 ---
 
-## Uso
+## O que é
+
+AWS Client VPN deve ser entendido pelo caminho do tráfego: origem, destino, protocolo, porta, rota, nome DNS e limite de isolamento. Rede na AWS define quem consegue falar com quem e por onde os pacotes passam.
+
+Rede define isolamento, caminhos, exposição, conectividade privada, DNS e segurança de tráfego.
+
+---
+
+## Por que existe
+
+AWS Client VPN existe para controlar comunicação entre recursos, usuários, serviços e ambientes externos. Sem desenho de rede claro, surgem exposição indevida, falhas de conectividade, latência difícil de explicar e custo de tráfego inesperado.
+
+---
+
+## Como funciona
+
+**Uso**
 
 * acesso remoto de administradores;
 * acesso seguro a subnets privadas;
@@ -19,29 +34,32 @@ Sempre pergunte: “quem precisa falar com quem, por qual caminho, e com qual pe
 
 ---
 
-## Relação com VPC
+## Exemplo prático
 
-O usuário se conecta ao endpoint Client VPN e pode acessar recursos dentro da [[Amazon VPC]], conforme rotas, autorização e regras de segurança.
-
----
-
-## Cuidado
-
-Client VPN não substitui IAM, Security Groups ou auditoria.
-
-Ela apenas fornece caminho de rede. Permissões e controles de aplicação continuam necessários.
-
----
-
-## Exemplo Prático
-
-Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e VPC Endpoints para acessar serviços AWS sem passar pela internet.
+Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e [[Amazon VPC|VPC]] Endpoints para acessar serviços AWS sem passar pela internet.
 
 Cada componente muda segurança, custo e disponibilidade.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* [[Amazon VPC|VPC]] é regional.
+* Subnet é zonal.
+* Route table define caminho.
+* Security group controla tráfego em recurso.
+* NACL controla tráfego em subnet.
+* NAT Gateway permite saída privada.
+
+---
+
+## Cuidados
+
+Client VPN não substitui [[AWS Identity and Access Management (IAM)|IAM]], Security Groups ou auditoria.
+
+Ela apenas fornece caminho de rede. Permissões e controles de aplicação continuam necessários.
 
 Rede mal desenhada pode gerar três problemas comuns:
 
@@ -51,25 +69,12 @@ Rede mal desenhada pode gerar três problemas comuns:
 
 Por isso, rede precisa ser estudada junto com segurança, alta disponibilidade e precificação.
 
+Recurso em subnet pública só é realmente público se também tiver IP público e rota adequada.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence ao módulo de redes na AWS.
+**Relação com [[Amazon VPC|VPC]]**
 
-## Ponto central
-
-Rede define isolamento, caminhos, exposição, conectividade privada, DNS e segurança de tráfego.
-
-## Como Diferenciar
-
-* VPC é regional.
-* Subnet é zonal.
-* Route table define caminho.
-* Security group controla tráfego em recurso.
-* NACL controla tráfego em subnet.
-* NAT Gateway permite saída privada.
-
-## Cuidado importante
-
-Recurso em subnet pública só é realmente público se também tiver IP público e rota adequada.
+O usuário se conecta ao endpoint Client VPN e pode acessar recursos dentro da [[Amazon VPC]], conforme rotas, autorização e regras de segurança.

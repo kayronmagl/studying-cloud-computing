@@ -6,9 +6,23 @@ Modelos de implantação não são a mesma coisa que modelos de serviço. Modelo
 
 ---
 
-## Implantação baseada em nuvem
+## O que é
 
-Na implantação baseada em nuvem, os recursos principais de computação, armazenamento, banco de dados e rede são executados na infraestrutura de um [[Provedores de Nuvem|provedor de nuvem]]. Servidores virtuais, serviços de aplicação, bancos gerenciados, filas, buckets, balanceadores de carga e redes lógicas são criados sobre [[Data Centers|data centers]] operados pelo provedor.
+Modelos de Implantação em Nuvem deve ser entendido como base para interpretar a nuvem. Fundamentos explicam o que já existia antes dos provedores e continua aparecendo em serviços modernos.
+
+---
+
+## Por que existe
+
+Modelos de Implantação em Nuvem existe porque nuvem não substitui os fundamentos de computação. Ela reorganiza infraestrutura, rede, dados, segurança e operação em serviços consumíveis.
+
+---
+
+## Como funciona
+
+**Implantação baseada em nuvem**
+
+Na implantação baseada em nuvem, os recursos principais de computação, armazenamento, banco de dados e rede são executados na infraestrutura de um [[Provedores de Nuvem|provedor de nuvem]]. Servidores virtuais, serviços de aplicação, bancos gerenciados, filas, [[Buckets S3|buckets]], balanceadores de carga e redes lógicas são criados sobre [[Data Centers|data centers]] operados pelo provedor.
 
 O cliente não possui os prédios, racks, servidores físicos, energia, refrigeração e conectividade física que sustentam o serviço. Essa camada fica com o provedor. Mesmo assim, o cliente continua responsável por decisões dentro do ambiente: arquitetura, dados, permissões, configurações, redes lógicas, monitoramento, custos e aplicações.
 
@@ -22,9 +36,7 @@ Uma organização pode usar esse modelo de mais de uma forma. Ela pode migrar si
 
 Esse modelo é adequado quando a organização precisa começar rápido, escalar sem comprar hardware antecipadamente, usar serviços gerenciados, testar ideias com menor barreira inicial ou distribuir aplicações em múltiplas regiões. Pode ser inadequado quando há exigências rígidas de controle físico, dependências legadas difíceis de migrar, restrições regulatórias específicas, latência local extrema ou custos previsíveis que favorecem infraestrutura própria bem utilizada. O uso da nuvem também exige disciplina financeira, porque recursos criados sem governança podem continuar gerando custo mesmo quando não entregam valor.
 
----
-
-## Implantação on-premises
+**Implantação on-premises**
 
 Na implantação [[On-Premise|on-premises]], os recursos são executados em infraestrutura controlada pela própria organização ou por uma instalação contratada para esse fim. Servidores, armazenamento, rede, energia, refrigeração, espaço físico e manutenção precisam ser planejados diretamente.
 
@@ -40,9 +52,7 @@ Não é correto dizer que on-premises sempre tem menor latência. A latência de
 
 Esse modelo pode ser inadequado quando a organização precisa escalar rapidamente, reduzir compra antecipada de hardware, operar globalmente ou experimentar novos ambientes com frequência. A nota [[On-Premise]] aprofunda a responsabilidade específica da infraestrutura mantida localmente; aqui o foco é comparar esse modelo com outras formas de implantação.
 
----
-
-## Implantação híbrida
+**Implantação híbrida**
 
 Na implantação híbrida, parte dos recursos permanece on-premises e parte é executada em nuvem. O ponto central não é apenas usar os dois ambientes, mas integrá-los de forma segura, observável e operacionalmente coerente.
 
@@ -52,15 +62,13 @@ Uma aplicação pode manter um banco sensível em um datacenter local e executar
 
 A conectividade híbrida pode usar VPN, [[AWS Direct Connect]], [[AWS Site-to-Site VPN]], [[AWS Client VPN]], [[AWS Transit Gateway]] e outros recursos de [[Redes na AWS]]. O desenho precisa considerar latência, largura de banda, criptografia, rotas, redundância, DNS, falhas parciais e custo de transferência de dados. Também precisa considerar consistência de dados, porque parte da informação pode estar localmente e outra parte pode ser processada ou armazenada em nuvem.
 
-O provisionamento fica dividido. Recursos locais seguem processos internos da organização. Recursos em nuvem podem ser criados por console, APIs, CLI, SDKs ou infraestrutura como código. Essa diferença aumenta a necessidade de padronização, inventário, controle de permissões e auditoria.
+O provisionamento fica dividido. Recursos locais seguem processos internos da organização. Recursos em nuvem podem ser criados por console, [[APIs|APIs]], [[AWS CLI|CLI]], [[AWS SDKs|SDKs]] ou infraestrutura como código. Essa diferença aumenta a necessidade de padronização, inventário, controle de permissões e auditoria.
 
 Um exemplo comum é uma aplicação regulada que mantém registros principais em infraestrutura local, envia dados autorizados para processamento em nuvem e retorna os resultados para sistemas internos. Nesse cenário, identidade, criptografia, auditoria, regras de acesso e rotas precisam funcionar de forma coordenada nos dois lados. Uma falha de conectividade pode não derrubar todos os sistemas, mas pode interromper fluxos que dependem da comunicação entre os ambientes.
 
 O modelo híbrido é adequado quando a organização precisa migrar gradualmente, manter sistemas legados, atender requisitos de residência de dados, integrar ambientes corporativos existentes ou usar a nuvem como expansão de capacidade. Pode ser inadequado quando a equipe não consegue operar dois ambientes com consistência, quando a latência entre eles compromete a aplicação, quando a dependência de conectividade cria fragilidade ou quando a integração gera complexidade maior que o benefício. Híbrido não é automaticamente mais maduro; ele só faz sentido quando a necessidade de integração justifica o custo operacional adicional.
 
----
-
-## Multicloud não é automaticamente híbrido
+**Multicloud não é automaticamente híbrido**
 
 Multicloud significa usar serviços de dois ou mais provedores de nuvem. Uma arquitetura pode usar AWS para parte da computação e outro provedor para análise, armazenamento, inteligência artificial ou distribuição global, por exemplo. Isso não exige infraestrutura on-premises.
 
@@ -70,7 +78,15 @@ Um ambiente que usa AWS e outro provedor, sem datacenter local integrado, é mul
 
 ---
 
-## Comparação prática
+## Exemplo prático
+
+Em uma arquitetura simples, usuário, aplicação, rede, banco, armazenamento, segurança e monitoramento trabalham juntos. Modelos de Implantação em Nuvem deve ser entendido pelo papel que exerce nesse conjunto.
+
+---
+
+## Diferenças importantes
+
+**Comparação prática**
 
 Em uma implantação baseada em nuvem, a maior parte da infraestrutura física é responsabilidade do provedor, e o cliente administra recursos lógicos e aplicações. Em uma implantação on-premises, a organização assume desde a base física até as camadas superiores. Em uma implantação híbrida, as responsabilidades são divididas e precisam ser coordenadas entre ambientes.
 
@@ -78,7 +94,7 @@ Em uma implantação baseada em nuvem, a maior parte da infraestrutura física �
 | --- | --- | --- | --- |
 | Local dos recursos | Infraestrutura do provedor de nuvem | Infraestrutura controlada pela organização ou instalação dedicada | Parte local e parte em nuvem |
 | Responsabilidade física | Provedor cuida de prédios, energia, hardware e infraestrutura física | Organização assume hardware, energia, refrigeração, espaço e manutenção | Dividida conforme o ambiente |
-| Provisionamento | Console, APIs, CLI, SDKs e infraestrutura como código | Processos locais, virtualização, automação interna e capacidade já adquirida | Combinação dos processos locais com os mecanismos da nuvem |
+| Provisionamento | Console, [[APIs|APIs]], [[AWS CLI|CLI]], [[AWS SDKs|SDKs]] e infraestrutura como código | Processos locais, virtualização, automação interna e capacidade já adquirida | Combinação dos processos locais com os mecanismos da nuvem |
 | Elasticidade | Maior capacidade de ajustar recursos sob demanda | Limitada pela capacidade instalada ou comprada | Possível na parte em nuvem, mas condicionada pela integração |
 | Conectividade | Pode ser pública, privada ou interna ao provedor | Geralmente local ou corporativa, com saída para redes externas quando necessário | Depende de VPNs, links dedicados, rotas, DNS e políticas entre ambientes |
 | Controle | Menor controle físico, maior abstração operacional | Maior controle físico e operacional direto | Controle dividido e mais difícil de padronizar |
@@ -96,7 +112,15 @@ Nenhum modelo é universalmente melhor. A escolha depende de requisitos técnico
 
 ---
 
-## Relação com outros conceitos
+## Cuidados
+
+O cuidado principal em Modelos de Implantação em Nuvem é pular a base e tentar memorizar produto. Sem fundamento, a diferença entre serviços parecidos fica confusa e a arquitetura vira tentativa.
+
+---
+
+## Relação com outras notas
+
+**Relação com outros conceitos**
 
 Para entender a diferença entre modelo de implantação e operação local, aprofunde em [[On-Premise]].
 

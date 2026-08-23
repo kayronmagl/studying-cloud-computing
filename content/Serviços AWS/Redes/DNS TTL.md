@@ -2,44 +2,59 @@ DNS TTL significa Time To Live em registros DNS.
 
 Ele define por quanto tempo uma resposta DNS pode permanecer em cache antes de ser consultada novamente.
 
-
 DNS TTL faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 
 Sempre pergunte: “quem precisa falar com quem, por qual caminho, e com qual permissão?”.
 
 ---
 
-## Exemplo
+## O que é
+
+DNS TTL deve ser entendido pelo caminho do tráfego: origem, destino, protocolo, porta, rota, nome DNS e limite de isolamento. Rede na AWS define quem consegue falar com quem e por onde os pacotes passam.
+
+---
+
+## Por que existe
+
+DNS TTL existe para controlar comunicação entre recursos, usuários, serviços e ambientes externos. Sem desenho de rede claro, surgem exposição indevida, falhas de conectividade, latência difícil de explicar e custo de tráfego inesperado.
+
+---
+
+## Como funciona
+
+O funcionamento depende de endereçamento, rotas, subnets, gateways, DNS, regras de tráfego e limites do serviço. Ao estudar DNS TTL, siga o caminho da comunicação: origem, destino, porta, protocolo, rota e controle de segurança.
+
+---
+
+## Exemplo prático
 
 Um TTL de 300 segundos permite que resolvers mantenham a resposta por até 5 minutos.
 
 TTL baixo facilita mudanças rápidas. TTL alto reduz consultas e melhora cache.
 
+Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e [[Amazon VPC|VPC]] Endpoints para acessar serviços AWS sem passar pela internet.
+
+Cada componente muda segurança, custo e disponibilidade.
+
+TTL influencia quanto tempo uma resposta DNS fica em cache.
+
+Se o TTL é alto, clientes e resolvedores demoram mais para buscar uma nova resposta. Isso reduz consultas, mas torna mudanças mais lentas.
+
+Se o TTL é baixo, alterações se propagam mais rápido, mas podem gerar mais consultas DNS. Em arquiteturas com failover ou mudança frequente de destino, esse detalhe pode afetar o tempo percebido de recuperação.
+
 ---
 
-## Relação com Route 53
+## Diferenças importantes
 
-No [[Amazon Route 53]], TTL influencia migração, failover, cutover e propagação de mudanças.
+Não confunda alcance e função. [[Amazon VPC|VPC]] é regional, subnet é zonal, route table define caminho, Security Group protege recurso, Network ACL protege subnet, NAT Gateway permite saída e Internet Gateway permite conectividade com a internet.
 
 ---
 
-## Cuidado
+## Cuidados
 
 Mesmo com TTL baixo, alguns resolvers e clientes podem se comportar de forma diferente.
 
 Planeje mudanças críticas com antecedência.
-
----
-
-## Exemplo Prático
-
-Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e VPC Endpoints para acessar serviços AWS sem passar pela internet.
-
-Cada componente muda segurança, custo e disponibilidade.
-
----
-
-## Cuidados importantes
 
 Rede mal desenhada pode gerar três problemas comuns:
 
@@ -51,10 +66,8 @@ Por isso, rede precisa ser estudada junto com segurança, alta disponibilidade e
 
 ---
 
-## Exemplo aplicado
+## Relação com outras notas
 
-TTL influencia quanto tempo uma resposta DNS fica em cache.
+**Relação com Route 53**
 
-Se o TTL é alto, clientes e resolvedores demoram mais para buscar uma nova resposta. Isso reduz consultas, mas torna mudanças mais lentas.
-
-Se o TTL é baixo, alterações se propagam mais rápido, mas podem gerar mais consultas DNS. Em arquiteturas com failover ou mudança frequente de destino, esse detalhe pode afetar o tempo percebido de recuperação.
+No [[Amazon Route 53]], TTL influencia migração, failover, cutover e propagação de mudanças.

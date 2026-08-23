@@ -2,17 +2,15 @@ Jornada de Transformação em Nuvem é o caminho que uma organização percorre 
 
 Essa jornada envolve tecnologia, pessoas, processos, governança e negócio.
 
-
 Não pense em adoção de nuvem como “migrar tudo de uma vez”.
 
 Normalmente, uma empresa passa por fases: entende o cenário, prepara fundamentos, migra workloads, moderniza aplicações, melhora operação e otimiza continuamente.
 
 ---
 
-## Como entender isso
+## O que é
 
 A jornada pode ser pensada assim:
-
 
 * avaliar: onde estamos agora?
 * preparar: quais capacidades faltam?
@@ -21,35 +19,29 @@ A jornada pode ser pensada assim:
 * operar: como manter com qualidade?
 * otimizar: como reduzir custo e aumentar valor?
 
+* Jornada: caminho de amadurecimento da organização na nuvem..
+
+Uma boa resposta precisa ter três partes:
+
+* definição: o que é.
+* função: para que serve na adoção da nuvem.
+* diferença: com o que não deve ser confundido.
+
+No contexto do AWS CAF, o objetivo não é decorar nomes. O objetivo é reconhecer qual área da organização precisa amadurecer.
+
+Quando o cenário descreve um problema, identifique se ele é de negócio, pessoas, governança, plataforma, segurança ou operações. Essa leitura normalmente entrega a resposta.
 
 ---
 
-## Relação com AWS CAF
+## Por que existe
 
-O [[AWS Cloud Adoption Framework (AWS CAF)]] ajuda a organizar essa jornada por perspectivas e capacidades.
-
-Ele evita olhar apenas para tecnologia.
+Jornada de Transformação em Nuvem existe para orientar decisões que não são apenas técnicas. Adoção de nuvem envolve pessoas, processos, risco, plataforma, segurança, operação, custo e valor de negócio.
 
 ---
 
-## Como Diferenciar
+## Como funciona
 
-Esse tipo de cenário pode exigir qual framework ajuda a avaliar prontidão, priorizar oportunidades e criar roadmap de transformação.
-
-A resposta tende a ser AWS CAF.
-
----
-
-## Cuidado importante
-
-Transformação em nuvem não é apenas migração.
-
-Migração move sistemas. Transformação muda a forma como a organização entrega valor usando nuvem.
-
----
-
-## Como Analisar o Cenário
-
+**Como Analisar o Cenário**
 
 Não é apenas migração técnica.
 
@@ -57,7 +49,7 @@ Não é apenas migração técnica.
 
 ---
 
-## Exemplo explicado
+## Exemplo prático
 
 Uma organização começa com projetos piloto, cria uma landing zone, treina equipes, migra workloads, moderniza aplicações e depois otimiza custo e operação.
 
@@ -65,29 +57,32 @@ Esse conjunto forma a jornada.
 
 ---
 
-## Relação com CAF
+## Diferenças importantes
+
+**Como Diferenciar**
+
+Esse tipo de cenário pode exigir qual framework ajuda a avaliar prontidão, priorizar oportunidades e criar roadmap de transformação.
+
+A resposta tende a ser AWS CAF.
+
+---
+
+## Cuidados
+
+Transformação em nuvem não é apenas migração.
+
+Migração move sistemas. Transformação muda a forma como a organização entrega valor usando nuvem.
+
+---
+
+## Relação com outras notas
+
+**Relação com AWS CAF**
+
+O [[AWS Cloud Adoption Framework (AWS CAF)]] ajuda a organizar essa jornada por perspectivas e capacidades.
+
+Ele evita olhar apenas para tecnologia.
+
+**Relação com CAF**
 
 O [[AWS Cloud Adoption Framework (AWS CAF)]] ajuda a organizar essa jornada porque mostra quais áreas precisam amadurecer.
-
----
-
-## Ideia Central
-
-* Jornada: caminho de amadurecimento da organização na nuvem..
-
-
----
-
-## Outra forma de entender
-
-Uma boa resposta precisa ter três partes:
-
-
-* definição: o que é.
-* função: para que serve na adoção da nuvem.
-* diferença: com o que não deve ser confundido.
-
-
-No contexto do AWS CAF, o objetivo não é decorar nomes. O objetivo é reconhecer qual área da organização precisa amadurecer.
-
-Quando o cenário descreve um problema, identifique se ele é de negócio, pessoas, governança, plataforma, segurança ou operações. Essa leitura normalmente entrega a resposta.

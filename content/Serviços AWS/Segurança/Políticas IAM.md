@@ -1,16 +1,30 @@
-Políticas IAM são documentos que definem permissões na AWS.
+Políticas [[AWS Identity and Access Management (IAM)|IAM]] são documentos que definem permissões na AWS.
 
 Elas especificam se uma ação é permitida ou negada, em quais recursos e sob quais condições.
 
 Políticas normalmente são escritas em JSON.
 
-
-Em Políticas IAM, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
-
+Em Políticas [[AWS Identity and Access Management (IAM)|IAM]], pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 
 ---
 
-## Estrutura Conceitual
+## O que é
+
+Políticas IAM deve ser entendido como controle de confiança. Segurança em nuvem envolve identidade, autenticação, autorização, criptografia, auditoria, isolamento e resposta a incidentes.
+
+Segurança combina [[AWS Identity and Access Management (IAM)|IAM]], rede, criptografia, auditoria, detecção e proteção de aplicação.
+
+---
+
+## Por que existe
+
+Políticas [[AWS Identity and Access Management (IAM)|IAM]] existe para reduzir risco de acesso indevido, exposição de dados, abuso de permissões e falta de rastreabilidade. Em nuvem, segurança depende de identidade, configuração, criptografia, auditoria e resposta a incidentes trabalhando juntas.
+
+---
+
+## Como funciona
+
+**Estrutura Conceitual**
 
 Uma política possui elementos como:
 
@@ -30,9 +44,7 @@ Exemplo conceitual:
 }
 ```
 
----
-
-## Allow e Deny
+**Allow e Deny**
 
 `Allow` concede permissão.
 
@@ -40,9 +52,7 @@ Exemplo conceitual:
 
 Uma negação explícita tem prioridade sobre permissões.
 
----
-
-## Tipos
+**Tipos**
 
 Políticas podem ser:
 
@@ -54,17 +64,13 @@ Políticas podem ser:
 * permission boundaries;
 * [[Service Control Policies (SCPs)]].
 
----
-
-## Resource
+**Resource**
 
 O campo Resource limita onde a ação pode ocorrer.
 
-Permitir `s3: GetObject` em todos os buckets é muito diferente de permitir apenas em um bucket específico.
+Permitir `s3: GetObject` em todos os [[Buckets S3|buckets]] é muito diferente de permitir apenas em um [[Buckets S3|bucket]] específico.
 
----
-
-## Condition
+**Condition**
 
 Condições refinam acesso.
 
@@ -78,15 +84,7 @@ Exemplos:
 
 ---
 
-## Erro Comum
-
-Usar `Action: "*"` e `Resource: "*"` por conveniência.
-
-Isso cria permissões amplas demais e viola o [[Princípio do Menor Privilégio]].
-
----
-
-## Exemplo Prático
+## Exemplo prático
 
 Uma aplicação pública pode usar [[AWS WAF]] para filtrar requisições, [[AWS Shield]] para proteção DDoS, [[AWS Identity and Access Management (IAM)|IAM]] para permissões, [[AWS Key Management Service (KMS)|KMS]] para chaves e [[AWS CloudTrail]] para auditoria.
 
@@ -94,29 +92,43 @@ Essas camadas reduzem risco de exposição, abuso e alteração indevida.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* [[AWS Identity and Access Management (IAM)|IAM]] controla permissões.
+* KMS gerencia chaves.
+* WAF filtra HTTP/HTTPS.
+* Shield protege contra DDoS.
+* CloudTrail audita chamadas de [[APIs|API]].
+* GuardDuty detecta ameaças.
+
+---
+
+## Cuidados
+
+**Erro Comum**
+
+Usar `Action: "*"` e `Resource: "*"` por conveniência.
+
+Isso cria permissões amplas demais e viola o [[Princípio do Menor Privilégio]].
 
 O erro comum é confundir “serviço seguro” com “configuração segura”.
 
 A AWS protege a infraestrutura, mas o cliente ainda precisa configurar identidade, rede, dados, logs e aplicação corretamente.
 
-## Como entender isso
-
-Este conceito pertence ao módulo de segurança na AWS.
-
-## Ponto central
-
-Segurança combina IAM, rede, criptografia, auditoria, detecção e proteção de aplicação.
-
-## Como Diferenciar
-
-* IAM controla permissões.
-* KMS gerencia chaves.
-* WAF filtra HTTP/HTTPS.
-* Shield protege contra DDoS.
-* CloudTrail audita chamadas de API.
-* GuardDuty detecta ameaças.
-
-## Cuidado importante
-
 Permissão demais é risco. Aplique menor privilégio e use roles temporárias sempre que possível.
+
+---
+
+## Relação com outras notas
+
+- [[Políticas Baseadas em Identidade]]
+- [[Políticas Baseadas em Recurso]]
+- [[Service Control Policies (SCPs)]]
+- [[AWS WAF]]
+- [[AWS Shield]]
+- [[AWS Identity and Access Management (IAM)]]
+- [[AWS Key Management Service (KMS)]]
+- [[AWS CloudTrail]]
+- [[Princípio do Menor Privilégio]]

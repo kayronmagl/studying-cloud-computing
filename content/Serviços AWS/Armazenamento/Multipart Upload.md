@@ -2,17 +2,25 @@ Multipart Upload é o recurso do [[Amazon S3]] para enviar objetos grandes em pa
 
 Em vez de enviar um arquivo inteiro em uma única requisição, a aplicação divide o arquivo em partes, envia cada parte separadamente e depois conclui o upload.
 
-## Por que Existe
+---
+
+## O que é
+
+Multipart Upload deve ser entendido pelo tipo de dado que guarda, pelo modo de acesso e pela durabilidade esperada. Em armazenamento na nuvem, a decisão central é separar objeto, bloco, arquivo, backup, ciclo de vida, recuperação e custo.
+
+Uma pergunta principal é: como o dado será acessado?
+
+Se for disco de servidor, pense em EBS. Se for objeto via [[APIs|API]], pense em [[Amazon S3|S3]]. Se for filesystem compartilhado, pense em EFS ou FSx.
+
+---
+
+## Por que existe
 
 Uploads grandes são mais sensíveis a falhas de rede.
 
 Se um arquivo de muitos gigabytes falha perto do fim, reenviar tudo do zero é ineficiente.
 
 Com multipart upload, apenas partes com falha precisam ser reenviadas.
-
----
-
-## Vantagens
 
 * melhora resiliência em uploads grandes;
 * permite paralelismo;
@@ -22,26 +30,19 @@ Com multipart upload, apenas partes com falha precisam ser reenviadas.
 
 ---
 
-## Fluxo
+## Como funciona
+
+**Fluxo**
 
 * iniciar multipart upload: ↓.
 * enviar partes: ↓.
 * registrar ETags das partes: ↓.
 * concluir upload: ↓.
-* S3 monta o objeto final
-
-
----
-
-## Cuidado
-
-Uploads multipart incompletos podem gerar custo.
-
-É boa prática usar [[S3 Lifecycle]] para abortar uploads incompletos após determinado período.
+* [[Amazon S3|S3]] monta o objeto final
 
 ---
 
-## Exemplo Prático
+## Exemplo prático
 
 Uma aplicação pode usar:
 
@@ -54,33 +55,21 @@ Cada escolha muda o comportamento da aplicação.
 
 ---
 
-## Critério de Escolha
+## Diferenças importantes
+
+**Critério de Escolha**
 
 Pergunte:
 
-
 * a aplicação precisa de disco?
-* precisa de API de objeto?
+* precisa de [[APIs|API]] de objeto?
 * precisa compartilhar arquivos entre máquinas?
 * precisa arquivar por anos?
 * precisa recuperar imediatamente?
 
+Responder essas perguntas evita usar [[Amazon S3|S3]] como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
 
-Responder essas perguntas evita usar S3 como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
-
----
-
-## Como entender isso
-
-Este conceito pertence ao módulo de armazenamento na AWS.
-
-## Ponto central
-
-Uma pergunta principal é: como o dado será acessado?
-
-Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se for filesystem compartilhado, pense em EFS ou FSx.
-
-## Como Diferenciar
+**Como Diferenciar**
 
 * bloco é diferente de objeto;
 * objeto é diferente de arquivo compartilhado;
@@ -88,6 +77,21 @@ Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se f
 * lifecycle automatiza economia;
 * versionamento e backup ajudam recuperação.
 
-## Cuidado importante
+---
+
+## Cuidados
+
+Uploads multipart incompletos podem gerar custo.
+
+É boa prática usar [[S3 Lifecycle]] para abortar uploads incompletos após determinado período.
 
 Não escolha armazenamento só pelo nome do serviço. Escolha pelo padrão de acesso.
+
+---
+
+## Relação com outras notas
+
+- [[Amazon S3]]
+- [[Amazon EBS]]
+- [[Amazon EFS]]
+- [[S3 Lifecycle]]

@@ -2,33 +2,31 @@ Throughput de Armazenamento é a quantidade de dados transferidos por unidade de
 
 Ele costuma ser medido em MiB/s, MB/s ou GB/s.
 
-## Diferença para IOPS
+---
 
-[[IOPS]] mede operações.
+## O que é
 
-Throughput mede volume.
+Throughput de Armazenamento deve ser entendido pelo tipo de dado que guarda, pelo modo de acesso e pela durabilidade esperada. Em armazenamento na nuvem, a decisão central é separar objeto, bloco, arquivo, backup, ciclo de vida, recuperação e custo.
 
-Um workload pode ter poucas operações enormes ou muitas operações pequenas. Cada caso pressiona o armazenamento de forma diferente.
+Uma pergunta principal é: como o dado será acessado?
+
+Se for disco de servidor, pense em EBS. Se for objeto via [[APIs|API]], pense em [[Amazon S3|S3]]. Se for filesystem compartilhado, pense em EFS ou FSx.
 
 ---
 
-## Onde Importa
+## Por que existe
+
+Throughput de Armazenamento existe para organizar como dados são guardados, acessados, protegidos, recuperados e cobrados. Em nuvem, armazenamento não é apenas espaço em disco: envolve durabilidade, disponibilidade, performance, classe de uso, ciclo de vida e custo.
+
+---
+
+## Como funciona
+
+**Onde Importa**
 
 Throughput é importante em backups, logs, big data, processamento sequencial, streaming, transferência de arquivos grandes e data warehouses.
 
----
-
-## Relação com AWS
-
-Em [[Amazon EBS]], volumes como `st1` favorecem throughput.
-
-Em [[Amazon S3]], throughput depende do paralelismo e do padrão de requisições.
-
-Em [[Amazon EFS]], throughput depende de modos como Elastic, Provisioned e Bursting.
-
----
-
-## Interpretação
+**Interpretação**
 
 Throughput deve ser analisado junto com latência, IOPS e custo.
 
@@ -36,7 +34,7 @@ Alta vazão não significa automaticamente bom desempenho para banco transaciona
 
 ---
 
-## Exemplo Prático
+## Exemplo prático
 
 Uma aplicação pode usar:
 
@@ -49,33 +47,29 @@ Cada escolha muda o comportamento da aplicação.
 
 ---
 
-## Critério de Escolha
+## Diferenças importantes
+
+**Diferença para IOPS**
+
+[[IOPS]] mede operações.
+
+Throughput mede volume.
+
+Um workload pode ter poucas operações enormes ou muitas operações pequenas. Cada caso pressiona o armazenamento de forma diferente.
+
+**Critério de Escolha**
 
 Pergunte:
 
-
 * a aplicação precisa de disco?
-* precisa de API de objeto?
+* precisa de [[APIs|API]] de objeto?
 * precisa compartilhar arquivos entre máquinas?
 * precisa arquivar por anos?
 * precisa recuperar imediatamente?
 
+Responder essas perguntas evita usar [[Amazon S3|S3]] como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
 
-Responder essas perguntas evita usar S3 como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
-
----
-
-## Como entender isso
-
-Este conceito pertence ao módulo de armazenamento na AWS.
-
-## Ponto central
-
-Uma pergunta principal é: como o dado será acessado?
-
-Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se for filesystem compartilhado, pense em EFS ou FSx.
-
-## Como Diferenciar
+**Como Diferenciar**
 
 * bloco é diferente de objeto;
 * objeto é diferente de arquivo compartilhado;
@@ -83,6 +77,20 @@ Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se f
 * lifecycle automatiza economia;
 * versionamento e backup ajudam recuperação.
 
-## Cuidado importante
+---
+
+## Cuidados
 
 Não escolha armazenamento só pelo nome do serviço. Escolha pelo padrão de acesso.
+
+---
+
+## Relação com outras notas
+
+**Relação com AWS**
+
+Em [[Amazon EBS]], volumes como `st1` favorecem throughput.
+
+Em [[Amazon S3]], throughput depende do paralelismo e do padrão de requisições.
+
+Em [[Amazon EFS]], throughput depende de modos como Elastic, Provisioned e Bursting.

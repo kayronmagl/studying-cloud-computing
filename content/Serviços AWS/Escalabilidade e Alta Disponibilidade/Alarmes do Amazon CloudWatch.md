@@ -2,13 +2,27 @@ Alarmes do Amazon CloudWatch monitoram métricas e mudam de estado quando uma co
 
 Eles conectam observabilidade a ação.
 
-
 Alarmes do Amazon CloudWatch ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
-
 
 ---
 
-## Estados
+## O que é
+
+Alarmes do Amazon CloudWatch pertence ao desenho de disponibilidade, crescimento e recuperação. O objetivo é manter a aplicação funcionando quando há aumento de demanda, falha parcial ou necessidade de trocar tráfego para outro recurso.
+
+Escalabilidade é crescer ou reduzir capacidade. Alta disponibilidade é continuar funcionando apesar de falhas.
+
+---
+
+## Por que existe
+
+Alarmes do Amazon CloudWatch existe para manter aplicações disponíveis, responsivas e recuperáveis quando há aumento de demanda, falhas ou variações no ambiente. Sem esse tipo de desenho, crescimento e falha viram eventos manuais e arriscados.
+
+---
+
+## Como funciona
+
+**Estados**
 
 Um alarme pode estar em estados como:
 
@@ -16,17 +30,7 @@ Um alarme pode estar em estados como:
 * ALARM;
 * INSUFFICIENT_DATA.
 
----
-
-## Exemplo
-
-* se CPU média > 70% por 5 minutos: estado ALARM.
-* acionar política de escala
-
-
----
-
-## Ações
+**Ações**
 
 Alarmes podem:
 
@@ -37,21 +41,10 @@ Alarmes podem:
 
 ---
 
-## Relação com Auto Scaling
+## Exemplo prático
 
-Auto Scaling pode usar alarmes para decidir quando aumentar ou reduzir capacidade.
-
----
-
-## Cuidado
-
-Alarmes mal calibrados geram ruído.
-
-Alarmes atrasados podem detectar problema tarde demais. Alarmes sensíveis demais podem gerar flapping.
-
----
-
-## Exemplo Prático
+* se CPU média > 70% por 5 minutos: estado ALARM.
+* acionar política de escala
 
 Uma aplicação pode ser distribuída em múltiplas [[Availability Zones (AZ)]], atrás de um [[Application Load Balancer]], com instâncias gerenciadas por [[Amazon EC2 Auto Scaling]] e métricas no [[Amazon CloudWatch]].
 
@@ -59,7 +52,24 @@ Quando a carga aumenta, novas instâncias entram. Quando uma falha ocorre, desti
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* CloudWatch observa.
+* Auto Scaling ajusta capacidade.
+* ELB distribui tráfego.
+* Health checks removem destinos ruins.
+* Multi-AZ reduz falha zonal.
+* RTO e RPO guiam recuperação.
+
+---
+
+## Cuidados
+
+Alarmes mal calibrados geram ruído.
+
+Alarmes atrasados podem detectar problema tarde demais. Alarmes sensíveis demais podem gerar flapping.
 
 Escalar sem observar pode aumentar custo.
 
@@ -69,25 +79,17 @@ Ter alta disponibilidade sem testes pode criar falsa confiança.
 
 Por isso, esses conceitos devem ser combinados com métricas, alarmes, limites e testes de resiliência.
 
+Auto Scaling não garante alta disponibilidade sozinho. Precisa de múltiplas AZs, load balancing e health checks.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence ao módulo de escalabilidade e alta disponibilidade.
+**Relação com Auto Scaling**
 
-## Ponto central
+Auto Scaling pode usar alarmes para decidir quando aumentar ou reduzir capacidade.
 
-Escalabilidade é crescer ou reduzir capacidade. Alta disponibilidade é continuar funcionando apesar de falhas.
-
-## Como Diferenciar
-
-* CloudWatch observa.
-* Auto Scaling ajusta capacidade.
-* ELB distribui tráfego.
-* Health checks removem destinos ruins.
-* Multi-AZ reduz falha zonal.
-* RTO e RPO guiam recuperação.
-
-## Cuidado importante
-
-Auto Scaling não garante alta disponibilidade sozinho. Precisa de múltiplas AZs, load balancing e health checks.
+- [[Amazon EC2 Auto Scaling]]
+- [[Availability Zones (AZ)]]
+- [[Application Load Balancer]]
+- [[Amazon CloudWatch]]

@@ -2,22 +2,29 @@ At-Least-Once Delivery significa que uma mensagem será entregue uma ou mais vez
 
 O sistema tenta garantir que a mensagem não seja perdida, aceitando a possibilidade de duplicidade.
 
-
 At-Least-Once Delivery aparece quando sistemas precisam conversar sem ficarem grudados um no outro. Mensageria serve para desacoplar, absorver picos e lidar melhor com falhas.
 
 Ao estudar, pense sempre em produtor, consumidor, mensagem, retry e DLQ.
 
 ---
 
-## Exemplo
+## O que é
 
-[[Amazon SQS]] Standard Queues usam esse modelo.
+At-Least-Once Delivery deve ser entendido como comunicação indireta entre partes de uma aplicação. Em vez de um componente depender da resposta imediata de outro, mensagens permitem desacoplar envio, espera, processamento e falha.
 
-Uma mensagem pode ser entregue para o consumidor, processada, mas por falha de confirmação, reaparecer na fila.
+Mensageria desacopla produtores e consumidores.
 
 ---
 
-## Consequência
+## Por que existe
+
+At-Least-Once Delivery existe para desacoplar partes de uma aplicação, absorver variação de carga e permitir comunicação assíncrona ou orientada a eventos. Sem mensageria, componentes ficam mais dependentes do tempo de resposta uns dos outros.
+
+---
+
+## Como funciona
+
+**Consequência**
 
 Consumidores precisam ser idempotentes.
 
@@ -25,55 +32,51 @@ Isso significa que processar a mesma mensagem duas vezes não deve corromper o s
 
 ---
 
-## Relação com Idempotência
+## Exemplo prático
 
-[[Idempotência]] é a técnica que torna at-least-once seguro.
+[[Amazon SQS]] Standard Queues usam esse modelo.
 
-Sem idempotência, duplicidade pode gerar cobranças duplicadas, e-mails repetidos ou estados incorretos.
+Uma mensagem pode ser entregue para o consumidor, processada, mas por falha de confirmação, reaparecer na fila.
 
----
-
-## Trade-off
-
-At-least-once favorece durabilidade e disponibilidade.
-
-O custo é lidar com duplicidade.
-
----
-
-## Exemplo Prático
-
-Uma API pode receber uma solicitação, publicar uma mensagem em [[Amazon SQS]] e responder rapidamente ao usuário. Workers processam a fila depois. Se falharem, mensagens podem ser repetidas ou enviadas para [[Dead Letter Queue (DLQ)]].
+Uma [[APIs|API]] pode receber uma solicitação, publicar uma mensagem em [[Amazon SQS]] e responder rapidamente ao usuário. Workers processam a fila depois. Se falharem, mensagens podem ser repetidas ou enviadas para [[Dead Letter Queue (DLQ)]].
 
 Em outro cenário, [[Amazon SNS]] distribui uma mensagem para vários consumidores, enquanto [[Amazon EventBridge]] roteia eventos por padrão.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
 
-Mensageria exige lidar com duplicidade, ordem, atraso, reprocessamento e observabilidade.
+**Trade-off**
 
-Não basta “colocar na fila”. O consumidor precisa ser idempotente, monitorado e preparado para falhas.
+At-least-once favorece durabilidade e disponibilidade.
 
----
+O custo é lidar com duplicidade.
 
-## Como entender isso
+**Como Diferenciar**
 
-Este conceito pertence ao módulo de mensageria na AWS.
-
-## Ponto central
-
-Mensageria desacopla produtores e consumidores.
-
-## Como Diferenciar
-
-* SQS é fila.
+* [[Amazon SQS|SQS]] é fila.
 * SNS é pub/sub.
 * EventBridge é barramento de eventos.
 * MQ é broker gerenciado.
 * MSK é Kafka gerenciado.
 * Kinesis é streaming.
 
-## Cuidado importante
+---
+
+## Cuidados
+
+Mensageria exige lidar com duplicidade, ordem, atraso, reprocessamento e observabilidade.
+
+Não basta “colocar na fila”. O consumidor precisa ser idempotente, monitorado e preparado para falhas.
 
 Mensageria exige idempotência, retries, DLQ e observabilidade.
+
+---
+
+## Relação com outras notas
+
+**Relação com Idempotência**
+
+[[Idempotência]] é a técnica que torna at-least-once seguro.
+
+Sem idempotência, duplicidade pode gerar cobranças duplicadas, e-mails repetidos ou estados incorretos.

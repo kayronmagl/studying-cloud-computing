@@ -1,15 +1,30 @@
-VPC Flow Logs registram metadados de tráfego de rede em uma [[Amazon VPC]].
+[[Amazon VPC|VPC]] Flow Logs registram metadados de tráfego de rede em uma [[Amazon VPC]].
 
 Eles podem ser habilitados em VPCs, subnets ou interfaces de rede.
 
-
-VPC Flow Logs faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
+[[Amazon VPC|VPC]] Flow Logs faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 
 Sempre pergunte: “quem precisa falar com quem, por qual caminho, e com qual permissão?”.
 
 ---
 
-## O que Registram
+## O que é
+
+VPC Flow Logs deve ser entendido pelo caminho do tráfego: origem, destino, protocolo, porta, rota, nome DNS e limite de isolamento. Rede na AWS define quem consegue falar com quem e por onde os pacotes passam.
+
+A [[Amazon VPC|VPC]] define isolamento lógico. Subnets dividem a [[Amazon VPC|VPC]] por zona. Route tables definem caminhos. Gateways conectam a [[Amazon VPC|VPC]] a redes externas ou serviços.
+
+---
+
+## Por que existe
+
+[[Amazon VPC|VPC]] Flow Logs existe para controlar comunicação entre recursos, usuários, serviços e ambientes externos. Sem desenho de rede claro, surgem exposição indevida, falhas de conectividade, latência difícil de explicar e custo de tráfego inesperado.
+
+---
+
+## Como funciona
+
+**O que Registram**
 
 Flow Logs registram informações como:
 
@@ -24,9 +39,7 @@ Flow Logs registram informações como:
 
 Eles não registram o conteúdo completo dos pacotes.
 
----
-
-## Uso
+**Uso**
 
 * diagnóstico de conectividade;
 * auditoria;
@@ -37,29 +50,31 @@ Eles não registram o conteúdo completo dos pacotes.
 
 ---
 
-## Relação com CloudWatch
+## Exemplo prático
 
-Flow Logs podem ser enviados para [[Amazon CloudWatch]], S3 ou outros destinos compatíveis, dependendo da configuração.
-
----
-
-## Cuidado
-
-Flow Logs geram volume de dados.
-
-É preciso planejar retenção, custo e filtros.
-
----
-
-## Exemplo Prático
-
-Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e VPC Endpoints para acessar serviços AWS sem passar pela internet.
+Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e [[Amazon VPC|VPC]] Endpoints para acessar serviços AWS sem passar pela internet.
 
 Cada componente muda segurança, custo e disponibilidade.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* Subnet pertence a uma única AZ.
+* [[Amazon VPC|VPC]] é regional.
+* Internet Gateway permite rota pública.
+* NAT Gateway permite saída de subnets privadas.
+* Route table decide para onde o pacote vai.
+
+---
+
+## Cuidados
+
+Flow Logs geram volume de dados.
+
+É preciso planejar retenção, custo e filtros.
 
 Rede mal desenhada pode gerar três problemas comuns:
 
@@ -69,24 +84,12 @@ Rede mal desenhada pode gerar três problemas comuns:
 
 Por isso, rede precisa ser estudada junto com segurança, alta disponibilidade e precificação.
 
+Security group não cria rota. Route table não libera porta. Cada componente resolve uma parte diferente da rede.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence à camada de rede na AWS.
+**Relação com CloudWatch**
 
-## Ponto central
-
-A VPC define isolamento lógico. Subnets dividem a VPC por zona. Route tables definem caminhos. Gateways conectam a VPC a redes externas ou serviços.
-
-## Como Diferenciar
-
-* Subnet pertence a uma única AZ.
-* VPC é regional.
-* Internet Gateway permite rota pública.
-* NAT Gateway permite saída de subnets privadas.
-* Route table decide para onde o pacote vai.
-
-## Cuidado importante
-
-Security group não cria rota. Route table não libera porta. Cada componente resolve uma parte diferente da rede.
+Flow Logs podem ser enviados para [[Amazon CloudWatch]], [[Amazon S3|S3]] ou outros destinos compatíveis, dependendo da configuração.

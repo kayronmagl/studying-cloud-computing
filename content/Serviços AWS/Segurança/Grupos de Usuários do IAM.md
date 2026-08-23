@@ -1,28 +1,28 @@
-Grupos de Usuários do IAM são coleções de [[Usuários do IAM]] usadas para facilitar administração de permissões.
+Grupos de Usuários do [[AWS Identity and Access Management (IAM)|IAM]] são coleções de [[Usuários do IAM]] usadas para facilitar administração de permissões.
 
 Em vez de anexar políticas manualmente a cada usuário, cria-se um grupo e anexa-se a política ao grupo.
 
-
-Em Grupos de Usuários do IAM, pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
-
+Em Grupos de Usuários do [[AWS Identity and Access Management (IAM)|IAM]], pense em proteção por camadas. Segurança na AWS combina identidade, rede, criptografia, logs, detecção e resposta.
 
 ---
 
-## Exemplo
+## O que é
 
-* Grupo: Desenvolvedores: pode visualizar logs.
-* pode acessar ambiente de desenvolvimento
-* Grupo: Operadores: pode reiniciar serviços.
-* pode consultar métricas
-* Grupo: Auditores: pode ler CloudTrail.
-* não pode alterar recursos
+Grupos de Usuários do IAM deve ser entendido como controle de confiança. Segurança em nuvem envolve identidade, autenticação, autorização, criptografia, auditoria, isolamento e resposta a incidentes.
 
-
-Usuários herdariam as permissões dos grupos aos quais pertencem.
+Segurança combina [[AWS Identity and Access Management (IAM)|IAM]], rede, criptografia, auditoria, detecção e proteção de aplicação.
 
 ---
 
-## O que Grupos Não São
+## Por que existe
+
+Grupos de Usuários do [[AWS Identity and Access Management (IAM)|IAM]] existe para reduzir risco de acesso indevido, exposição de dados, abuso de permissões e falta de rastreabilidade. Em nuvem, segurança depende de identidade, configuração, criptografia, auditoria e resposta a incidentes trabalhando juntas.
+
+---
+
+## Como funciona
+
+**O que Grupos Não São**
 
 Grupos não são identidades assumíveis.
 
@@ -32,25 +32,16 @@ Grupos servem para organizar usuários.
 
 ---
 
-## Boas Práticas
+## Exemplo prático
 
-* agrupar por função;
-* evitar grupos genéricos demais;
-* não anexar permissões administrativas sem necessidade;
-* revisar membros periodicamente;
-* aplicar [[Princípio do Menor Privilégio]].
+* Grupo: Desenvolvedores: pode visualizar logs.
+* pode acessar ambiente de desenvolvimento
+* Grupo: Operadores: pode reiniciar serviços.
+* pode consultar métricas
+* Grupo: Auditores: pode ler CloudTrail.
+* não pode alterar recursos
 
----
-
-## Relação com Políticas
-
-Grupos recebem [[Políticas IAM]].
-
-A política define o que membros do grupo podem fazer.
-
----
-
-## Exemplo Prático
+Usuários herdariam as permissões dos grupos aos quais pertencem.
 
 Uma aplicação pública pode usar [[AWS WAF]] para filtrar requisições, [[AWS Shield]] para proteção DDoS, [[AWS Identity and Access Management (IAM)|IAM]] para permissões, [[AWS Key Management Service (KMS)|KMS]] para chaves e [[AWS CloudTrail]] para auditoria.
 
@@ -58,31 +49,41 @@ Essas camadas reduzem risco de exposição, abuso e alteração indevida.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* [[AWS Identity and Access Management (IAM)|IAM]] controla permissões.
+* KMS gerencia chaves.
+* WAF filtra HTTP/HTTPS.
+* Shield protege contra DDoS.
+* CloudTrail audita chamadas de [[APIs|API]].
+* GuardDuty detecta ameaças.
+
+---
+
+## Cuidados
+
+**Boas Práticas**
+
+* agrupar por função;
+* evitar grupos genéricos demais;
+* não anexar permissões administrativas sem necessidade;
+* revisar membros periodicamente;
+* aplicar [[Princípio do Menor Privilégio]].
 
 O erro comum é confundir “serviço seguro” com “configuração segura”.
 
 A AWS protege a infraestrutura, mas o cliente ainda precisa configurar identidade, rede, dados, logs e aplicação corretamente.
 
+Permissão demais é risco. Aplique menor privilégio e use roles temporárias sempre que possível.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence ao módulo de segurança na AWS.
+**Relação com Políticas**
 
-## Ponto central
+Grupos recebem [[Políticas IAM]].
 
-Segurança combina IAM, rede, criptografia, auditoria, detecção e proteção de aplicação.
-
-## Como Diferenciar
-
-* IAM controla permissões.
-* KMS gerencia chaves.
-* WAF filtra HTTP/HTTPS.
-* Shield protege contra DDoS.
-* CloudTrail audita chamadas de API.
-* GuardDuty detecta ameaças.
-
-## Cuidado importante
-
-Permissão demais é risco. Aplique menor privilégio e use roles temporárias sempre que possível.
+A política define o que membros do grupo podem fazer.

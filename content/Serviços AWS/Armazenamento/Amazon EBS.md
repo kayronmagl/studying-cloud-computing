@@ -2,30 +2,44 @@ Amazon EBS significa Amazon Elastic Block Store.
 
 É o serviço de [[Armazenamento em Bloco]] persistente da AWS para instâncias [[Amazon EC2]]. Um volume EBS funciona como um disco virtual que pode ser anexado a uma instância, formatado pelo sistema operacional e usado por aplicações.
 
-## Volumes
+---
 
-[[Volumes do Amazon EBS]] são criados dentro de uma [[Availability Zones (AZ)]]. Normalmente, a instância EC2 que usa o volume precisa estar na mesma zona.
+## O que é
 
-Isso conecta EBS diretamente ao desenho de disponibilidade. Se uma aplicação precisa sobreviver à falha de uma zona, não basta ter um volume EBS. É preciso pensar em replicação, snapshots, backups, multi-AZ ou outro serviço gerenciado.
+Amazon EBS deve ser entendido pelo tipo de dado que guarda, pelo modo de acesso e pela durabilidade esperada. Em armazenamento na nuvem, a decisão central é separar objeto, bloco, arquivo, backup, ciclo de vida, recuperação e custo.
+
+Uma pergunta principal é: como o dado será acessado?
+
+Se for disco de servidor, pense em EBS. Se for objeto via [[APIs|API]], pense em [[Amazon S3|S3]]. Se for filesystem compartilhado, pense em EFS ou FSx.
 
 ---
 
-## Tipos de Volume
+## Por que existe
+
+Amazon EBS existe para organizar como dados são guardados, acessados, protegidos, recuperados e cobrados. Em nuvem, armazenamento não é apenas espaço em disco: envolve durabilidade, disponibilidade, performance, classe de uso, ciclo de vida e custo.
+
+---
+
+## Como funciona
+
+**Volumes**
+
+[[Volumes do Amazon EBS]] são criados dentro de uma [[Availability Zones (AZ)]]. Normalmente, a instância [[Amazon EC2|EC2]] que usa o volume precisa estar na mesma zona.
+
+Isso conecta EBS diretamente ao desenho de disponibilidade. Se uma aplicação precisa sobreviver à falha de uma zona, não basta ter um volume EBS. É preciso pensar em replicação, snapshots, backups, multi-AZ ou outro serviço gerenciado.
+
+**Tipos de Volume**
 
 [[Tipos de Volume do Amazon EBS]] incluem SSDs de propósito geral, SSDs com IOPS provisionado e HDDs otimizados para throughput ou baixo custo.
 
 A escolha deve partir do padrão de I/O:
-
 
 * uso geral: gp3.
 * muitas operações críticas: io2.
 * grandes leituras sequenciais: st1.
 * dados frios em bloco: sc1.
 
-
----
-
-## Snapshots
+**Snapshots**
 
 [[Snapshots do Amazon EBS]] são backups incrementais de volumes.
 
@@ -35,17 +49,13 @@ Para bancos autogerenciados, consistência de snapshot exige cuidado com buffers
 
 ---
 
-## Exemplo
+## Exemplo prático
 
-Uma empresa roda PostgreSQL manualmente em EC2.
+Uma empresa roda PostgreSQL manualmente em [[Amazon EC2|EC2]].
 
 Ela pode usar `io2` para IOPS previsível, snapshots automatizados, criptografia, alarmes no [[Amazon CloudWatch]] e replicação no próprio banco.
 
 Nesse caso, o EBS é parte crítica da camada de dados.
-
----
-
-## Exemplo Prático
 
 Uma aplicação pode usar:
 
@@ -58,33 +68,21 @@ Cada escolha muda o comportamento da aplicação.
 
 ---
 
-## Critério de Escolha
+## Diferenças importantes
+
+**Critério de Escolha**
 
 Pergunte:
 
-
 * a aplicação precisa de disco?
-* precisa de API de objeto?
+* precisa de [[APIs|API]] de objeto?
 * precisa compartilhar arquivos entre máquinas?
 * precisa arquivar por anos?
 * precisa recuperar imediatamente?
 
+Responder essas perguntas evita usar [[Amazon S3|S3]] como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
 
-Responder essas perguntas evita usar S3 como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
-
----
-
-## Como entender isso
-
-Este conceito pertence ao módulo de armazenamento na AWS.
-
-## Ponto central
-
-Uma pergunta principal é: como o dado será acessado?
-
-Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se for filesystem compartilhado, pense em EFS ou FSx.
-
-## Como Diferenciar
+**Como Diferenciar**
 
 * bloco é diferente de objeto;
 * objeto é diferente de arquivo compartilhado;
@@ -92,6 +90,22 @@ Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se f
 * lifecycle automatiza economia;
 * versionamento e backup ajudam recuperação.
 
-## Cuidado importante
+---
+
+## Cuidados
 
 Não escolha armazenamento só pelo nome do serviço. Escolha pelo padrão de acesso.
+
+---
+
+## Relação com outras notas
+
+- [[Armazenamento em Bloco]]
+- [[Amazon EC2]]
+- [[Volumes do Amazon EBS]]
+- [[Availability Zones (AZ)]]
+- [[Tipos de Volume do Amazon EBS]]
+- [[Snapshots do Amazon EBS]]
+- [[Amazon CloudWatch]]
+- [[Amazon S3]]
+- [[Amazon EFS]]

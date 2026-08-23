@@ -2,14 +2,29 @@ Routing Policies do Route 53 definem como o [[Amazon Route 53]] escolhe resposta
 
 Elas permitem que DNS participe de estratégias de disponibilidade, performance e distribuição geográfica.
 
-
 Routing Policies do Route 53 faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 
 Sempre pergunte: “quem precisa falar com quem, por qual caminho, e com qual permissão?”.
 
 ---
 
-## Políticas Comuns
+## O que é
+
+Routing Policies do Route 53 deve ser entendido pelo caminho do tráfego: origem, destino, protocolo, porta, rota, nome DNS e limite de isolamento. Rede na AWS define quem consegue falar com quem e por onde os pacotes passam.
+
+A [[Amazon VPC|VPC]] define isolamento lógico. Subnets dividem a [[Amazon VPC|VPC]] por zona. Route tables definem caminhos. Gateways conectam a [[Amazon VPC|VPC]] a redes externas ou serviços.
+
+---
+
+## Por que existe
+
+Routing Policies do Route 53 existe para controlar comunicação entre recursos, usuários, serviços e ambientes externos. Sem desenho de rede claro, surgem exposição indevida, falhas de conectividade, latência difícil de explicar e custo de tráfego inesperado.
+
+---
+
+## Como funciona
+
+**Políticas Comuns**
 
 * simples;
 * ponderada;
@@ -19,52 +34,52 @@ Sempre pergunte: “quem precisa falar com quem, por qual caminho, e com qual pe
 * geoproximidade;
 * multivalue answer.
 
----
-
-## Weighted Routing
+**Weighted Routing**
 
 Roteamento ponderado distribui porcentagens de tráfego.
 
 Exemplo:
 
-
 * 90% versão atual
 * 10% versão nova
 
-
 É útil para migração gradual.
 
----
-
-## Latency Routing
+**Latency Routing**
 
 Roteamento por latência responde com o destino que tende a oferecer menor latência ao usuário.
 
----
-
-## Failover
+**Failover**
 
 Roteamento de failover usa [[Health Checks]] para responder com destino secundário se o principal falhar.
 
 ---
 
-## Cuidado
+## Exemplo prático
 
-DNS trabalha com cache.
-
-Mesmo com política sofisticada, clientes e resolvers podem manter respostas por algum tempo.
-
----
-
-## Exemplo Prático
-
-Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e VPC Endpoints para acessar serviços AWS sem passar pela internet.
+Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e [[Amazon VPC|VPC]] Endpoints para acessar serviços AWS sem passar pela internet.
 
 Cada componente muda segurança, custo e disponibilidade.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* Subnet pertence a uma única AZ.
+* [[Amazon VPC|VPC]] é regional.
+* Internet Gateway permite rota pública.
+* NAT Gateway permite saída de subnets privadas.
+* Route table decide para onde o pacote vai.
+
+---
+
+## Cuidados
+
+DNS trabalha com cache.
+
+Mesmo com política sofisticada, clientes e resolvers podem manter respostas por algum tempo.
 
 Rede mal desenhada pode gerar três problemas comuns:
 
@@ -74,24 +89,11 @@ Rede mal desenhada pode gerar três problemas comuns:
 
 Por isso, rede precisa ser estudada junto com segurança, alta disponibilidade e precificação.
 
+Security group não cria rota. Route table não libera porta. Cada componente resolve uma parte diferente da rede.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence à camada de rede na AWS.
-
-## Ponto central
-
-A VPC define isolamento lógico. Subnets dividem a VPC por zona. Route tables definem caminhos. Gateways conectam a VPC a redes externas ou serviços.
-
-## Como Diferenciar
-
-* Subnet pertence a uma única AZ.
-* VPC é regional.
-* Internet Gateway permite rota pública.
-* NAT Gateway permite saída de subnets privadas.
-* Route table decide para onde o pacote vai.
-
-## Cuidado importante
-
-Security group não cria rota. Route table não libera porta. Cada componente resolve uma parte diferente da rede.
+- [[Amazon Route 53]]
+- [[Health Checks]]

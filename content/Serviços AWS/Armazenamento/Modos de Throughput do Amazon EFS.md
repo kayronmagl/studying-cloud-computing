@@ -2,7 +2,27 @@ Modos de Throughput do Amazon EFS definem como o [[Amazon EFS]] entrega vazão d
 
 O throughput é importante porque um filesystem compartilhado pode ser acessado por múltiplas instâncias, containers ou funções ao mesmo tempo. Se a vazão disponível não acompanha o padrão de acesso, a aplicação pode ficar lenta mesmo que a rede e as instâncias estejam saudáveis.
 
-## Elastic Throughput
+---
+
+## O que é
+
+Modos de Throughput do Amazon EFS deve ser entendido pelo tipo de dado que guarda, pelo modo de acesso e pela durabilidade esperada. Em armazenamento na nuvem, a decisão central é separar objeto, bloco, arquivo, backup, ciclo de vida, recuperação e custo.
+
+Uma pergunta principal é: como o dado será acessado?
+
+Se for disco de servidor, pense em EBS. Se for objeto via [[APIs|API]], pense em [[Amazon S3|S3]]. Se for filesystem compartilhado, pense em EFS ou FSx.
+
+---
+
+## Por que existe
+
+Modos de Throughput do Amazon EFS existe para organizar como dados são guardados, acessados, protegidos, recuperados e cobrados. Em nuvem, armazenamento não é apenas espaço em disco: envolve durabilidade, disponibilidade, performance, classe de uso, ciclo de vida e custo.
+
+---
+
+## Como funciona
+
+**Elastic Throughput**
 
 O modo Elastic ajusta a vazão automaticamente conforme a demanda.
 
@@ -10,9 +30,7 @@ O modo Elastic ajusta a vazão automaticamente conforme a demanda.
 
 Exemplo: processamento de arquivos que ocorre em horários irregulares.
 
----
-
-## Provisioned Throughput
+**Provisioned Throughput**
 
 O modo Provisioned permite definir uma vazão esperada independentemente da quantidade de dados armazenados.
 
@@ -20,9 +38,7 @@ Ele é útil quando a aplicação precisa de throughput previsível mesmo com po
 
 Exemplo: uma aplicação que mantém poucos arquivos, mas lê e escreve com alta intensidade.
 
----
-
-## Bursting Throughput
+**Bursting Throughput**
 
 O modo Bursting usa um modelo em que a capacidade de burst depende do tamanho do filesystem e de créditos acumulados.
 
@@ -30,18 +46,7 @@ Ele funciona bem para workloads com picos ocasionais, mas pode degradar se o uso
 
 ---
 
-## Como Escolher
-
-* demanda variável e imprevisível: Elastic.
-* demanda previsível e alta: Provisioned.
-* uso moderado com picos ocasionais: Bursting.
-
-
-A escolha deve ser feita com métricas do [[Amazon CloudWatch]], observando throughput, latência e comportamento real da aplicação.
-
----
-
-## Exemplo Prático
+## Exemplo prático
 
 Uma aplicação pode usar:
 
@@ -54,31 +59,29 @@ Cada escolha muda o comportamento da aplicação.
 
 ---
 
-## Critério de Escolha
+## Diferenças importantes
+
+**Como Escolher**
+
+* demanda variável e imprevisível: Elastic.
+* demanda previsível e alta: Provisioned.
+* uso moderado com picos ocasionais: Bursting.
+
+A escolha deve ser feita com métricas do [[Amazon CloudWatch]], observando throughput, latência e comportamento real da aplicação.
+
+**Critério de Escolha**
 
 Pergunte:
 
-
 * a aplicação precisa de disco?
-* precisa de API de objeto?
+* precisa de [[APIs|API]] de objeto?
 * precisa compartilhar arquivos entre máquinas?
 * precisa arquivar por anos?
 * precisa recuperar imediatamente?
 
+Responder essas perguntas evita usar [[Amazon S3|S3]] como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
 
-Responder essas perguntas evita usar S3 como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
-
-## Como entender isso
-
-Este conceito pertence ao módulo de armazenamento na AWS.
-
-## Ponto central
-
-Uma pergunta principal é: como o dado será acessado?
-
-Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se for filesystem compartilhado, pense em EFS ou FSx.
-
-## Como Diferenciar
+**Como Diferenciar**
 
 * bloco é diferente de objeto;
 * objeto é diferente de arquivo compartilhado;
@@ -86,6 +89,17 @@ Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se f
 * lifecycle automatiza economia;
 * versionamento e backup ajudam recuperação.
 
-## Cuidado importante
+---
+
+## Cuidados
 
 Não escolha armazenamento só pelo nome do serviço. Escolha pelo padrão de acesso.
+
+---
+
+## Relação com outras notas
+
+- [[Amazon EFS]]
+- [[Amazon EBS]]
+- [[Amazon S3]]
+- [[Amazon CloudWatch]]

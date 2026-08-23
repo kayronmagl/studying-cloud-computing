@@ -2,14 +2,21 @@ Bancos de Dados Purpose-Built são bancos criados para finalidades específicas.
 
 A ideia é que diferentes modelos de dados exigem motores diferentes. Um banco relacional não é sempre a melhor escolha para chave-valor em escala massiva. Um banco de grafos não substitui um data warehouse. Um cache em memória não substitui armazenamento durável.
 
-
 Bancos de Dados Purpose-Built deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 
 muitas alternativas erradas parecem boas porque ignoram esse padrão de acesso.
 
 ---
 
-## Por que Importa
+## O que é
+
+Bancos de Dados Purpose-Built deve ser entendido pelo modelo de dados, pelo padrão de consulta e pela consistência exigida. Banco de dados na nuvem não é apenas onde a informação fica guardada; é onde leitura, escrita, escala, backup, latência e custo se encontram.
+
+A escolha do banco depende do padrão de acesso, consistência, escala, consulta e modelo de dados.
+
+---
+
+## Por que existe
 
 Durante muito tempo, muitas aplicações tentavam resolver quase tudo com banco relacional.
 
@@ -26,7 +33,9 @@ Isso ainda funciona em muitos casos, mas sistemas modernos podem precisar de vá
 
 ---
 
-## Exemplos AWS
+## Como funciona
+
+**Exemplos AWS**
 
 * [[Amazon RDS]] para relacional.
 * [[Amazon DynamoDB]] para chave-valor e documento.
@@ -38,17 +47,7 @@ Isso ainda funciona em muitos casos, mas sistemas modernos podem precisar de vá
 
 ---
 
-## Cuidado
-
-Purpose-built não significa usar muitos bancos sem critério.
-
-Cada novo banco aumenta operação, integração, consistência, custo e complexidade mental.
-
-A decisão precisa ser justificada por padrão de acesso real.
-
----
-
-## Exemplo Prático
+## Exemplo prático
 
 Uma aplicação de pedidos pode usar:
 
@@ -62,12 +61,30 @@ Cada banco resolve um tipo de problema.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* [[Amazon RDS|RDS]]/Aurora: relacional e transacional.
+* [[Amazon DynamoDB|DynamoDB]]: NoSQL chave-valor/documento.
+* ElastiCache: cache em memória.
+* Redshift: data warehouse.
+* Neptune: grafos.
+* Timestream: séries temporais.
+
+---
+
+## Cuidados
+
+Purpose-built não significa usar muitos bancos sem critério.
+
+Cada novo banco aumenta operação, integração, consistência, custo e complexidade mental.
+
+A decisão precisa ser justificada por padrão de acesso real.
 
 A escolha do banco deve partir do padrão de acesso.
 
 Perguntas importantes:
-
 
 * preciso de transação?
 * preciso de join?
@@ -75,26 +92,19 @@ Perguntas importantes:
 * preciso de analytics?
 * preciso de relacionamento em grafo?
 
-
 Escolher banco só pelo nome do serviço costuma gerar arquitetura ruim.
 
-## Como entender isso
+NoSQL não é “sem modelagem”. Em [[Amazon DynamoDB|DynamoDB]], modelagem é orientada pelas consultas.
 
-Este conceito pertence ao módulo de bancos de dados na AWS.
+---
 
-## Ponto central
+## Relação com outras notas
 
-A escolha do banco depende do padrão de acesso, consistência, escala, consulta e modelo de dados.
-
-## Como Diferenciar
-
-* RDS/Aurora: relacional e transacional.
-* DynamoDB: NoSQL chave-valor/documento.
-* ElastiCache: cache em memória.
-* Redshift: data warehouse.
-* Neptune: grafos.
-* Timestream: séries temporais.
-
-## Cuidado importante
-
-NoSQL não é “sem modelagem”. Em DynamoDB, modelagem é orientada pelas consultas.
+- [[Amazon RDS]]
+- [[Amazon DynamoDB]]
+- [[Amazon Redshift]]
+- [[Amazon Neptune]]
+- [[Amazon Timestream]]
+- [[Amazon OpenSearch Service]]
+- [[Amazon ElastiCache]]
+- [[Amazon S3]]

@@ -2,24 +2,19 @@ Escalabilidade Horizontal significa adicionar mais recursos em paralelo.
 
 Exemplo: em vez de uma instância maior, usar várias instâncias atrás de um load balancer.
 
-
 Escalabilidade Horizontal ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
 
+---
+
+## O que é
+
+Escalabilidade Horizontal pertence ao desenho de disponibilidade, crescimento e recuperação. O objetivo é manter a aplicação funcionando quando há aumento de demanda, falha parcial ou necessidade de trocar tráfego para outro recurso.
+
+Escalabilidade é crescer ou reduzir capacidade. Alta disponibilidade é continuar funcionando apesar de falhas.
 
 ---
 
-## Exemplo AWS
-
-Uma aplicação web usa:
-
-* múltiplas instâncias [[Amazon EC2]];
-* [[Auto Scaling Groups]];
-* [[Application Load Balancer]];
-* múltiplas [[Availability Zones (AZ)]].
-
----
-
-## Vantagens
+## Por que existe
 
 * reduz dependência de uma máquina única;
 * melhora disponibilidade;
@@ -29,7 +24,18 @@ Uma aplicação web usa:
 
 ---
 
-## Requisitos
+## Como funciona
+
+**Exemplo AWS**
+
+Uma aplicação web usa:
+
+* múltiplas instâncias [[Amazon EC2]];
+* [[Auto Scaling Groups]];
+* [[Application Load Balancer]];
+* múltiplas [[Availability Zones (AZ)]].
+
+**Requisitos**
 
 A aplicação precisa evitar estado local.
 
@@ -37,15 +43,7 @@ Sessões devem ir para banco, cache, token ou serviço compartilhado. Arquivos d
 
 ---
 
-## Cuidado
-
-Escalar horizontalmente a camada web não resolve gargalo no banco.
-
-A arquitetura inteira precisa ser analisada.
-
----
-
-## Exemplo Prático
+## Exemplo prático
 
 Uma aplicação pode ser distribuída em múltiplas [[Availability Zones (AZ)]], atrás de um [[Application Load Balancer]], com instâncias gerenciadas por [[Amazon EC2 Auto Scaling]] e métricas no [[Amazon CloudWatch]].
 
@@ -53,7 +51,24 @@ Quando a carga aumenta, novas instâncias entram. Quando uma falha ocorre, desti
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* CloudWatch observa.
+* Auto Scaling ajusta capacidade.
+* ELB distribui tráfego.
+* Health checks removem destinos ruins.
+* Multi-AZ reduz falha zonal.
+* RTO e RPO guiam recuperação.
+
+---
+
+## Cuidados
+
+Escalar horizontalmente a camada web não resolve gargalo no banco.
+
+A arquitetura inteira precisa ser analisada.
 
 Escalar sem observar pode aumentar custo.
 
@@ -63,25 +78,17 @@ Ter alta disponibilidade sem testes pode criar falsa confiança.
 
 Por isso, esses conceitos devem ser combinados com métricas, alarmes, limites e testes de resiliência.
 
+Auto Scaling não garante alta disponibilidade sozinho. Precisa de múltiplas AZs, load balancing e health checks.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence ao módulo de escalabilidade e alta disponibilidade.
-
-## Ponto central
-
-Escalabilidade é crescer ou reduzir capacidade. Alta disponibilidade é continuar funcionando apesar de falhas.
-
-## Como Diferenciar
-
-* CloudWatch observa.
-* Auto Scaling ajusta capacidade.
-* ELB distribui tráfego.
-* Health checks removem destinos ruins.
-* Multi-AZ reduz falha zonal.
-* RTO e RPO guiam recuperação.
-
-## Cuidado importante
-
-Auto Scaling não garante alta disponibilidade sozinho. Precisa de múltiplas AZs, load balancing e health checks.
+- [[Amazon EC2]]
+- [[Auto Scaling Groups]]
+- [[Application Load Balancer]]
+- [[Availability Zones (AZ)]]
+- [[Amazon S3]]
+- [[Amazon EFS]]
+- [[Amazon EC2 Auto Scaling]]
+- [[Amazon CloudWatch]]

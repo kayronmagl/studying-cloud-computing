@@ -4,10 +4,19 @@ A ideia central é simples: em vez de criar uma [[Instância EC2]], instalar sis
 
 Lambda não elimina servidores. Ele remove o gerenciamento direto dos servidores pelo cliente.
 
-## Problema que Resolve
+---
+
+## O que é
+
+Você não provisiona servidor antes.
+
+Você envia código, configura execução e paga por invocações/duração.
+
+---
+
+## Por que existe
 
 Em uma aplicação tradicional hospedada em [[Amazon EC2]], a equipe precisa responder perguntas como:
-
 
 * quantas instâncias devo manter ligadas?
 * qual tipo de instância usar?
@@ -16,29 +25,27 @@ Em uma aplicação tradicional hospedada em [[Amazon EC2]], a equipe precisa res
 * como recuperar se uma instância falhar?
 * como manter capacidade sem pagar por ociosidade?
 
-
 No Lambda, a unidade de raciocínio muda.
 
 A equipe passa a perguntar:
-
 
 * qual evento dispara o código?
 * qual função processa esse evento?
 * qual timeout é adequado?
 * quanta memória a função precisa?
-* quais permissões IAM são necessárias?
+* quais permissões [[AWS Identity and Access Management (IAM)|IAM]] são necessárias?
 * como tratar retries e duplicidade?
 * como observar logs, erros e duração?
-
 
 Essa mudança é importante para quem está aprendendo nuvem: o foco sai da máquina e vai para evento, função, permissão, execução e observabilidade.
 
 ---
 
-## Como o Lambda Funciona
+## Como funciona
+
+**Como o Lambda Funciona**
 
 O fluxo básico de uma execução Lambda é:
-
 
 * evento de entrada: ↓.
 * invocação da função: ↓.
@@ -49,12 +56,9 @@ O fluxo básico de uma execução Lambda é:
 * retorno, erro ou publicação de saída: ↓.
 * logs e métricas no CloudWatch
 
-
 Cada parte desse fluxo precisa ser entendida separadamente.
 
----
-
-## Evento
+**Evento**
 
 Um evento é o dado de entrada que chega à função.
 
@@ -67,11 +71,9 @@ Ele pode representar:
 * uma etapa coordenada pelo [[AWS Step Functions]];
 * uma chamada direta por [[AWS SDKs]] ou [[APIs]].
 
-O formato do evento depende da origem. Um evento do API Gateway contém método HTTP, headers, path, query string e corpo da requisição. Um evento do S3 contém bucket, chave do objeto e metadados do arquivo. Um evento do SQS contém uma lista de mensagens.
+O formato do evento depende da origem. Um evento do [[APIs|API]] Gateway contém método HTTP, headers, path, query string e corpo da requisição. Um evento do [[Amazon S3|S3]] contém [[Buckets S3|bucket]], chave do objeto e metadados do arquivo. Um evento do [[Amazon SQS|SQS]] contém uma lista de mensagens.
 
----
-
-## Invocação
+**Invocação**
 
 A invocação é a chamada da função.
 
@@ -81,7 +83,7 @@ Existem três formas importantes de pensar nisso:
 
 O cliente chama a função e espera resposta.
 
-Exemplo: API Gateway chama Lambda para responder `GET /produtos`.
+Exemplo: [[APIs|API]] Gateway chama Lambda para responder `GET /produtos`.
 
 Se a função demora, o usuário espera. Se a função falha, o cliente recebe erro.
 
@@ -99,9 +101,7 @@ Em [[Event Source Mapping]], o próprio Lambda lê registros de fontes como [[Am
 
 Isso é fundamental para processamento assíncrono e desacoplado.
 
----
-
-## Ambiente de Execução
+**Ambiente de Execução**
 
 O ambiente de execução é o espaço preparado pela AWS para rodar a função.
 
@@ -111,9 +111,7 @@ Quando a AWS precisa criar um ambiente novo, pode ocorrer [[Cold Start]]. Quando
 
 Isso explica por que inicializações pesadas, bibliotecas grandes e conexões mal gerenciadas podem afetar latência.
 
----
-
-## Runtime
+**Runtime**
 
 O runtime é o suporte da linguagem usada pela função.
 
@@ -129,9 +127,7 @@ Exemplos:
 
 O runtime carrega o código e chama o handler.
 
----
-
-## Handler
+**Handler**
 
 O handler é o ponto de entrada da função.
 
@@ -146,9 +142,7 @@ O `event` contém os dados da invocação. O `context` contém metadados da exec
 
 O handler deve ser pequeno o suficiente para ser compreensível, mas não tão fragmentado a ponto de criar dezenas de funções difíceis de rastrear.
 
----
-
-## Execution Role
+**Execution Role**
 
 Toda função Lambda executa com uma role do [[AWS Identity and Access Management (IAM)|IAM]], chamada de execution role.
 
@@ -156,7 +150,7 @@ Essa role define o que a função pode fazer.
 
 Exemplo:
 
-* ler objetos de um bucket [[Amazon S3]];
+* ler objetos de um [[Buckets S3|bucket]] [[Amazon S3]];
 * escrever logs no [[Amazon CloudWatch]];
 * enviar mensagens para [[Amazon SQS]];
 * publicar eventos no [[Amazon EventBridge]];
@@ -167,9 +161,7 @@ Sem permissão, a função pode até iniciar, mas falhará ao tentar acessar o r
 
 Isso conecta Lambda diretamente ao [[Modelo de Responsabilidade Compartilhada]]: a AWS executa a infraestrutura, mas o cliente define permissões corretas.
 
----
-
-## Concorrência
+**Concorrência**
 
 [[Concorrência Lambda]] é a quantidade de execuções simultâneas da função.
 
@@ -177,11 +169,9 @@ Se muitos eventos chegam ao mesmo tempo, o Lambda pode executar várias cópias 
 
 Isso é poderoso, mas perigoso quando a função chama recursos limitados.
 
-Exemplo: uma função que processa mensagens do SQS e grava no RDS pode escalar rapidamente e abrir conexões demais no banco. Nesse caso, limitar concorrência pode proteger o sistema.
+Exemplo: uma função que processa mensagens do [[Amazon SQS|SQS]] e grava no [[Amazon RDS|RDS]] pode escalar rapidamente e abrir conexões demais no banco. Nesse caso, limitar concorrência pode proteger o sistema.
 
----
-
-## Cold Start
+**Cold Start**
 
 [[Cold Start]] é a latência adicional quando um novo ambiente de execução precisa ser criado.
 
@@ -191,15 +181,13 @@ Pode ser afetado por:
 * tamanho do pacote;
 * dependências;
 * inicialização fora do handler;
-* conexão com VPC;
+* conexão com [[Amazon VPC|VPC]];
 * provisioned concurrency;
 * complexidade do código.
 
-Cold start costuma importar mais em APIs síncronas sensíveis a latência. Em processamento assíncrono por fila, geralmente é menos crítico.
+Cold start costuma importar mais em [[APIs|APIs]] síncronas sensíveis a latência. Em processamento assíncrono por fila, geralmente é menos crítico.
 
----
-
-## Retries, Erros e DLQ
+**Retries, Erros e DLQ**
 
 Lambda precisa ser desenhado para falhas.
 
@@ -213,9 +201,7 @@ Por isso, três conceitos são essenciais:
 
 Exemplo: se uma função processa pagamento, ela não pode cobrar duas vezes apenas porque recebeu o mesmo evento novamente.
 
----
-
-## Observabilidade
+**Observabilidade**
 
 Toda função Lambda precisa ser observável.
 
@@ -231,13 +217,42 @@ O mínimo esperado é:
 
 Sem observabilidade, serverless vira uma caixa-preta difícil de depurar.
 
+**Exemplo Completo**
+
+Um sistema de imagens pode funcionar assim:
+
+1. Usuário envia imagem para uma [[APIs|API]] no [[Amazon API Gateway]].
+2. [[APIs|API]] Gateway invoca uma função Lambda.
+3. A função valida autenticação e tamanho do arquivo.
+4. A imagem é salva no [[Amazon S3]].
+5. O evento do [[Amazon S3|S3]] aciona outra função Lambda.
+6. A segunda função gera miniaturas.
+7. Uma mensagem é enviada ao [[Amazon SQS]].
+8. Falhas repetidas vão para uma [[Dead Letter Queue (DLQ)]].
+9. O [[Amazon CloudFront]] entrega imagens otimizadas.
+10. O [[Amazon CloudWatch]] registra logs, métricas e alarmes.
+
+Esse exemplo mostra o papel real do Lambda: ele não é apenas “código sem servidor”. Ele é uma peça de execução orientada a eventos dentro de uma arquitetura distribuída.
+
+**Funções sob demanda**
+
+O Lambda é um exemplo direto de [[Function as a Service (FaaS)]], porque executa código em funções acionadas por eventos.
+
 ---
 
-## Quando Usar
+## Exemplo prático
+
+Em uma arquitetura simples, usuário, aplicação, rede, banco, armazenamento, segurança e monitoramento trabalham juntos. AWS Lambda deve ser entendido pelo papel que exerce nesse conjunto.
+
+---
+
+## Diferenças importantes
+
+**Quando Usar**
 
 Lambda funciona bem para:
 
-* APIs leves;
+* [[APIs|APIs]] leves;
 * automações;
 * processamento de arquivos;
 * tarefas agendadas;
@@ -247,9 +262,7 @@ Lambda funciona bem para:
 * workloads variáveis;
 * protótipos que precisam escalar sem operar servidores.
 
----
-
-## Quando Evitar
+**Quando Evitar**
 
 Lambda pode não ser ideal para:
 
@@ -263,42 +276,13 @@ Lambda pode não ser ideal para:
 
 Nesses casos, [[Amazon EC2]], [[Amazon ECS]], [[Amazon EKS]] ou [[AWS Fargate]] podem ser melhores.
 
----
-
-## Exemplo Completo
-
-Um sistema de imagens pode funcionar assim:
-
-1. Usuário envia imagem para uma API no [[Amazon API Gateway]].
-2. API Gateway invoca uma função Lambda.
-3. A função valida autenticação e tamanho do arquivo.
-4. A imagem é salva no [[Amazon S3]].
-5. O evento do S3 aciona outra função Lambda.
-6. A segunda função gera miniaturas.
-7. Uma mensagem é enviada ao [[Amazon SQS]].
-8. Falhas repetidas vão para uma [[Dead Letter Queue (DLQ)]].
-9. O [[Amazon CloudFront]] entrega imagens otimizadas.
-10. O [[Amazon CloudWatch]] registra logs, métricas e alarmes.
-
-Esse exemplo mostra o papel real do Lambda: ele não é apenas “código sem servidor”. Ele é uma peça de execução orientada a eventos dentro de uma arquitetura distribuída.
-
----
-
-## Pontos que Costumam Gerar Confusão
+**Pontos que Costumam Gerar Confusão**
 
 A afirmação verdadeira sobre Lambda é que a empresa paga apenas pelo tempo de computação durante a execução do código.
 
 ---
 
-## Como entender
-
-Você não provisiona servidor antes.
-
-Você envia código, configura execução e paga por invocações/duração.
-
----
-
-## Cuidado importante
+## Cuidados
 
 Lambda não exige configurar servidores.
 
@@ -308,6 +292,15 @@ Serverless não significa sem infraestrutura; significa sem gerenciamento direto
 
 ---
 
-## Funções sob demanda
+## Relação com outras notas
 
-O Lambda é um exemplo direto de [[Function as a Service (FaaS)]], porque executa código em funções acionadas por eventos.
+- [[Computação sem Servidor (Serverless)]]
+- [[Instância EC2]]
+- [[Amazon CloudWatch]]
+- [[Amazon EC2]]
+- [[Amazon API Gateway]]
+- [[Amazon S3]]
+- [[Amazon SQS]]
+- [[Amazon EventBridge]]
+- [[AWS Step Functions]]
+- [[AWS SDKs]]

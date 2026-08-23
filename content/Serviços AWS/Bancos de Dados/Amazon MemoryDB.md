@@ -2,22 +2,29 @@ Amazon MemoryDB é um banco em memória compatível com Redis, projetado para du
 
 Ele se diferencia de cache puro porque pode atuar como banco primário em memória para determinados workloads.
 
-
 Amazon MemoryDB deve ser estudado a partir do padrão de acesso. Antes de escolher um banco, pergunte como a aplicação vai consultar, gravar, escalar e manter consistência.
 
 muitas alternativas erradas parecem boas porque ignoram esse padrão de acesso.
 
 ---
 
-## Diferença para ElastiCache
+## O que é
 
-[[Amazon ElastiCache]] é normalmente usado como cache.
+Amazon MemoryDB deve ser entendido pelo modelo de dados, pelo padrão de consulta e pela consistência exigida. Banco de dados na nuvem não é apenas onde a informação fica guardada; é onde leitura, escrita, escala, backup, latência e custo se encontram.
 
-MemoryDB busca oferecer durabilidade maior para dados em memória.
+A escolha do banco depende do padrão de acesso, consistência, escala, consulta e modelo de dados.
 
 ---
 
-## Usos
+## Por que existe
+
+Amazon MemoryDB existe para resolver necessidades de persistência, consulta, consistência, escala ou especialização de dados. Escolher banco errado pode gerar custo alto, lentidão, modelagem confusa e dificuldade para manter a aplicação.
+
+---
+
+## Como funciona
+
+**Usos**
 
 * aplicações de baixa latência;
 * estado de sessão durável;
@@ -25,25 +32,7 @@ MemoryDB busca oferecer durabilidade maior para dados em memória.
 * placares;
 * workloads compatíveis com Redis que exigem persistência.
 
----
-
-## Cuidado
-
-Memória é cara.
-
-Use quando latência e modelo de acesso justificam o custo.
-
----
-
-## Relação com ElastiCache
-
-[[Amazon ElastiCache]] é usado principalmente como cache.
-
-[[Amazon MemoryDB]] é mais adequado quando a aplicação quer compatibilidade com Redis, baixa latência e durabilidade maior para atuar como fonte primária de dados em memória.
-
----
-
-## Decisão Arquitetural
+**Decisão Arquitetural**
 
 Use MemoryDB quando a perda do dado em memória não é aceitável e quando a latência extremamente baixa justifica custo.
 
@@ -51,13 +40,7 @@ Se os dados já existem em outro banco e a intenção é apenas acelerar leitura
 
 ---
 
-## Cuidado na prática
-
-Memória é uma camada cara. A modelagem precisa controlar tamanho dos dados, política de expiração, replicação, persistência e impacto financeiro.
-
----
-
-## Exemplo Prático
+## Exemplo prático
 
 Uma aplicação de pedidos pode usar:
 
@@ -71,12 +54,36 @@ Cada banco resolve um tipo de problema.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Diferença para ElastiCache**
+
+[[Amazon ElastiCache]] é normalmente usado como cache.
+
+MemoryDB busca oferecer durabilidade maior para dados em memória.
+
+**Como Diferenciar**
+
+* [[Amazon RDS|RDS]]/Aurora: relacional e transacional.
+* [[Amazon DynamoDB|DynamoDB]]: NoSQL chave-valor/documento.
+* ElastiCache: cache em memória.
+* Redshift: data warehouse.
+* Neptune: grafos.
+* Timestream: séries temporais.
+
+---
+
+## Cuidados
+
+Memória é cara.
+
+Use quando latência e modelo de acesso justificam o custo.
+
+Memória é uma camada cara. A modelagem precisa controlar tamanho dos dados, política de expiração, replicação, persistência e impacto financeiro.
 
 A escolha do banco deve partir do padrão de acesso.
 
 Perguntas importantes:
-
 
 * preciso de transação?
 * preciso de join?
@@ -84,26 +91,16 @@ Perguntas importantes:
 * preciso de analytics?
 * preciso de relacionamento em grafo?
 
-
 Escolher banco só pelo nome do serviço costuma gerar arquitetura ruim.
 
-## Como entender isso
+NoSQL não é “sem modelagem”. Em [[Amazon DynamoDB|DynamoDB]], modelagem é orientada pelas consultas.
 
-Este conceito pertence ao módulo de bancos de dados na AWS.
+---
 
-## Ponto central
+## Relação com outras notas
 
-A escolha do banco depende do padrão de acesso, consistência, escala, consulta e modelo de dados.
+**Relação com ElastiCache**
 
-## Como Diferenciar
+[[Amazon ElastiCache]] é usado principalmente como cache.
 
-* RDS/Aurora: relacional e transacional.
-* DynamoDB: NoSQL chave-valor/documento.
-* ElastiCache: cache em memória.
-* Redshift: data warehouse.
-* Neptune: grafos.
-* Timestream: séries temporais.
-
-## Cuidado importante
-
-NoSQL não é “sem modelagem”. Em DynamoDB, modelagem é orientada pelas consultas.
+[[Amazon MemoryDB]] é mais adequado quando a aplicação quer compatibilidade com Redis, baixa latência e durabilidade maior para atuar como fonte primária de dados em memória.

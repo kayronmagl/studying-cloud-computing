@@ -2,31 +2,31 @@ Armazenamento de Arquivos é um modelo que fornece um sistema de arquivos compar
 
 Na AWS, os principais serviços são [[Amazon EFS]] e [[Amazon FSx]].
 
-## Diferença para Bloco e Objeto
+---
 
-[[Armazenamento em Bloco]] oferece discos.
+## O que é
 
-[[Armazenamento de Objetos]] oferece objetos por API.
+Armazenamento de Arquivos deve ser entendido pelo tipo de dado que guarda, pelo modo de acesso e pela durabilidade esperada. Em armazenamento na nuvem, a decisão central é separar objeto, bloco, arquivo, backup, ciclo de vida, recuperação e custo.
 
-Armazenamento de arquivos oferece filesystem compartilhado.
+Uma pergunta principal é: como o dado será acessado?
+
+Se for disco de servidor, pense em EBS. Se for objeto via [[APIs|API]], pense em [[Amazon S3|S3]]. Se for filesystem compartilhado, pense em EFS ou FSx.
 
 ---
 
-## Quando Usar
+## Por que existe
 
-Use quando múltiplas instâncias precisam acessar os mesmos arquivos, aplicações legadas esperam filesystem, containers compartilham diretórios, funções Lambda precisam de arquivos comuns ou processamento paralelo usa diretórios compartilhados.
-
----
-
-## Cuidados importantes
-
-Filesystem compartilhado pode virar gargalo se usado como banco de dados improvisado.
-
-Também exige atenção a permissões, throughput, latência e padrão de acesso.
+Armazenamento de Arquivos existe para organizar como dados são guardados, acessados, protegidos, recuperados e cobrados. Em nuvem, armazenamento não é apenas espaço em disco: envolve durabilidade, disponibilidade, performance, classe de uso, ciclo de vida e custo.
 
 ---
 
-## Exemplo Prático
+## Como funciona
+
+O funcionamento depende do tipo de dado, padrão de acesso, necessidade de durabilidade, performance, retenção e recuperação. Ao estudar Armazenamento de Arquivos, conecte capacidade, acesso, proteção, ciclo de vida e custo.
+
+---
+
+## Exemplo prático
 
 Uma aplicação pode usar:
 
@@ -39,33 +39,33 @@ Cada escolha muda o comportamento da aplicação.
 
 ---
 
-## Critério de Escolha
+## Diferenças importantes
+
+**Diferença para Bloco e Objeto**
+
+[[Armazenamento em Bloco]] oferece discos.
+
+[[Armazenamento de Objetos]] oferece objetos por [[APIs|API]].
+
+Armazenamento de arquivos oferece filesystem compartilhado.
+
+**Quando Usar**
+
+Use quando múltiplas instâncias precisam acessar os mesmos arquivos, aplicações legadas esperam filesystem, containers compartilham diretórios, funções [[AWS Lambda|Lambda]] precisam de arquivos comuns ou processamento paralelo usa diretórios compartilhados.
+
+**Critério de Escolha**
 
 Pergunte:
 
-
 * a aplicação precisa de disco?
-* precisa de API de objeto?
+* precisa de [[APIs|API]] de objeto?
 * precisa compartilhar arquivos entre máquinas?
 * precisa arquivar por anos?
 * precisa recuperar imediatamente?
 
+Responder essas perguntas evita usar [[Amazon S3|S3]] como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
 
-Responder essas perguntas evita usar S3 como se fosse disco, EBS como se fosse compartilhado, ou EFS como se fosse banco.
-
----
-
-## Como entender isso
-
-Este conceito pertence ao módulo de armazenamento na AWS.
-
-## Ponto central
-
-Uma pergunta principal é: como o dado será acessado?
-
-Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se for filesystem compartilhado, pense em EFS ou FSx.
-
-## Como Diferenciar
+**Como Diferenciar**
 
 * bloco é diferente de objeto;
 * objeto é diferente de arquivo compartilhado;
@@ -73,6 +73,23 @@ Se for disco de servidor, pense em EBS. Se for objeto via API, pense em S3. Se f
 * lifecycle automatiza economia;
 * versionamento e backup ajudam recuperação.
 
-## Cuidado importante
+---
+
+## Cuidados
+
+Filesystem compartilhado pode virar gargalo se usado como banco de dados improvisado.
+
+Também exige atenção a permissões, throughput, latência e padrão de acesso.
 
 Não escolha armazenamento só pelo nome do serviço. Escolha pelo padrão de acesso.
+
+---
+
+## Relação com outras notas
+
+- [[Amazon EFS]]
+- [[Amazon FSx]]
+- [[Amazon EBS]]
+- [[Amazon S3]]
+- [[Armazenamento em Bloco]]
+- [[Armazenamento de Objetos]]

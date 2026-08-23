@@ -2,104 +2,47 @@ Acoplamento Fraco é um princípio arquitetural em que componentes dependem o m�
 
 Isso melhora resiliência, escalabilidade e facilidade de mudança.
 
-
 Imagine dois sistemas conectados diretamente.
 
 Se um fica lento, o outro trava. Se um cai, o outro falha junto.
 
-Com acoplamento fraco, você coloca uma camada intermediária, como fila, evento ou API estável.
+Com acoplamento fraco, você coloca uma camada intermediária, como fila, evento ou [[APIs|API]] estável.
 
 Assim, cada parte pode evoluir, escalar e falhar com menos impacto na outra.
 
 ---
 
-## Pontos que Costumam Gerar Confusão
-
-O cenário descreve qual princípio afirma que sistemas devem reduzir interdependências.
-
-A resposta é Acoplamento fraco.
-
----
-
-## Exemplos na AWS
-
-* [[Amazon SQS]] entre produtor e consumidor;
-* [[Amazon SNS]] para pub/sub;
-* [[Amazon EventBridge]] para eventos;
-* APIs entre serviços;
-* filas para absorver picos;
-* DLQ para falhas;
-* retries com backoff.
-
----
-
-## Cuidado importante
-
-Acoplamento fraco não significa ausência de comunicação.
-
-Significa comunicação com menos dependência rígida.
-
----
-
-## Ideia Central
+## O que é
 
 * se um componente não precisa saber demais sobre o outro, o sistema fica mais flexível
-
-
----
-
-## Explicação principal
 
 Acoplamento fraco é fazer com que uma parte do sistema não dependa demais da outra.
 
 Quanto mais grudados os componentes estão, mais fácil uma falha se espalhar.
 
----
-
-## Exemplo
-
-Sem fila:
-
-
-* sistema A chama sistema B diretamente
-* B fica lento
-* A também fica lento
-
-
-Com fila:
-
-
-* sistema A envia mensagem para SQS
-* sistema B processa quando puder
-* A não fica preso esperando
-
+Quando o cenário envolve reduzir interdependências, a resposta é acoplamento fraco.
 
 ---
 
-## Como Diferenciar
+## Por que existe
 
-A frase principal é:
-
-
-* reduzir interdependências
-
-
-A resposta é Acoplamento fraco.
+Acoplamento Fraco existe para orientar decisões que não são apenas técnicas. Adoção de nuvem envolve pessoas, processos, risco, plataforma, segurança, operação, custo e valor de negócio.
 
 ---
 
-## Serviços que ajudam
+## Como funciona
 
-* [[Amazon SQS]];
-* [[Amazon SNS]];
-* [[Amazon EventBridge]];
-* [[Dead Letter Queue (DLQ)]];
-* retries;
-* arquitetura orientada a eventos.
+**Exemplos na AWS**
 
----
+* [[Amazon SQS]] entre produtor e consumidor;
+* [[Amazon SNS]] para pub/sub;
+* [[Amazon EventBridge]] para eventos;
+* [[APIs|APIs]] entre serviços;
+* filas para absorver picos;
+* DLQ para falhas;
+* retries com backoff.
 
-## Pensando como arquiteto
+**Pensando como arquiteto**
 
 Acoplamento fraco é um dos conceitos mais importantes para sistemas modernos.
 
@@ -109,7 +52,19 @@ Com acoplamento fraco, cada parte consegue trabalhar com mais independência.
 
 ---
 
-## Exemplo bem simples
+## Exemplo prático
+
+Sem fila:
+
+* sistema A chama sistema B diretamente
+* B fica lento
+* A também fica lento
+
+Com fila:
+
+* sistema A envia mensagem para [[Amazon SQS|SQS]]
+* sistema B processa quando puder
+* A não fica preso esperando
 
 Imagine uma loja online.
 
@@ -123,6 +78,39 @@ Isso deixa o sistema mais resistente.
 
 ---
 
-## Resposta curta para guardar
+## Diferenças importantes
 
-Quando o cenário envolve reduzir interdependências, a resposta é acoplamento fraco.
+**Pontos que Costumam Gerar Confusão**
+
+O cenário descreve qual princípio afirma que sistemas devem reduzir interdependências.
+
+A resposta é Acoplamento fraco.
+
+**Como Diferenciar**
+
+A frase principal é:
+
+* reduzir interdependências
+
+A resposta é Acoplamento fraco.
+
+---
+
+## Cuidados
+
+Acoplamento fraco não significa ausência de comunicação.
+
+Significa comunicação com menos dependência rígida.
+
+---
+
+## Relação com outras notas
+
+**Serviços que ajudam**
+
+* [[Amazon SQS]];
+* [[Amazon SNS]];
+* [[Amazon EventBridge]];
+* [[Dead Letter Queue (DLQ)]];
+* retries;
+* arquitetura orientada a eventos.

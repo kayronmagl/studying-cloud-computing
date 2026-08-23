@@ -2,13 +2,27 @@ Dashboards do Amazon CloudWatch são painéis visuais para acompanhar métricas 
 
 Eles ajudam a reunir sinais de múltiplos serviços em uma visão única.
 
-
 Dashboards do Amazon CloudWatch ajuda a responder duas perguntas: “como o sistema cresce?” e “como ele continua funcionando quando algo falha?”.
-
 
 ---
 
-## Função
+## O que é
+
+[[Amazon RDS]] é o serviço gerenciado de bancos relacionais da AWS.
+
+Ele suporta motores como MySQL, PostgreSQL, MariaDB, Oracle, SQL Server e outros conforme disponibilidade.
+
+---
+
+## Por que existe
+
+Dashboards do Amazon CloudWatch existe para manter aplicações disponíveis, responsivas e recuperáveis quando há aumento de demanda, falhas ou variações no ambiente. Sem esse tipo de desenho, crescimento e falha viram eventos manuais e arriscados.
+
+---
+
+## Como funciona
+
+**Função**
 
 Dashboards permitem visualizar:
 
@@ -21,9 +35,7 @@ Dashboards permitem visualizar:
 * status de alarmes;
 * capacidade de Auto Scaling.
 
----
-
-## Uso
+**Uso**
 
 Uma equipe pode criar um dashboard para produção contendo:
 
@@ -34,49 +46,7 @@ Uma equipe pode criar um dashboard para produção contendo:
 * logs relevantes;
 * alarmes críticos.
 
----
-
-## Relação com Operação
-
-Dashboards ajudam durante incidentes, deploys, picos de tráfego e análises de performance.
-
----
-
-## Cuidado
-
-Dashboard bonito não significa observabilidade útil.
-
-Um bom dashboard responde perguntas operacionais reais.
-
----
-
-## Exemplo Prático
-
-Uma aplicação pode ser distribuída em múltiplas [[Availability Zones (AZ)]], atrás de um [[Application Load Balancer]], com instâncias gerenciadas por [[Amazon EC2 Auto Scaling]] e métricas no [[Amazon CloudWatch]].
-
-Quando a carga aumenta, novas instâncias entram. Quando uma falha ocorre, destinos não saudáveis são removidos.
-
----
-
-## Cuidados importantes
-
-Escalar sem observar pode aumentar custo.
-
-Ter múltiplas instâncias sem health check pode manter falhas ativas.
-
-Ter alta disponibilidade sem testes pode criar falsa confiança.
-
-Por isso, esses conceitos devem ser combinados com métricas, alarmes, limites e testes de resiliência.
-
----
-
-## Explicação principal
-
-[[Amazon RDS]] é o serviço gerenciado de bancos relacionais da AWS.
-
-Ele suporta motores como MySQL, PostgreSQL, MariaDB, Oracle, SQL Server e outros conforme disponibilidade.
-
-## O que a AWS Gerencia
+**O que a AWS Gerencia**
 
 * provisionamento;
 * backups automáticos;
@@ -86,7 +56,7 @@ Ele suporta motores como MySQL, PostgreSQL, MariaDB, Oracle, SQL Server e outros
 * Multi-AZ;
 * monitoramento básico.
 
-## O que o Cliente Ainda Gerencia
+**O que o Cliente Ainda Gerencia**
 
 * modelo de dados;
 * queries;
@@ -96,6 +66,49 @@ Ele suporta motores como MySQL, PostgreSQL, MariaDB, Oracle, SQL Server e outros
 * parâmetros;
 * performance da aplicação.
 
-## Cuidado importante
+---
 
-RDS gerencia o banco, mas não cria automaticamente uma boa modelagem. Query ruim continua sendo query ruim.
+## Exemplo prático
+
+Uma aplicação pode ser distribuída em múltiplas [[Availability Zones (AZ)]], atrás de um [[Application Load Balancer]], com instâncias gerenciadas por [[Amazon EC2 Auto Scaling]] e métricas no [[Amazon CloudWatch]].
+
+Quando a carga aumenta, novas instâncias entram. Quando uma falha ocorre, destinos não saudáveis são removidos.
+
+---
+
+## Diferenças importantes
+
+Não confunda escalabilidade, disponibilidade e resiliência. Escalabilidade lida com variação de demanda, disponibilidade lida com acesso contínuo e resiliência lida com sobreviver e recuperar após falhas.
+
+---
+
+## Cuidados
+
+Dashboard bonito não significa observabilidade útil.
+
+Um bom dashboard responde perguntas operacionais reais.
+
+Escalar sem observar pode aumentar custo.
+
+Ter múltiplas instâncias sem health check pode manter falhas ativas.
+
+Ter alta disponibilidade sem testes pode criar falsa confiança.
+
+Por isso, esses conceitos devem ser combinados com métricas, alarmes, limites e testes de resiliência.
+
+[[Amazon RDS|RDS]] gerencia o banco, mas não cria automaticamente uma boa modelagem. Query ruim continua sendo query ruim.
+
+---
+
+## Relação com outras notas
+
+**Relação com Operação**
+
+Dashboards ajudam durante incidentes, deploys, picos de tráfego e análises de performance.
+
+- [[Amazon RDS]]
+- [[Elastic Load Balancing]]
+- [[Amazon EC2 Auto Scaling]]
+- [[Availability Zones (AZ)]]
+- [[Application Load Balancer]]
+- [[Amazon CloudWatch]]

@@ -1,14 +1,22 @@
 Conformidade Legal é atender leis, normas e regulações. Em cloud, envolve proteção de dados, retenção, auditoria e residência de dados.
 
-## Exemplo Prático
+---
 
-Uma aplicação pode executar instâncias em duas zonas de disponibilidade. Se uma zona sofrer falha, o tráfego pode ser direcionado para recursos saudáveis em outra zona.
+## O que é
 
-Esse desenho depende de conceitos como isolamento, latência, failover, replicação e estado da aplicação.
+Conformidade Legal deve ser entendido pela posição dos recursos no mapa da nuvem: região, zona, borda, distância, isolamento e dependências. Topologia explica onde as coisas ficam e como falhas ou latência se propagam.
 
 ---
 
-## Decisão Arquitetural
+## Por que existe
+
+Conformidade Legal existe para explicar como localização, distância, redundância, cache, conectividade e distribuição geográfica afetam disponibilidade, latência, recuperação e custo.
+
+---
+
+## Como funciona
+
+**Decisão Arquitetural**
 
 Ao escolher região, zona ou estratégia de recuperação, a equipe precisa equilibrar:
 
@@ -21,26 +29,41 @@ Ao escolher região, zona ou estratégia de recuperação, a equipe precisa equi
 
 Não basta “usar AWS”. É necessário desenhar onde e como os recursos serão distribuídos.
 
+**Proteção de dados na Europa**
+
+[[GDPR]] aparece quando a arquitetura precisa considerar regras europeias de proteção e tratamento de dados pessoais.
+
+**Proteção de dados no Brasil**
+
+[[LGPD]] aparece quando a arquitetura precisa considerar regras brasileiras de tratamento e proteção de dados pessoais.
+
 ---
 
-## Exemplo
+## Exemplo prático
+
+Uma aplicação pode executar instâncias em duas zonas de disponibilidade. Se uma zona sofrer falha, o tráfego pode ser direcionado para recursos saudáveis em outra zona.
+
+Esse desenho depende de conceitos como isolamento, latência, failover, replicação e estado da aplicação.
 
 Uma aplicação crítica pode usar duas zonas de disponibilidade, um load balancer, bancos Multi-AZ e backups. Se um componente falhar, o tráfego deve continuar indo para partes saudáveis.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+Compare Conformidade Legal com região, zona de disponibilidade, edge location, data center, failover e disaster recovery. Cada termo descreve um nível diferente de localização, isolamento ou resposta a falha.
+
+---
+
+## Cuidados
 
 Distribuir recursos aumenta disponibilidade, mas também pode aumentar custo e complexidade.
 
 A decisão precisa equilibrar latência, custo, conformidade, RTO, RPO e esforço operacional.
 
-## Proteção de dados na Europa
-
-[[GDPR]] aparece quando a arquitetura precisa considerar regras europeias de proteção e tratamento de dados pessoais.
-
 ---
 
-## Proteção de dados no Brasil
+## Relação com outras notas
 
-[[LGPD]] aparece quando a arquitetura precisa considerar regras brasileiras de tratamento e proteção de dados pessoais.
+- [[GDPR]]
+- [[LGPD]]

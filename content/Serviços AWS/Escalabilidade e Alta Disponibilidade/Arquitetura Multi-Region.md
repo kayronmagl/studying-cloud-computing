@@ -2,23 +2,21 @@ Arquitetura Multi-Region distribui componentes entre múltiplas [[Regions (Regi�
 
 Ela é usada quando requisitos de recuperação de desastre regional, baixa latência global, residência de dados, conformidade ou continuidade de negócios justificam maior isolamento geográfico.
 
-
 Multi-Region não é prática obrigatória para toda aplicação. Muitas necessidades de disponibilidade podem ser atendidas dentro de uma única região com [[Arquitetura Multi-AZ]], desde que a aplicação, os dados e a rede estejam bem desenhados.
 
 Operar em várias regiões aumenta significativamente a complexidade. Failover entre regiões não acontece apenas porque recursos existem em mais de uma região. A estratégia precisa definir replicação, roteamento, consistência, capacidade, observabilidade, permissões, testes e operação.
 
+---
+
+## O que é
+
+Arquitetura Multi-Region pertence ao desenho de disponibilidade, crescimento e recuperação. O objetivo é manter a aplicação funcionando quando há aumento de demanda, falha parcial ou necessidade de trocar tráfego para outro recurso.
+
+Multi-Region distribui recursos entre regiões diferentes. Ela não substitui Multi-AZ; atende requisitos de isolamento geográfico, recuperação regional, latência global ou conformidade quando esses requisitos justificam a complexidade.
 
 ---
 
-## Diferença para Multi-AZ
-
-[[Arquitetura Multi-AZ]] distribui recursos entre zonas dentro de uma região.
-
-Multi-Region distribui recursos entre regiões diferentes.
-
----
-
-## Benefícios
+## Por que existe
 
 * tolerância a falhas regionais;
 * menor latência para usuários globais;
@@ -28,7 +26,9 @@ Multi-Region distribui recursos entre regiões diferentes.
 
 ---
 
-## Desafios
+## Como funciona
+
+**Desafios**
 
 * replicação de dados;
 * consistência;
@@ -45,9 +45,7 @@ Multi-Region distribui recursos entre regiões diferentes.
 * testes;
 * recuperação do ambiente primário.
 
----
-
-## Serviços Relacionados
+**Serviços Relacionados**
 
 * [[Amazon Route 53]];
 * [[Route 53 Health Checks]];
@@ -57,9 +55,7 @@ Multi-Region distribui recursos entre regiões diferentes.
 * [[Amazon CloudWatch]];
 * [[AWS CloudTrail]].
 
----
-
-## Failover entre regiões
+**Failover entre regiões**
 
 Um desenho Multi-Region precisa definir como o tráfego muda de uma região para outra. Isso pode envolver [[Amazon Route 53]], [[Route 53 Health Checks]], [[Failover Routing]] ou outros mecanismos de roteamento.
 
@@ -69,37 +65,50 @@ Depois da recuperação, a equipe ainda precisa decidir como ocorrerá o failbac
 
 ---
 
-## Cuidado
+## Exemplo prático
 
-Multi-Region é poderoso, mas complexo.
-
-Não deve ser usado apenas por parecer sofisticado. Deve responder a requisitos reais de RTO, RPO, latência ou conformidade.
+Uma aplicação pode aumentar capacidade quando CPU, fila ou requisições crescem, distribuir tráfego entre instâncias e remover destinos não saudáveis. Nesse cenário, Arquitetura Multi-Region ajuda a manter resposta e disponibilidade.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
 
-Multi-Region pode melhorar continuidade e alcance, mas traz trade-offs de consistência, latência, residência de dados, custo, transferência entre regiões, duplicação de ambientes, testes de failover e operação diária.
+**Diferença para Multi-AZ**
 
-Não trate Multi-Region como equivalente a Multi-AZ. Multi-AZ trabalha dentro de uma região; Multi-Region atravessa limites geográficos independentes.
+[[Arquitetura Multi-AZ]] distribui recursos entre zonas dentro de uma região.
 
----
+Multi-Region distribui recursos entre regiões diferentes.
 
-## Como entender isso
-
-Este conceito pertence ao módulo de escalabilidade e alta disponibilidade.
-
-## Ponto central
-
-Multi-Region distribui recursos entre regiões diferentes. Ela não substitui Multi-AZ; atende requisitos de isolamento geográfico, recuperação regional, latência global ou conformidade quando esses requisitos justificam a complexidade.
-
-## Como Diferenciar
+**Como Diferenciar**
 
 * Multi-AZ reduz impacto de falha zonal dentro de uma região.
 * Multi-Region reduz dependência de uma única região, mas exige replicação, roteamento, capacidade e operação em mais de um local.
 * RTO e RPO ajudam a decidir se Multi-Region é necessário.
 * Health checks e roteamento podem participar do failover, mas não substituem dados consistentes nem ambiente secundário preparado.
 
-## Cuidado importante
+---
+
+## Cuidados
+
+Multi-Region é poderoso, mas complexo.
+
+Não deve ser usado apenas por parecer sofisticado. Deve responder a requisitos reais de RTO, RPO, latência ou conformidade.
+
+Multi-Region pode melhorar continuidade e alcance, mas traz trade-offs de consistência, latência, residência de dados, custo, transferência entre regiões, duplicação de ambientes, testes de failover e operação diária.
+
+Não trate Multi-Region como equivalente a Multi-AZ. Multi-AZ trabalha dentro de uma região; Multi-Region atravessa limites geográficos independentes.
 
 Auto Scaling não garante alta disponibilidade sozinho. Em Multi-Region, além de escala local, a arquitetura precisa de roteamento, replicação, observabilidade, permissões, capacidade e processo operacional em cada região envolvida.
+
+---
+
+## Relação com outras notas
+
+- [[Regions (Regiões)]]
+- [[Arquitetura Multi-AZ]]
+- [[Amazon Route 53]]
+- [[Route 53 Health Checks]]
+- [[Failover Routing]]
+- [[Amazon S3]]
+- [[Amazon CloudWatch]]
+- [[AWS CloudTrail]]

@@ -2,24 +2,21 @@ Endereços IP Privados são endereços usados dentro da [[Amazon VPC]] para comu
 
 Eles não são roteáveis diretamente pela internet pública.
 
-
 Endereços IP Privados faz parte do caminho que o tráfego percorre. Redes na AWS não são só “internet”: envolvem isolamento, rotas, subnets, DNS, gateways e regras de segurança.
 
 Sempre pergunte: “quem precisa falar com quem, por qual caminho, e com qual permissão?”.
 
 ---
 
-## Uso
+## O que é
 
-Recursos em subnets privadas e públicas possuem IP privado.
+Endereços IP Privados deve ser entendido pelo caminho do tráfego: origem, destino, protocolo, porta, rota, nome DNS e limite de isolamento. Rede na AWS define quem consegue falar com quem e por onde os pacotes passam.
 
-Mesmo uma instância com IP público normalmente também possui IP privado.
-
-A comunicação interna entre recursos da VPC usa IP privado.
+Rede define isolamento, caminhos, exposição, conectividade privada, DNS e segurança de tráfego.
 
 ---
 
-## Benefícios
+## Por que existe
 
 * menor exposição;
 * comunicação interna;
@@ -30,21 +27,42 @@ A comunicação interna entre recursos da VPC usa IP privado.
 
 ---
 
-## Cuidado
+## Como funciona
 
-Evite depender de IPs privados fixos quando nomes DNS internos, load balancers ou service discovery forem mais adequados.
+**Uso**
+
+Recursos em subnets privadas e públicas possuem IP privado.
+
+Mesmo uma instância com IP público normalmente também possui IP privado.
+
+A comunicação interna entre recursos da [[Amazon VPC|VPC]] usa IP privado.
 
 ---
 
-## Exemplo Prático
+## Exemplo prático
 
-Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e VPC Endpoints para acessar serviços AWS sem passar pela internet.
+Uma aplicação web pode usar subnets públicas para load balancers, subnets privadas para instâncias e bancos, NAT Gateway para saída controlada e [[Amazon VPC|VPC]] Endpoints para acessar serviços AWS sem passar pela internet.
 
 Cada componente muda segurança, custo e disponibilidade.
 
 ---
 
-## Cuidados importantes
+## Diferenças importantes
+
+**Como Diferenciar**
+
+* [[Amazon VPC|VPC]] é regional.
+* Subnet é zonal.
+* Route table define caminho.
+* Security group controla tráfego em recurso.
+* NACL controla tráfego em subnet.
+* NAT Gateway permite saída privada.
+
+---
+
+## Cuidados
+
+Evite depender de IPs privados fixos quando nomes DNS internos, load balancers ou service discovery forem mais adequados.
 
 Rede mal desenhada pode gerar três problemas comuns:
 
@@ -54,25 +72,10 @@ Rede mal desenhada pode gerar três problemas comuns:
 
 Por isso, rede precisa ser estudada junto com segurança, alta disponibilidade e precificação.
 
+Recurso em subnet pública só é realmente público se também tiver IP público e rota adequada.
+
 ---
 
-## Como entender isso
+## Relação com outras notas
 
-Este conceito pertence ao módulo de redes na AWS.
-
-## Ponto central
-
-Rede define isolamento, caminhos, exposição, conectividade privada, DNS e segurança de tráfego.
-
-## Como Diferenciar
-
-* VPC é regional.
-* Subnet é zonal.
-* Route table define caminho.
-* Security group controla tráfego em recurso.
-* NACL controla tráfego em subnet.
-* NAT Gateway permite saída privada.
-
-## Cuidado importante
-
-Recurso em subnet pública só é realmente público se também tiver IP público e rota adequada.
+- [[Amazon VPC]]
